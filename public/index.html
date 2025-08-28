@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PaginasFast - Desarrollo de Páginas Web Rápidas y Optimizadas</title>
+      <title>Diseño de Páginas Web Rápidas en Chile | PaginasFast</title>
+    <meta name="description" content="En PaginasFast creamos páginas web ultra-rápidas y optimizadas para SEO que convierten visitas en clientes. Potencia tu negocio en Santiago y todo Chile.">
+    
     <link rel="icon" type="image/png" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -14,8 +16,11 @@
 
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <style>
-        /* Estilos personalizados para PaginasFast */
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -42,8 +47,6 @@
             scroll-behavior: smooth;
         }
 
-
-        /* --- Estilos del Chatbot y Modal --- */
         .loader {
             width: 20px;
             height: 20px;
@@ -52,14 +55,16 @@
             border-top-color: #fff;
             animation: spin 1s ease-in-out infinite;
         }
-        
+
         .loader-dark {
-             border: 3px solid rgba(0, 0, 0, 0.2);
-             border-top-color: #3B82F6; /* blue-600 */
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            border-top-color: #3B82F6;
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .chat-opener {
@@ -91,8 +96,8 @@
             max-width: 400px;
             height: 70vh;
             max-height: 600px;
-            background-color: #111827; /* gray-900 */
-            border: 1px solid #374151; /* gray-700 */
+            background-color: #111827;
+            border: 1px solid #374151;
             border-radius: 1.5rem;
             overflow: hidden;
             display: flex;
@@ -117,7 +122,7 @@
         }
 
         .chat-header {
-            background-color: #1f2937; /* gray-800 */
+            background-color: #1f2937;
             padding: 1rem;
             display: flex;
             align-items: center;
@@ -157,18 +162,18 @@
         }
 
         .user-bubble {
-            background-color: #3B82F6; /* blue-600 */
+            background-color: #3B82F6;
             border-bottom-right-radius: 0.375rem;
             align-self: flex-end;
         }
 
         .bot-bubble {
-            background-color: #374151; /* gray-700 */
+            background-color: #374151;
             color: #d1d5db;
             border-bottom-left-radius: 0.375rem;
             align-self: flex-start;
         }
-        
+
         .summary-notification {
             background-color: #4f46e520;
             color: #c7d2fe;
@@ -178,7 +183,7 @@
             font-size: 0.9em;
             text-align: left;
         }
-        
+
         .chat-input-form {
             display: flex;
             gap: 0.5rem;
@@ -198,11 +203,11 @@
         }
 
         .chat-input:focus {
-            border-color: #3B82F6; /* blue-600 */
+            border-color: #3B82F6;
         }
 
         .chat-send-btn {
-            background-color: #3B82F6; /* blue-600 */
+            background-color: #3B82F6;
             color: white;
             border-radius: 50%;
             padding: 0.75rem;
@@ -215,7 +220,7 @@
         }
 
         .chat-send-btn:hover {
-            background-color: #2563EB; /* blue-700 */
+            background-color: #2563EB;
         }
 
         .chat-send-btn:disabled {
@@ -226,6 +231,7 @@
         .modal {
             transition: opacity 0.3s ease;
         }
+
         .testimonial-card {
             background-color: #ffffff;
             border: 1px solid #e5e7eb;
@@ -233,11 +239,42 @@
             padding: 2rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+
+
+        .faq-item {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease-in-out;
+        }
+
+        .faq-item[open] {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-content {
+            overflow: hidden;
+
+        }
+
+        .faq-summary {
+            list-style: none;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .faq-item[open]>.faq-summary .faq-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
 <body class="bg-white text-gray-800">
-
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-900">
@@ -245,7 +282,8 @@
             </a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium">Servicios</a>
-                <a href="#nuestro-compromiso" class="text-gray-600 hover:text-blue-600 font-medium">Nuestro Compromiso</a>
+                <a href="#nuestro-compromiso" class="text-gray-600 hover:text-blue-600 font-medium">Nuestro
+                    Compromiso</a>
                 <a href="#portafolio" class="text-gray-600 hover:text-blue-600 font-medium">Proyectos</a>
                 <a href="#contacto" id="nav-contact-btn"
                     class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors cursor-pointer">Cotizar
@@ -268,50 +306,65 @@
     <main class="gradient-bg">
         <section class="container mx-auto px-6 py-20 md:py-32 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                Tu Página Web No Es Un Gasto, <span class="text-blue-600">Es Tu Mejor Vendedor</span>
+                Deja de Ser Invisible. <span class="text-blue-600">Atrae Clientes y Vende Más.</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                En PaginasFast, creamos sitios web <strong>ultra-rápidos que convierten visitas en clientes.</strong>
-                Deja de perder dinero con una web lenta. Invierte en una herramienta diseñada para vender 24/7.
+                Creamos páginas web ultra-rápidas, diseñadas para posicionarte en Google y <strong>convertir cada visita
+                    en una oportunidad de venta.</strong> Tu negocio merece una web que trabaje para ti 24/7.
             </p>
             <a href="#servicios"
                 class="cta-button inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700">
-                Ver Planes y Precios
+                Quiero más Clientes
             </a>
         </section>
     </main>
-    
+
     <section id="como-vender-mas" class="py-20 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">¿Cómo una Página Web Profesional Aumenta tus Ventas?</h2>
-            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Tu web es más que una tarjeta de presentación. Es un motor de crecimiento.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">La Ecuación es Simple: Mejor Web = Más Clientes
+            </h2>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Más clientes = Más dinero. No es magia, es estrategia. Una
+                página rápida y profesional genera confianza, te posiciona como experto y guía a los visitantes a
+                convertirse en clientes.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div class="text-center">
                     <div class="flex justify-center items-center mb-4">
-                         <div class="bg-blue-100 rounded-full p-4">
-                             <i data-feather="clock" class="h-8 w-8 text-blue-600"></i>
-                         </div>
+                        <div class="bg-blue-100 rounded-full p-4">
+                            <i data-feather="clock" class="h-8 w-8 text-blue-600"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Atrae Clientes 24/7</h3>
-                    <p class="text-gray-600">Tu página web trabaja para ti sin descanso, capturando clientes potenciales incluso mientras duermes.</p>
+                    <h3 class="text-xl font-bold mb-2">Atrae Clientes, No Solo Visitas</h3>
+                    <p class="text-gray-600">
+                        Tu página funcionará como un imán, capturando el interés de tu público objetivo y
+                        convirtiéndolos en clientes potenciales calificados, día y noche.
+                    </p>
                 </div>
-                 <div class="text-center">
+
+                <div class="text-center">
                     <div class="flex justify-center items-center mb-4">
-                         <div class="bg-blue-100 rounded-full p-4">
-                             <i data-feather="award" class="h-8 w-8 text-blue-600"></i>
-                         </div>
+                        <div class="bg-blue-100 rounded-full p-4">
+                            <i data-feather="award" class="h-8 w-8 text-blue-600"></i>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Genera Confianza Instantánea</h3>
-                    <p class="text-gray-600">Un diseño profesional y rápido te posiciona como un líder creíble en tu sector, haciendo que los clientes te elijan a ti.</p>
+                    <h3 class="text-xl font-bold mb-2">Proyecta Autoridad y Confianza</h3>
+                    <p class="text-gray-600">
+                        La primera impresión es crucial. Un diseño profesional y una carga rápida demuestran que eres un
+                        experto serio, generando la confianza necesaria para la venta.
+                    </p>
                 </div>
-                 <div class="text-center">
+
+                <div class="text-center">
                     <div class="flex justify-center items-center mb-4">
-                         <div class="bg-blue-100 rounded-full p-4">
+                        <div class="bg-blue-100 rounded-full p-4">
                             <i data-feather="dollar-sign" class="h-8 w-8 text-blue-600"></i>
-                         </div>
+                        </div>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Convierte Visitas en Dinero</h3>
-                    <p class="text-gray-600">Cada elemento de tu web estará optimizado para que los visitantes te contacten, agenden o compren.</p>
+                    <p class="text-gray-600">
+                        Cada botón y formulario está optimizado para que el cliente <b>no abandone y te contácte.</b>
+                        Hacemos que para tus visitantes sea
+                        increíblemente fácil y tentador contactarte o comprar.
+                    </p>
                 </div>
             </div>
         </div>
@@ -321,7 +374,8 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes de Desarrollo Web a tu Medida</h2>
-                <p class="text-gray-600 mt-2">Soluciones claras y enfocadas en resultados. Elige el plan que impulsará tu negocio.</p>
+                <p class="text-gray-600 mt-2">Soluciones claras y enfocadas en resultados. Elige el plan que impulsará
+                    tu negocio.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
@@ -332,7 +386,8 @@
                         <span class="text-4xl font-extrabold text-gray-900">$100.000</span>
                         <p class="text-gray-500 text-sm">CLP / Pago único</p>
                     </div>
-                    <p class="text-gray-600 mb-6 flex-grow">La base perfecta para lanzar tu marca. Un sitio presencial profesional para que empieces a capturar clientes.</p>
+                    <p class="text-gray-600 mb-6 flex-grow">La base perfecta para lanzar tu marca. Un sitio presencial
+                        profesional para que empieces a capturar clientes.</p>
                     <ul class="text-gray-700 space-y-3 mb-8">
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2"></i>3 a 5 Secciones estratégicas</li>
@@ -341,10 +396,12 @@
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2"></i>Formulario para recibir contactos</li>
                         <li class="flex items-center"><i data-feather="check-circle"
-                                class="h-5 w-5 text-green-500 mr-2"></i>Optimización para que te encuentren en Google</li>
+                                class="h-5 w-5 text-green-500 mr-2"></i>Optimización para que te encuentren en Google
+                        </li>
                     </ul>
                     <button
-                        class="chat-cta w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors" data-plan="Web Emprendedor">¡Quiero Empezar!
+                        class="chat-cta w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors"
+                        data-plan="Web Emprendedor">¡Quiero Empezar!
                     </button>
                 </div>
 
@@ -356,7 +413,8 @@
                         <span class="text-4xl font-extrabold text-white">$300.000</span>
                         <p class="text-blue-200 text-sm">CLP / Pago único</p>
                     </div>
-                    <p class="text-blue-100 mb-6 flex-grow">La solución definitiva para consolidar tu marca, dominar tu mercado y convertir tu web en una máquina de ventas.</p>
+                    <p class="text-blue-100 mb-6 flex-grow">La solución definitiva para consolidar tu marca, dominar tu
+                        mercado y convertir tu web en una máquina de ventas.</p>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-300 mr-2"></i>Hasta 10 secciones completas</li>
@@ -368,7 +426,8 @@
                                 class="h-5 w-5 text-green-300 mr-2"></i>SEO Avanzado para superar a tu competencia</li>
                     </ul>
                     <button
-                        class="chat-cta w-full mt-auto text-center bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors" data-plan="Web Corporativa">¡Quiero Este Plan!
+                        class="chat-cta w-full mt-auto text-center bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                        data-plan="Web Corporativa">¡Quiero Este Plan!
                     </button>
                 </div>
 
@@ -380,7 +439,8 @@
                         <span class="text-4xl font-extrabold text-gray-900">$300.000</span>
                         <p class="text-gray-500 text-sm">CLP / Pago único</p>
                     </div>
-                    <p class="text-gray-600 mb-6 flex-grow">Vende tus productos sin parar con una tienda online robusta, segura y optimizada para una experiencia de compra fácil.</p>
+                    <p class="text-gray-600 mb-6 flex-grow">Vende tus productos sin parar con una tienda online robusta,
+                        segura y optimizada para una experiencia de compra fácil.</p>
                     <ul class="text-gray-700 space-y-3 mb-8">
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2"></i>Catálogo de productos ilimitado</li>
@@ -392,72 +452,117 @@
                                 class="h-5 w-5 text-green-500 mr-2"></i>Carrito de compras fácil de usar</li>
                     </ul>
                     <button
-                        class="chat-cta w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors" data-plan="Tienda Online">Vender Online
+                        class="chat-cta w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors"
+                        data-plan="Tienda Online">Vender Online
                     </button>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section id="nuestro-compromiso" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/3 text-center">
-                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop" alt="Alex Morales - CEO de PaginasFast"
+                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop"
+                        alt="Alex Morales - CEO de PaginasFast"
                         class="rounded-full w-64 h-64 mx-auto shadow-xl border-4 border-white object-cover">
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-blue-600 font-semibold mb-2">NO CREAMOS PÁGINAS, CREAMOS NEGOCIOS</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Un Fundador Obsesionado con tus Resultados</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Un Fundador Obsesionado con tus
+                        Resultados</h2>
                     <p class="text-gray-600 mb-4 text-lg">
-                        Hola, soy <span class="font-bold text-gray-800">Alex Morales</span>, fundador de PaginasFast. Mi única misión es que tu inversión en una página web se traduzca en más clientes y más ventas. Punto.
+                        Hola, soy <span class="font-bold text-gray-800">Alex Morales</span>, fundador de PaginasFast. Mi
+                        única misión es que tu inversión en una página web se traduzca en más clientes y más ventas.
+                        Punto.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        No usamos plantillas genéricas. Nos sumergimos en tu negocio para construir una web que no solo sea atractiva, sino que funcione como tu mejor herramienta de marketing.
+                        No usamos plantillas genéricas. Nos sumergimos en tu negocio para construir una web que no solo
+                        sea atractiva, sino que funcione como tu mejor herramienta de marketing.
                     </p>
                     <div class="border-l-4 border-blue-500 pl-4 bg-white p-4 rounded-r-lg">
-                        <p class="text-gray-700 italic font-medium">"Cada segundo que un cliente potencial pasa en una web lenta o confusa es dinero que pierdes. Me comprometo personalmente a entregarte un sitio web tan rápido y eficaz que cada visita cuente."</p>
+                        <p class="text-gray-700 italic font-medium">"Cada segundo que un cliente potencial pasa en una
+                            web lenta o confusa es dinero que pierdes. Me comprometo personalmente a entregarte un sitio
+                            web tan rápido y eficaz que cada visita cuente."</p>
                         <p class="font-semibold mt-2">- Alex Morales, CEO de PaginasFast</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section id="testimonios" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nuestros Clientes ya están Ganando Más</h2>
-                <p class="text-gray-600 mt-2">Prueba social real. Clientes que han transformado su negocio con nosotros.</p>
+                <p class="text-gray-600 mt-2">Y se tú el siguiente en tener los mejores resultados y dejar una reseña.
+                </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"Desde que lanzamos la nueva web con PaginasFast, las solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente marcan la diferencia."</p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar de Cliente Satisfecho">
+
+                <div class="testimonial-card flex flex-col">
+                    <div class="flex items-center text-yellow-500 mb-2">
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 flex-grow">"Desde que lanzamos la nueva web con PaginasFast, las
+                        solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente marcan
+                        la diferencia."</p>
+                    <div class="flex items-center mt-auto">
+                        <img class="w-12 h-12 rounded-full mr-4 bg-gray-200"
+                            src="https://ui-avatars.com/api/?name=Carlos+Vega&background=0D8ABC&color=fff&size=128"
+                            alt="Avatar de Carlos Vega">
                         <div>
                             <p class="font-bold text-gray-900">Carlos Vega</p>
-                            <p class="text-sm text-gray-500">CEO de Constructora XYZ</p>
+                            <p class="text-sm text-gray-500">Gerente en Constructora Vega Ltda.</p>
                         </div>
                     </div>
                 </div>
-                 <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"Estaba perdiendo clientes por mi antigua página. Alex y su equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer mes. ¡Totalmente recomendado!"</p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar de Cliente Satisfecho">
+
+                <div class="testimonial-card flex flex-col">
+                    <div class="flex items-center text-yellow-500 mb-2">
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 flex-grow">"Estaba perdiendo clientes por mi antigua página.
+                        Alex y su equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer
+                        mes. ¡Totalmente recomendado!"</p>
+                    <div class="flex items-center mt-auto">
+                        <img class="w-12 h-12 rounded-full mr-4 bg-gray-200"
+                            src="https://ui-avatars.com/api/?name=Ana+Fuentes&background=1E293B&color=fff&size=128"
+                            alt="Avatar de Ana Fuentes">
                         <div>
                             <p class="font-bold text-gray-900">Ana Fuentes</p>
-                            <p class="text-sm text-gray-500">Fundadora de Moda Sostenible</p>
+                            <p class="text-sm text-gray-500">Fundadora de "Moda con Sentido"</p>
                         </div>
                     </div>
                 </div>
-                 <div class="testimonial-card">
-                    <p class="text-gray-600 italic mb-4">"El profesionalismo y el enfoque en resultados de PaginasFast es de otro nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para crecer."</p>
-                    <div class="flex items-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/3.jpg" alt="Avatar de Cliente Satisfecho">
+
+                <div class="testimonial-card flex flex-col">
+                    <div class="flex items-center text-yellow-500 mb-2">
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                        <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-gray-600 italic mb-4 flex-grow">"El profesionalismo y el enfoque en resultados es de
+                        otro nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para
+                        crecer."</p>
+                    <div class="flex items-center mt-auto">
+                        <img class="w-12 h-12 rounded-full mr-4 bg-gray-200"
+                            src="https://ui-avatars.com/api/?name=Javier+Torres&background=0D8ABC&color=fff&size=128"
+                            alt="Avatar de Javier Torres">
                         <div>
                             <p class="font-bold text-gray-900">Javier Torres</p>
-                            <p class="text-sm text-gray-500">Consultor de Negocios</p>
+                            <p class="text-sm text-gray-500">Consultor de Negocios Independiente</p>
                         </div>
                     </div>
                 </div>
@@ -468,32 +573,60 @@
     <section id="portafolio" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Proyectos que Generan Resultados</h2>
-                <p class="text-gray-600 mt-2">Diseños web creados para ser máquinas de conversión.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Historias de Éxito de Negocios Como el Tuyo
+                </h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">No solo creamos páginas web. Construimos herramientas
+                    que ayudan a profesionales y pymes a crecer.</p>
             </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center mb-16">
+                <div>
+                    <h3 class="text-4xl font-extrabold text-blue-600">+50</h3>
+                    <p class="text-gray-600 font-semibold">Proyectos Completados</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-extrabold text-blue-600">98%</h3>
+                    <p class="text-gray-600 font-semibold">Clientes Satisfechos</p>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h3 class="text-4xl font-extrabold text-blue-600">+30%</h3>
+                    <p class="text-gray-600 font-semibold">Aumento Promedio en Consultas</p>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop"
-                        alt="Diseño web para Fintech"
+                    <img src="/public/image/abogados.webp"
+                        alt="Página web profesional para un moderno estudio de abogados"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                        <h3 class="text-white text-2xl font-bold">Fintech Innovadora</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Estudios de Abogados</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Web corporativa que genera confianza y
+                                captura consultas legales.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop"
-                        alt="Página web para marca de moda"
+                    <img src="/public/image/sabor-espanol.webp" alt="Página web para restaurante"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                        <h3 class="text-white text-2xl font-bold">Marca de Moda Sostenible</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Restaurantes y cafeterías</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Página con menú online y sistema de
+                                reservas que aumentó los pedidos.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
-                        alt="Desarrollo web para consultora"
+                    <img src="/public/image/dental.webp" alt="Página web para consulta médica"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                        <h3 class="text-white text-2xl font-bold">Consultora de Negocios</h3>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Consulta Médica</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Sitio web profesional que permite a los
+                                pacientes agendar horas fácilmente.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -502,7 +635,7 @@
 
     <section id="contacto" class="py-20 gradient-bg">
         <div class="container mx-auto px-6 text-center">
-             <div class="bg-white p-8 rounded-xl shadow-2xl inline-block">
+            <div class="bg-white p-8 rounded-xl shadow-2xl inline-block">
                 <div class="flex items-center justify-center space-x-2 text-yellow-500 mb-2">
                     <i data-feather="star" fill="currentColor"></i>
                     <i data-feather="star" fill="currentColor"></i>
@@ -510,17 +643,149 @@
                     <i data-feather="star" fill="currentColor"></i>
                     <i data-feather="star" fill="currentColor"></i>
                 </div>
-                 <h3 class="text-xl font-bold text-gray-900">Garantía de Satisfacción 100%</h3>
-                 <p class="text-gray-600 mt-1">No consideramos el proyecto terminado hasta que estés completamente feliz con tu nueva web.</p>
-             </div>
-            
+                <h3 class="text-xl font-bold text-gray-900">Garantía de Satisfacción 100%</h3>
+                <p class="text-gray-600 mt-1">No consideramos el proyecto terminado hasta que estés completamente feliz
+                    con tu nueva web.</p>
+            </div>
+
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-8">¿Listo para que tu Negocio Despegue?</h2>
-            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">La consulta es gratis. El potencial de crecimiento, ilimitado. Hablemos.</p>
-             <button id="open-modal-btn" class="mt-8 cta-button inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700">
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">La consulta es gratis. El potencial de crecimiento,
+                ilimitado. Hablemos.</p>
+            <button id="open-modal-btn"
+                class="mt-8 cta-button inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700">
                 Agendar Mi Llamada Estratégica
             </button>
         </div>
     </section>
+
+
+
+
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Preguntas Frecuentes</h2>
+                <p class="text-gray-600 mt-2">Respuestas a las dudas más comunes de nuestros clientes.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4" id="faq-container">
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Por qué mi negocio necesita una página web?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            Una página web es tu vendedor 24/7. Te permite atraer clientes fuera de tu horario y
+                            ubicación, genera confianza profesional y te da una plataforma propia para mostrar tus
+                            productos o servicios sin depender de las comisiones o reglas de redes sociales.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Qué es el hosting y el dominio?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            El <strong>dominio</strong> es la dirección de tu sitio (ej: `paginasfast.com`). El
+                            <strong>hosting</strong> es el espacio en internet donde se guardan los archivos de tu web
+                            para que sea visible. En PaginasFast, podemos asesorarte para adquirir ambos, aunque el
+                            costo de estos servicios es aparte de nuestros planes.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿En cuánto tiempo estará lista mi página?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            El plan "Web Emprendedor" suele tardar entre 5 y 7 días hábiles. Los planes "Corporativo" o
+                            "Tienda Online" pueden tomar de 10 a 15 días hábiles, dependiendo de la complejidad y la
+                            rapidez con la que recibamos el material (textos, imágenes) de tu parte.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Cómo puedo contactar con ustedes?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            ¡Es muy fácil! Puedes agendar una llamada directamente desde el botón en nuestra sección de
+                            <a href="#contacto" class="text-blue-600 hover:underline">Contacto</a>, o iniciar una
+                            conversación con nuestro asistente virtual haciendo clic en el ícono de chat en la esquina
+                            inferior derecha.
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "¿Por qué mi negocio necesita una página web?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una página web es tu vendedor 24/7. Te permite atraer clientes fuera de tu horario y ubicación, genera confianza profesional y te da una plataforma propia para mostrar tus productos o servicios sin depender de las comisiones o reglas de redes sociales."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿Qué es el hosting y el dominio?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El dominio es la dirección de tu sitio (ej: paginasfast.com). El hosting es el espacio en internet donde se guardan los archivos de tu web para que sea visible. En PaginasFast, podemos asesorarte para adquirir ambos, aunque el costo de estos servicios es aparte de nuestros planes."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿En cuánto tiempo estará lista mi página?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El plan 'Web Emprendedor' suele tardar entre 5 y 7 días hábiles. Los planes 'Corporativo' o 'Tienda Online' pueden tomar de 10 a 15 días hábiles, dependiendo de la complejidad y la rapidez con la que recibamos el material (textos, imágenes) de tu parte."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿Cómo puedo contactar con ustedes?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Es muy fácil! Puedes agendar una llamada directamente desde el botón en nuestra sección de Contacto, o iniciar una conversación con nuestro asistente virtual haciendo clic en el ícono de chat en la esquina inferior derecha."
+            }
+        }]
+        }
+</script>
+
+
+
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-12">
@@ -568,7 +833,8 @@
             <button id="chat-close-btn" class="chat-close-btn">&times;</button>
         </div>
         <div id="chat-messages" class="chat-messages">
-            <div class="chat-bubble bot-bubble">¡Hola! 👋 Soy tu asistente experto de PaginasFast. Para empezar a cotizar tu nueva página web, ¿podrías decirme tu nombre?</div>
+            <div class="chat-bubble bot-bubble">¡Hola! 👋 Soy tu asistente experto de PaginasFast. Para empezar a
+                cotizar tu nueva página web, ¿podrías decirme tu nombre?</div>
         </div>
         <form id="chat-form" class="chat-input-form">
             <input type="text" id="user-input" placeholder="Escribe tu respuesta..." class="chat-input"
@@ -582,12 +848,16 @@
             </button>
         </form>
     </div>
-    
-    <div id="contact-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
-            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+
+    <div id="contact-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
+            <button id="close-modal-btn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Agendar una Llamada Estratégica</h3>
-            <p class="text-gray-600 mb-6">Déjanos tus datos y nos pondremos en contacto para definir cómo podemos ayudarte a crecer.</p>
+            <p class="text-gray-600 mb-6">Déjanos tus datos y nos pondremos en contacto para definir cómo podemos
+                ayudarte a crecer.</p>
             <form id="contact-form">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
@@ -605,13 +875,15 @@
                         class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
 
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
-                   <span class="btn-text">Enviar Solicitud</span>
-                   <div class="loader loader-dark hidden"></div>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                    <span class="btn-text">Enviar Solicitud</span>
+                    <div class="loader loader-dark hidden"></div>
                 </button>
             </form>
         </div>
     </div>
+
 
 
     <script>
@@ -633,7 +905,7 @@
             const closeModalBtn = document.getElementById('close-modal-btn');
             const navContactBtn = document.getElementById('nav-contact-btn');
             const contactForm = document.getElementById('contact-form');
-            
+
             const chatOpener = document.getElementById('chat-opener');
             const chatWindow = document.getElementById('chat-window');
             const closeChatBtn = document.getElementById('chat-close-btn');
@@ -652,25 +924,25 @@
                 modalContent.classList.remove('scale-100');
                 setTimeout(() => modal.classList.add('hidden'), 300);
             };
-            
+
             // Event Listeners para abrir y cerrar el modal
-            if(openModalBtn) openModalBtn.addEventListener('click', openModal);
-            if(navContactBtn) {
-                 navContactBtn.addEventListener('click', (e) => {
+            if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+            if (navContactBtn) {
+                navContactBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     openModal();
                 });
             }
-            if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-            if(modal) {
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) closeModal();
                 });
             }
 
             // Lógica de envío del formulario del modal
-            if(contactForm) {
-                 contactForm.addEventListener('submit', async (e) => {
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
 
                     const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -681,7 +953,7 @@
                     submitButton.disabled = true;
                     buttonText.classList.add('hidden');
                     buttonLoader.classList.remove('hidden');
-                    
+
                     const name = document.getElementById('name-modal').value;
                     const email = document.getElementById('email-modal').value;
                     const phone = document.getElementById('phone-modal').value;
@@ -713,7 +985,7 @@
                     }
                 });
             }
-           
+
 
             // Chatbot Logic
             const openChat = () => {
@@ -741,7 +1013,7 @@
                     }
                 });
             });
-            
+
 
             // --- LÓGICA CONVERSACIONAL DEL CHATBOT ---
             const chatFormEl = document.getElementById('chat-form');
@@ -808,10 +1080,10 @@
                 sendButton.disabled = isLoading;
                 sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
             }
-            
+
             async function callGemini(payload) {
                 // Esta función asume que tienes un endpoint en tu servidor en '/api/chat'
-                const apiUrl = '/api/chat'; 
+                const apiUrl = '/api/chat';
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -828,7 +1100,7 @@
                     return "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
                 }
             }
-            
+
             async function getBotResponse() {
                 const knowledgeBase = `
                 ---
@@ -860,7 +1132,7 @@
                 };
                 return await callGemini(payload);
             }
-            
+
             async function triggerSummaryGeneration() {
                 appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'system', 'summary');
 
@@ -884,14 +1156,44 @@
                     });
 
                     // Mostrar notificación final al usuario
-                     appendMessage("<strong>¡Gracias!</strong><p>Hemos recibido tu solicitud. Un especialista de PaginasFast te contactará muy pronto.</p>", 'system', 'summary');
+                    appendMessage("<strong>¡Gracias!</strong><p>Hemos recibido tu solicitud. Un especialista de PaginasFast te contactará muy pronto.</p>", 'system', 'summary');
 
                 } catch (error) {
                     console.error("Error en el proceso de resumen y envío:", error);
                     appendMessage("No pudimos procesar tu solicitud final, pero no te preocupes, hemos guardado tus datos y un agente te contactará.", 'system', 'summary');
                 }
             }
-            
+
+
+
+            const faqContainer = document.getElementById('faq-container');
+            const detailsElements = faqContainer.querySelectorAll('details');
+
+            detailsElements.forEach(details => {
+                details.addEventListener('toggle', (event) => {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+
+
+        });
+
+
+
+    </script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // Duración de la animación
+            once: true,    // Animar solo una vez
         });
     </script>
 </body>
