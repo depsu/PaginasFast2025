@@ -10,20 +10,261 @@
 
     <link rel="icon" type="image/png" href="/favicon.png">
     <link href="/output.css" rel="stylesheet">
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <script src="https://unpkg.com/feather-icons" defer></script>
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    </noscript>
+
 
     <style>
-       body{font-family:Inter,sans-serif}.gradient-bg{background:linear-gradient(135deg,#f5f7fa 0,#c3cfe2 100%)}.cta-button{transition:.3s}.chat-opener,.chat-window{position:fixed;bottom:2rem;right:2rem;transition:transform .3s,opacity .3s;display:flex}.cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,.15)}.service-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,0,0,.12)}html{scroll-behavior:smooth}.loader{width:20px;height:20px;border:3px solid rgba(255,255,255,.3);border-radius:50%;border-top-color:#fff;animation:1s ease-in-out infinite spin}.loader-dark{border:3px solid rgba(0,0,0,.2);border-top-color:#3b82f6}@keyframes spin{to{transform:rotate(360deg)}}.chat-opener{width:60px;height:60px;background:linear-gradient(45deg,#3b82f6,#6d28d9);border-radius:50%;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(0,0,0,.2);cursor:pointer;z-index:1000}.chat-opener:hover{transform:scale(1.1)}.chat-window{width:90%;max-width:400px;height:70vh;max-height:600px;background-color:#111827;border:1px solid #374151;border-radius:1.5rem;overflow:hidden;flex-direction:column;box-shadow:0 20px 30px rgba(0,0,0,.3);transform:translateY(20px) scale(.95);opacity:0;z-index:999;pointer-events:none}.chat-window.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto}.chat-opener.hidden{transform:scale(0);opacity:0}.chat-header{background-color:#1f2937;padding:1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #374151;color:#fff}.chat-header-title{font-weight:700}.chat-close-btn{background:0 0;border:none;color:#9ca3af;font-size:1.5rem;cursor:pointer}.chat-messages{flex-grow:1;padding:1rem;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem}.chat-bubble{max-width:85%;padding:.6rem 1rem;border-radius:1.25rem;word-wrap:break-word;line-height:1.5;color:#fff}.user-bubble{background-color:#3b82f6;border-bottom-right-radius:.375rem;align-self:flex-end}.bot-bubble{background-color:#374151;color:#d1d5db;border-bottom-left-radius:.375rem;align-self:flex-start}.summary-notification{background-color:#4f46e520;color:#c7d2fe;border:1px solid #4f46e5;border-radius:.5rem;padding:1rem;font-size:.9em;text-align:left}.chat-input-form{display:flex;gap:.5rem;padding:.75rem;border-top:1px solid #374151;background-color:#1f2937}.chat-input{flex-grow:1;background-color:#374151;border:1px solid #4b5563;border-radius:9999px;padding:.75rem 1rem;color:#fff;outline:0}.chat-input:focus{border-color:#3b82f6}.chat-send-btn{background-color:#3b82f6;color:#fff;border-radius:50%;padding:.75rem;border:none;cursor:pointer;transition:background-color .2s;display:flex;align-items:center;justify-content:center;width:50px;height:50px}.chat-send-btn:hover{background-color:#2563eb}.chat-send-btn:disabled{background-color:#374151;cursor:not-allowed}.modal{transition:opacity .3s}.testimonial-card{background-color:#fff;border:1px solid #e5e7eb;border-radius:.75rem;padding:2rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}.faq-item{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease-in-out}.faq-item[open]{grid-template-rows:1fr}.faq-content{overflow:hidden}.faq-summary{list-style:none}.faq-summary::-webkit-details-marker{display:none}.faq-icon{transition:transform .3s ease-in-out}.faq-item[open]>.faq-summary .faq-icon{transform:rotate(180deg)}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0, #c3cfe2 100%)
+        }
+
+        .cta-button {
+            transition: .3s
+        }
+
+        .chat-opener,
+        .chat-window {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            transition: transform .3s, opacity .3s;
+            display: flex
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15)
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .12)
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: 1s ease-in-out infinite spin
+        }
+
+        .loader-dark {
+            border: 3px solid rgba(0, 0, 0, .2);
+            border-top-color: #3b82f6
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .chat-opener {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #3b82f6, #6d28d9);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+            cursor: pointer;
+            z-index: 1000
+        }
+
+        .chat-opener:hover {
+            transform: scale(1.1)
+        }
+
+        .chat-window {
+            width: 90%;
+            max-width: 400px;
+            height: 70vh;
+            max-height: 600px;
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            flex-direction: column;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, .3);
+            transform: translateY(20px) scale(.95);
+            opacity: 0;
+            z-index: 999;
+            pointer-events: none
+        }
+
+        .chat-window.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .chat-opener.hidden {
+            transform: scale(0);
+            opacity: 0
+        }
+
+        .chat-header {
+            background-color: #1f2937;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #374151;
+            color: #fff
+        }
+
+        .chat-header-title {
+            font-weight: 700
+        }
+
+        .chat-close-btn {
+            background: 0 0;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.5rem;
+            cursor: pointer
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: .6rem 1rem;
+            border-radius: 1.25rem;
+            word-wrap: break-word;
+            line-height: 1.5;
+            color: #fff
+        }
+
+        .user-bubble {
+            background-color: #3b82f6;
+            border-bottom-right-radius: .375rem;
+            align-self: flex-end
+        }
+
+        .bot-bubble {
+            background-color: #374151;
+            color: #d1d5db;
+            border-bottom-left-radius: .375rem;
+            align-self: flex-start
+        }
+
+        .summary-notification {
+            background-color: #4f46e520;
+            color: #c7d2fe;
+            border: 1px solid #4f46e5;
+            border-radius: .5rem;
+            padding: 1rem;
+            font-size: .9em;
+            text-align: left
+        }
+
+        .chat-input-form {
+            display: flex;
+            gap: .5rem;
+            padding: .75rem;
+            border-top: 1px solid #374151;
+            background-color: #1f2937
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 9999px;
+            padding: .75rem 1rem;
+            color: #fff;
+            outline: 0
+        }
+
+        .chat-input:focus {
+            border-color: #3b82f6
+        }
+
+        .chat-send-btn {
+            background-color: #3b82f6;
+            color: #fff;
+            border-radius: 50%;
+            padding: .75rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px
+        }
+
+        .chat-send-btn:hover {
+            background-color: #2563eb
+        }
+
+        .chat-send-btn:disabled {
+            background-color: #374151;
+            cursor: not-allowed
+        }
+
+        .modal {
+            transition: opacity .3s
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: .75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)
+        }
+
+        .faq-item {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .3s ease-in-out
+        }
+
+        .faq-item[open] {
+            grid-template-rows: 1fr
+        }
+
+        .faq-content {
+            overflow: hidden
+        }
+
+        .faq-summary {
+            list-style: none
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq-icon {
+            transition: transform .3s ease-in-out
+        }
+
+        .faq-item[open]>.faq-summary .faq-icon {
+            transform: rotate(180deg)
+        }
     </style>
 </head>
 
@@ -50,7 +291,7 @@
             <a href="#servicios" class="block py-2 text-gray-600 hover:text-blue-600">Servicios</a>
             <a href="#nuestro-compromiso" class="block py-2 text-gray-600 hover:text-blue-600">Nuestro Compromiso</a>
             <a href="#portafolio" class="block py-2 text-gray-600 hover:text-blue-600">Proyectos</a>
-            <a href="#contacto"
+            <a href="#contacto" a
                 class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
                 Página Web</a>
         </div>
@@ -126,13 +367,13 @@
 
     <section id="servicios" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes de Desarrollo Web</h2>
                 <p class="text-gray-600 mt-2">No pierdas el tiempo. Tenemos la mejor opción para tu negocio.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div data-aos="fade-right"
+                <div
                     class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
                     <div class="text-blue-600 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -171,7 +412,7 @@
                     </button>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="100"
+                <div
                     class="service-card bg-blue-600 text-white rounded-xl p-8 shadow-xl transition-all duration-300 transform md:scale-105 flex flex-col hover:md:scale-110 hover:-translate-y-2">
                     <div class="text-white mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -209,7 +450,7 @@
                     </button>
                 </div>
 
-                <div data-aos="fade-left" data-aos-delay="200"
+                <div
                     class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
                     <div class="text-blue-600 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -386,7 +627,9 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/abogados.webp"
+                    <img loading="lazy" src="/image/abogados-800w.webp" srcset="/image/abogados-480w.webp 480w,
+                     /image/abogados-800w.webp 800w,
+                     /image/abogados-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         alt="Página web profesional para un moderno estudio de abogados"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
@@ -398,7 +641,11 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
+                    <img loading="lazy" src="/image/sabor-espanol-800w.webp" srcset="/image/sabor-espanol-480w.webp 480w,
+                     /image/sabor-espanol-800w.webp 800w,
+                     /image/sabor-espanol-1200w.webp 1200w"
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        alt="Página web para restaurante"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -409,7 +656,10 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/dental.webp" alt="Página web para consulta médica"
+                    <img loading="lazy" src="/image/dental-800w.webp" srcset="/image/dental-480w.webp 480w,
+                     /image/dental-800w.webp 800w,
+                     /image/dental-1200w.webp 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        alt="Página web para consulta médica"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -678,14 +928,10 @@
     </div>
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            AOS.init({
-                duration: 800,
-                once: true,
-            });
+
             // Inicializar Feather Icons
             feather.replace();
 
