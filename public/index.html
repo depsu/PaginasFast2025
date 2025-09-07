@@ -265,6 +265,37 @@
         .faq-item[open]>.faq-summary .faq-icon {
             transform: rotate(180deg)
         }
+
+        .quick-reply-btn {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 9999px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .quick-reply-btn:hover {
+            background-color: #4338ca;
+        }
+
+        @media (max-width: 640px) {
+            .chat-window {
+                /* Hacemos que ocupe toda la pantalla */
+                width: 100%;
+                height: 100dvh;
+                /* <-- LA MAGIA ESTÁ AQUÍ */
+                max-height: 100dvh;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 0;
+                /* Sin bordes redondeados en full screen */
+            }
+        }
     </style>
 </head>
 
@@ -627,7 +658,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                     <img loading="lazy" src="/image/abogados.webp"
+                    <img loading="lazy" src="/image/abogados.webp"
                         alt="Página web profesional para un moderno estudio de abogados"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
@@ -639,8 +670,7 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/sabor-espanol.webp"
-                        alt="Página web para restaurante"
+                    <img loading="lazy" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -651,7 +681,7 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                     <img loading="lazy" src="/image/dental.webp" alt="Página web para consulta médica"
+                    <img loading="lazy" src="/image/dental.webp" alt="Página web para consulta médica"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -868,8 +898,14 @@
             <button id="chat-close-btn" class="chat-close-btn">&times;</button>
         </div>
         <div id="chat-messages" class="chat-messages">
-            <div class="chat-bubble bot-bubble">¡Hola! 👋 Soy tu asistente experto de PaginasFast. Para empezar a
-                cotizar tu nueva página web, ¿podrías decirme tu nombre?</div>
+            <div class="chat-bubble bot-bubble">
+                ¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?
+                <div class="quick-replies mt-3 flex flex-wrap gap-2">
+                    <button class="quick-reply-btn">Ver Planes</button>
+                    <button class="quick-reply-btn">Necesito una Tienda Online</button>
+                    <button class="quick-reply-btn">Hablar sobre mi proyecto</button>
+                </div>
+            </div>
         </div>
         <form id="chat-form" class="chat-input-form">
             <input type="text" id="user-input" placeholder="Escribe tu respuesta..." class="chat-input"
@@ -1055,6 +1091,14 @@
             const chatFormEl = document.getElementById('chat-form');
             const userInput = document.getElementById('user-input');
             const chatMessages = document.getElementById('chat-messages');
+
+            userInput.addEventListener('focus', () => {
+                // Esperamos un instante para que el teclado termine de aparecer
+                setTimeout(() => {
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 300); // 300 milisegundos suele ser suficiente
+            });
+
             const sendButton = document.getElementById('send-button');
 
             let conversationHistory = [];
@@ -1098,6 +1142,59 @@
                 handleNewMessage(userMessage);
             });
 
+
+// ... dentro de tu <script>
+const chatMessagesContainer = document.getElementById('chat-messages');
+
+// --- AÑADE ESTE BLOQUE ---
+chatMessagesContainer.addEventListener('click', function(e) {
+    if (e.target.classList.contains('quick-reply-btn')) {
+        const messageText = e.target.textContent;
+
+        // Simula el envío del mensaje del usuario
+        appendMessage(messageText, 'user');
+        conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
+
+        // Oculta los botones después de usarlos
+        e.target.parentElement.remove();
+
+        // Llama a la IA para obtener la respuesta
+        handleBotResponse(); 
+    }
+});
+
+async function handleBotResponse() {
+    toggleLoading(true);
+    try {
+        const botResponse = await getBotResponse();
+        appendMessage(botResponse, 'bot');
+        conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+        // ... (el resto de la lógica de fin de conversación, etc.)
+    } catch (error) {
+        console.error("Error obteniendo respuesta del bot:", error);
+        appendMessage("Lo siento, algo salió mal. Por favor, intenta de nuevo.", 'bot');
+    } finally {
+        toggleLoading(false);
+    }
+}
+
+chatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (conversationEnded) return;
+
+    const userMessage = userInput.value.trim();
+    if (!userMessage) return;
+
+    appendMessage(userMessage, 'user');
+    conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
+    userInput.value = '';
+    userInput.focus();
+
+    await handleBotResponse();
+});
+
+
+
             function appendMessage(message, sender, type = 'bubble') {
                 const messageDiv = document.createElement('div');
                 if (type === 'bubble') {
@@ -1137,8 +1234,8 @@
                 }
             }
 
-         async function getBotResponse() {
-    const systemInstructionText = `
+            async function getBotResponse() {
+                const systemInstructionText = `
     [INICIO DE PROMPT DE SISTEMA]
 
     **1. TU PERSONAJE (QUIÉN ERES):**
@@ -1176,13 +1273,13 @@
     [FIN DE PROMPT DE SISTEMA]
     `;
 
-    const payload = {
-        contents: conversationHistory,
-        system_instruction: { parts: [{ text: systemInstructionText }] },
-        generationConfig: { temperature: 0.7, topP: 1, maxOutputTokens: 250 } // Aumenté un poco los tokens por si la respuesta general es más larga
-    };
-    return await callGemini(payload);
-}
+                const payload = {
+                    contents: conversationHistory,
+                    system_instruction: { parts: [{ text: systemInstructionText }] },
+                    generationConfig: { temperature: 0.7, topP: 1, maxOutputTokens: 250 } // Aumenté un poco los tokens por si la respuesta general es más larga
+                };
+                return await callGemini(payload);
+            }
 
             async function triggerSummaryGeneration() {
                 appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'system', 'summary');
