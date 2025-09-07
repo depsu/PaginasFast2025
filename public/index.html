@@ -285,8 +285,6 @@
             .chat-window {
                 /* Hacemos que ocupe toda la pantalla */
                 width: 100%;
-                height: 100dvh;
-                /* <-- LA MAGIA ESTÁ AQUÍ */
                 max-height: 100dvh;
                 top: 0;
                 left: 0;
@@ -1098,6 +1096,45 @@
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }, 300); // 300 milisegundos suele ser suficiente
             });
+
+
+            // Esta función mide el espacio visible y ajusta la altura del chat
+function adjustChatWindowHeight() {
+    // window.visualViewport nos da el tamaño real del área visible
+    if (window.visualViewport) {
+        const visibleHeight = window.visualViewport.height;
+        chatWindow.style.height = `${visibleHeight}px`;
+
+        // Nos aseguramos de que el scroll baje hasta el último mensaje
+        // Esto es importante por si el ajuste de altura lo esconde
+        setTimeout(() => {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 100);
+    }
+}
+
+// Nos "sintonizamos" a los cambios de tamaño del área visible
+// Esto se activa cuando aparece o desaparece el teclado
+if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', adjustChatWindowHeight);
+}
+
+// También es una buena idea ajustar la altura al abrir el chat
+// por si el tamaño inicial no es el correcto en móviles
+chatOpener.addEventListener('click', () => {
+    // Un pequeño retardo para darle tiempo a la animación de apertura
+    setTimeout(adjustChatWindowHeight, 150);
+});
+
+// Y también al enfocar el input, como una doble seguridad
+
+userInput.addEventListener('focus', () => {
+    setTimeout(adjustChatWindowHeight, 150);
+});
+
+
+
+            
 
             const sendButton = document.getElementById('send-button');
 
