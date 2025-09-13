@@ -1,0 +1,6 @@
+1. El bot en mobile tiene un espacio en blanco al levantar el teclado 
+
+
+2. es posible... que al momento de esperar a que el chatbot cargue el mensaje... aparezca unos puntos suspensivos (como en WhatsApp) simulando como si estuviera escribiendo... 
+
+tambien 
