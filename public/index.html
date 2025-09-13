@@ -1099,42 +1099,42 @@
 
 
             // Esta función mide el espacio visible y ajusta la altura del chat
-function adjustChatWindowHeight() {
-    // window.visualViewport nos da el tamaño real del área visible
-    if (window.visualViewport) {
-        const visibleHeight = window.visualViewport.height;
-        chatWindow.style.height = `${visibleHeight}px`;
+            function adjustChatWindowHeight() {
+                // window.visualViewport nos da el tamaño real del área visible
+                if (window.visualViewport) {
+                    const visibleHeight = window.visualViewport.height;
+                    chatWindow.style.height = `${visibleHeight}px`;
 
-        // Nos aseguramos de que el scroll baje hasta el último mensaje
-        // Esto es importante por si el ajuste de altura lo esconde
-        setTimeout(() => {
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 100);
-    }
-}
+                    // Nos aseguramos de que el scroll baje hasta el último mensaje
+                    // Esto es importante por si el ajuste de altura lo esconde
+                    setTimeout(() => {
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 100);
+                }
+            }
 
-// Nos "sintonizamos" a los cambios de tamaño del área visible
-// Esto se activa cuando aparece o desaparece el teclado
-if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', adjustChatWindowHeight);
-}
+            // Nos "sintonizamos" a los cambios de tamaño del área visible
+            // Esto se activa cuando aparece o desaparece el teclado
+            if (window.visualViewport) {
+                window.visualViewport.addEventListener('resize', adjustChatWindowHeight);
+            }
 
-// También es una buena idea ajustar la altura al abrir el chat
-// por si el tamaño inicial no es el correcto en móviles
-chatOpener.addEventListener('click', () => {
-    // Un pequeño retardo para darle tiempo a la animación de apertura
-    setTimeout(adjustChatWindowHeight, 150);
-});
+            // También es una buena idea ajustar la altura al abrir el chat
+            // por si el tamaño inicial no es el correcto en móviles
+            chatOpener.addEventListener('click', () => {
+                // Un pequeño retardo para darle tiempo a la animación de apertura
+                setTimeout(adjustChatWindowHeight, 150);
+            });
 
-// Y también al enfocar el input, como una doble seguridad
+            // Y también al enfocar el input, como una doble seguridad
 
-userInput.addEventListener('focus', () => {
-    setTimeout(adjustChatWindowHeight, 150);
-});
+            userInput.addEventListener('focus', () => {
+                setTimeout(adjustChatWindowHeight, 150);
+            });
 
 
 
-            
+
 
             const sendButton = document.getElementById('send-button');
 
@@ -1180,90 +1180,90 @@ userInput.addEventListener('focus', () => {
             });
 
 
-// ... dentro de tu <script>
-const chatMessagesContainer = document.getElementById('chat-messages');
+            // ... dentro de tu <script>
+            const chatMessagesContainer = document.getElementById('chat-messages');
 
-// --- AÑADE ESTE BLOQUE ---
-chatMessagesContainer.addEventListener('click', function(e) {
-    if (e.target.classList.contains('quick-reply-btn')) {
-        const messageText = e.target.textContent;
+            // --- AÑADE ESTE BLOQUE ---
+            chatMessagesContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('quick-reply-btn')) {
+                    const messageText = e.target.textContent;
 
-        // Simula el envío del mensaje del usuario
-        appendMessage(messageText, 'user');
-        conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
+                    // Simula el envío del mensaje del usuario
+                    appendMessage(messageText, 'user');
+                    conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
 
-        // Oculta los botones después de usarlos
-        e.target.parentElement.remove();
+                    // Oculta los botones después de usarlos
+                    e.target.parentElement.remove();
 
-        // Llama a la IA para obtener la respuesta
-        handleBotResponse(); 
-    }
-});
-
-async function handleBotResponse() {
-    toggleLoading(true);
-    try {
-        const botResponse = await getBotResponse();
-        conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-
-        // Llamamos a la nueva función para procesar y mostrar la respuesta.
-        processBotResponse(botResponse);
-
-        // La lógica de fin de conversación y el summary se mantienen igual.
-        if (botResponse.includes("¡Excelente! He registrado tu información.")) {
-            conversationEnded = true;
-            userInput.disabled = true;
-            userInput.placeholder = "Conversación finalizada.";
-            await triggerSummaryGeneration();
-        }
-
-    } catch (error) {
-        console.error("Error obteniendo respuesta del bot:", error);
-        appendMessage("Lo siento, algo salió mal. Por favor, intenta de nuevo.", 'bot');
-        toggleLoading(false); // Aseguramos que se detenga la carga en caso de error.
-    }
-    // El toggleLoading(false) ahora es manejado por processBotResponse para evitar que el input se active antes de tiempo.
-}
-
-chatFormEl.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const userMessage = userInput.value.trim();
-    handleNewMessage(userMessage);
-});
-
-
-           function appendMessage(message, sender) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
-            
-            // Reemplaza saltos de línea de la IA con <br> para un formato correcto.
-            messageDiv.innerHTML = message.replace(/\n/g, '<br>');
-
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        // Nueva función para manejar la lógica de mensajes divididos
-        function processBotResponse(fullResponse) {
-            const parts = fullResponse.split('[SPLIT]');
-            let delay = 0;
-
-            parts.forEach((part, index) => {
-                const message = part.trim();
-                if (message) {
-                    setTimeout(() => {
-                        appendMessage(message, 'bot');
-                    }, delay);
-                    // Aumentamos el retraso para cada mensaje, simulando una conversación.
-                    delay += 800; // 800 milisegundos entre mensajes
+                    // Llama a la IA para obtener la respuesta
+                    handleBotResponse();
                 }
             });
 
-            // Re-habilita el input después de que el último mensaje se haya enviado.
-            setTimeout(() => {
-                 toggleLoading(false);
-            }, delay);
-        }
+            async function handleBotResponse() {
+                toggleLoading(true);
+                try {
+                    const botResponse = await getBotResponse();
+                    conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+
+                    // Llamamos a la nueva función para procesar y mostrar la respuesta.
+                    processBotResponse(botResponse);
+
+                    // La lógica de fin de conversación y el summary se mantienen igual.
+                    if (botResponse.includes("¡Excelente! He registrado tu información.")) {
+                        conversationEnded = true;
+                        userInput.disabled = true;
+                        userInput.placeholder = "Conversación finalizada.";
+                        await triggerSummaryGeneration();
+                    }
+
+                } catch (error) {
+                    console.error("Error obteniendo respuesta del bot:", error);
+                    appendMessage("Lo siento, algo salió mal. Por favor, intenta de nuevo.", 'bot');
+                    toggleLoading(false); // Aseguramos que se detenga la carga en caso de error.
+                }
+                // El toggleLoading(false) ahora es manejado por processBotResponse para evitar que el input se active antes de tiempo.
+            }
+
+            chatFormEl.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const userMessage = userInput.value.trim();
+                handleNewMessage(userMessage);
+            });
+
+
+            function appendMessage(message, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
+
+                // Reemplaza saltos de línea de la IA con <br> para un formato correcto.
+                messageDiv.innerHTML = message.replace(/\n/g, '<br>');
+
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Nueva función para manejar la lógica de mensajes divididos
+            function processBotResponse(fullResponse) {
+                const parts = fullResponse.split('[SPLIT]');
+                let delay = 0;
+
+                parts.forEach((part, index) => {
+                    const message = part.trim();
+                    if (message) {
+                        setTimeout(() => {
+                            appendMessage(message, 'bot');
+                        }, delay);
+                        // Aumentamos el retraso para cada mensaje, simulando una conversación.
+                        delay += 800; // 800 milisegundos entre mensajes
+                    }
+                });
+
+                // Re-habilita el input después de que el último mensaje se haya enviado.
+                setTimeout(() => {
+                    toggleLoading(false);
+                }, delay);
+            }
             function toggleLoading(isLoading) {
                 const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
                 sendButton.disabled = isLoading;
@@ -1321,9 +1321,10 @@ chatFormEl.addEventListener('submit', async (e) => {
         *Ejemplo:* Si preguntan "¿Quién ganó el partido de ayer?", responde: "¡Claro! El ganador fue [Equipo X]. Hablando de estrategias ganadoras, una página web veloz es clave para que un negocio gane en el mundo digital. ¿Tu proyecto ya tiene una página web o estás pensando en crear una desde cero?".
 
 
-  - **LA REGLA DE MENSAJES MÚLTIPLES (¡Para claridad!):**
-     Cuando necesites presentar una lista (como los planes de precios) o cuando quieras separar una explicación de una pregunta final, DEBES dividir tu respuesta usando el separador especial: `[SPLIT]`. Cada parte separada por `[SPLIT]` se mostrará como una burbuja de chat independiente. Esto hace la conversación más natural y fácil de leer.
-     *Ejemplo de respuesta sobre planes:* "¡Claro! Aquí te muestro los planes: [SPLIT] **Web Emprendedor ($100.000):** Ideal para empezar, con 3 a 5 secciones. 🚀 [SPLIT] **Web Corporativa ($300.000):** La solución completa con SEO avanzado. ✨ [SPLIT] **Tienda Online ($300.000):** Para vender tus productos 24/7. 🛒 [SPLIT] Para saber cuál es el mejor para ti, ¿me cuentas un poco de tu negocio?"
+    - **LA REGLA DE MENSAJES MÚLTIPLES (¡Para claridad!):**
+        Cuando necesites presentar una lista (como los planes de precios) o cuando quieras separar una explicación de una pregunta final, DEBES dividir tu respuesta usando el separador especial: [SPLIT]. Cada parte separada por [SPLIT] se mostrará como una burbuja de chat independiente. Esto hace la conversación más natural y fácil de leer.
+        *Ejemplo de respuesta sobre planes:* "¡Claro! Aquí te muestro los planes: [SPLIT] **Web Emprendedor ($100.000):** Ideal para empezar, con 3 a 5 secciones. 🚀 [SPLIT] **Web Corporativa ($300.000):** La solución completa con SEO avanzado. ✨ [SPLIT] **Tienda Online ($300.000):** Para vender tus productos 24/7. 🛒 [SPLIT] Para saber cuál es el mejor para ti, ¿me cuentas un poco de tu negocio?"
+
 
 
     - **Sé Proactivo y Relevante:** Si un cliente dice "tengo una cafetería", responde: "¡Excelente! Imagina una web veloz donde tus clientes vean tu menú, ubicación y horarios al instante, incluso desde su celular. Para poder darte ideas más concretas, ¿cuál es tu nombre?".
