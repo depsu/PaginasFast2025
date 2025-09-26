@@ -1190,10 +1190,11 @@
                         conversationEnded = true;
                         userInput.disabled = true;
                         userInput.placeholder = "Conversación finalizada.";
+                        window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
                         await triggerSummaryGeneration();
                     }
 
-                    window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+             
 
 
                 } catch (error) {
