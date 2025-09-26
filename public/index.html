@@ -1061,6 +1061,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             throw new Error('Falló el envío del formulario');
                         }
 
+                            window.dataLayer.push({'event': 'formulario_enviado_ok'});
+
+
                         // Éxito
                         alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
                         closeModal();
