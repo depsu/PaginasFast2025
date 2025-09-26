@@ -405,11 +405,15 @@
                 <div
                     class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
                     <div class="text-blue-600 mb-4">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10">
-  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
-  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
-  <circle cx="15" cy="9" r="1"></circle>
-</svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="h-10 w-10">
+                            <path
+                                d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                            </path>
+                            <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                            <circle cx="15" cy="9" r="1"></circle>
+                        </svg>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Web Emprendedor</h3>
                     <div class="my-4 text-center">
@@ -1153,7 +1157,7 @@
 
                 try {
                     const botResponse = await getBotResponse();
-                    appendMessage(botResponse, 'bot');
+                    processBotResponse(botResponse);
                     conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
 
                     if (botResponse.includes("¡Excelente! He registrado tu información.")) {
@@ -1234,8 +1238,11 @@
                 const messageDiv = document.createElement('div');
                 messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
 
-                // Reemplaza saltos de línea de la IA con <br> para un formato correcto.
-                messageDiv.innerHTML = message.replace(/\n/g, '<br>');
+                const formattedMessage = message
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\n/g, '<br>');
+
+                messageDiv.innerHTML = formattedMessage;
 
                 chatMessages.appendChild(messageDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -1382,9 +1389,9 @@
                     console.error("Error en el proceso de resumen y envío:", error);
                     appendMessage("No pudimos procesar tu solicitud final, pero no te preocupes, hemos guardado tus datos y un agente te contactará.", 'system', 'summary');
                 }
-            } 
- 
-  
+            }
+
+
 
             const faqContainer = document.getElementById('faq-container');
             const detailsElements = faqContainer.querySelectorAll('details');
