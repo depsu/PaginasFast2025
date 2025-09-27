@@ -1209,22 +1209,22 @@
 
             // Nos "sintonizamos" a los cambios de tamaño del área visible
             // Esto se activa cuando aparece o desaparece el teclado
-            if (window.visualViewport) {
-                window.visualViewport.addEventListener('resize', adjustChatWindowHeight);
-            }
+            // if (window.visualViewport) {
+            //     window.visualViewport.addEventListener('resize', adjustChatWindowHeight);
+            // }
 
             // También es una buena idea ajustar la altura al abrir el chat
             // por si el tamaño inicial no es el correcto en móviles
-            chatOpener.addEventListener('click', () => {
-                // Un pequeño retardo para darle tiempo a la animación de apertura
-                setTimeout(adjustChatWindowHeight, 150);
-            });
+            // chatOpener.addEventListener('click', () => {
+            //     // Un pequeño retardo para darle tiempo a la animación de apertura
+            //     setTimeout(adjustChatWindowHeight, 150);
+            // });
 
-            // Y también al enfocar el input, como una doble seguridad
+            // // Y también al enfocar el input, como una doble seguridad
 
-            userInput.addEventListener('focus', () => {
-                setTimeout(adjustChatWindowHeight, 150);
-            });
+            // userInput.addEventListener('focus', () => {
+            //     setTimeout(adjustChatWindowHeight, 150);
+            // });
 
 
 
