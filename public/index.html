@@ -100,7 +100,7 @@
 
         .chat-window {
             width: 90%;
-            max-width: 400px;
+            max-width: 527px;
             height: 70vh;
             max-height: 600px;
             background-color: #111827;
@@ -293,24 +293,26 @@
         }
 
         @media (max-width: 640px) {
-             .chat-window {
-        /* Hacemos que ocupe toda la pantalla visible */
-        width: 100%;
-        height: 100dvh; /* Usa la altura dinámica del viewport */
-        max-height: 100dvh; /* Asegura que no se desborde */
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 0; /* Sin bordes redondeados en pantalla completa */
-    }
+            .chat-window {
+                width: calc(100% - 20px);
+                margin: 10px;
+                height: 100dvh;
+                max-height: 100dvh;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
 
-     .chat-opener,
-    .chat-window {
-        /* Ajustamos la posición a 1rem para que no quede tan pegado al borde */
-        bottom: 1rem;
-        right: 1rem;
-    }
+            .chat-opener,
+            .chat-window {
+                /* Ajustamos la posición a 1rem para que no quede tan pegado al borde */
+                bottom: 1rem;
+            }
+
+            body:has(#chat-window.open) {
+                overflow: hidden;
+            }
         }
 
 
@@ -970,17 +972,17 @@
             <span class="chat-header-title">Asistente Virtual</span>
             <button id="chat-close-btn" class="chat-close-btn">&times;</button>
         </div>
-       <div id="chat-messages" class="chat-messages">
-    <div class="chat-bubble bot-bubble">
-        ¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?
-        <div class="quick-replies mt-3 flex flex-wrap gap-2">
-            <button class="quick-reply-btn">Ver Planes</button>
-            <button class="quick-reply-btn">Necesito una Tienda Online</button>
-            <button class="quick-reply-btn">Hablar sobre mi proyecto</button>
-            <button class="quick-reply-btn" data-action="whatsapp">Contactar por WhatsApp</button>
+        <div id="chat-messages" class="chat-messages">
+            <div class="chat-bubble bot-bubble">
+                ¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?
+                <div class="quick-replies mt-3 flex flex-wrap gap-2">
+                    <button class="quick-reply-btn">Ver Planes</button>
+                    <button class="quick-reply-btn">Necesito una Tienda Online</button>
+                    <button class="quick-reply-btn">Hablar sobre mi proyecto</button>
+                    <button class="quick-reply-btn" data-action="whatsapp">Contactar por WhatsApp</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
         <form id="chat-form" class="chat-input-form">
             <input type="text" id="user-input" placeholder="Escribe tu respuesta..." class="chat-input"
                 autocomplete="off">
@@ -1063,210 +1065,210 @@
     </a>
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Inicializar Feather Icons
-        feather.replace();
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar Feather Icons
+            feather.replace();
 
-        // Lógica del menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- LÓGICA DEL MODAL ---
-        const modal = document.getElementById('contact-modal');
-        const modalContent = modal.querySelector('div');
-        const openModalBtn = document.getElementById('open-modal-btn');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const navContactBtn = document.getElementById('nav-contact-btn');
-        const contactForm = document.getElementById('contact-form');
-
-        const openModal = () => {
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.add('opacity-100');
-                modalContent.classList.add('scale-100');
-            }, 10);
-        };
-        const closeModal = () => {
-            modal.classList.remove('opacity-100');
-            modalContent.classList.remove('scale-100');
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        };
-        if (openModalBtn) openModalBtn.addEventListener('click', openModal);
-        if (navContactBtn) {
-            navContactBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal();
+            // Lógica del menú móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        }
-        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
+
+            // --- LÓGICA DEL MODAL ---
+            const modal = document.getElementById('contact-modal');
+            const modalContent = modal.querySelector('div');
+            const openModalBtn = document.getElementById('open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const navContactBtn = document.getElementById('nav-contact-btn');
+            const contactForm = document.getElementById('contact-form');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modalContent.classList.add('scale-100');
+                }, 10);
+            };
+            const closeModal = () => {
+                modal.classList.remove('opacity-100');
+                modalContent.classList.remove('scale-100');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            };
+            if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+            if (navContactBtn) {
+                navContactBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+            }
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const buttonText = submitButton.querySelector('.btn-text');
+                    const buttonLoader = submitButton.querySelector('.loader');
+                    submitButton.disabled = true;
+                    buttonText.classList.add('hidden');
+                    buttonLoader.classList.remove('hidden');
+                    const name = document.getElementById('name-modal').value;
+                    const email = document.getElementById('email-modal').value;
+                    const phone = document.getElementById('phone-modal').value;
+                    try {
+                        const response = await fetch('/api/send-contact-form', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ name, email, phone }),
+                        });
+                        if (!response.ok) throw new Error('Falló el envío del formulario');
+                        window.dataLayer.push({ 'event': 'formulario_enviado_ok' });
+                        alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
+                        closeModal();
+                        contactForm.reset();
+                    } catch (error) {
+                        console.error('Error en el formulario de contacto:', error);
+                        alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
+                    } finally {
+                        submitButton.disabled = false;
+                        buttonText.classList.remove('hidden');
+                        buttonLoader.classList.add('hidden');
+                    }
+                });
+            }
+
+            // --- LÓGICA DEL CHATBOT ---
+            const chatOpener = document.getElementById('chat-opener');
+            const chatWindow = document.getElementById('chat-window');
+            const closeChatBtn = document.getElementById('chat-close-btn');
+            const chatCTAs = document.querySelectorAll('.chat-cta');
+            const chatFormEl = document.getElementById('chat-form');
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+            const sendButton = document.getElementById('send-button');
+
+            const openChat = () => {
+                chatWindow.classList.add('open');
+                chatOpener.classList.add('hidden');
+                setTimeout(() => userInput.focus(), 300); // Enfocar input al abrir
+            };
+            const closeChat = () => {
+                chatWindow.classList.remove('open');
+                chatOpener.classList.remove('hidden');
+            };
+
+            chatOpener.addEventListener('click', openChat);
+            closeChatBtn.addEventListener('click', closeChat);
+            chatCTAs.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openChat();
+                    const plan = btn.dataset.plan;
+                    if (plan) {
+                        setTimeout(() => {
+                            const message = `Hola, estoy interesado en el plan "${plan}".`;
+                            handleNewMessage(message);
+                        }, 300);
+                    }
+                });
             });
-        }
-        if (contactForm) {
-            contactForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                const buttonText = submitButton.querySelector('.btn-text');
-                const buttonLoader = submitButton.querySelector('.loader');
-                submitButton.disabled = true;
-                buttonText.classList.add('hidden');
-                buttonLoader.classList.remove('hidden');
-                const name = document.getElementById('name-modal').value;
-                const email = document.getElementById('email-modal').value;
-                const phone = document.getElementById('phone-modal').value;
+
+            // --- LÓGICA CONVERSACIONAL DEL CHATBOT ---
+            let conversationHistory = [];
+            let conversationEnded = false;
+            const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
+            conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
+
+            async function handleNewMessage(message) {
+                if (conversationEnded || !message) return;
+                appendMessage(message, 'user');
+                conversationHistory.push({ role: 'user', parts: [{ text: message }] });
+                userInput.value = '';
+                userInput.focus();
+                await handleBotResponse();
+            }
+
+            async function handleBotResponse() {
+                toggleLoading(true);
                 try {
-                    const response = await fetch('/api/send-contact-form', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, email, phone }),
-                    });
-                    if (!response.ok) throw new Error('Falló el envío del formulario');
-                    window.dataLayer.push({ 'event': 'formulario_enviado_ok' });
-                    alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
-                    closeModal();
-                    contactForm.reset();
+                    const botResponse = await getBotResponse();
+                    conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+                    processBotResponse(botResponse);
+                    if (botResponse.includes("¡Excelente! He registrado tu información.")) {
+                        conversationEnded = true;
+                        userInput.disabled = true;
+                        userInput.placeholder = "Conversación finalizada.";
+                        window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+                        await triggerSummaryGeneration();
+                    }
                 } catch (error) {
-                    console.error('Error en el formulario de contacto:', error);
-                    alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
+                    console.error("Error obteniendo respuesta del bot:", error);
+                    // MODIFICADO: Mensaje de error mejorado
+                    appendErrorMessage();
                 } finally {
-                    submitButton.disabled = false;
-                    buttonText.classList.remove('hidden');
-                    buttonLoader.classList.add('hidden');
+                    toggleLoading(false);
                 }
-            });
-        }
+            }
 
-        // --- LÓGICA DEL CHATBOT ---
-        const chatOpener = document.getElementById('chat-opener');
-        const chatWindow = document.getElementById('chat-window');
-        const closeChatBtn = document.getElementById('chat-close-btn');
-        const chatCTAs = document.querySelectorAll('.chat-cta');
-        const chatFormEl = document.getElementById('chat-form');
-        const userInput = document.getElementById('user-input');
-        const chatMessages = document.getElementById('chat-messages');
-        const sendButton = document.getElementById('send-button');
-
-        const openChat = () => {
-            chatWindow.classList.add('open');
-            chatOpener.classList.add('hidden');
-            setTimeout(() => userInput.focus(), 300); // Enfocar input al abrir
-        };
-        const closeChat = () => {
-            chatWindow.classList.remove('open');
-            chatOpener.classList.remove('hidden');
-        };
-
-        chatOpener.addEventListener('click', openChat);
-        closeChatBtn.addEventListener('click', closeChat);
-        chatCTAs.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            chatFormEl.addEventListener('submit', (e) => {
                 e.preventDefault();
-                openChat();
-                const plan = btn.dataset.plan;
-                if (plan) {
-                    setTimeout(() => {
-                        const message = `Hola, estoy interesado en el plan "${plan}".`;
-                        handleNewMessage(message);
-                    }, 300);
+                handleNewMessage(userInput.value.trim());
+            });
+
+            chatMessages.addEventListener('click', function (e) {
+                if (e.target.classList.contains('quick-reply-btn')) {
+                    // NUEVO: Lógica para el botón de WhatsApp
+                    if (e.target.dataset.action === 'whatsapp') {
+                        const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                        window.open(whatsappUrl, '_blank');
+                        appendMessage('Contactar por WhatsApp', 'user');
+                        setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
+                        return; // Detenemos la ejecución aquí
+                    }
+
+                    // Lógica existente para otros botones
+                    const messageText = e.target.textContent;
+                    appendMessage(messageText, 'user');
+                    conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
+                    e.target.parentElement.remove(); // Elimina contenedor de botones
+                    handleBotResponse();
                 }
             });
-        });
 
-        // --- LÓGICA CONVERSACIONAL DEL CHATBOT ---
-        let conversationHistory = [];
-        let conversationEnded = false;
-        const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
-        conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
+            function appendMessage(message, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
 
-        async function handleNewMessage(message) {
-            if (conversationEnded || !message) return;
-            appendMessage(message, 'user');
-            conversationHistory.push({ role: 'user', parts: [{ text: message }] });
-            userInput.value = '';
-            userInput.focus();
-            await handleBotResponse();
-        }
+                // MODIFICADO: Limpieza de caracteres extraños y formato
+                const formattedMessage = message
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Markdown negrita
+                    .replace(/\*/g, '') // Elimina asteriscos de itálicas u otros
+                    .replace(/(?<!<)\//g, '') // Elimina '/' que no sean de etiquetas HTML
+                    .replace(/\n/g, '<br>'); // Saltos de línea
 
-        async function handleBotResponse() {
-            toggleLoading(true);
-            try {
-                const botResponse = await getBotResponse();
-                conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-                processBotResponse(botResponse);
-                if (botResponse.includes("¡Excelente! He registrado tu información.")) {
-                    conversationEnded = true;
-                    userInput.disabled = true;
-                    userInput.placeholder = "Conversación finalizada.";
-                    window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
-                    await triggerSummaryGeneration();
-                }
-            } catch (error) {
-                console.error("Error obteniendo respuesta del bot:", error);
-                // MODIFICADO: Mensaje de error mejorado
-                appendErrorMessage(); 
-            } finally {
-                toggleLoading(false);
+                messageDiv.innerHTML = formattedMessage;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-        }
-        
-        chatFormEl.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleNewMessage(userInput.value.trim());
-        });
 
-        chatMessages.addEventListener('click', function (e) {
-            if (e.target.classList.contains('quick-reply-btn')) {
-                // NUEVO: Lógica para el botón de WhatsApp
-                if (e.target.dataset.action === 'whatsapp') {
-                    const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-                    window.open(whatsappUrl, '_blank');
-                    appendMessage('Contactar por WhatsApp', 'user');
-                    setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
-                    return; // Detenemos la ejecución aquí
-                }
+            // NUEVO: Función para mostrar un mensaje de error con acciones
+            function appendErrorMessage() {
+                const errorDiv = document.createElement('div');
+                errorDiv.classList.add('chat-bubble', 'bot-bubble');
+                errorDiv.style.backgroundColor = '#4c1d1d'; // Un rojo más oscuro y sutil
+                errorDiv.style.border = '1px solid #c2410c';
 
-                // Lógica existente para otros botones
-                const messageText = e.target.textContent;
-                appendMessage(messageText, 'user');
-                conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
-                e.target.parentElement.remove(); // Elimina contenedor de botones
-                handleBotResponse();
-            }
-        });
+                const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                const contactModalTrigger = `document.getElementById('open-modal-btn').click(); document.getElementById('chat-close-btn').click();`;
 
-        function appendMessage(message, sender) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
-            
-            // MODIFICADO: Limpieza de caracteres extraños y formato
-            const formattedMessage = message
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Markdown negrita
-                .replace(/\*/g, '') // Elimina asteriscos de itálicas u otros
-                .replace(/(?<!<)\//g, '') // Elimina '/' que no sean de etiquetas HTML
-                .replace(/\n/g, '<br>'); // Saltos de línea
-
-            messageDiv.innerHTML = formattedMessage;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        // NUEVO: Función para mostrar un mensaje de error con acciones
-        function appendErrorMessage() {
-            const errorDiv = document.createElement('div');
-            errorDiv.classList.add('chat-bubble', 'bot-bubble');
-            errorDiv.style.backgroundColor = '#4c1d1d'; // Un rojo más oscuro y sutil
-            errorDiv.style.border = '1px solid #c2410c';
-
-            const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-            const contactModalTrigger = `document.getElementById('open-modal-btn').click(); document.getElementById('chat-close-btn').click();`;
-
-            errorDiv.innerHTML = `
+                errorDiv.innerHTML = `
                 <p style="margin-bottom: 0.75rem;">Ups, parece que mi conexión falló por un momento. 😥</p>
                 <p style="margin-bottom: 1rem;">No te preocupes, puedes contactarnos directamente por aquí:</p>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -1274,46 +1276,46 @@
                     <button onclick="${contactModalTrigger}" class="quick-reply-btn" style="background-color: #3b82f6; text-align: center; display: block; width: 100%;">Abrir Formulario de Contacto</button>
                 </div>
             `;
-            chatMessages.appendChild(errorDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function processBotResponse(fullResponse) {
-            const parts = fullResponse.split('[SPLIT]');
-            let delay = 0;
-            parts.forEach((part) => {
-                const message = part.trim();
-                if (message) {
-                    setTimeout(() => {
-                        appendMessage(message, 'bot');
-                    }, delay);
-                    delay += 800;
-                }
-            });
-            setTimeout(() => toggleLoading(false), delay);
-        }
-
-        function toggleLoading(isLoading) {
-            const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
-            sendButton.disabled = isLoading;
-            sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
-        }
-
-        async function callGemini(payload) {
-            const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            if (!response.ok) {
-                throw new Error(`Error en la API: ${response.status}`);
+                chatMessages.appendChild(errorDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-            const result = await response.json();
-            return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
-        }
 
-        async function getBotResponse() {
-            const systemInstructionText = `
+            function processBotResponse(fullResponse) {
+                const parts = fullResponse.split('[SPLIT]');
+                let delay = 0;
+                parts.forEach((part) => {
+                    const message = part.trim();
+                    if (message) {
+                        setTimeout(() => {
+                            appendMessage(message, 'bot');
+                        }, delay);
+                        delay += 800;
+                    }
+                });
+                setTimeout(() => toggleLoading(false), delay);
+            }
+
+            function toggleLoading(isLoading) {
+                const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
+                sendButton.disabled = isLoading;
+                sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
+            }
+
+            async function callGemini(payload) {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) {
+                    throw new Error(`Error en la API: ${response.status}`);
+                }
+                const result = await response.json();
+                return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
+            }
+
+            async function getBotResponse() {
+                const systemInstructionText = `
                 [INICIO DE PROMPT DE SISTEMA]
                 **1. TU PERSONAJE (QUIÉN ERES):** Eres "WebExpert", el principal consultor digital de PaginasFast. Eres amigable, con un lenguaje natural y trato de confianza (no tan profesional), ocupando palabras fáciles de entender y usando emojis sutilmente para conectar. Eres conciso. Tu objetivo es demostrar el valor de tener una página web para conseguir más clientes, mencionando también lo que sea aparacer en Google y la ventaja de hacerlo nosotros es que saldrá de los primeros y los beneficios que conlleva ser el primero.  **Importante: Cuando menciones disponibilidad continua, usa siempre el formato "24/7", nunca "247".**
                 **2. TU MISIÓN PRINCIPAL (QUÉ DEBES LOGRAR):** Calificar al usuario como un lead de alta calidad obteniendo de forma natural y conversacional: Nombre, Correo electrónico y Teléfono.
@@ -1332,47 +1334,47 @@
                 - **CIERRE DE CONVERSACIÓN:** Una vez que obtengas al menos el correo, DEBES cerrar la conversación usando la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles. ¡Gracias!". No añadas nada más.
                 [FIN DE PROMPT DE SISTEMA]
             `;
-            const payload = {
-                contents: conversationHistory,
-                system_instruction: { parts: [{ text: systemInstructionText }] },
-                generationConfig: { temperature: 0.7, topP: 1, maxOutputTokens: 250 }
-            };
-            return await callGemini(payload);
-        }
-
-        async function triggerSummaryGeneration() {
-            appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
-            const summaryPrompt = `Basado en el siguiente historial de conversación, crea un resumen para un correo. Extrae: - Nombre del Cliente: - Email de Contacto: - Número de WhatsApp: (si no, indica "No proporcionado") - Resumen de Necesidades: (Resume lo que busca). Historial: ${JSON.stringify(conversationHistory)}`;
-            const payload = { contents: [{ role: 'user', parts: [{ text: summaryPrompt }] }] };
-            try {
-                const summaryText = await callGemini(payload);
-                const emailMatch = summaryText.match(/Email de Contacto:\s*(\S+@\S+)/);
-                const leadEmail = emailMatch ? emailMatch[1] : 'Email no capturado';
-                await fetch('/api/send-summary', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ summaryText, leadEmail }),
-                });
-            } catch (error) {
-                console.error("Error en el proceso de resumen:", error);
-                appendMessage("No pudimos procesar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+                const payload = {
+                    contents: conversationHistory,
+                    system_instruction: { parts: [{ text: systemInstructionText }] },
+                    generationConfig: { temperature: 0.7, topP: 1, maxOutputTokens: 250 }
+                };
+                return await callGemini(payload);
             }
-        }
 
-        // Lógica para FAQ
-        const faqContainer = document.getElementById('faq-container');
-        const detailsElements = faqContainer.querySelectorAll('details');
-        detailsElements.forEach(details => {
-            details.addEventListener('toggle', () => {
-                if (details.open) {
-                    detailsElements.forEach(otherDetails => {
-                        if (otherDetails !== details) otherDetails.removeAttribute('open');
+            async function triggerSummaryGeneration() {
+                appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
+                const summaryPrompt = `Basado en el siguiente historial de conversación, crea un resumen para un correo. Extrae: - Nombre del Cliente: - Email de Contacto: - Número de WhatsApp: (si no, indica "No proporcionado") - Resumen de Necesidades: (Resume lo que busca). Historial: ${JSON.stringify(conversationHistory)}`;
+                const payload = { contents: [{ role: 'user', parts: [{ text: summaryPrompt }] }] };
+                try {
+                    const summaryText = await callGemini(payload);
+                    const emailMatch = summaryText.match(/Email de Contacto:\s*(\S+@\S+)/);
+                    const leadEmail = emailMatch ? emailMatch[1] : 'Email no capturado';
+                    await fetch('/api/send-summary', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ summaryText, leadEmail }),
                     });
+                } catch (error) {
+                    console.error("Error en el proceso de resumen:", error);
+                    appendMessage("No pudimos procesar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
                 }
+            }
+
+            // Lógica para FAQ
+            const faqContainer = document.getElementById('faq-container');
+            const detailsElements = faqContainer.querySelectorAll('details');
+            detailsElements.forEach(details => {
+                details.addEventListener('toggle', () => {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) otherDetails.removeAttribute('open');
+                        });
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>
