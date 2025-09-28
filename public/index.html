@@ -1189,11 +1189,38 @@
 
             async function handleNewMessage(message) {
                 if (conversationEnded || !message) return;
+
                 appendMessage(message, 'user');
                 conversationHistory.push({ role: 'user', parts: [{ text: message }] });
                 userInput.value = '';
                 userInput.focus();
-                await handleBotResponse();
+
+                toggleLoading(true);
+
+                try {
+                    const botResponse = await getBotResponse();
+                    processBotResponse(botResponse);
+                    conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+
+                    if (botResponse.includes("¡Excelente! He registrado tu información.")) {
+                        conversationEnded = true;
+                        userInput.disabled = true;
+                        userInput.placeholder = "Conversación finalizada.";
+                        window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+
+                        // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
+                        setTimeout(() => {
+                            generateWhatsAppLinkBubble();
+                        }, 1200);
+
+                        await triggerSummaryGeneration();
+                    }
+                } catch (error) {
+                    console.error("Error obteniendo respuesta del bot:", error);
+                    appendErrorMessage();
+                } finally {
+                    toggleLoading(false);
+                }
             }
 
             async function handleBotResponse() {
@@ -1201,17 +1228,24 @@
                 try {
                     const botResponse = await getBotResponse();
                     conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+
                     processBotResponse(botResponse);
+
                     if (botResponse.includes("¡Excelente! He registrado tu información.")) {
                         conversationEnded = true;
                         userInput.disabled = true;
                         userInput.placeholder = "Conversación finalizada.";
-                        window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+
+                        // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
+                        setTimeout(() => {
+                            generateWhatsAppLinkBubble();
+                        }, 1200);
+
                         await triggerSummaryGeneration();
                     }
+
                 } catch (error) {
                     console.error("Error obteniendo respuesta del bot:", error);
-                    // MODIFICADO: Mensaje de error mejorado
                     appendErrorMessage();
                 } finally {
                     toggleLoading(false);
@@ -1313,6 +1347,64 @@
                 }
                 const result = await response.json();
                 return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
+            }
+
+
+            // --- NUEVA FUNCIÓN PARA GENERAR EL BOTÓN DE WHATSAPP ---
+            async function generateWhatsAppLinkBubble() {
+                const extractionPrompt = `
+                Analiza el siguiente historial de conversación y extrae el nombre del plan web (Web Emprendedor, Web Corporativa, o Tienda Online) y un resumen muy breve del proyecto del cliente (máximo 15 palabras).
+                Responde ÚNICAMENTE con un objeto JSON válido con las claves "plan" y "proyecto".
+                Si un dato no se menciona, su valor debe ser null.
+
+                Historial:
+                ${JSON.stringify(conversationHistory)}
+            `;
+
+                try {
+                    // Usamos un payload simple para la extracción de datos
+                    const payload = {
+                        contents: [{ role: 'user', parts: [{ text: extractionPrompt }] }],
+                        generationConfig: { temperature: 0.1, maxOutputTokens: 100 }
+                    };
+                    const rawResponse = await callGemini(payload);
+
+                    // Limpiamos la respuesta para asegurar que sea un JSON válido
+                    const cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
+                    const extractedData = JSON.parse(cleanedResponse);
+
+                    const whatsAppButton = document.getElementById('boton-whatsapp-flotante');
+                    if (!whatsAppButton) return;
+
+                    const baseWhatsAppUrl = 'https://api.whatsapp.com/send/';
+                    const phone = new URL(whatsAppButton.href).searchParams.get('phone');
+
+                    let messageText = "Hola, necesito más información para crear mi página web"; // Mensaje por defecto
+
+                    const plan = extractedData.plan;
+                    const proyecto = extractedData.proyecto;
+
+                    if (plan && proyecto) {
+                        messageText = `Hola, estoy interesado en el plan ${plan}, y mi proyecto trata de ${proyecto}`;
+                    } else if (plan) {
+                        messageText = `Hola, estoy interesado en el plan ${plan}`;
+                    }
+
+                    const finalUrl = `${baseWhatsAppUrl}?phone=${phone}&text=${encodeURIComponent(messageText)}`;
+
+                    const bubbleDiv = document.createElement('div');
+                    bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
+                    bubbleDiv.style.backgroundColor = '#25D366'; // Verde WhatsApp
+                    bubbleDiv.style.border = '1px solid #128C7E';
+                    bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Continuar en WhatsApp</a>`;
+
+                    chatMessages.appendChild(bubbleDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                } catch (error) {
+                    console.error("Error al generar el enlace de WhatsApp:", error);
+                    // Si falla, no mostramos nada para no confundir al usuario.
+                }
             }
 
             async function getBotResponse() {
