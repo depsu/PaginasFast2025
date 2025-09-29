@@ -1328,7 +1328,7 @@
             const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
             conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
 
-            async function handleNewMessage(message) {
+          async function handleNewMessage(message) {
                 if (conversationEnded || !message) return;
 
                 appendMessage(message, 'user');
@@ -1341,8 +1341,18 @@
 
                 toggleLoading(true);
 
+                // --- INICIO DE LA MODIFICACIÓN ---
+                // Creamos una pausa mínima de 2 segundos.
+                const minimumWait = new Promise(resolve => setTimeout(resolve, 2000));
+
                 try {
-                    const botResponse = await getBotResponse();
+                    // Hacemos la llamada a la IA y esperamos la pausa mínima al mismo tiempo.
+                    const [botResponse] = await Promise.all([
+                        getBotResponse(),
+                        minimumWait
+                    ]);
+
+                    // El resto del código se ejecuta después de que ambas cosas (llamada y pausa) terminen.
                     processBotResponse(botResponse);
                     conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
 
@@ -1351,13 +1361,10 @@
                         userInput.disabled = true;
                         userInput.placeholder = "Conversación finalizada.";
                         window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
-
                         clearTimeout(inactivityTimer);
-
                         setTimeout(() => {
                             mostrarEnlaceWhatsAppBubble();
                         }, 1200);
-
                         await triggerSummaryGeneration();
                     }
                 } catch (error) {
@@ -1366,6 +1373,7 @@
                 } finally {
                     toggleLoading(false);
                 }
+                // --- FIN DE LA MODIFICACIÓN ---
             }
 
             async function handleBotResponse(message) { // Añadimos 'message' como parámetro
