@@ -8,23 +8,42 @@ export default async function handler(request, response) {
   }
 
   try {
-    const { summaryText, leadEmail } = request.body;
-    // Leemos la nueva variable de entorno que contiene los correos
+    // Obtenemos los nuevos datos, incluyendo el 'status'
+    const { leadData, conversationText, status } = request.body;
     const ownerEmailsString = process.env.OWNER_EMAILS;
 
-    if (!summaryText || !ownerEmailsString) {
-      return response.status(400).json({ message: 'Falta el texto del resumen o la lista de emails del destinatario.' });
+    if (!leadData || !conversationText || !ownerEmailsString) {
+      return response.status(400).json({ message: 'Faltan datos para generar el resumen.' });
     }
 
-    // Convertimos el string de correos separados por coma en un array
     const recipientList = ownerEmailsString.split(',').map(email => email.trim());
 
-    // Enviamos el correo a la lista de destinatarios
+    // --- LÓGICA PARA CAMBIAR EL ASUNTO ---
+    let subject = `Nuevo Lead Completado: ${leadData.nombre || 'Nombre no capturado'}`;
+    if (status === 'INCOMPLETO_POR_INACTIVIDAD') {
+        subject = `Lead Parcial por Inactividad: ${leadData.nombre || 'Nombre no capturado'}`;
+    }
+    // ------------------------------------
+
     const { data, error } = await resend.emails.send({
       from: 'Lead Notifier <onboarding@resend.dev>',
-      to: recipientList, // Aquí usamos la lista de correos
-      subject: `Nuevo Lead Calificado: ${leadEmail || 'Email no capturado'}`,
-      html: `<p>¡Felicitaciones! Tu chatbot ha calificado un nuevo lead.</p><pre>${summaryText}</pre>`,
+      to: recipientList,
+      subject: subject, // Usamos el asunto dinámico
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+          <h2 style="color: #333;">${subject}</h2>
+          <hr>
+          <h3 style="color: #555;">Datos del Cliente:</h3>
+          <ul>
+            <li><strong>Nombre:</strong> ${leadData.nombre}</li>
+            <li><strong>Email:</strong> ${leadData.email}</li>
+            <li><strong>Teléfono:</strong> ${leadData.telefono}</li>
+          </ul>
+          <hr>
+          <h3 style="color: #555;">Transcripción de la Conversación:</h3>
+          <pre style="white-space: pre-wrap; background-color: #f4f4f4; padding: 15px; border-radius: 5px; font-size: 14px;">${conversationText}</pre>
+        </div>
+      `,
     });
 
     if (error) {

@@ -1288,9 +1288,14 @@
             // --- LÓGICA CONVERSACIONAL DEL CHATBOT ---
             let conversationHistory = [];
             let conversationEnded = false;
+            let interactionCount = 0;
+            let inactivityTimer = null;
+            let inactivityEmailSent = false;
+
             const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
             conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
 
+            // Reemplaza tu función handleNewMessage con esta
             async function handleNewMessage(message) {
                 if (conversationEnded || !message) return;
 
@@ -1298,6 +1303,11 @@
                 conversationHistory.push({ role: 'user', parts: [{ text: message }] });
                 userInput.value = '';
                 userInput.focus();
+
+                // --- LÓGICA AÑADIDA ---
+                interactionCount++; // Incrementa el contador
+                resetInactivityTimer(); // Reinicia el temporizador con cada mensaje
+                // -----------------------
 
                 toggleLoading(true);
 
@@ -1312,9 +1322,12 @@
                         userInput.placeholder = "Conversación finalizada.";
                         window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
 
-                        // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
+                        // Detiene cualquier temporizador de inactividad pendiente
+                        clearTimeout(inactivityTimer);
+
                         setTimeout(() => {
-                        mostrarEnlaceWhatsAppBubble()}, 1200);
+                            mostrarEnlaceWhatsAppBubble();
+                        }, 1200);
 
                         await triggerSummaryGeneration();
                     }
@@ -1341,7 +1354,8 @@
 
                         // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
                         setTimeout(() => {
-                        mostrarEnlaceWhatsAppBubble()}, 1200);
+                            mostrarEnlaceWhatsAppBubble()
+                        }, 1200);
 
                         await triggerSummaryGeneration();
                     }
@@ -1599,22 +1613,125 @@
                 return await callGemini(payload);
             }
 
-            async function triggerSummaryGeneration() {
-                appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
-                const summaryPrompt = `Basado en el siguiente historial de conversación, crea un resumen para un correo. Extrae: - Nombre del Cliente: - Email de Contacto: - Número de WhatsApp: (si no, indica "No proporcionado") - Resumen de Necesidades: (Resume lo que busca). Historial: ${JSON.stringify(conversationHistory)}`;
-                const payload = { contents: [{ role: 'user', parts: [{ text: summaryPrompt }] }] };
+            // Pega estas dos nuevas funciones en tu script
+            function resetInactivityTimer() {
+                // Limpia el temporizador anterior
+                clearTimeout(inactivityTimer);
+
+                // Si ya se envió un correo por inactividad, no hacemos nada más
+                if (inactivityEmailSent || conversationEnded) {
+                    return;
+                }
+
+                // Si el usuario ha interactuado al menos 3 veces, activamos el temporizador
+                if (interactionCount >= 3) {
+                    inactivityTimer = setTimeout(() => {
+                        sendInactivitySummary();
+                    }, 60000); // 60,000 milisegundos = 1 minuto
+                }
+            }
+
+            async function sendInactivitySummary() {
+                if (inactivityEmailSent || conversationEnded) return; // Doble chequeo por seguridad
+
+                console.log("Usuario inactivo, enviando lead parcial...");
+                inactivityEmailSent = true; // Marcamos que el correo ya fue enviado
+
+                // Usamos las mismas funciones que ya creamos para extraer y formatear
+                const leadData = extractData(conversationHistory);
+                const conversationText = formatConversation(conversationHistory);
+
                 try {
-                    const summaryText = await callGemini(payload);
-                    const emailMatch = summaryText.match(/Email de Contacto:\s*(\S+@\S+)/);
-                    const leadEmail = emailMatch ? emailMatch[1] : 'Email no capturado';
                     await fetch('/api/send-summary', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ summaryText, leadEmail }),
+                        body: JSON.stringify({
+                            leadData,
+                            conversationText,
+                            status: 'INCOMPLETO_POR_INACTIVIDAD' // Enviamos un estado para diferenciar el correo
+                        }),
                     });
                 } catch (error) {
-                    console.error("Error en el proceso de resumen:", error);
-                    appendMessage("No pudimos procesar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+                    console.error("Error enviando el resumen por inactividad:", error);
+                }
+            }
+
+            async function triggerSummaryGeneration() {
+                appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
+
+                // --- INICIO DE LA NUEVA LÓGICA ---
+
+                // 1. Función para extraer datos específicos con Regex
+                function extractData(history) {
+                    const data = {
+                        nombre: "No proporcionado",
+                        email: "No proporcionado",
+                        telefono: "No proporcionado"
+                    };
+                    const emailRegex = /[\w\.-]+@[\w\.-]+\.\w+/;
+                    const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/; // Regex para teléfonos chilenos
+
+                    // Itera la conversación para encontrar los datos
+                    for (let i = 0; i < history.length; i++) {
+                        const currentMsg = history[i];
+                        if (currentMsg.role === 'user') {
+                            const text = currentMsg.parts[0].text;
+                            const prevMsg = history[i - 1];
+
+                            // Extraer Email
+                            const emailMatch = text.match(emailRegex);
+                            if (emailMatch) {
+                                data.email = emailMatch[0];
+                                continue; // Pasa al siguiente mensaje
+                            }
+
+                            // Extraer Teléfono
+                            const phoneMatch = text.match(phoneRegex);
+                            if (phoneMatch) {
+                                data.telefono = phoneMatch[0].replace(/\s|-/g, ''); // Limpia el número
+                                continue;
+                            }
+
+                            // Extraer Nombre (si el mensaje anterior del bot lo pedía)
+                            if (prevMsg && prevMsg.role === 'model' && prevMsg.parts[0].text.toLowerCase().includes('tu nombre')) {
+                                data.nombre = text;
+                            }
+                        }
+                    }
+                    return data;
+                }
+
+                // 2. Función para formatear el historial como texto plano
+                function formatConversation(history) {
+                    return history.map(msg => {
+                        const prefix = msg.role === 'user' ? 'Cliente:' : 'WebExpert:';
+                        return `${prefix} ${msg.parts[0].text.replace(/<[^>]*>/g, '')}`; // Limpia HTML
+                    }).join('\n');
+                }
+
+                // --- FIN DE LA NUEVA LÓGICA ---
+
+                try {
+                    const leadData = extractData(conversationHistory);
+                    const conversationText = formatConversation(conversationHistory);
+
+                    // Enviamos el nuevo payload al backend
+                    await fetch('/api/send-summary', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            leadData,
+                            conversationText,
+                            status: 'COMPLETADO' // Informa que este es el correo final
+                        }),
+                    });
+
+                    // Confirmación para el usuario
+                    appendMessage("¡Perfecto! Hemos enviado la información a nuestro equipo. Te contactaremos pronto.", 'bot');
+
+                } catch (error) {
+                    console.error("Error en el proceso de envío de resumen:", error);
+                    appendMessage("No pudimos enviar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
                 }
             }
 
