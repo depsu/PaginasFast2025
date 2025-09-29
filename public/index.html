@@ -21,7 +21,7 @@
         content="Creamos páginas para que salgas de los primeros en Google. Atrae más clientes y hace crecer tu negocio ahora.">
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script src="https://unpkg.com/feather-icons" defer></script>
 
@@ -358,6 +358,38 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
+
+        /* --- CÓDIGO PARA LA FRANJA SUPERIOR DE OFERTA --- */
+/* --- CÓDIGO PARA LA FRANJA SUPERIOR DE OFERTA (CORREGIDO) --- */
+.promo-bar {
+    background: linear-gradient(45deg, #3b82f6, #6d28d9);
+    color: white;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9em;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 100; /* Lo dejamos por si acaso, pero no es crucial aquí */
+}
+
+.promo-text {
+    display: inline-block;
+    animation: marquee 30s linear infinite; /* Aumentamos la duración para que no sea muy rápido */
+}
+
+.promo-text span {
+    padding: 0 2rem; /* Añade un espacio entre las repeticiones del texto */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%); /* Se mueve exactamente la mitad para un bucle perfecto */
+    }
+}
     </style>
 
 
@@ -367,6 +399,12 @@
 </head>
 
 <body class="bg-white text-gray-800">
+    <div class="promo-bar">
+    <div class="promo-text">
+        <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990. ¡Últimos días! 🎉</span>
+        <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990. ¡Últimos días! 🎉</span>
+    </div>
+</div>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
@@ -473,32 +511,40 @@
     <section id="servicios" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes de Desarrollo Web</h2>
-                <p class="text-gray-600 mt-2">No pierdas el tiempo. Tenemos la mejor opción para tu negocio.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes con Descuento de Septiembre</h2>
+                <p class="text-gray-600 mt-2">No pierdas el tiempo. Asegura tu 30% de descuento y empieza con solo
+                    $19.990.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <div
                     class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
-                    <div class="text-blue-600 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="h-10 w-10">
-                            <path
-                                d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
-                            </path>
-                            <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
-                            <circle cx="15" cy="9" r="1"></circle>
-                        </svg>
+                    <div class="flex justify-between items-start">
+                        <div class="text-blue-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <path
+                                    d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                                </path>
+                                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                                <circle cx="15" cy="9" r="1"></circle>
+                            </svg>
+                        </div>
+                        <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Web Emprendedor</h3>
                     <div class="my-4 text-center">
-                        <span class="text-4xl font-extrabold text-gray-900">$100.000</span>
+                        <span class="text-2xl font-semibold text-gray-400 line-through mr-2">$79.000</span>
+                        <span class="text-4xl font-extrabold text-gray-900">$55.000</span>
                         <p class="text-gray-500 text-sm">CLP / Pago único</p>
                     </div>
                     <p class="text-gray-600 mb-6 flex-grow">Apostamos por que tus servicios serán unicos, <b>debes dar
                             el salto ahora,</b> junto a nosotros</p>
                     <ul class="text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>3 a 5 Secciones estratégicas</li>
                         <li class="flex items-center"><i data-feather="check-circle"
@@ -506,12 +552,10 @@
                         </li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Formulario para recibir contactos
-                            y whatsapp
-                        </li>
+                            y whatsapp</li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Optimización para que te
-                            encuentren en Google
-                        </li>
+                            encuentren en Google</li>
                     </ul>
                     <button
                         class="chat-cta w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors"
@@ -521,22 +565,29 @@
 
                 <div
                     class="service-card bg-blue-600 text-white rounded-xl p-8 shadow-xl transition-all duration-300 transform md:scale-105 flex flex-col hover:md:scale-110 hover:-translate-y-2">
-                    <div class="text-white mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="h-10 w-10">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
+                    <div class="flex justify-between items-start">
+                        <div class="text-white mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <span class="bg-white text-red-500 text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Web Corporativa</h3>
                     <div class="my-4 text-center">
-                        <span class="text-4xl font-extrabold text-white">$300.000</span>
+                        <span class="text-2xl font-semibold text-blue-200 line-through mr-2">$300.000</span>
+                        <span class="text-4xl font-extrabold text-white">$210.000</span>
                         <p class="text-blue-50 text-sm">CLP / Pago único</p>
                     </div>
                     <p class="text-white mb-6 flex-grow">La solución definitiva para consolidar tu marca, dominar tu
                         mercado y convertir tu web en una máquina de atraer clientes.</p>
                     <ul class="space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-300 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Hasta 10 secciones completas</li>
                         <li class="flex items-center"><i data-feather="check-circle"
@@ -559,23 +610,30 @@
 
                 <div
                     class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
-                    <div class="text-blue-600 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="h-10 w-10">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
+                    <div class="flex justify-between items-start">
+                        <div class="text-blue-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-2">Tienda Online</h3>
                     <div class="my-4 text-center">
-                        <span class="text-4xl font-extrabold text-gray-900">$300.000</span>
+                        <span class="text-2xl font-semibold text-gray-400 line-through mr-2">$300.000</span>
+                        <span class="text-4xl font-extrabold text-gray-900">$210.000</span>
                         <p class="text-gray-500 text-sm">CLP / Pago único</p>
                     </div>
                     <p class="text-gray-600 mb-6 flex-grow">Vende tus productos sin parar con una tienda online robusta,
                         segura y optimizada para una experiencia de compra fácil.</p>
                     <ul class="text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Catálogo de productos ilimitado
                         </li>
@@ -616,8 +674,7 @@
                         crezca como una bola de nieve.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        Somos prácticos, he inteligentes, no siempre más es mejor, la gente solo busca lo que necesita y
-                        nos adapatemos a eso.
+                        Hay mucha gente haciando páginas Webs. Pero pocos que realmente entienden que una página, enfocada en posicionarse en Google y que la gente entre y disfrute estar en ella. hace 1.000 veces la diferencia.                                                                     
                     </p>
                     <div class="border-l-4 border-blue-500 pl-4 bg-white p-4 rounded-r-lg">
                         <p class="text-gray-700 italic font-medium">"Cada segundo que un cliente potencial pasa en una
@@ -975,11 +1032,12 @@
         </div>
         <div id="chat-messages" class="chat-messages">
             <div class="chat-bubble bot-bubble">
-                ¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?
+                ¡Hola! 👋 Soy WebExpert. ¡Tengo una oferta para ti! Si contratas tu web antes de que termine septiembre,
+                tienes un <strong>30% de descuento</strong> y puedes empezar con solo <strong>$19.990</strong>.
+                ¿Hablamos de tu proyecto?
                 <div class="quick-replies mt-3 flex flex-wrap gap-2">
-                    <button class="quick-reply-btn">Ver Planes</button>
-                    <button class="quick-reply-btn">Necesito una Tienda Online</button>
-                    <button class="quick-reply-btn">Hablar sobre mi proyecto</button>
+                    <button class="quick-reply-btn">Ver Planes con Descuento</button>
+                    <button class="quick-reply-btn">¡Quiero la oferta!</button>
                     <button class="quick-reply-btn" data-action="whatsapp">Contactar por WhatsApp</button>
                 </div>
             </div>
@@ -1285,7 +1343,7 @@
                 const formattedMessage = message
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Markdown negrita
                     .replace(/\*/g, '') // Elimina asteriscos de itálicas u otros
-                    .replace(/(?<!<)\//g, '') // Elimina '/' que no sean de etiquetas HTML
+                    // .replace(/(?<!<)\//g, '') // Elimina '/' que no sean de etiquetas HTML
                     .replace(/\n/g, '<br>'); // Saltos de línea
 
                 messageDiv.innerHTML = formattedMessage;
@@ -1409,23 +1467,28 @@
 
             async function getBotResponse() {
                 const systemInstructionText = `
-                [INICIO DE PROMPT DE SISTEMA]
-                **1. TU PERSONAJE (QUIÉN ERES):** Eres "WebExpert", el principal consultor digital de PaginasFast. Eres amigable, con un lenguaje natural y trato de confianza (no tan profesional), ocupando palabras fáciles de entender y usando emojis sutilmente para conectar. Eres conciso. Tu objetivo es demostrar el valor de tener una página web para conseguir más clientes, mencionando también lo que sea aparacer en Google y la ventaja de hacerlo nosotros es que saldrá de los primeros y los beneficios que conlleva ser el primero.  **Importante: Cuando menciones disponibilidad continua, usa siempre el formato "24/7", nunca "247".**
-                **2. TU MISIÓN PRINCIPAL (QUÉ DEBES LOGRAR):** Calificar al usuario como un lead de alta calidad obteniendo de forma natural y conversacional: Nombre, Correo electrónico y Teléfono.
-                **3. BASE DE CONOCIMIENTO (LO QUE SABES):**
-                - **Servicio Principal:** Desarrollo de páginas web optimizadas para Aparecer de los primeros en Google.
-                - **Problemas que Solucionamos:** Páginas lentas, mal SEO, mal diseño en móviles, baja generación de contactos, problema de que la gente entre a un sitio y que se salga, perdiendo dinero y un potencial cliente.
-                - **Ventajas Clave:** Aparecer de los primeros en Google, diseño profesional e intuitivo para que el usuario te contacte, generar clientes con buenas experiencias para que siempre vuelvan a recurrir a tus servicios.
-                - **Planes (Pago Único CLP):**
-                    - **Web Emprendedor ($100.000):** Landing page de 3 a 5 secciones.
-                    - **Web Corporativa ($300.000):** Solución completa, hasta 10 secciones, SEO avanzado.
-                    - **Tienda Online ($300.000):** Para vender productos 24/7.
-                **4. REGLAS DE COMPORTAMIENTO Y CONVERSACIÓN (CÓMO ACTÚAS):**
-                - **REGLA DE FLEXIBILIDAD Y RETORNO:** Si el usuario pregunta algo fuera de tema (ej. clima), responde brevemente y de inmediato conecta de vuelta al tema de páginas web con una pregunta. *Ejemplo: "¡Claro! La temperatura es de 20°C. Hablando de estar 'on fire', una página web rápida es clave para que un negocio despegue. ¿Tu proyecto ya tiene web o quieres empezar uno?"*.
-                - **REGLA DE MENSAJES MÚLTIPLES (¡MUY IMPORTANTE!):** Separa tus respuestas en mensajes cortos usando '[SPLIT]'. **Siempre** que des una explicación y termines pidiendo información al usuario (nombre, email, etc.), la pregunta final DEBE ir en su propio mensaje separado por '[SPLIT]'. *Ejemplo Correcto: "¡Genial! Una web para tu cafetería puede mostrar tu menú y atraer clientes locales. ☕[SPLIT]Para darte ideas, ¿cuál es tu nombre?"*.
-                - **USA HTML PARA FORMATO:** Para poner texto en negrita, usa SIEMPRE las etiquetas '<strong>' y '</strong>' en lugar de asteriscos.
-                - **CIERRE DE CONVERSACIÓN:** Una vez que obtengas al menos el correo, DEBES cerrar la conversación usando la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles. ¡Gracias!". No añadas nada más.
-                [FIN DE PROMPT DE SISTEMA]
+            [INICIO DE PROMPT DE SISTEMA]
+            **1. TU PERSONAJE (QUIÉN ERES):** Eres "WebExpert", el principal consultor digital de PaginasFast. Eres amigable, con un lenguaje natural y trato de confianza (no tan profesional), ocupando palabras fáciles de entender y usando emojis sutilmente para conectar. Eres conciso. Tu objetivo es demostrar el valor de tener una página web para conseguir más clientes, mencionando también lo que sea aparacer en Google y la ventaja de hacerlo nosotros es que saldrá de los primeros y los beneficios que conlleva ser el primero.  **Importante: Cuando menciones disponibilidad continua, usa siempre el formato "24/7", nunca "247".**
+
+            **2. TU MISIÓN PRINCIPAL (QUÉ DEBES LOGRAR):** Calificar al usuario como un lead de alta calidad obteniendo de forma natural y conversacional: Nombre, Correo electrónico y Teléfono.
+
+            **3. BASE DE CONOCIMIENTO (LO QUE SABES):**
+            - **Servicio Principal:** Desarrollo de páginas web optimizadas para Aparecer de los primeros en Google.
+            - **Problemas que Solucionamos:** Páginas lentas, mal SEO, mal diseño en móviles, baja generación de contactos, problema de que la gente entre a un sitio y que se salga, perdiendo dinero y un potencial cliente.
+            - **Ventajas Clave:** Aparecer de los primeros en Google, diseño profesional e intuitivo para que el usuario te contacte, generar clientes con buenas experiencias para que siempre vuelvan a recurrir a tus servicios.
+            - **Planes (Pago Único CLP, CON DESCUENTO YA APLICADO):**
+                - **Web Emprendedor antes 79.000 ahora ($55.000):** Landing page de 3 a 5 secciones. Ideal para quienes inician.            
+                - **Web Corporativa ($210.000):** Solución completa, hasta 10 secciones, SEO avanzado.
+                - **Tienda Online ($210.000):** Para vender productos 24/7.
+            - **OFERTA ESPECIAL (Septiembre):** Hay un 30% de descuento en todos los planes para quienes contacten antes de que termine septiembre. El proyecto se inicia con un abono de solo **$19.990 CLP**, y el resto se paga al finalizar y entregar la web.
+
+            **4. REGLAS DE COMPORTAMIENTO Y CONVERSACIÓN (CÓMO ACTÚAS):**
+            - **REGLA DE LA OFERTA (MUY IMPORTANTE):** SIEMPRE menciona la oferta del 30% de descuento y el abono inicial de $19.990 al principio de la conversación. Es tu principal herramienta para incentivar. Si el usuario pregunta por precios, dale el precio final con descuento y recuérdale que puede empezar con el abono inicial.
+            - **REGLA DE FLEXIBILIDAD Y RETORNO:** Si el usuario pregunta algo fuera de tema (ej. clima), responde brevemente y de inmediato conecta de vuelta al tema de páginas web con una pregunta. *Ejemplo: "¡Claro! La temperatura es de 20°C. Hablando de estar 'on fire', esta oferta del 30% está que arde para que tu negocio despegue. ¿Qué tipo de página tenías en mente?"*.
+            - **REGLA DE MENSAJES MÚLTIPLES (¡MUY IMPORTANTE!):** Separa tus respuestas en mensajes cortos usando '[SPLIT]'. **Siempre** que des una explicación y termines pidiendo información al usuario (nombre, email, etc.), la pregunta final DEBE ir en su propio mensaje separado por '[SPLIT]'. *Ejemplo Correcto: "¡Genial! El plan Emprendedor a $70.000 es perfecto para eso y puedes empezar con solo $19.990. ☕[SPLIT]Para avanzar, ¿cuál es tu nombre?"*.
+            - **USA HTML PARA FORMATO:** Para poner texto en negrita, usa SIEMPRE las etiquetas '<strong>' y '</strong>' en lugar de asteriscos.
+            - **CIERRE DE CONVERSACIÓN:** Una vez que obtengas al menos el correo, DEBES cerrar la conversación usando la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles y aplicar tu descuento. ¡Gracias!". No añadas nada más.
+            [FIN DE PROMPT DE SISTEMA]
             `;
                 const payload = {
                     contents: conversationHistory,
