@@ -1262,12 +1262,20 @@
             const openChat = () => {
                 chatWindow.classList.add('open');
                 chatOpener.classList.add('hidden');
-                setTimeout(() => userInput.focus(), 300); // Enfocar input al abrir
+                setTimeout(() => userInput.focus(), 300);
             };
+
+            // --- MODIFICACIÓN 1: LÓGICA DE CIERRE ---
             const closeChat = () => {
                 chatWindow.classList.remove('open');
                 chatOpener.classList.remove('hidden');
+
+                // Si se cierra el chat antes de terminar, y se cumplen las condiciones, se envía el correo.
+                if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                    sendPartialLeadSummary('INCOMPLETO_POR_CIERRE');
+                }
             };
+            // --- FIN MODIFICACIÓN 1 ---
 
             chatOpener.addEventListener('click', openChat);
             closeChatBtn.addEventListener('click', closeChat);
@@ -1285,7 +1293,6 @@
                 });
             });
 
-            // --- LÓGICA CONVERSACIONAL DEL CHATBOT ---
             let conversationHistory = [];
             let conversationEnded = false;
             let interactionCount = 0;
@@ -1295,7 +1302,6 @@
             const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
             conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
 
-            // Reemplaza tu función handleNewMessage con esta
             async function handleNewMessage(message) {
                 if (conversationEnded || !message) return;
 
@@ -1304,10 +1310,8 @@
                 userInput.value = '';
                 userInput.focus();
 
-                // --- LÓGICA AÑADIDA ---
-                interactionCount++; // Incrementa el contador
-                resetInactivityTimer(); // Reinicia el temporizador con cada mensaje
-                // -----------------------
+                interactionCount++;
+                resetInactivityTimer();
 
                 toggleLoading(true);
 
@@ -1322,7 +1326,6 @@
                         userInput.placeholder = "Conversación finalizada.";
                         window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
 
-                        // Detiene cualquier temporizador de inactividad pendiente
                         clearTimeout(inactivityTimer);
 
                         setTimeout(() => {
@@ -1344,22 +1347,17 @@
                 try {
                     const botResponse = await getBotResponse();
                     conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-
                     processBotResponse(botResponse);
-
                     if (botResponse.includes("¡Excelente! He registrado tu información.")) {
                         conversationEnded = true;
                         userInput.disabled = true;
                         userInput.placeholder = "Conversación finalizada.";
-
-                        // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
+                        clearTimeout(inactivityTimer);
                         setTimeout(() => {
-                            mostrarEnlaceWhatsAppBubble()
+                            mostrarEnlaceWhatsAppBubble();
                         }, 1200);
-
                         await triggerSummaryGeneration();
                     }
-
                 } catch (error) {
                     console.error("Error obteniendo respuesta del bot:", error);
                     appendErrorMessage();
@@ -1368,30 +1366,123 @@
                 }
             }
 
-            chatFormEl.addEventListener('submit', (e) => {
-                e.preventDefault();
-                handleNewMessage(userInput.value.trim());
-            });
+            // --- MODIFICACIÓN 2: NUEVA LÓGICA DE TEMPORIZADOR Y ENVÍO ---
+            function resetInactivityTimer() {
+                clearTimeout(inactivityTimer);
+                if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                    inactivityTimer = setTimeout(() => {
+                        sendPartialLeadSummary('INCOMPLETO_POR_INACTIVIDAD');
+                    }, 60000); // 1 minuto
+                }
+            }
 
-            chatMessages.addEventListener('click', function (e) {
-                if (e.target.classList.contains('quick-reply-btn')) {
-                    // NUEVO: Lógica para el botón de WhatsApp
-                    if (e.target.dataset.action === 'whatsapp') {
-                        const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-                        window.open(whatsappUrl, '_blank');
-                        appendMessage('Contactar por WhatsApp', 'user');
-                        setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
-                        return; // Detenemos la ejecución aquí
+            async function sendPartialLeadSummary(status) {
+                if (inactivityEmailSent || conversationEnded) return;
+
+                inactivityEmailSent = true; // Previene envíos múltiples
+                clearTimeout(inactivityTimer); // Detiene el temporizador por si acaso
+
+                const leadData = extractData(conversationHistory);
+                const conversationText = formatConversation(conversationHistory);
+
+                try {
+                    const response = await fetch('/api/send-summary', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            leadData,
+                            conversationText,
+                            status: status
+                        }),
+                    });
+
+                    if (response.ok) {
+                        console.log(`Correo de lead parcial (${status}) enviado con éxito.`);
+                    } else {
+                        console.error(`Fallo al enviar correo de lead parcial (${status}). Estado: ${response.status}`);
                     }
 
-                    // Lógica existente para otros botones
-                    const messageText = e.target.textContent;
-                    appendMessage(messageText, 'user');
-                    conversationHistory.push({ role: 'user', parts: [{ text: messageText }] });
-                    e.target.parentElement.remove(); // Elimina contenedor de botones
-                    handleBotResponse();
+                } catch (error) {
+                    console.error(`Error de red al enviar el resumen por ${status}:`, error);
                 }
-            });
+            }
+            // --- FIN MODIFICACIÓN 2 ---
+
+            async function triggerSummaryGeneration() {
+                if (inactivityEmailSent) {
+                    console.log("El correo de lead parcial ya fue enviado, no se enviará el correo final.");
+                    return;
+                }
+                appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
+                try {
+                    const leadData = extractData(conversationHistory);
+                    const conversationText = formatConversation(conversationHistory);
+
+                    const response = await fetch('/api/send-summary', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            leadData,
+                            conversationText,
+                            status: 'COMPLETADO'
+                        }),
+                    });
+
+                    if (response.ok) {
+                        console.log("Correo de lead completado enviado con éxito.");
+                    } else {
+                        console.error(`Fallo al enviar correo de lead completado. Estado: ${response.status}`);
+                    }
+
+                    appendMessage("¡Perfecto! Hemos enviado la información a nuestro equipo. Te contactaremos pronto.", 'bot');
+                } catch (error) {
+                    console.error("Error en el proceso de envío de resumen:", error);
+                    appendMessage("No pudimos enviar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+                }
+            }
+
+            function extractData(history) {
+                const data = {
+                    nombre: "No proporcionado",
+                    email: "No proporcionado",
+                    telefono: "No proporcionado"
+                };
+                const emailRegex = /[\w\.-]+@[\w\.-]+\.\w+/;
+                const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/;
+
+                for (let i = 0; i < history.length; i++) {
+                    const currentMsg = history[i];
+                    if (currentMsg.role === 'user') {
+                        const text = currentMsg.parts[0].text;
+                        const prevMsg = history[i - 1];
+
+                        const emailMatch = text.match(emailRegex);
+                        if (emailMatch) {
+                            data.email = emailMatch[0];
+                            continue;
+                        }
+
+                        const phoneMatch = text.match(phoneRegex);
+                        if (phoneMatch) {
+                            data.telefono = phoneMatch[0].replace(/\s|-/g, '');
+                            continue;
+                        }
+
+                        if (prevMsg && prevMsg.role === 'model' && prevMsg.parts[0].text.toLowerCase().includes('tu nombre')) {
+                            data.nombre = text;
+                        }
+                    }
+                }
+                return data;
+            }
+
+            function formatConversation(history) {
+                return history.map(msg => {
+                    const prefix = msg.role === 'user' ? 'Cliente:' : 'WebExpert:';
+                    return `${prefix} ${msg.parts[0].text.replace(/<[^>]*>/g, '')}`;
+                }).join('\n');
+            }
+
 
             function appendMessage(message, sender) {
                 const messageDiv = document.createElement('div');
