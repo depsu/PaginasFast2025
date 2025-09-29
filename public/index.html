@@ -1083,7 +1083,6 @@
                 tienes un <strong>30% de descuento</strong> y puedes empezar con solo <strong>$19.990</strong>.
                 ¿Hablamos de tu proyecto?
                 <div class="quick-replies mt-3 flex flex-wrap gap-2">
-                    <button class="quick-reply-btn">Ver Planes con Descuento</button>
                     <button class="quick-reply-btn">¡Quiero la oferta!</button>
                     <button class="quick-reply-btn" data-action="whatsapp">Contactar por WhatsApp</button>
                 </div>
@@ -1315,8 +1314,7 @@
 
                         // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
                         setTimeout(() => {
-                            generateWhatsAppLinkBubble();
-                        }, 1200);
+                        mostrarEnlaceWhatsAppBubble}, 1200);
 
                         await triggerSummaryGeneration();
                     }
@@ -1343,8 +1341,7 @@
 
                         // MODIFICADO: Añadimos la llamada a la nueva función con un retardo
                         setTimeout(() => {
-                            generateWhatsAppLinkBubble();
-                        }, 1200);
+                        mostrarEnlaceWhatsAppBubble}, 1200);
 
                         await triggerSummaryGeneration();
                     }
@@ -1468,85 +1465,131 @@
                     throw new Error(`Error en la API: ${response.status}`);
                 }
                 const result = await response.json();
-                console.log("Respuesta cruda de la API:", result); 
+                console.log("Respuesta cruda de la API:", result);
                 return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
             }
 
+            // --- INICIO DEL NUEVO CÓDIGO ---
 
-            // --- NUEVA FUNCIÓN PARA GENERAR EL BOTÓN DE WHATSAPP ---
-            // En tu archivo public/index.html
+            /**
+             * Extrae el nombre del cliente y el plan seleccionado del historial de conversación.
+             * @param {Array} historial - El array conversationHistory.
+             * @returns {object} Un objeto con { nombre, plan }.
+             */
+            function extraerDatosDeConversacion(historial) {
+                let nombre = null;
+                let plan = null;
 
-            async function generateWhatsAppLinkBubble() {
-                // Creamos un historial corto solo para esta función
-                const shortHistory = conversationHistory.slice(-8);
+                // Búsqueda simple del plan
+                const planRegex = /interesado en el plan "([^"]+)"/i;
+                for (const mensaje of historial) {
+                    if (mensaje.role === 'user') {
+                        const match = mensaje.parts[0].text.match(planRegex);
+                        if (match && match[1]) {
+                            plan = match[1];
+                            break; // Encontramos el plan, podemos parar de buscarlo
+                        }
+                    }
+                }
 
-                const extractionPrompt = `
-                Analiza el siguiente historial de conversación y extrae el nombre del plan web (Web Emprendedor, Web Corporativa, o Tienda Online) y un resumen muy breve del proyecto del cliente (máximo 15 palabras).
-                Responde ÚNICAMENTE con un objeto JSON válido con las claves "plan" y "proyecto".
-                Si un dato no se menciona, su valor debe ser null.
+                // Búsqueda simple del nombre (asumiendo que es una de las últimas respuestas del usuario)
+                // Esto es una heurística; podría mejorarse si el bot siempre pregunta el nombre de la misma forma.
+                for (let i = historial.length - 1; i >= 0; i--) {
+                    const entrada = historial[i];
+                    const entradaAnterior = historial[i - 1];
+                    if (entrada.role === 'user' && entradaAnterior && entradaAnterior.role === 'model' && entradaAnterior.parts[0].text.toLowerCase().includes('tu nombre')) {
+                        // Si el bot preguntó por el nombre, la respuesta del usuario es probablemente el nombre.
+                        nombre = entrada.parts[0].text;
+                        break;
+                    }
+                }
 
-                Historial:
-                ${JSON.stringify(shortHistory)} 
-                `; // Usamos el historial corto aquí
+                // Si no encontramos el nombre con el método anterior, intentamos buscarlo en el resumen del correo.
+                if (!nombre) {
+                    // Fallback: buscamos en los datos del formulario de contacto si existen.
+                    const nombreModal = document.getElementById('name-modal')?.value;
+                    if (nombreModal) {
+                        nombre = nombreModal;
+                    }
+                }
+
+                return { nombre, plan };
+            }
+
+
+            /**
+             * Genera un enlace de WhatsApp con un mensaje dinámico y un respaldo por defecto.
+             * @param {object} datos - Un objeto con los datos del cliente.
+             * @param {string} [datos.nombre] - El nombre del cliente (opcional).
+             * @param {string} [datos.plan] - El nombre del plan seleccionado (opcional).
+             * @returns {string} La URL completa para la API de WhatsApp.
+             */
+            function generarEnlaceWhatsApp(datos = {}) {
+                const telefono = "56930153632"; // Tu número de teléfono ya estaba en el HTML
+                const mensajePorDefecto = "Hola, quiero comenzar con el desarrollo de mi web hoy.";
+
+                let mensajeFinal = mensajePorDefecto;
 
                 try {
-                    const payload = {
-                        contents: [{ role: 'user', parts: [{ text: extractionPrompt }] }],
-                        generationConfig: { temperature: 0.1, maxOutputTokens: 100 }
-                    };
-                    const rawResponse = await callGemini(payload);
+                    const { nombre, plan } = datos;
 
-                    const cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
-                    const extractedData = JSON.parse(cleanedResponse);
-
-                    // Para depurar, puedes ver qué extrajo la IA en la consola
-                    console.log("Datos extraídos para WhatsApp:", extractedData);
-
-                    const whatsAppButton = document.getElementById('boton-whatsapp-flotante');
-                    if (!whatsAppButton) return;
-
-                    const baseWhatsAppUrl = 'https://api.whatsapp.com/send/';
-                    const phone = new URL(whatsAppButton.href).searchParams.get('phone');
-
-                    let messageText = "Hola, necesito más información para crear mi página web";
-
-                    const plan = extractedData.plan;
-                    const proyecto = extractedData.proyecto;
-
-                    if (plan && proyecto) {
-                        messageText = `Hola, estoy interesado en el plan ${plan}, y mi proyecto trata de ${proyecto}`;
-                    } else if (plan) {
-                        messageText = `Hola, estoy interesado en el plan ${plan}`;
+                    if (nombre && plan) {
+                        mensajeFinal = `Hola soy ${nombre} y quiero comenzar el desarrollo de mi web con el plan ${plan}.`;
+                    } else if (nombre) {
+                        mensajeFinal = `Hola, soy ${nombre} quiero comenzar con el desarrollo de mi web.`;
                     }
+                    // Si no hay datos, se usa el mensaje por defecto.
+                } catch (error) {
+                    console.error("Error al construir el mensaje de WhatsApp, usando el predeterminado.", error);
+                    mensajeFinal = mensajePorDefecto;
+                }
 
-                    const finalUrl = `${baseWhatsAppUrl}?phone=${phone}&text=${encodeURIComponent(messageText)}`;
+                const mensajeCodificado = encodeURIComponent(mensajeFinal);
+                return `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
+            }
 
+            /**
+             * Orquesta la creación y muestra del botón de WhatsApp en el chat.
+             */
+            function mostrarEnlaceWhatsAppBubble() {
+                try {
+                    // 1. Extraemos los datos de la conversación actual
+                    const datosExtraidos = extraerDatosDeConversacion(conversationHistory);
+                    console.log("Datos extraídos para WhatsApp:", datosExtraidos);
+
+                    // 2. Generamos la URL de WhatsApp con esos datos
+                    const finalUrl = generarEnlaceWhatsApp(datosExtraidos);
+
+                    // 3. Creamos y mostramos la burbuja en el chat
                     const bubbleDiv = document.createElement('div');
                     bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
-                    bubbleDiv.style.backgroundColor = '#25D366';
+                    bubbleDiv.style.backgroundColor = '#25D366'; // Verde WhatsApp
                     bubbleDiv.style.border = '1px solid #128C7E';
-                    bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Continuar en WhatsApp</a>`;
+                    bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Click aquí para continuar en WhatsApp</a>`;
 
                     chatMessages.appendChild(bubbleDiv);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
 
                 } catch (error) {
-                    console.error("Error al generar el enlace de WhatsApp:", error);
-                    // Si falla, no mostramos nada para no confundir al usuario.
+                    console.error("Error al mostrar la burbuja de WhatsApp:", error);
+                    // Si algo falla, el sistema es resiliente y no muestra nada roto.
                 }
             }
+
+            // --- FIN DEL NUEVO CÓDIGO ---
 
             async function getBotResponse() {
                 const systemInstructionText = `
             [ROL] Eres "WebExpert", un consultor amigable y conciso de PaginasFast. Usas emojis sutilmente 🚀.
             [OBJETIVO] Tu misión es obtener Nombre, Email y Teléfono del usuario.
-            [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google.
+            [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google. Tardamos desde 1 día, manejamos 3 planes: Web Emprendedor (La mejor para comenzar), Web Corporativa (Para grandes empresas, chatbot Gratis) y Tienda Online.
             [OFERTA CLAVE] Menciona SIEMPRE al inicio sutilmente la oferta de Septiembre que termina mañana: 30% OFF y abono inicial de $19.990 CLP. 
             [REGLAS]
                 - Divide respuestas largas con "[SPLIT]". La pregunta para pedir un dato (nombre, email) DEBE ir en un mensaje separado por [SPLIT].
                 - Usa etiquetas <strong> para negrita.
                 - Al obtener el correo y el teléfono, finaliza la conversación con la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles y aplicar tu descuento. ¡Gracias!".
                 - No repitas información que ya hayas dicho, como los detalles de la oferta.
+                - Evita textos largos y técnicos.
             `;
                 const payload = {
                     contents: conversationHistory.slice(-8),
