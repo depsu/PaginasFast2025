@@ -1468,32 +1468,39 @@
                     throw new Error(`Error en la API: ${response.status}`);
                 }
                 const result = await response.json();
+                console.log("Respuesta cruda de la API:", result); 
                 return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
             }
 
 
             // --- NUEVA FUNCIÓN PARA GENERAR EL BOTÓN DE WHATSAPP ---
+            // En tu archivo public/index.html
+
             async function generateWhatsAppLinkBubble() {
+                // Creamos un historial corto solo para esta función
+                const shortHistory = conversationHistory.slice(-8);
+
                 const extractionPrompt = `
                 Analiza el siguiente historial de conversación y extrae el nombre del plan web (Web Emprendedor, Web Corporativa, o Tienda Online) y un resumen muy breve del proyecto del cliente (máximo 15 palabras).
                 Responde ÚNICAMENTE con un objeto JSON válido con las claves "plan" y "proyecto".
                 Si un dato no se menciona, su valor debe ser null.
 
                 Historial:
-                ${JSON.stringify(conversationHistory)}
-            `;
+                ${JSON.stringify(shortHistory)} 
+                `; // Usamos el historial corto aquí
 
                 try {
-                    // Usamos un payload simple para la extracción de datos
                     const payload = {
                         contents: [{ role: 'user', parts: [{ text: extractionPrompt }] }],
                         generationConfig: { temperature: 0.1, maxOutputTokens: 100 }
                     };
                     const rawResponse = await callGemini(payload);
 
-                    // Limpiamos la respuesta para asegurar que sea un JSON válido
                     const cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
                     const extractedData = JSON.parse(cleanedResponse);
+
+                    // Para depurar, puedes ver qué extrajo la IA en la consola
+                    console.log("Datos extraídos para WhatsApp:", extractedData);
 
                     const whatsAppButton = document.getElementById('boton-whatsapp-flotante');
                     if (!whatsAppButton) return;
@@ -1501,7 +1508,7 @@
                     const baseWhatsAppUrl = 'https://api.whatsapp.com/send/';
                     const phone = new URL(whatsAppButton.href).searchParams.get('phone');
 
-                    let messageText = "Hola, necesito más información para crear mi página web"; // Mensaje por defecto
+                    let messageText = "Hola, necesito más información para crear mi página web";
 
                     const plan = extractedData.plan;
                     const proyecto = extractedData.proyecto;
@@ -1516,7 +1523,7 @@
 
                     const bubbleDiv = document.createElement('div');
                     bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
-                    bubbleDiv.style.backgroundColor = '#25D366'; // Verde WhatsApp
+                    bubbleDiv.style.backgroundColor = '#25D366';
                     bubbleDiv.style.border = '1px solid #128C7E';
                     bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Continuar en WhatsApp</a>`;
 
