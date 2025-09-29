@@ -21,7 +21,7 @@
         content="Creamos páginas para que salgas de los primeros en Google. Atrae más clientes y hace crecer tu negocio ahora.">
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <script src="https://unpkg.com/feather-icons" defer></script>
 
@@ -360,36 +360,79 @@
         }
 
         /* --- CÓDIGO PARA LA FRANJA SUPERIOR DE OFERTA --- */
-/* --- CÓDIGO PARA LA FRANJA SUPERIOR DE OFERTA (CORREGIDO) --- */
-.promo-bar {
-    background: linear-gradient(45deg, #3b82f6, #6d28d9);
-    color: white;
-    padding: 0.75rem 0;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.9em;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 100; /* Lo dejamos por si acaso, pero no es crucial aquí */
-}
+        /* --- CÓDIGO PARA LA FRANJA SUPERIOR DE OFERTA (CORREGIDO) --- */
+        .promo-bar {
+            background: linear-gradient(45deg, #3b82f6, #6d28d9);
+            color: white;
+            padding: 0.75rem 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 100;
+            /* Lo dejamos por si acaso, pero no es crucial aquí */
+        }
 
-.promo-text {
-    display: inline-block;
-    animation: marquee 30s linear infinite; /* Aumentamos la duración para que no sea muy rápido */
-}
+        .promo-text {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+            /* Aumentamos la duración para que no sea muy rápido */
+        }
 
-.promo-text span {
-    padding: 0 2rem; /* Añade un espacio entre las repeticiones del texto */
-}
+        .promo-text span {
+            padding: 0 2rem;
+            /* Añade un espacio entre las repeticiones del texto */
+        }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-50%); /* Se mueve exactamente la mitad para un bucle perfecto */
-    }
-}
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+                /* Se mueve exactamente la mitad para un bucle perfecto */
+            }
+        }
+
+        /* Añade esto al final de tu CSS en la etiqueta <style> */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: .6rem 1rem;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: #9ca3af;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1.0);
+            }
+        }
     </style>
 
 
@@ -400,11 +443,13 @@
 
 <body class="bg-white text-gray-800">
     <div class="promo-bar">
-    <div class="promo-text">
-        <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990. ¡Últimos días! 🎉</span>
-        <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990. ¡Últimos días! 🎉</span>
+        <div class="promo-text">
+            <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990.
+                ¡Últimos días! 🎉</span>
+            <span>🎉 ¡OFERTA SEPTIEMBRE! 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990.
+                ¡Últimos días! 🎉</span>
+        </div>
     </div>
-</div>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
@@ -674,7 +719,9 @@
                         crezca como una bola de nieve.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        Hay mucha gente haciando páginas Webs. Pero pocos que realmente entienden que una página, enfocada en posicionarse en Google y que la gente entre y disfrute estar en ella. hace 1.000 veces la diferencia.                                                                     
+                        Hay mucha gente haciando páginas Webs. Pero pocos que realmente entienden que una página,
+                        enfocada en posicionarse en Google y que la gente entre y disfrute estar en ella. hace 1.000
+                        veces la diferencia.
                     </p>
                     <div class="border-l-4 border-blue-500 pl-4 bg-white p-4 rounded-r-lg">
                         <p class="text-gray-700 italic font-medium">"Cada segundo que un cliente potencial pasa en una
@@ -1388,10 +1435,27 @@
                 setTimeout(() => toggleLoading(false), delay);
             }
 
+
             function toggleLoading(isLoading) {
                 const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
                 sendButton.disabled = isLoading;
                 sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
+
+                // Lógica para el indicador de "escribiendo..."
+                const existingIndicator = document.getElementById('typing-indicator');
+                if (isLoading && !existingIndicator) {
+                    const indicatorDiv = document.createElement('div');
+                    indicatorDiv.id = 'typing-indicator';
+                    indicatorDiv.classList.add('chat-bubble', 'bot-bubble');
+                    indicatorDiv.innerHTML = `
+            <div class="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>`;
+                    chatMessages.appendChild(indicatorDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                } else if (!isLoading && existingIndicator) {
+                    existingIndicator.remove();
+                }
             }
 
             async function callGemini(payload) {
@@ -1467,33 +1531,20 @@
 
             async function getBotResponse() {
                 const systemInstructionText = `
-            [INICIO DE PROMPT DE SISTEMA]
-            **1. TU PERSONAJE (QUIÉN ERES):** Eres "WebExpert", el principal consultor digital de PaginasFast. Eres amigable, con un lenguaje natural y trato de confianza (no tan profesional), ocupando palabras fáciles de entender y usando emojis sutilmente para conectar. Eres conciso. Tu objetivo es demostrar el valor de tener una página web para conseguir más clientes, mencionando también lo que sea aparacer en Google y la ventaja de hacerlo nosotros es que saldrá de los primeros y los beneficios que conlleva ser el primero.  **Importante: Cuando menciones disponibilidad continua, usa siempre el formato "24/7", nunca "247".**
-
-            **2. TU MISIÓN PRINCIPAL (QUÉ DEBES LOGRAR):** Calificar al usuario como un lead de alta calidad obteniendo de forma natural y conversacional: Nombre, Correo electrónico y Teléfono.
-
-            **3. BASE DE CONOCIMIENTO (LO QUE SABES):**
-            - **Servicio Principal:** Desarrollo de páginas web optimizadas para Aparecer de los primeros en Google.
-            - **Problemas que Solucionamos:** Páginas lentas, mal SEO, mal diseño en móviles, baja generación de contactos, problema de que la gente entre a un sitio y que se salga, perdiendo dinero y un potencial cliente.
-            - **Ventajas Clave:** Aparecer de los primeros en Google, diseño profesional e intuitivo para que el usuario te contacte, generar clientes con buenas experiencias para que siempre vuelvan a recurrir a tus servicios.
-            - **Planes (Pago Único CLP, CON DESCUENTO YA APLICADO):**
-                - **Web Emprendedor antes 79.000 ahora ($55.000):** Landing page de 3 a 5 secciones. Ideal para quienes inician.            
-                - **Web Corporativa ($210.000):** Solución completa, hasta 10 secciones, SEO avanzado.
-                - **Tienda Online ($210.000):** Para vender productos 24/7.
-            - **OFERTA ESPECIAL (Septiembre):** Hay un 30% de descuento en todos los planes para quienes contacten antes de que termine septiembre. El proyecto se inicia con un abono de solo **$19.990 CLP**, y el resto se paga al finalizar y entregar la web.
-
-            **4. REGLAS DE COMPORTAMIENTO Y CONVERSACIÓN (CÓMO ACTÚAS):**
-            - **REGLA DE LA OFERTA (MUY IMPORTANTE):** SIEMPRE menciona la oferta del 30% de descuento y el abono inicial de $19.990 al principio de la conversación. Es tu principal herramienta para incentivar. Si el usuario pregunta por precios, dale el precio final con descuento y recuérdale que puede empezar con el abono inicial.
-            - **REGLA DE FLEXIBILIDAD Y RETORNO:** Si el usuario pregunta algo fuera de tema (ej. clima), responde brevemente y de inmediato conecta de vuelta al tema de páginas web con una pregunta. *Ejemplo: "¡Claro! La temperatura es de 20°C. Hablando de estar 'on fire', esta oferta del 30% está que arde para que tu negocio despegue. ¿Qué tipo de página tenías en mente?"*.
-            - **REGLA DE MENSAJES MÚLTIPLES (¡MUY IMPORTANTE!):** Separa tus respuestas en mensajes cortos usando '[SPLIT]'. **Siempre** que des una explicación y termines pidiendo información al usuario (nombre, email, etc.), la pregunta final DEBE ir en su propio mensaje separado por '[SPLIT]'. *Ejemplo Correcto: "¡Genial! El plan Emprendedor a $70.000 es perfecto para eso y puedes empezar con solo $19.990. ☕[SPLIT]Para avanzar, ¿cuál es tu nombre?"*.
-            - **USA HTML PARA FORMATO:** Para poner texto en negrita, usa SIEMPRE las etiquetas '<strong>' y '</strong>' en lugar de asteriscos.
-            - **CIERRE DE CONVERSACIÓN:** Una vez que obtengas al menos el correo, DEBES cerrar la conversación usando la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles y aplicar tu descuento. ¡Gracias!". No añadas nada más.
-            [FIN DE PROMPT DE SISTEMA]
+            [ROL] Eres "WebExpert", un consultor amigable y conciso de PaginasFast. Usas emojis sutilmente 🚀.
+            [OBJETIVO] Tu misión es obtener Nombre, Email y Teléfono del usuario.
+            [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google.
+            [OFERTA CLAVE] Menciona SIEMPRE al inicio sutilmente la oferta de Septiembre que termina mañana: 30% OFF y abono inicial de $19.990 CLP. 
+            [REGLAS]
+                - Divide respuestas largas con "[SPLIT]". La pregunta para pedir un dato (nombre, email) DEBE ir en un mensaje separado por [SPLIT].
+                - Usa etiquetas <strong> para negrita.
+                - Al obtener el correo y el teléfono, finaliza la conversación con la frase EXACTA: "¡Excelente! He registrado tu información. Uno de nuestros especialistas te contactará muy pronto para afinar los detalles y aplicar tu descuento. ¡Gracias!".
+                - No repitas información que ya hayas dicho, como los detalles de la oferta.
             `;
                 const payload = {
-                    contents: conversationHistory,
+                    contents: conversationHistory.slice(-8),
                     system_instruction: { parts: [{ text: systemInstructionText }] },
-                    generationConfig: { temperature: 0.7, topP: 1, maxOutputTokens: 250 }
+                    generationConfig: { temperature: 0.3, topP: 1, maxOutputTokens: 250 }
                 };
                 return await callGemini(payload);
             }

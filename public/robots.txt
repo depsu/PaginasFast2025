@@ -1,0 +1,5 @@
+# Allow all web crawlers
+User-agent: *
+Disallow:
+
+Sitemap: https://paginasfast.cl/sitemap.xml
