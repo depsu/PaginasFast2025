@@ -1299,6 +1299,32 @@
             let inactivityTimer = null;
             let inactivityEmailSent = false;
 
+
+            // --- CÓDIGO FALTANTE A AGREGAR ---
+chatFormEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleNewMessage(userInput.value.trim());
+});
+
+chatMessages.addEventListener('click', function (e) {
+    if (e.target.classList.contains('quick-reply-btn')) {
+        // Lógica para el botón de WhatsApp
+        if (e.target.dataset.action === 'whatsapp') {
+            const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+            window.open(whatsappUrl, '_blank');
+            appendMessage('Contactar por WhatsApp', 'user');
+            setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
+            return;
+        }
+
+        // Lógica para otros botones de respuesta rápida
+        const messageText = e.target.textContent;
+        handleNewMessage(messageText); // Usamos handleNewMessage para que cuente como interacción
+        e.target.parentElement.remove();
+    }
+});
+// --- FIN DEL CÓDIGO A AGREGAR ---
+
             const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
             conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
 
