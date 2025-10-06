@@ -1089,7 +1089,7 @@
         </form>
     </div>
 
-    <div id="contact-modal"
+   <div id="contact-modal"
         class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
         <div
             class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
@@ -1111,7 +1111,7 @@
                 </div>
                 <div class="mb-6">
                     <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
-                    <input type="tel" id="phone-modal" name="phone"
+                    <input type="tel" id="contact-phone-input" name="phone"
                         class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
 
@@ -1193,504 +1193,510 @@
             // Lógica del menú móvil
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
             // --- LÓGICA DEL MODAL DE CONTACTO GENERAL ---
             const contactModal = document.getElementById('contact-modal');
-            const contactModalContent = contactModal.querySelector('div');
-            const openModalBtn = document.getElementById('open-modal-btn');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const navContactBtn = document.getElementById('nav-contact-btn');
-            const contactForm = document.getElementById('contact-form');
-
-            const openContactModal = () => {
-                contactModal.classList.remove('hidden');
-                setTimeout(() => {
-                    contactModal.classList.add('opacity-100');
-                    contactModalContent.classList.add('scale-100');
-                }, 10);
-            };
-            const closeContactModal = () => {
-                contactModal.classList.remove('opacity-100');
-                contactModalContent.classList.remove('scale-100');
-                setTimeout(() => contactModal.classList.add('hidden'), 300);
-            };
-            if (openModalBtn) openModalBtn.addEventListener('click', openContactModal);
-            if (navContactBtn) {
-                navContactBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openContactModal();
-                });
-            }
-            if (closeModalBtn) closeModalBtn.addEventListener('click', closeContactModal);
             if (contactModal) {
+                const contactModalContent = contactModal.querySelector('div');
+                const openModalBtn = document.getElementById('open-modal-btn');
+                const closeModalBtn = document.getElementById('close-modal-btn');
+                const navContactBtn = document.getElementById('nav-contact-btn');
+                const contactForm = document.getElementById('contact-form');
+
+                const openContactModal = () => {
+                    contactModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        contactModal.classList.add('opacity-100');
+                        contactModalContent.classList.add('scale-100');
+                    }, 10);
+                };
+                const closeContactModal = () => {
+                    contactModal.classList.remove('opacity-100');
+                    contactModalContent.classList.remove('scale-100');
+                    setTimeout(() => contactModal.classList.add('hidden'), 300);
+                };
+
+                if (openModalBtn) openModalBtn.addEventListener('click', openContactModal);
+                if (navContactBtn) {
+                    navContactBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openContactModal();
+                    });
+                }
+                if (closeModalBtn) closeModalBtn.addEventListener('click', closeContactModal);
                 contactModal.addEventListener('click', (e) => {
                     if (e.target === contactModal) closeContactModal();
                 });
-            }
-            if (contactForm) {
-                contactForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-                    const buttonText = submitButton.querySelector('.btn-text');
-                    const buttonLoader = submitButton.querySelector('.loader');
-                    submitButton.disabled = true;
-                    buttonText.classList.add('hidden');
-                    buttonLoader.classList.remove('hidden');
-                    const name = document.getElementById('name-modal').value;
-                    const email = document.getElementById('email-modal').value;
-                    const phone = document.getElementById('phone-modal').value;
-                    try {
-                        const response = await fetch('/api/send-contact-form', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ name, email, phone }),
-                        });
-                        if (!response.ok) throw new Error('Falló el envío del formulario');
-                        window.dataLayer.push({ 'event': 'formulario_enviado_ok' });
-                        alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
-                        closeContactModal();
-                        contactForm.reset();
-                    } catch (error) {
-                        console.error('Error en el formulario de contacto:', error);
-                        alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
-                    } finally {
-                        submitButton.disabled = false;
-                        buttonText.classList.remove('hidden');
-                        buttonLoader.classList.add('hidden');
-                    }
-                });
+
+                if (contactForm) {
+                    contactForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const submitButton = contactForm.querySelector('button[type="submit"]');
+                        const buttonText = submitButton.querySelector('.btn-text');
+                        const buttonLoader = submitButton.querySelector('.loader');
+                        submitButton.disabled = true;
+                        buttonText.classList.add('hidden');
+                        buttonLoader.classList.remove('hidden');
+                        const name = document.getElementById('name-modal').value;
+                        const email = document.getElementById('email-modal').value;
+                        // CORRECCIÓN: Se usa el nuevo ID "contact-phone-input"
+                        const phone = document.getElementById('contact-phone-input').value; 
+                        try {
+                            const response = await fetch('/api/send-contact-form', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ name, email, phone }),
+                            });
+                            if (!response.ok) throw new Error('Falló el envío del formulario');
+                            window.dataLayer.push({ 'event': 'formulario_enviado_ok' });
+                            alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
+                            closeContactModal();
+                            contactForm.reset();
+                        } catch (error) {
+                            console.error('Error en el formulario de contacto:', error);
+                            alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
+                        } finally {
+                            submitButton.disabled = false;
+                            buttonText.classList.remove('hidden');
+                            buttonLoader.classList.add('hidden');
+                        }
+                    });
+                }
             }
 
             // --- LÓGICA DEL NUEVO MODAL DE TELÉFONO (PARA PLANES) ---
             const phoneModal = document.getElementById('phone-modal');
-            const phoneModalContent = phoneModal.querySelector('div');
-            const planButtons = document.querySelectorAll('.plan-cta-btn');
-            const closePhoneModalBtn = document.getElementById('close-phone-modal-btn');
-            const phoneForm = document.getElementById('phone-form');
-            const planInput = document.getElementById('plan-input');
-            const phoneInput = document.getElementById('phone-input');
-
-            const openPhoneModal = (plan) => {
-                planInput.value = plan;
-                phoneModal.classList.remove('hidden');
-                setTimeout(() => {
-                    phoneModal.classList.add('opacity-100');
-                    phoneModalContent.classList.add('scale-100');
-                    phoneInput.focus();
-                }, 10);
-            };
-
-            const closePhoneModal = () => {
-                phoneModal.classList.remove('opacity-100');
-                phoneModalContent.classList.remove('scale-100');
-                setTimeout(() => phoneModal.classList.add('hidden'), 300);
-            };
-
-            planButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const plan = btn.dataset.plan;
-                    openPhoneModal(plan);
-                });
-            });
-
-            if (closePhoneModalBtn) closePhoneModalBtn.addEventListener('click', closePhoneModal);
             if (phoneModal) {
+                const phoneModalContent = phoneModal.querySelector('div');
+                const planButtons = document.querySelectorAll('.plan-cta-btn');
+                const closePhoneModalBtn = document.getElementById('close-phone-modal-btn');
+                const phoneForm = document.getElementById('phone-form');
+                const planInput = document.getElementById('plan-input');
+                const phoneInput = document.getElementById('phone-input');
+
+                const openPhoneModal = (plan) => {
+                    planInput.value = plan;
+                    phoneModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        phoneModal.classList.add('opacity-100');
+                        phoneModalContent.classList.add('scale-100');
+                        phoneInput.focus();
+                    }, 10);
+                };
+
+                const closePhoneModal = () => {
+                    phoneModal.classList.remove('opacity-100');
+                    phoneModalContent.classList.remove('scale-100');
+                    setTimeout(() => phoneModal.classList.add('hidden'), 300);
+                };
+
+                planButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const plan = btn.dataset.plan;
+                        openPhoneModal(plan);
+                    });
+                });
+
+                if (closePhoneModalBtn) closePhoneModalBtn.addEventListener('click', closePhoneModal);
                 phoneModal.addEventListener('click', (e) => {
                     if (e.target === phoneModal) closePhoneModal();
                 });
+
+                if (phoneForm) {
+                    phoneForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const submitButton = phoneForm.querySelector('button[type="submit"]');
+                        const buttonText = submitButton.querySelector('.btn-text');
+                        const buttonLoader = submitButton.querySelector('.loader-dark'); // Corregido a loader-dark
+                        
+                        submitButton.disabled = true;
+                        buttonText.classList.add('hidden');
+                        buttonLoader.classList.remove('hidden');
+
+                        const phone = phoneInput.value;
+                        const plan = planInput.value;
+
+                        try {
+                            await fetch('/api/send-plan-inquiry', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ phone, plan }),
+                            });
+
+                            const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en el plan ${plan}. Mi número es ${phone}.`);
+                            const whatsappUrl = `https://api.whatsapp.com/send/?phone=56930153632&text=${whatsappMessage}&type=phone_number&app_absent=0`;
+                            window.location.href = whatsappUrl;
+
+                        } catch (error) {
+                            console.error('Error en el formulario de teléfono:', error);
+                            alert('Lo sentimos, ocurrió un error. Por favor, intenta de nuevo o contáctanos por el ícono de WhatsApp.');
+                            submitButton.disabled = false;
+                            buttonText.classList.remove('hidden');
+                            buttonLoader.classList.add('hidden');
+                        }
+                    });
+                }
             }
 
-            if (phoneForm) {
-                phoneForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const submitButton = phoneForm.querySelector('button[type="submit"]');
-                    const buttonText = submitButton.querySelector('.btn-text');
-                    const buttonLoader = submitButton.querySelector('.loader');
-
-                    submitButton.disabled = true;
-                    buttonText.classList.add('hidden');
-                    buttonLoader.classList.remove('hidden');
-
-                    const phone = phoneInput.value;
-                    const plan = planInput.value;
-
-                    try {
-                        // Envía el correo en segundo plano
-                        await fetch('/api/send-plan-inquiry', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ phone, plan }),
-                        });
-
-                        // Redirige al usuario a WhatsApp
-                        const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en el plan ${plan}. Mi número es ${phone}.`);
-                        const whatsappUrl = `https://api.whatsapp.com/send/?phone=56930153632&text=${whatsappMessage}&type=phone_number&app_absent=0`;
-                        window.location.href = whatsappUrl;
-
-                    } catch (error) {
-                        console.error('Error en el formulario de teléfono:', error);
-                        alert('Lo sentimos, ocurrió un error. Por favor, intenta de nuevo o contáctanos por el ícono de WhatsApp.');
-                        // Si falla, reactiva el botón
-                        submitButton.disabled = false;
-                        buttonText.classList.remove('hidden');
-                        buttonLoader.classList.add('hidden');
-                    }
-                });
-            }
 
             // --- LÓGICA DEL CHATBOT ---
             const chatOpener = document.getElementById('chat-opener');
             const chatWindow = document.getElementById('chat-window');
-            const closeChatBtn = document.getElementById('chat-close-btn');
-            const chatCTAs = document.querySelectorAll('.chat-cta');
-            const chatFormEl = document.getElementById('chat-form');
-            const userInput = document.getElementById('user-input');
-            const chatMessages = document.getElementById('chat-messages');
-            const sendButton = document.getElementById('send-button');
+            if (chatOpener && chatWindow) {
+                const closeChatBtn = document.getElementById('chat-close-btn');
+                const chatCTAs = document.querySelectorAll('.chat-cta');
+                const chatFormEl = document.getElementById('chat-form');
+                const userInput = document.getElementById('user-input');
+                const chatMessages = document.getElementById('chat-messages');
+                const sendButton = document.getElementById('send-button');
+                
+                let conversationHistory = [];
+                let conversationEnded = false;
+                let interactionCount = 0;
+                let inactivityTimer = null;
+                let inactivityEmailSent = false;
 
-            const openChat = () => {
-                chatWindow.classList.add('open');
-                chatOpener.classList.add('hidden');
-                setTimeout(() => userInput.focus(), 300);
-            };
+                const openChat = () => {
+                    chatWindow.classList.add('open');
+                    chatOpener.classList.add('hidden');
+                    setTimeout(() => userInput.focus(), 300);
+                };
 
-            const closeChat = () => {
-                chatWindow.classList.remove('open');
-                chatOpener.classList.remove('hidden');
-                if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
-                    sendPartialLeadSummary('INCOMPLETO_POR_CIERRE');
-                }
-            };
-
-            if (chatOpener) chatOpener.addEventListener('click', openChat);
-            if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
-            chatCTAs.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openChat();
-                    const plan = btn.dataset.plan;
-                    if (plan) {
-                        setTimeout(() => {
-                            const message = `Hola, estoy interesado en el plan "${plan}".`;
-                            handleNewMessage(message);
-                        }, 300);
+                const closeChat = () => {
+                    chatWindow.classList.remove('open');
+                    chatOpener.classList.remove('hidden');
+                    if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                        sendPartialLeadSummary('INCOMPLETO_POR_CIERRE');
                     }
-                });
-            });
+                };
+                
+                chatOpener.addEventListener('click', openChat);
+                if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
 
-            let conversationHistory = [];
-            let conversationEnded = false;
-            let interactionCount = 0;
-            let inactivityTimer = null;
-            let inactivityEmailSent = false;
-
-            if (chatFormEl) {
-                chatFormEl.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    handleNewMessage(userInput.value.trim());
-                });
-            }
-
-            if (chatMessages) {
-                chatMessages.addEventListener('click', function (e) {
-                    if (e.target.classList.contains('quick-reply-btn')) {
-                        if (e.target.dataset.action === 'whatsapp') {
-                            const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-                            window.open(whatsappUrl, '_blank');
-                            appendMessage('Contactar por WhatsApp', 'user');
-                            setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
-                            return;
+                chatCTAs.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openChat();
+                        const plan = btn.dataset.plan;
+                        if (plan) {
+                            setTimeout(() => {
+                                const message = `Hola, estoy interesado en el plan "${plan}".`;
+                                handleNewMessage(message);
+                            }, 300);
                         }
-                        const messageText = e.target.textContent;
-                        handleNewMessage(messageText);
-                        e.target.parentElement.remove();
-                    }
-                });
-            }
-
-            const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
-            conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
-
-            async function handleNewMessage(message) {
-                if (conversationEnded || !message) return;
-                appendMessage(message, 'user');
-                conversationHistory.push({ role: 'user', parts: [{ text: message }] });
-                userInput.value = '';
-                userInput.focus();
-                interactionCount++;
-                resetInactivityTimer();
-                toggleLoading(true);
-
-                const minimumWait = new Promise(resolve => setTimeout(resolve, 2000));
-                try {
-                    const [botResponse] = await Promise.all([getBotResponse(), minimumWait]);
-                    processBotResponse(botResponse);
-                    conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-                    if (botResponse.includes("¡Excelente! He registrado tu información.")) {
-                        conversationEnded = true;
-                        userInput.disabled = true;
-                        userInput.placeholder = "Conversación finalizada.";
-                        window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
-                        clearTimeout(inactivityTimer);
-                        setTimeout(() => {
-                            mostrarEnlaceWhatsAppBubble();
-                        }, 1200);
-                        await triggerSummaryGeneration();
-                    }
-                } catch (error) {
-                    console.error("Error obteniendo respuesta del bot:", error);
-                    appendErrorMessage();
-                } finally {
-                    toggleLoading(false);
-                }
-            }
-
-            function resetInactivityTimer() {
-                clearTimeout(inactivityTimer);
-                if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
-                    inactivityTimer = setTimeout(() => {
-                        sendPartialLeadSummary('INCOMPLETO_POR_INACTIVIDAD');
-                    }, 60000);
-                }
-            }
-
-            async function sendPartialLeadSummary(status) {
-                if (inactivityEmailSent || conversationEnded) return;
-                inactivityEmailSent = true;
-                clearTimeout(inactivityTimer);
-                const leadData = extractData(conversationHistory);
-                const conversationText = formatConversation(conversationHistory);
-                try {
-                    const response = await fetch('/api/send-summary', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ leadData, conversationText, status: status }),
                     });
-                    if (response.ok) {
-                        console.log(`Correo de lead parcial (${status}) enviado con éxito.`);
-                    } else {
-                        console.error(`Fallo al enviar correo de lead parcial (${status}). Estado: ${response.status}`);
-                    }
-                } catch (error) {
-                    console.error(`Error de red al enviar el resumen por ${status}:`, error);
-                }
-            }
+                });
 
-            async function triggerSummaryGeneration() {
-                if (inactivityEmailSent) {
-                    console.log("El correo de lead parcial ya fue enviado, no se enviará el correo final.");
-                    return;
+                if (chatFormEl) {
+                    chatFormEl.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        handleNewMessage(userInput.value.trim());
+                    });
                 }
-                appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
-                try {
+
+                if (chatMessages) {
+                    chatMessages.addEventListener('click', function (e) {
+                        if (e.target.classList.contains('quick-reply-btn')) {
+                            if (e.target.dataset.action === 'whatsapp') {
+                                const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                                window.open(whatsappUrl, '_blank');
+                                appendMessage('Contactar por WhatsApp', 'user');
+                                setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
+                                return;
+                            }
+                            const messageText = e.target.textContent;
+                            handleNewMessage(messageText);
+                            e.target.parentElement.remove();
+                        }
+                    });
+                }
+                
+                const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
+                conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
+
+                async function handleNewMessage(message) {
+                    if (conversationEnded || !message) return;
+                    appendMessage(message, 'user');
+                    conversationHistory.push({ role: 'user', parts: [{ text: message }] });
+                    userInput.value = '';
+                    userInput.focus();
+                    interactionCount++;
+                    resetInactivityTimer();
+                    toggleLoading(true);
+
+                    const minimumWait = new Promise(resolve => setTimeout(resolve, 2000));
+                    try {
+                        const [botResponse] = await Promise.all([getBotResponse(), minimumWait]);
+                        processBotResponse(botResponse);
+                        conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
+                        if (botResponse.includes("¡Excelente! He registrado tu información.")) {
+                            conversationEnded = true;
+                            userInput.disabled = true;
+                            userInput.placeholder = "Conversación finalizada.";
+                            window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+                            clearTimeout(inactivityTimer);
+                            setTimeout(() => {
+                                mostrarEnlaceWhatsAppBubble();
+                            }, 1200);
+                            await triggerSummaryGeneration();
+                        }
+                    } catch (error) {
+                        console.error("Error obteniendo respuesta del bot:", error);
+                        appendErrorMessage();
+                    } finally {
+                        toggleLoading(false);
+                    }
+                }
+
+                function resetInactivityTimer() {
+                    clearTimeout(inactivityTimer);
+                    if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                        inactivityTimer = setTimeout(() => {
+                            sendPartialLeadSummary('INCOMPLETO_POR_INACTIVIDAD');
+                        }, 60000);
+                    }
+                }
+
+                async function sendPartialLeadSummary(status) {
+                    if (inactivityEmailSent || conversationEnded) return;
+                    inactivityEmailSent = true;
+                    clearTimeout(inactivityTimer);
                     const leadData = extractData(conversationHistory);
                     const conversationText = formatConversation(conversationHistory);
-                    const response = await fetch('/api/send-summary', {
+                    try {
+                        const response = await fetch('/api/send-summary', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ leadData, conversationText, status: status }),
+                        });
+                        if (response.ok) {
+                            console.log(`Correo de lead parcial (${status}) enviado con éxito.`);
+                        } else {
+                            console.error(`Fallo al enviar correo de lead parcial (${status}). Estado: ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.error(`Error de red al enviar el resumen por ${status}:`, error);
+                    }
+                }
+
+                async function triggerSummaryGeneration() {
+                    if (inactivityEmailSent) {
+                        console.log("El correo de lead parcial ya fue enviado, no se enviará el correo final.");
+                        return;
+                    }
+                    appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
+                    try {
+                        const leadData = extractData(conversationHistory);
+                        const conversationText = formatConversation(conversationHistory);
+                        const response = await fetch('/api/send-summary', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ leadData, conversationText, status: 'COMPLETADO' }),
+                        });
+                        if (response.ok) {
+                            console.log("Correo de lead completado enviado con éxito.");
+                        } else {
+                            console.error(`Fallo al enviar correo de lead completado. Estado: ${response.status}`);
+                        }
+                        appendMessage("¡Perfecto! Hemos enviado la información a nuestro equipo. Te contactaremos pronto.", 'bot');
+                    } catch (error) {
+                        console.error("Error en el proceso de envío de resumen:", error);
+                        appendMessage("No pudimos enviar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+                    }
+                }
+
+                function extractData(history) {
+                    const data = { nombre: "No proporcionado", email: "No proporcionado", telefono: "No proporcionado" };
+                    const emailRegex = /[\w\.-]+@[\w\.-]+\.\w+/;
+                    const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/;
+                    for (let i = 0; i < history.length; i++) {
+                        const currentMsg = history[i];
+                        if (currentMsg.role === 'user') {
+                            const text = currentMsg.parts[0].text;
+                            const prevMsg = history[i - 1];
+                            const emailMatch = text.match(emailRegex);
+                            if (emailMatch) {
+                                data.email = emailMatch[0];
+                                continue;
+                            }
+                            const phoneMatch = text.match(phoneRegex);
+                            if (phoneMatch) {
+                                data.telefono = phoneMatch[0].replace(/\s|-/g, '');
+                                continue;
+                            }
+                            if (prevMsg && prevMsg.role === 'model' && prevMsg.parts[0].text.toLowerCase().includes('tu nombre')) {
+                                data.nombre = text;
+                            }
+                        }
+                    }
+                    return data;
+                }
+
+                function formatConversation(history) {
+                    return history.map(msg => {
+                        const prefix = msg.role === 'user' ? 'Cliente:' : 'WebExpert:';
+                        return `${prefix} ${msg.parts[0].text.replace(/<[^>]*>/g, '')}`;
+                    }).join('\n');
+                }
+
+                function appendMessage(message, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
+                    const formattedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*/g, '').replace(/\n/g, '<br>');
+                    messageDiv.innerHTML = formattedMessage;
+                    chatMessages.appendChild(messageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function appendErrorMessage() {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.classList.add('chat-bubble', 'bot-bubble');
+                    errorDiv.style.backgroundColor = '#4c1d1d';
+                    errorDiv.style.border = '1px solid #c2410c';
+                    const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                    const contactModalTrigger = `document.getElementById('open-modal-btn').click(); document.getElementById('chat-close-btn').click();`;
+                    errorDiv.innerHTML = `<p style="margin-bottom: 0.75rem;">Ups, parece que mi conexión falló por un momento. 😥</p><p style="margin-bottom: 1rem;">No te preocupes, puedes contactarnos directamente por aquí:</p><div style="display: flex; flex-direction: column; gap: 8px;"><a href="${whatsappUrl}" target="_blank" class="quick-reply-btn" style="background-color: #25D366; text-align: center; display: block; text-decoration: none;">Contactar por WhatsApp</a><button onclick="${contactModalTrigger}" class="quick-reply-btn" style="background-color: #3b82f6; text-align: center; display: block; width: 100%;">Abrir Formulario de Contacto</button></div>`;
+                    chatMessages.appendChild(errorDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function processBotResponse(fullResponse) {
+                    const parts = fullResponse.split('[SPLIT]');
+                    let delay = 0;
+                    parts.forEach((part) => {
+                        const message = part.trim();
+                        if (message) {
+                            setTimeout(() => {
+                                appendMessage(message, 'bot');
+                            }, delay);
+                            delay += 800;
+                        }
+                    });
+                    setTimeout(() => toggleLoading(false), delay);
+                }
+
+                function toggleLoading(isLoading) {
+                    const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
+                    if (sendButton) {
+                        sendButton.disabled = isLoading;
+                        sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
+                    }
+                    if (userInput) userInput.disabled = isLoading;
+                    const existingIndicator = document.getElementById('typing-indicator');
+                    if (isLoading && !existingIndicator) {
+                        const indicatorDiv = document.createElement('div');
+                        indicatorDiv.id = 'typing-indicator';
+                        indicatorDiv.classList.add('chat-bubble', 'bot-bubble');
+                        indicatorDiv.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+                        chatMessages.appendChild(indicatorDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    } else if (!isLoading && existingIndicator) {
+                        existingIndicator.remove();
+                    }
+                }
+
+                async function callGemini(payload) {
+                    const response = await fetch('/api/chat', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ leadData, conversationText, status: 'COMPLETADO' }),
+                        body: JSON.stringify(payload)
                     });
-                    if (response.ok) {
-                        console.log("Correo de lead completado enviado con éxito.");
-                    } else {
-                        console.error(`Fallo al enviar correo de lead completado. Estado: ${response.status}`);
+                    if (!response.ok) {
+                        throw new Error(`Error en la API: ${response.status}`);
                     }
-                    appendMessage("¡Perfecto! Hemos enviado la información a nuestro equipo. Te contactaremos pronto.", 'bot');
-                } catch (error) {
-                    console.error("Error en el proceso de envío de resumen:", error);
-                    appendMessage("No pudimos enviar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+                    const result = await response.json();
+                    return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
                 }
-            }
-
-            function extractData(history) {
-                const data = { nombre: "No proporcionado", email: "No proporcionado", telefono: "No proporcionado" };
-                const emailRegex = /[\w\.-]+@[\w\.-]+\.\w+/;
-                const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/;
-                for (let i = 0; i < history.length; i++) {
-                    const currentMsg = history[i];
-                    if (currentMsg.role === 'user') {
-                        const text = currentMsg.parts[0].text;
-                        const prevMsg = history[i - 1];
-                        const emailMatch = text.match(emailRegex);
-                        if (emailMatch) {
-                            data.email = emailMatch[0];
-                            continue;
-                        }
-                        const phoneMatch = text.match(phoneRegex);
-                        if (phoneMatch) {
-                            data.telefono = phoneMatch[0].replace(/\s|-/g, '');
-                            continue;
-                        }
-                        if (prevMsg && prevMsg.role === 'model' && prevMsg.parts[0].text.toLowerCase().includes('tu nombre')) {
-                            data.nombre = text;
+                
+                function extraerDatosDeConversacion(historial) {
+                    let nombre = null;
+                    let plan = null;
+                    const planRegex = /interesado en el plan "([^"]+)"/i;
+                    for (const mensaje of historial) {
+                        if (mensaje.role === 'user') {
+                            const match = mensaje.parts[0].text.match(planRegex);
+                            if (match && match[1]) {
+                                plan = match[1];
+                                break;
+                            }
                         }
                     }
-                }
-                return data;
-            }
-
-            function formatConversation(history) {
-                return history.map(msg => {
-                    const prefix = msg.role === 'user' ? 'Cliente:' : 'WebExpert:';
-                    return `${prefix} ${msg.parts[0].text.replace(/<[^>]*>/g, '')}`;
-                }).join('\n');
-            }
-
-            function appendMessage(message, sender) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
-                const formattedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*/g, '').replace(/\n/g, '<br>');
-                messageDiv.innerHTML = formattedMessage;
-                chatMessages.appendChild(messageDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function appendErrorMessage() {
-                const errorDiv = document.createElement('div');
-                errorDiv.classList.add('chat-bubble', 'bot-bubble');
-                errorDiv.style.backgroundColor = '#4c1d1d';
-                errorDiv.style.border = '1px solid #c2410c';
-                const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-                const contactModalTrigger = `document.getElementById('open-modal-btn').click(); document.getElementById('chat-close-btn').click();`;
-                errorDiv.innerHTML = `<p style="margin-bottom: 0.75rem;">Ups, parece que mi conexión falló por un momento. 😥</p><p style="margin-bottom: 1rem;">No te preocupes, puedes contactarnos directamente por aquí:</p><div style="display: flex; flex-direction: column; gap: 8px;"><a href="${whatsappUrl}" target="_blank" class="quick-reply-btn" style="background-color: #25D366; text-align: center; display: block; text-decoration: none;">Contactar por WhatsApp</a><button onclick="${contactModalTrigger}" class="quick-reply-btn" style="background-color: #3b82f6; text-align: center; display: block; width: 100%;">Abrir Formulario de Contacto</button></div>`;
-                chatMessages.appendChild(errorDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function processBotResponse(fullResponse) {
-                const parts = fullResponse.split('[SPLIT]');
-                let delay = 0;
-                parts.forEach((part) => {
-                    const message = part.trim();
-                    if (message) {
-                        setTimeout(() => {
-                            appendMessage(message, 'bot');
-                        }, delay);
-                        delay += 800;
-                    }
-                });
-                setTimeout(() => toggleLoading(false), delay);
-            }
-
-            function toggleLoading(isLoading) {
-                const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
-                if (sendButton) {
-                    sendButton.disabled = isLoading;
-                    sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
-                }
-                if (userInput) userInput.disabled = isLoading;
-                const existingIndicator = document.getElementById('typing-indicator');
-                if (isLoading && !existingIndicator) {
-                    const indicatorDiv = document.createElement('div');
-                    indicatorDiv.id = 'typing-indicator';
-                    indicatorDiv.classList.add('chat-bubble', 'bot-bubble');
-                    indicatorDiv.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
-                    chatMessages.appendChild(indicatorDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                } else if (!isLoading && existingIndicator) {
-                    existingIndicator.remove();
-                }
-            }
-
-            async function callGemini(payload) {
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!response.ok) {
-                    throw new Error(`Error en la API: ${response.status}`);
-                }
-                const result = await response.json();
-                return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
-            }
-
-            function extraerDatosDeConversacion(historial) {
-                let nombre = null;
-                let plan = null;
-                const planRegex = /interesado en el plan "([^"]+)"/i;
-                for (const mensaje of historial) {
-                    if (mensaje.role === 'user') {
-                        const match = mensaje.parts[0].text.match(planRegex);
-                        if (match && match[1]) {
-                            plan = match[1];
+                    for (let i = historial.length - 1; i >= 0; i--) {
+                        const entrada = historial[i];
+                        const entradaAnterior = historial[i - 1];
+                        if (entrada.role === 'user' && entradaAnterior && entradaAnterior.role === 'model' && entradaAnterior.parts[0].text.toLowerCase().includes('tu nombre')) {
+                            nombre = entrada.parts[0].text;
                             break;
                         }
                     }
+                    if (!nombre) {
+                        const nombreModal = document.getElementById('name-modal')?.value;
+                        if (nombreModal) {
+                            nombre = nombreModal;
+                        }
+                    }
+                    return { nombre, plan };
                 }
-                for (let i = historial.length - 1; i >= 0; i--) {
-                    const entrada = historial[i];
-                    const entradaAnterior = historial[i - 1];
-                    if (entrada.role === 'user' && entradaAnterior && entradaAnterior.role === 'model' && entradaAnterior.parts[0].text.toLowerCase().includes('tu nombre')) {
-                        nombre = entrada.parts[0].text;
-                        break;
+
+                function generarEnlaceWhatsApp(datos = {}) {
+                    const telefono = "56930153632";
+                    const mensajePorDefecto = "Hola, quiero comenzar con el desarrollo de mi web hoy.";
+                    let mensajeFinal = mensajePorDefecto;
+                    try {
+                        const { nombre, plan } = datos;
+                        if (nombre && plan) {
+                            mensajeFinal = `Hola soy ${nombre} y quiero comenzar el desarrollo de mi web con el plan ${plan}.`;
+                        } else if (nombre) {
+                            mensajeFinal = `Hola, soy ${nombre} quiero comenzar con el desarrollo de mi web.`;
+                        }
+                    } catch (error) {
+                        console.error("Error al construir el mensaje de WhatsApp, usando el predeterminado.", error);
+                    }
+                    const mensajeCodificado = encodeURIComponent(mensajeFinal);
+                    return `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
+                }
+
+                function mostrarEnlaceWhatsAppBubble() {
+                    try {
+                        const datosExtraidos = extraerDatosDeConversacion(conversationHistory);
+                        const finalUrl = generarEnlaceWhatsApp(datosExtraidos);
+                        const bubbleDiv = document.createElement('div');
+                        bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
+                        bubbleDiv.style.backgroundColor = '#25D366';
+                        bubbleDiv.style.border = '1px solid #128C7E';
+                        bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Click aquí para continuar en WhatsApp</a>`;
+                        chatMessages.appendChild(bubbleDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    } catch (error) {
+                        console.error("Error al mostrar la burbuja de WhatsApp:", error);
                     }
                 }
-                if (!nombre) {
-                    const nombreModal = document.getElementById('name-modal')?.value;
-                    if (nombreModal) {
-                        nombre = nombreModal;
-                    }
-                }
-                return { nombre, plan };
-            }
 
-            function generarEnlaceWhatsApp(datos = {}) {
-                const telefono = "56930153632";
-                const mensajePorDefecto = "Hola, quiero comenzar con el desarrollo de mi web hoy.";
-                let mensajeFinal = mensajePorDefecto;
-                try {
-                    const { nombre, plan } = datos;
-                    if (nombre && plan) {
-                        mensajeFinal = `Hola soy ${nombre} y quiero comenzar el desarrollo de mi web con el plan ${plan}.`;
-                    } else if (nombre) {
-                        mensajeFinal = `Hola, soy ${nombre} quiero comenzar con el desarrollo de mi web.`;
-                    }
-                } catch (error) {
-                    console.error("Error al construir el mensaje de WhatsApp, usando el predeterminado.", error);
-                }
-                const mensajeCodificado = encodeURIComponent(mensajeFinal);
-                return `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
-            }
-
-            function mostrarEnlaceWhatsAppBubble() {
-                try {
-                    const datosExtraidos = extraerDatosDeConversacion(conversationHistory);
-                    const finalUrl = generarEnlaceWhatsApp(datosExtraidos);
-                    const bubbleDiv = document.createElement('div');
-                    bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
-                    bubbleDiv.style.backgroundColor = '#25D366';
-                    bubbleDiv.style.border = '1px solid #128C7E';
-                    bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Click aquí para continuar en WhatsApp</a>`;
-                    chatMessages.appendChild(bubbleDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                } catch (error) {
-                    console.error("Error al mostrar la burbuja de WhatsApp:", error);
+                async function getBotResponse() {
+                    const systemInstructionText = `
+                    [ROL] Eres "WebExpert", un consultor amigable y conciso de PaginasFast. Usas emojis sutilmente 🚀. Evitas textos largos y técnicos.
+                    [OBJETIVO] Tu misión es obtener Nombre, Email y Teléfono del usuario.
+                    [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google. Tardamos desde 1 día, manejamos 3 planes: Web Emprendedor (La mejor para comenzar), Web Corporativa (Para grandes empresas, chatbot Gratis) y Tienda Online.
+                    [REGLAS]
+                        - Divide respuestas largas con "[SPLIT]". La pregunta para pedir un dato (nombre, email) DEBE ir en un mensaje separado por [SPLIT].
+                        - Usa etiquetas <strong> para negrita.
+                        - Al obtener el correo y el teléfono, finaliza la conversación.
+                    `;
+                    const payload = {
+                        contents: conversationHistory.slice(-8),
+                        system_instruction: { parts: [{ text: systemInstructionText }] },
+                        generationConfig: { temperature: 0.3, topP: 1, maxOutputTokens: 250 }
+                    };
+                    return await callGemini(payload);
                 }
             }
-
-            async function getBotResponse() {
-                const systemInstructionText = `
-            [ROL] Eres "WebExpert", un consultor amigable y conciso de PaginasFast. Usas emojis sutilmente 🚀. Evitas textos largos y técnicos.
-            [OBJETIVO] Tu misión es obtener Nombre, Email y Teléfono del usuario.
-            [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google. Tardamos desde 1 día, manejamos 3 planes: Web Emprendedor (La mejor para comenzar), Web Corporativa (Para grandes empresas, chatbot Gratis) y Tienda Online.
-            [REGLAS]
-                - Divide respuestas largas con "[SPLIT]". La pregunta para pedir un dato (nombre, email) DEBE ir en un mensaje separado por [SPLIT].
-                - Usa etiquetas <strong> para negrita.
-                - Al obtener el correo y el teléfono, finaliza la conversación.
-            `;
-                const payload = {
-                    contents: conversationHistory.slice(-8),
-                    system_instruction: { parts: [{ text: systemInstructionText }] },
-                    generationConfig: { temperature: 0.3, topP: 1, maxOutputTokens: 250 }
-                };
-                return await callGemini(payload);
-            }
-
+            
             // Lógica para FAQ
             const faqContainer = document.getElementById('faq-container');
             if (faqContainer) {
