@@ -431,10 +431,10 @@
 <body class="bg-white text-gray-800">
     <div class="promo-bar">
         <div class="promo-text">
-            <span>🎉 ¡OFERTA CYBER! 🕷️ 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990.
-                ¡Últimos días! 🎉</span>
-            <span>🎉 ¡OFERTA CYBER! 🕷️ 30% DE DESCUENTO en todos los planes. Comienza tu proyecto con solo $19.990.
-                ¡Últimos días! 🎉</span>
+            <span>⚠️ CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
+                    id="countdown"></strong></span>
+            <span>⚠️ CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
+                    id="countdown-clone"></strong></span>
         </div>
     </div>
 
@@ -543,9 +543,10 @@
     <section id="servicios" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes con Descuento de Cyber</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes Diseñados para Superar a tu Competencia
+                </h2>
                 <p class="text-gray-600 mt-2">No pierdas el tiempo. Asegura tu 30% de descuento y empieza con solo
-                    $19.990.</p>
+                    $19.000.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -1167,6 +1168,42 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
+
+            // --- CÓDIGO DEL CONTADOR REGRESIVO ---
+            const countdownElement = document.getElementById('countdown');
+            const countdownCloneElement = document.getElementById('countdown-clone');
+
+            // 1. Establecer la fecha de fin de la oferta (31 de octubre a medianoche)
+            const endDate = new Date(new Date().getFullYear(), 9, 31, 23, 59, 59); // Mes 9 es Octubre (0-11)
+
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = endDate - now;
+
+                // Si la oferta ya terminó
+                if (timeLeft < 0) {
+                    countdownElement.textContent = "Oferta Terminada";
+                    if (countdownCloneElement) countdownCloneElement.textContent = "Oferta Terminada";
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                // 2. Calcular días, horas, minutos y segundos
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // 3. Formatear y mostrar el resultado
+                const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                countdownElement.textContent = countdownText;
+                if (countdownCloneElement) countdownCloneElement.textContent = countdownText;
+            }
+
+            // Actualizar el contador cada segundo
+            const timerInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Llamada inicial para que no haya un segundo de retraso
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuButton && mobileMenu) {
@@ -1611,7 +1648,7 @@
                     [ROL] Eres "WebExpert", un consultor de ventas amigable y muy eficiente de PaginasFast. Tu objetivo principal es conseguir el número de WhatsApp del cliente para que un especialista lo contacte.
 
 [BASE DE CONOCIMIENTO DE PAGINASFAST]
-- **Oferta Actual:** Cyber, 30% de descuento en todos los planes. Se puede empezar con un abono de $19.990.
+- **Oferta Actual:** Un plan estratégico con 30% de descuento para posicionarte en Google y superar a tu competencia. Válido por Octubre.
 - **Planes y Precios (con descuento):**
   - **Web Emprendedor:** $55.000 (Antes $79.000). Incluye 3-5 secciones, diseño adaptable a móviles, formulario, WhatsApp y optimización para Google (SEO). Ideal para empezar.
   - **Web Corporativa:** $210.000 (Antes $300.000). Incluye hasta 10 secciones, diseño premium, blog, SEO avanzado y ChatBot con IA. Para empresas que quieren dominar su mercado.
