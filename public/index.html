@@ -305,7 +305,6 @@
 
             .chat-opener,
             .chat-window {
-                /* Ajustamos la posición a 1rem para que no quede tan pegado al borde */
                 bottom: 1rem;
             }
 
@@ -314,8 +313,6 @@
             }
         }
 
-
-        /* --- NUEVO BOTÓN FLOTANTE DE WHATSAPP --- */
         .floating-whatsapp-btn {
             position: fixed;
             bottom: 2rem;
@@ -323,7 +320,6 @@
             width: 60px;
             height: 60px;
             background-color: #25d366;
-            /* Verde WhatsApp */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -593,9 +589,11 @@
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Optimización para que te
                             encuentren en Google</li>
                     </ul>
-                    <button
-                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors"
-                        data-plan="Web Emprendedor">¡Quiero Empezar!</button>
+                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Web%20Emprendedor."
+                        target="_blank"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        ¡Consultar por este plan!
+                    </a>
                 </div>
 
                 <div
@@ -637,9 +635,13 @@
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>ChatBot con IA</li>
                     </ul>
-                    <button
-                        class="plan-cta-btn w-full mt-auto text-center bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors"
-                        data-plan="Web Corporativa">¡Quiero Este Plan!</button>
+
+
+                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Web%20Corporativa."
+                        target="_blank"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        ¡Consultar por este plan!
+                    </a>
                 </div>
 
                 <div
@@ -681,9 +683,11 @@
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Carrito de compras fácil de usar
                         </li>
                     </ul>
-                    <button
-                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors"
-                        data-plan="Tienda Online">Vender Online</button>
+                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Tienda%20Online."
+                        target="_blank"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        ¡Consultar por este plan!
+                    </a>
                 </div>
             </div>
         </div>
@@ -1089,7 +1093,7 @@
         </form>
     </div>
 
-   <div id="contact-modal"
+    <div id="contact-modal"
         class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
         <div
             class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
@@ -1187,10 +1191,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Inicializar Feather Icons
             feather.replace();
-
-            // Lógica del menú móvil
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuButton && mobileMenu) {
@@ -1245,7 +1246,7 @@
                         const name = document.getElementById('name-modal').value;
                         const email = document.getElementById('email-modal').value;
                         // CORRECCIÓN: Se usa el nuevo ID "contact-phone-input"
-                        const phone = document.getElementById('contact-phone-input').value; 
+                        const phone = document.getElementById('contact-phone-input').value;
                         try {
                             const response = await fetch('/api/send-contact-form', {
                                 method: 'POST',
@@ -1314,7 +1315,7 @@
                         const submitButton = phoneForm.querySelector('button[type="submit"]');
                         const buttonText = submitButton.querySelector('.btn-text');
                         const buttonLoader = submitButton.querySelector('.loader-dark'); // Corregido a loader-dark
-                        
+
                         submitButton.disabled = true;
                         buttonText.classList.add('hidden');
                         buttonLoader.classList.remove('hidden');
@@ -1355,7 +1356,7 @@
                 const userInput = document.getElementById('user-input');
                 const chatMessages = document.getElementById('chat-messages');
                 const sendButton = document.getElementById('send-button');
-                
+
                 let conversationHistory = [];
                 let conversationEnded = false;
                 let interactionCount = 0;
@@ -1375,7 +1376,7 @@
                         sendPartialLeadSummary('INCOMPLETO_POR_CIERRE');
                     }
                 };
-                
+
                 chatOpener.addEventListener('click', openChat);
                 if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
 
@@ -1402,21 +1403,51 @@
 
                 if (chatMessages) {
                     chatMessages.addEventListener('click', function (e) {
+                        // Asegurarse de que el clic fue en un botón de respuesta rápida
                         if (e.target.classList.contains('quick-reply-btn')) {
-                            if (e.target.dataset.action === 'whatsapp') {
-                                const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
-                                window.open(whatsappUrl, '_blank');
-                                appendMessage('Contactar por WhatsApp', 'user');
-                                setTimeout(() => appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp para que hablemos directamente.', 'bot'), 500);
-                                return;
+                            const button = e.target;
+                            const action = button.dataset.action;
+                            const message = button.dataset.message;
+
+                            // Opción 1: El botón envía un mensaje predefinido al chat
+                            if (message) {
+                                handleNewMessage(message); // Llama a la función que procesa los mensajes
+                                button.parentElement.remove(); // Elimina los botones después del clic
                             }
-                            const messageText = e.target.textContent;
-                            handleNewMessage(messageText);
-                            e.target.parentElement.remove();
+                            // Opción 2: El botón ejecuta una acción específica
+                            else if (action) {
+                                switch (action) {
+                                    case 'whatsapp':
+                                        // Abre el enlace del botón flotante de WhatsApp en una nueva pestaña
+                                        const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                                        window.open(whatsappUrl, '_blank');
+                                        appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp.', 'bot');
+                                        break;
+
+                                    case 'open-contact-modal':
+                                        // Abre el modal de contacto general y cierra el chat para no superponerlos
+                                        const contactModal = document.getElementById('contact-modal');
+                                        if (contactModal) {
+                                            // Reutilizamos la lógica que ya tienes para abrir el modal
+                                            contactModal.classList.remove('hidden');
+                                            setTimeout(() => {
+                                                contactModal.classList.add('opacity-100');
+                                                contactModal.querySelector('div').classList.add('scale-100');
+                                            }, 10);
+                                        }
+                                        // Cerramos el chat
+                                        const chatWindow = document.getElementById('chat-window');
+                                        if (chatWindow) chatWindow.classList.remove('open');
+                                        const chatOpener = document.getElementById('chat-opener');
+                                        if (chatOpener) chatOpener.classList.remove('hidden');
+                                        break;
+                                }
+                                button.parentElement.remove(); // Elimina los botones después de la acción
+                            }
                         }
                     });
                 }
-                
+
                 const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
                 conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
 
@@ -1435,16 +1466,21 @@
                         const [botResponse] = await Promise.all([getBotResponse(), minimumWait]);
                         processBotResponse(botResponse);
                         conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-                        if (botResponse.includes("¡Excelente! He registrado tu información.")) {
+                        // Usamos una etiqueta especial que no depende del texto visible
+                        if (botResponse.includes("[CONVERSION_SUCCESS]")) {
                             conversationEnded = true;
                             userInput.disabled = true;
                             userInput.placeholder = "Conversación finalizada.";
                             window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
                             clearTimeout(inactivityTimer);
+
+                            // El triggerSummary ahora envía los datos extraídos (solo el teléfono)
+                            await triggerSummaryGeneration();
+
+                            // Y luego la burbuja de WhatsApp, si aplica.
                             setTimeout(() => {
                                 mostrarEnlaceWhatsAppBubble();
                             }, 1200);
-                            await triggerSummaryGeneration();
                         }
                     } catch (error) {
                         console.error("Error obteniendo respuesta del bot:", error);
@@ -1512,26 +1548,18 @@
                 }
 
                 function extractData(history) {
-                    const data = { nombre: "No proporcionado", email: "No proporcionado", telefono: "No proporcionado" };
-                    const emailRegex = /[\w\.-]+@[\w\.-]+\.\w+/;
+                    const data = { telefono: "No proporcionado" };
+                    // Expresión regular para buscar números de teléfono chilenos.
                     const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/;
-                    for (let i = 0; i < history.length; i++) {
-                        const currentMsg = history[i];
-                        if (currentMsg.role === 'user') {
-                            const text = currentMsg.parts[0].text;
-                            const prevMsg = history[i - 1];
-                            const emailMatch = text.match(emailRegex);
-                            if (emailMatch) {
-                                data.email = emailMatch[0];
-                                continue;
-                            }
-                            const phoneMatch = text.match(phoneRegex);
+
+                    // Recorre el historial buscando un número en los mensajes del usuario
+                    for (const message of history) {
+                        if (message.role === 'user') {
+                            const phoneMatch = message.parts[0].text.match(phoneRegex);
                             if (phoneMatch) {
+                                // Limpia el número de espacios o guiones y lo asigna
                                 data.telefono = phoneMatch[0].replace(/\s|-/g, '');
-                                continue;
-                            }
-                            if (prevMsg && prevMsg.role === 'model' && prevMsg.parts[0].text.toLowerCase().includes('tu nombre')) {
-                                data.nombre = text;
+                                break; // Se detiene al encontrar el primer número
                             }
                         }
                     }
@@ -1613,7 +1641,7 @@
                     const result = await response.json();
                     return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
                 }
-                
+
                 function extraerDatosDeConversacion(historial) {
                     let nombre = null;
                     let plan = null;
@@ -1680,13 +1708,31 @@
 
                 async function getBotResponse() {
                     const systemInstructionText = `
-                    [ROL] Eres "WebExpert", un consultor amigable y conciso de PaginasFast. Usas emojis sutilmente 🚀. Evitas textos largos y técnicos.
-                    [OBJETIVO] Tu misión es obtener Nombre, Email y Teléfono del usuario.
-                    [CONTEXTO] Vendemos páginas web optimizadas para aparecer primeros en Google. Tardamos desde 1 día, manejamos 3 planes: Web Emprendedor (La mejor para comenzar), Web Corporativa (Para grandes empresas, chatbot Gratis) y Tienda Online.
-                    [REGLAS]
-                        - Divide respuestas largas con "[SPLIT]". La pregunta para pedir un dato (nombre, email) DEBE ir en un mensaje separado por [SPLIT].
-                        - Usa etiquetas <strong> para negrita.
-                        - Al obtener el correo y el teléfono, finaliza la conversación.
+                    [ROL] Eres "WebExpert", un consultor de ventas amigable y muy eficiente de PaginasFast. Tu objetivo principal es conseguir el número de WhatsApp del cliente para que un especialista lo contacte.
+
+[BASE DE CONOCIMIENTO DE PAGINASFAST]
+- **Oferta Actual:** Cyber, 30% de descuento en todos los planes. Se puede empezar con un abono de $19.990.
+- **Planes y Precios (con descuento):**
+  - **Web Emprendedor:** $55.000 (Antes $79.000). Incluye 3-5 secciones, diseño adaptable a móviles, formulario, WhatsApp y optimización para Google (SEO). Ideal para empezar.
+  - **Web Corporativa:** $210.000 (Antes $300.000). Incluye hasta 10 secciones, diseño premium, blog, SEO avanzado y ChatBot con IA. Para empresas que quieren dominar su mercado.
+  - **Tienda Online:** $210.000 (Antes $300.000). Incluye catálogo ilimitado, integración con WebPay y MercadoPago, gestión de inventario.
+- **Tiempos de Entrega:**
+  - Web Emprendedor: 5 a 7 días hábiles.
+  - Web Corporativa y Tienda Online: 10 a 15 días hábiles.
+- **Fundador:** Alejandro Rivera. Misión: ayudar a las pymes en Chile a crecer.
+- **Diferenciadores:** Creamos páginas rápidas y enfocadas en posicionamiento en Google para generar más clientes y ventas.
+- **Hosting y Dominio:** No están incluidos en los planes, pero asesoramos al cliente para adquirirlos.
+- **Garantía:** 100% de satisfacción. No se termina el proyecto hasta que el cliente esté feliz.
+
+[REGLAS DE CONVERSACIÓN]
+1.  **INICIO:** Usa la [BASE DE CONOCIMIENTO] para responder amablemente a las preguntas del usuario. Sé breve y útil. Tu meta es generar confianza.
+2.  **DISPARADORES DE CONVERSIÓN:** Después de responder 2 o 3 preguntas, O si el usuario pregunta directamente por precios, tiempos de entrega, o cómo empezar, DEBES iniciar el protocolo de conversión.
+3.  **PROTOCOLO DE CONVERSIÓN (EL GUIÓN):**
+    a. **El Pivote:** Usa una frase de transición. Por ejemplo: "Entendido. Para darte una cotización formal y asegurar tu descuento Cyber, lo mejor es que te contacte un especialista. ¿A qué número de WhatsApp podemos escribirte?"
+    b. **La Captura:** Pide ÚNICAMENTE el número de teléfono.
+    c. **La Confirmación:** Una vez que el usuario te dé el número, confirma que lo recibiste. Por ejemplo: "¡Perfecto, número recibido! Un especialista te contactará por WhatsApp en minutos."
+    d. **El Cierre (Hand-off):** Ofrece un enlace para que el usuario pueda iniciar la conversación. Di: "Si prefieres, puedes iniciar el chat tú mismo haciendo clic aquí: [tu enlace de WhatsApp]."
+4.  **FIN:** Una vez que obtienes el número, la conversación termina. Agradece al usuario.
                     `;
                     const payload = {
                         contents: conversationHistory.slice(-8),
@@ -1696,7 +1742,7 @@
                     return await callGemini(payload);
                 }
             }
-            
+
             // Lógica para FAQ
             const faqContainer = document.getElementById('faq-container');
             if (faqContainer) {
