@@ -1071,12 +1071,13 @@
         </div>
         <div id="chat-messages" class="chat-messages">
             <div class="chat-bubble bot-bubble">
-                ¡Hola! 👋 Soy WebExpert. ¡Tengo una oferta para ti! Si contratas tu web antes de que termine cyber,
-                tienes un <strong>30% de descuento</strong> y puedes empezar con solo <strong>$19.990</strong>.
-                ¿Hablamos de tu proyecto?
+                ¡Hola! 👋 Soy WebExpert y estoy aquí para ayudarte a conseguir tu descuento del 30%. ¿Cómo prefieres que
+                sigamos?
                 <div class="quick-replies mt-3 flex flex-wrap gap-2">
-                    <button class="quick-reply-btn">¡Quiero la oferta!</button>
-                    <button class="quick-reply-btn" data-action="whatsapp">Contactar por WhatsApp</button>
+                    <button class="quick-reply-btn" data-message="Quiero hacer una consulta">💬 Hacer una
+                        consulta</button>
+                    <button class="quick-reply-btn" data-action="whatsapp">✅ Ir a WhatsApp</button>
+                    <button class="quick-reply-btn" data-action="open-contact-modal">📞 Agendar una llamada</button>
                 </div>
             </div>
         </div>
@@ -1128,32 +1129,6 @@
         </div>
     </div>
 
-    <div id="phone-modal"
-        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
-        <div
-            class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
-            <button id="close-phone-modal-btn"
-                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">¡Excelente Decisión!</h3>
-            <p class="text-gray-600 mb-6">Déjanos tu teléfono y te contactaremos de inmediato por WhatsApp para
-                comenzar.</p>
-            <form id="phone-form">
-                <input type="hidden" id="plan-input" name="plan">
-                <div class="mb-4">
-                    <label for="phone-input" class="block text-sm font-medium text-gray-700 mb-1">Tu Número de
-                        Teléfono</label>
-                    <input type="tel" id="phone-input" name="phone" required
-                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500"
-                        placeholder="+56 9 1234 5678">
-                </div>
-                <button type="submit"
-                    class="w-full bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center min-h-[48px]">
-                    <span class="btn-text">Continuar a WhatsApp</span>
-                    <div class="loader loader-dark hidden"></div>
-                </button>
-            </form>
-        </div>
-    </div>
 
     <a href="https://api.whatsapp.com/send/?phone=56930153632&text=Hola%2C+necesito+m%C3%A1s+informaci%C3%B3n+para+crear+mi+p%C3%A1gina+web&type=phone_number&app_absent=0"
         id="boton-whatsapp-flotante" target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
@@ -1262,81 +1237,6 @@
                             console.error('Error en el formulario de contacto:', error);
                             alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
                         } finally {
-                            submitButton.disabled = false;
-                            buttonText.classList.remove('hidden');
-                            buttonLoader.classList.add('hidden');
-                        }
-                    });
-                }
-            }
-
-            // --- LÓGICA DEL NUEVO MODAL DE TELÉFONO (PARA PLANES) ---
-            const phoneModal = document.getElementById('phone-modal');
-            if (phoneModal) {
-                const phoneModalContent = phoneModal.querySelector('div');
-                const planButtons = document.querySelectorAll('.plan-cta-btn');
-                const closePhoneModalBtn = document.getElementById('close-phone-modal-btn');
-                const phoneForm = document.getElementById('phone-form');
-                const planInput = document.getElementById('plan-input');
-                const phoneInput = document.getElementById('phone-input');
-
-                const openPhoneModal = (plan) => {
-                    planInput.value = plan;
-                    phoneModal.classList.remove('hidden');
-                    setTimeout(() => {
-                        phoneModal.classList.add('opacity-100');
-                        phoneModalContent.classList.add('scale-100');
-                        phoneInput.focus();
-                    }, 10);
-                };
-
-                const closePhoneModal = () => {
-                    phoneModal.classList.remove('opacity-100');
-                    phoneModalContent.classList.remove('scale-100');
-                    setTimeout(() => phoneModal.classList.add('hidden'), 300);
-                };
-
-                planButtons.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const plan = btn.dataset.plan;
-                        openPhoneModal(plan);
-                    });
-                });
-
-                if (closePhoneModalBtn) closePhoneModalBtn.addEventListener('click', closePhoneModal);
-                phoneModal.addEventListener('click', (e) => {
-                    if (e.target === phoneModal) closePhoneModal();
-                });
-
-                if (phoneForm) {
-                    phoneForm.addEventListener('submit', async (e) => {
-                        e.preventDefault();
-                        const submitButton = phoneForm.querySelector('button[type="submit"]');
-                        const buttonText = submitButton.querySelector('.btn-text');
-                        const buttonLoader = submitButton.querySelector('.loader-dark'); // Corregido a loader-dark
-
-                        submitButton.disabled = true;
-                        buttonText.classList.add('hidden');
-                        buttonLoader.classList.remove('hidden');
-
-                        const phone = phoneInput.value;
-                        const plan = planInput.value;
-
-                        try {
-                            await fetch('/api/send-plan-inquiry', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ phone, plan }),
-                            });
-
-                            const whatsappMessage = encodeURIComponent(`Hola, estoy interesado en el plan ${plan}. Mi número es ${phone}.`);
-                            const whatsappUrl = `https://api.whatsapp.com/send/?phone=56930153632&text=${whatsappMessage}&type=phone_number&app_absent=0`;
-                            window.location.href = whatsappUrl;
-
-                        } catch (error) {
-                            console.error('Error en el formulario de teléfono:', error);
-                            alert('Lo sentimos, ocurrió un error. Por favor, intenta de nuevo o contáctanos por el ícono de WhatsApp.');
                             submitButton.disabled = false;
                             buttonText.classList.remove('hidden');
                             buttonLoader.classList.add('hidden');
