@@ -19,9 +19,7 @@
         content="Mientras lees esto, un cliente buscó tu servicio, encontró a tu competencia y cerró un trato. ¿Duele? Tengo el plan para que eso no vuelva a pasar. Hablemos.">
     <link rel="icon" type="image/png" href="/favicon.png">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-
     <script src="https://unpkg.com/feather-icons" defer></script>
-
 
     <style>
         body {
@@ -142,6 +140,7 @@
             border: none;
             color: #9ca3af;
             font-size: 1.5rem;
+            width: 40px;
             cursor: pointer
         }
 
@@ -430,7 +429,7 @@
 <body class="bg-white text-gray-800">
     <div class="promo-bar">
         <div class="promo-text">
-            <span>⚠️ CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
+            <span>⚠️ TUS CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
                     id="countdown"></strong></span>
             <span>⚠️ CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
                     id="countdown-clone"></strong></span>
@@ -465,8 +464,7 @@
             <a href="#servicios" class="block py-2 text-gray-600 hover:text-blue-600">Servicios</a>
             <a href="#nuestro-compromiso" class="block py-2 text-gray-600 hover:text-blue-600">Nuestro Compromiso</a>
             <a href="#portafolio" class="block py-2 text-gray-600 hover:text-blue-600">Proyectos</a>
-            <a href="#contacto" a
-                class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
+            <a href="#contacto" class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
                 Página Web</a>
         </div>
     </header>
@@ -474,7 +472,7 @@
     <main class="gradient-bg">
         <section class="container mx-auto px-6 py-20 md:py-32 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-                Oferta Cyber Páginas Web para Pymes <span class="text-blue-600">Crece con nosotros</span>
+                Oferta Páginas Web para Pymes <span class="text-blue-600">Crece con nosotros</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Creamos páginas webs, para impulsar tu pyme, <strong>Mostrarle al mundo lo que Tu empresa o servicio
@@ -1133,9 +1131,6 @@
     <a href="https://api.whatsapp.com/send/?phone=56930153632&text=Hola%2C+necesito+m%C3%A1s+informaci%C3%B3n+para+crear+mi+p%C3%A1gina+web&type=phone_number&app_absent=0"
         id="boton-whatsapp-flotante" target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="30px" height="30px">
-            <script xmlns="" id="eppiocemhmnlbhjplcgkofciiegomcon"></script>
-            <script xmlns=""></script>
-            <script xmlns=""></script>
             <defs>
                 <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
                     <stop offset="0" stop-color="#57d163"></stop>
@@ -1384,8 +1379,7 @@
                     });
                 }
 
-                const initialBotMessage = "¡Hola! 👋 Soy WebExpert. ¿Cómo puedo ayudarte a potenciar tu negocio hoy?";
-                conversationHistory.push({ role: 'model', parts: [{ text: initialBotMessage }] });
+   
 
                 async function handleNewMessage(message) {
                     if (conversationEnded || !message) return;
@@ -1397,33 +1391,46 @@
                     resetInactivityTimer();
                     toggleLoading(true);
 
-                    const minimumWait = new Promise(resolve => setTimeout(resolve, 2000));
+                    const minimumWait = new Promise(resolve => setTimeout(resolve, 1500)); // Un poco menos de espera
+
                     try {
                         const [botResponse] = await Promise.all([getBotResponse(), minimumWait]);
-                        processBotResponse(botResponse);
-                        conversationHistory.push({ role: 'model', parts: [{ text: botResponse }] });
-                        // Usamos una etiqueta especial que no depende del texto visible
-                        if (botResponse.includes("[CONVERSION_SUCCESS]")) {
+
+                        // Verificamos la respuesta original para la lógica de conversión
+                        const isConversion = botResponse.includes("[CONVERSION_SUCCESS]");
+
+                        // Limpiamos la respuesta ANTES de guardarla y mostrarla
+                        const cleanedBotResponse = botResponse.replace("[CONVERSION_SUCCESS]", "").trim();
+
+                        conversationHistory.push({ role: 'model', parts: [{ text: cleanedBotResponse }] });
+
+                        // Ocultamos el indicador de "escribiendo..."
+                        toggleLoading(false);
+
+                        // Mostramos la respuesta ya limpia
+                        processBotResponse(cleanedBotResponse);
+
+                        // Si fue una conversión, ejecutamos las acciones finales
+                        if (isConversion) {
                             conversationEnded = true;
                             userInput.disabled = true;
                             userInput.placeholder = "Conversación finalizada.";
                             window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+                            console.log("Evento 'chatbot_lead_generado' enviado a dataLayer.");
                             clearTimeout(inactivityTimer);
 
-                            // El triggerSummary ahora envía los datos extraídos (solo el teléfono)
                             await triggerSummaryGeneration();
 
-                            // Y luego la burbuja de WhatsApp, si aplica.
                             setTimeout(() => {
                                 mostrarEnlaceWhatsAppBubble();
                             }, 1200);
                         }
                     } catch (error) {
                         console.error("Error obteniendo respuesta del bot:", error);
+                        toggleLoading(false); // Asegúrate de detener la carga en caso de error
                         appendErrorMessage();
-                    } finally {
-                        toggleLoading(false);
                     }
+                    // La llamada a toggleLoading(false) se movió dentro del bloque try
                 }
 
                 function resetInactivityTimer() {
@@ -1643,33 +1650,43 @@
                 }
 
                 async function getBotResponse() {
-                    const systemInstructionText = `
-                    [ROL] Eres "WebExpert", un consultor de ventas amigable y muy eficiente de PaginasFast. Tu objetivo principal es conseguir el número de WhatsApp del cliente para que un especialista lo contacte.
+                    const systemInstructionText =  `
+    [PERSONALIDAD]
+    - Tu nombre es "WebExpert".
+    - Eres entusiasta, proactivo y súper claro. Evita el lenguaje técnico complicado.
+    - Tu misión es hacer que el cliente se sienta seguro y bien atendido.
+    - Eres muy eficiente y vas directo al punto, pero siempre con amabilidad.
 
-[BASE DE CONOCIMIENTO DE PAGINASFAST]
-- **Oferta Actual:** Un plan estratégico con 30% de descuento para posicionarte en Google y superar a tu competencia. Válido por Octubre.
-- **Planes y Precios (con descuento):**
-  - **Web Emprendedor:** $55.000 (Antes $79.000). Incluye 3-5 secciones, diseño adaptable a móviles, formulario, WhatsApp y optimización para Google (SEO). Ideal para empezar.
-  - **Web Corporativa:** $210.000 (Antes $300.000). Incluye hasta 10 secciones, diseño premium, blog, SEO avanzado y ChatBot con IA. Para empresas que quieren dominar su mercado.
-  - **Tienda Online:** $210.000 (Antes $300.000). Incluye catálogo ilimitado, integración con WebPay y MercadoPago, gestión de inventario.
-- **Tiempos de Entrega:**
-  - Web Emprendedor: 5 a 7 días hábiles.
-  - Web Corporativa y Tienda Online: 10 a 15 días hábiles.
-- **Fundador:** Alejandro Rivera. Misión: ayudar a las pymes en Chile a crecer.
-- **Diferenciadores:** Creamos páginas rápidas y enfocadas en posicionamiento en Google para generar más clientes y ventas.
-- **Hosting y Dominio:** No están incluidos en los planes, pero asesoramos al cliente para adquirirlos.
-- **Garantía:** 100% de satisfacción. No se termina el proyecto hasta que el cliente esté feliz.
+    [ROL]
+    Eres un consultor de ventas de PaginasFast. Tu objetivo principal es identificar la necesidad del cliente y luego conseguir su nombre y número de WhatsApp para que un especialista lo contacte y cierre la venta.
 
-[REGLAS DE CONVERSACIÓN]
-1.  **INICIO:** Usa la [BASE DE CONOCIMIENTO] para responder amablemente a las preguntas del usuario. Sé breve y útil. Tu meta es generar confianza.
-2.  **DISPARADORES DE CONVERSIÓN:** Después de responder 2 o 3 preguntas, O si el usuario pregunta directamente por precios, tiempos de entrega, o cómo empezar, DEBES iniciar el protocolo de conversión.
-3.  **PROTOCOLO DE CONVERSIÓN (EL GUIÓN):**
-    a. **El Pivote:** Usa una frase de transición. Por ejemplo: "Entendido. Para darte una cotización formal y asegurar tu descuento Cyber, lo mejor es que te contacte un especialista. ¿A qué número de WhatsApp podemos escribirte?"
-    b. **La Captura:** Pide ÚNICAMENTE el número de teléfono.
-    c. **La Confirmación:** Una vez que el usuario te dé el número, confirma que lo recibiste. Por ejemplo: "¡Perfecto, número recibido! Un especialista te contactará por WhatsApp en minutos."
-    d. **El Cierre (Hand-off):** Ofrece un enlace para que el usuario pueda iniciar la conversación. Di: "Si prefieres, puedes iniciar el chat tú mismo haciendo clic aquí: [tu enlace de WhatsApp]."
-4.  **FIN:** Una vez que obtienes el número, la conversación termina. Agradece al usuario.
-                    `;
+    [BASE DE CONOCIMIENTO DE PAGINASFAST]
+    - **Oferta Actual:** Plan estratégico con 30% de descuento. Válido por {{MES_ACTUAL}}.
+    - **Planes y Precios (con descuento):**
+      - **Web Emprendedor:** $55.000 (Antes $79.000). Incluye 3-5 secciones, diseño adaptable, SEO básico. Ideal para empezar.
+      - **Web Corporativa:** $210.000 (Antes $300.000). Incluye hasta 10 secciones, diseño premium, blog, SEO avanzado, ChatBot con IA. Para dominar el mercado.
+      - **Tienda Online:** $210.000 (Antes $300.000). Incluye catálogo ilimitado, pagos con WebPay/MercadoPago.
+    - **Tiempos de Entrega:** Emprendedor (5-7 días hábiles), Corporativa/Tienda (10-15 días hábiles).
+    - **Garantía:** 100% de satisfacción.
+
+    [REGLAS DE CONVERSACIÓN]
+    1.  **INICIO:** Responde 1 o 2 preguntas del usuario de forma breve y clara usando la [BASE DE CONOCIMIENTO]. Genera confianza.
+    2.  **DISPARADORES DE CONVERSIÓN:** Si el usuario pregunta por precios, cómo empezar, o después de haber respondido a su consulta inicial, inicia INMEDIATAMENTE el [PROTOCOLO DE CONVERSIÓN]. No esperes más.
+    
+    [PROTOCOLO DE CONVERSIÓN - GUIÓN OBLIGATORIO]
+    Sigue estos pasos EN ORDEN:
+    1.  **Pivote:** Usa una frase de transición. Ejemplo: "¡Excelente pregunta! Para darte la mejor asesoría y asegurar tu descuento, lo ideal es que te contacte un especialista."
+    2.  **Captura de Nombre:** Pregunta su nombre. Ejemplo: "Primero, ¿con quién tengo el gusto de hablar?"
+    3.  **Captura de Teléfono:** Una vez que te dé su nombre, úsalo para pedir el número. Ejemplo: "¡Genial, [Nombre]! Ahora, para que el especialista te escriba, ¿cuál es tu número de WhatsApp?"
+    4.  **Confirmación y Cierre:** Cuando te dé el número, confirma y finaliza. Ejemplo: "¡Perfecto, número anotado! Un especialista te contactará en minutos. ¡Que tengas un gran día! [CONVERSION_SUCCESS]"
+
+    [MANEJO DE OBJECIONES]
+    - Si el usuario duda o no quiere dar su número de teléfono, NO INSISTAS.
+    - En su lugar, responde amablemente: "No hay problema. Si prefieres, puedes dejarnos tus datos en nuestro formulario de contacto o seguir explorando la página. ¡Estamos aquí para ayudar!". No intentes volver a pedir el número después de esto.
+
+    [ETIQUETA DE ÉXITO OBLIGATORIA]
+    - Cuando el usuario proporcione un número de teléfono válido, TU RESPUESTA DE CONFIRMACIÓN DEBE terminar OBLIGATORIAMENTE con la etiqueta `[CONVERSION_SUCCESS]`.
+    `;
                     const payload = {
                         contents: conversationHistory.slice(-8),
                         system_instruction: { parts: [{ text: systemInstructionText }] },

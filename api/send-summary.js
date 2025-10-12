@@ -8,7 +8,6 @@ export default async function handler(request, response) {
   }
 
   try {
-    // Obtenemos los nuevos datos, incluyendo el 'status'
     const { leadData, conversationText, status } = request.body;
     const ownerEmailsString = process.env.OWNER_EMAILS;
 
@@ -18,26 +17,30 @@ export default async function handler(request, response) {
 
     const recipientList = ownerEmailsString.split(',').map(email => email.trim());
 
-    // --- LÓGICA PARA CAMBIAR EL ASUNTO ---
-    let subject = `Nuevo Lead Completado: ${leadData.nombre || 'Nombre no capturado'}`;
+    // --- LÓGICA MEJORADA PARA EL ASUNTO Y DATOS ---
+    const telefono = leadData.telefono || 'No proporcionado';
+    let subject = `Nuevo Lead del Chatbot (Tel: ${telefono})`;
+
     if (status === 'INCOMPLETO_POR_INACTIVIDAD') {
-        subject = `Lead Parcial por Inactividad: ${leadData.nombre || 'Nombre no capturado'}`;
+        subject = `Lead Parcial (Inactivo): Tel: ${telefono}`;
+    } else if (status === 'INCOMPLETO_POR_CIERRE') {
+        subject = `Lead Parcial (Cerró el chat): Tel: ${telefono}`;
     }
-    // ------------------------------------
+    // ------------------------------------------------
 
     const { data, error } = await resend.emails.send({
-      from: 'Lead Notifier <onboarding@resend.dev>',
+      from: 'Chatbot Lead <onboarding@resend.dev>',
       to: recipientList,
-      subject: subject, // Usamos el asunto dinámico
+      subject: subject, // Asunto dinámico mejorado
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
           <h2 style="color: #333;">${subject}</h2>
           <hr>
           <h3 style="color: #555;">Datos del Cliente:</h3>
           <ul>
-            <li><strong>Nombre:</strong> ${leadData.nombre}</li>
-            <li><strong>Email:</strong> ${leadData.email}</li>
-            <li><strong>Teléfono:</strong> ${leadData.telefono}</li>
+            <li><strong>Teléfono:</strong> ${telefono}</li>
+            <li><strong>Nombre:</strong> No capturado por el bot</li>
+            <li><strong>Email:</strong> No capturado por el bot</li>
           </ul>
           <hr>
           <h3 style="color: #555;">Transcripción de la Conversación:</h3>
