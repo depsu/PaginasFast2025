@@ -464,7 +464,8 @@
             <a href="#servicios" class="block py-2 text-gray-600 hover:text-blue-600">Servicios</a>
             <a href="#nuestro-compromiso" class="block py-2 text-gray-600 hover:text-blue-600">Nuestro Compromiso</a>
             <a href="#portafolio" class="block py-2 text-gray-600 hover:text-blue-600">Proyectos</a>
-            <a href="#contacto" class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
+            <a href="#contacto"
+                class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
                 Página Web</a>
         </div>
     </header>
@@ -1064,12 +1065,12 @@
 
     <div id="chat-window" class="chat-window">
         <div class="chat-header">
-            <span class="chat-header-title">Asistente Virtual</span>
+            <span class="chat-header-title">IA Bot</span>
             <button id="chat-close-btn" class="chat-close-btn">&times;</button>
         </div>
         <div id="chat-messages" class="chat-messages">
             <div class="chat-bubble bot-bubble">
-                ¡Hola! 👋 Soy WebExpert y estoy aquí para ayudarte a conseguir tu descuento del 30%. ¿Cómo prefieres que
+                ¡Hola!, te ayudaré con tus dudas. ¿Cómo prefieres que
                 sigamos?
                 <div class="quick-replies mt-3 flex flex-wrap gap-2">
                     <button class="quick-reply-btn" data-message="Quiero hacer una consulta">💬 Hacer una
@@ -1379,7 +1380,7 @@
                     });
                 }
 
-   
+
 
                 async function handleNewMessage(message) {
                     if (conversationEnded || !message) return;
@@ -1418,9 +1419,8 @@
                             window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
                             console.log("Evento 'chatbot_lead_generado' enviado a dataLayer.");
                             clearTimeout(inactivityTimer);
-
-                            await triggerSummaryGeneration();
-
+                            appendMessage("¡Genial! Hemos recibido tus datos. En breve te hablaremos por WhatsApp. 👍", 'bot');
+                            triggerSummaryGeneration();
                             setTimeout(() => {
                                 mostrarEnlaceWhatsAppBubble();
                             }, 1200);
@@ -1465,11 +1465,13 @@
                 }
 
                 async function triggerSummaryGeneration() {
+                    // Si ya se envió un correo parcial, no hagas nada.
                     if (inactivityEmailSent) {
                         console.log("El correo de lead parcial ya fue enviado, no se enviará el correo final.");
                         return;
                     }
-                    appendMessage('<strong>Generando y enviando resumen del lead...</strong>', 'bot');
+
+                    // Esta función ahora solo se encarga de la lógica de fondo.
                     try {
                         const leadData = extractData(conversationHistory);
                         const conversationText = formatConversation(conversationHistory);
@@ -1478,15 +1480,18 @@
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ leadData, conversationText, status: 'COMPLETADO' }),
                         });
+
                         if (response.ok) {
                             console.log("Correo de lead completado enviado con éxito.");
                         } else {
                             console.error(`Fallo al enviar correo de lead completado. Estado: ${response.status}`);
                         }
-                        appendMessage("¡Perfecto! Hemos enviado la información a nuestro equipo. Te contactaremos pronto.", 'bot');
+                        // MENSAJE DE ÉXITO ELIMINADO DE AQUÍ
                     } catch (error) {
                         console.error("Error en el proceso de envío de resumen:", error);
-                        appendMessage("No pudimos enviar el resumen, pero guardamos tus datos. Un agente te contactará.", 'bot');
+
+                        // Mantenemos un mensaje de error por si algo falla, para que el usuario sepa.
+                        appendMessage("Tuvimos un problema al procesar tu solicitud, pero ¡no te preocupes! Guardamos tu número y un agente te contactará igualmente.", 'bot');
                     }
                 }
 
@@ -1650,9 +1655,8 @@
                 }
 
                 async function getBotResponse() {
-                    const systemInstructionText =  `
+                    const systemInstructionText = `
     [PERSONALIDAD]
-    - Tu nombre es "WebExpert".
     - Eres entusiasta, proactivo y súper claro. Evita el lenguaje técnico complicado.
     - Tu misión es hacer que el cliente se sienta seguro y bien atendido.
     - Eres muy eficiente y vas directo al punto, pero siempre con amabilidad.
