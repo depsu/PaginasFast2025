@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nombre de la Firma] - Abogados Expertos</title>
+    <meta name="description" content="Firma de abogados líder en [Tu Ciudad/País], especializada en derecho corporativo, familiar y penal. Ofrecemos soluciones legales estratégicas y personalizadas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+
+
+
+
+<body>
+
+    <style>
+    /* --- Variables y Estilos Globales --- */
+:root {
+    --primary-color: #0A2240; /* Azul marino oscuro */
+    --secondary-color: #1a4a8a; /* Azul más claro */
+    --accent-color: #C0A16E; /* Dorado/Ocre */
+    --light-gray-color: #f8f9fa;
+    --dark-gray-color: #343a40;
+    --text-color: #555;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+h2 { font-size: 2.8rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+a:hover { color: var(--accent-color); }
+
+.section-padding { padding: 80px 0; }
+.bg-light { background-color: var(--light-gray-color); }
+.bg-dark { background-color: var(--primary-color); color: #fff; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2 { margin-bottom: 15px; }
+.section-title p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 2px solid var(--accent-color);
+}
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+/* --- Header --- */
+.main-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.main-nav a {
+    color: var(--primary-color);
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+.main-nav a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+.nav-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+}
+.nav-button:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+}
+
+/* --- Héroe --- */
+#hero {
+    background: linear-gradient(rgba(10, 34, 64, 0.8), rgba(10, 34, 64, 0.8)), url('https://images.unsplash.com/photo-1605000797424-a7169be21523?q=80&w=1974') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.hero-content { max-width: 800px; }
+.hero-content h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* --- Features Grid --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+.feature-item {
+    border-top: 4px solid var(--accent-color);
+    padding-top: 25px;
+}
+
+/* --- About Section --- */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.about-text { flex: 1; }
+.about-image { flex: 1; }
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Áreas de Práctica --- */
+.practice-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+.area-card {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.area-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.area-card h4 { margin-bottom: 15px; }
+
+/* --- CTA Banner --- */
+#cta {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+#cta h2 { color: #fff; }
+#cta p { margin-bottom: 25px; font-size: 1.1rem; }
+#cta .btn-primary:hover { background: #fff; color: var(--accent-color); }
+
+/* --- Team --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.team-member {
+    text-align: center;
+}
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.team-info h5 { margin: 0; }
+.team-info span { color: var(--accent-color); font-weight: 700; }
+
+/* --- Testimonials --- */
+.testimonial-card {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.testimonial-card blockquote {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.testimonial-card cite {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Blog --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.blog-post { border-bottom: 1px solid #eee; padding-bottom: 20px; }
+.blog-post .post-meta {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.blog-post h4 a { color: var(--primary-color); }
+
+/* --- Contacto --- */
+.bg-dark h3, .bg-dark p { color: #fff; }
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+.contact-details ul { list-style: none; }
+.contact-details li { margin-bottom: 15px; }
+.contact-details a { color: var(--accent-color); }
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #556;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    color: #fff;
+    font-family: var(--body-font);
+}
+.contact-form button { width: 100%; }
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-gray-color);
+    color: #ccc;
+    padding-top: 60px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.footer-grid h5 { color: #fff; margin-bottom: 15px; }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: #ccc; }
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    .about-flex { flex-direction: column; }
+    .contact-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .main-nav ul { display: none; } /* Simplificación para no añadir JS para menú hamburguesa */
+    .hero-content h1 { font-size: 2.5rem; }
+    .features-grid, .practice-areas-grid, .team-grid, .blog-grid, .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-padding { padding: 60px 0; }
+}
+
+/* Estilos del Botón de Hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Debe estar por encima del menú */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación del botón a 'X' */
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* Adaptación del menú para móvil (dentro de tu Media Query existente o uno nuevo) */
+@media (max-width: 768px) {
+    /* Muestra el botón de hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Oculta el menú de navegación original y lo prepara para desplegarse */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Lo saca de la pantalla */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Clase que se añade con JS para mostrar el menú */
+    .main-nav.is-active {
+        transform: translateX(0);
+    }
+    
+    /* Estilos de la lista dentro del menú móvil */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .main-nav a {
+        font-size: 1.5rem; /* Letras más grandes para fácil selección */
+    }
+
+    .nav-button {
+        padding: 12px 25px; /* Botón más grande */
+    }
+}
+
+
+
+</style>
+
+    <header class="main-header">
+    <div class="container">
+        <a href="#" class="logo">[Nombre de la Firma]</a>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="main-nav" class="main-nav">
+            <ul>
+                <li><a href="#nosotros">La Firma</a></li>
+                <li><a href="#areas">Áreas de Práctica</a></li>
+                <li><a href="#equipo">Abogados</a></li>
+                <li><a href="#blog">Publicaciones</a></li>
+                <li><a href="#contacto" class="nav-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Excelencia Jurídica, Resultados Comprobados</h1>
+                <p>Brindamos asesoría legal estratégica para proteger lo que más importa.</p>
+                <a href="#contacto" class="btn btn-primary">Agendar una Consulta Confidencial</a>
+            </div>
+        </section>
+
+        <section id="features" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestra Ventaja Competitiva</h2>
+                    <p>Combinamos experiencia, dedicación y un profundo conocimiento legal.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Experiencia Décadas</h3>
+                        <p>Más de 20 años de trayectoria resolviendo casos complejos con éxito.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Enfoque Personalizado</h3>
+                        <p>Cada cliente recibe atención directa de nuestros socios y una estrategia a su medida.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Integridad Inquebrantable</h3>
+                        <p>Actuamos bajo los más altos estándares éticos, garantizando transparencia y confianza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section-padding bg-light">
+            <div class="container about-flex">
+                <div class="about-text">
+                    <h2>Una Firma con Historia y Visión de Futuro</h2>
+                    <p>Fundada en 2005, nuestra firma nació con el objetivo de redefinir la excelencia en servicios legales. Nos especializamos en ofrecer soluciones innovadoras y efectivas, anticipándonos a los desafíos legales de un mundo en constante cambio. Nuestra misión es ser el aliado estratégico que individuos y empresas necesitan para navegar con seguridad el complejo panorama jurídico.</p>
+                    <a href="#equipo" class="btn btn-secondary">Conozca a nuestros abogados</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932" alt="Oficina moderna de abogados">
+                </div>
+            </div>
+        </section>
+
+        <section id="areas" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Áreas de Práctica</h2>
+                    <p>Ofrecemos cobertura legal completa en las siguientes especialidades.</p>
+                </div>
+                <div class="practice-areas-grid">
+                    <div class="area-card">
+                        <h4>Derecho Corporativo y Comercial</h4>
+                        <p>Desde la constitución de sociedades hasta fusiones y adquisiciones complejas. Protegemos los activos de su empresa.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Litigios Civiles y Penales</h4>
+                        <p>Representación experta ante tribunales. Defendemos sus derechos con una estrategia procesal sólida y rigurosa.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Derecho Inmobiliario</h4>
+                        <p>Asesoría integral en compraventa, arrendamientos, estudios de títulos y desarrollo de proyectos inmobiliarios.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Derecho de Familia y Sucesiones</h4>
+                        <p>Manejo discreto y eficaz de asuntos de divorcio, herencias, testamentos y protección patrimonial familiar.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Derecho Laboral</h4>
+                        <p>Asesoría a empresas en contratación, cumplimiento normativo y defensa en juicios laborales.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Propiedad Intelectual</h4>
+                        <p>Registro y protección de marcas, patentes y derechos de autor para salvaguardar sus activos intangibles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="container">
+                <h2>¿Necesita Asesoría Legal Inmediata?</h2>
+                <p>No espere a que un problema legal se complique. Hablemos hoy.</p>
+                <a href="#contacto" class="btn btn-primary">Contacto Urgente</a>
+            </div>
+        </section>
+
+        <section id="equipo" class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nuestro Equipo de Abogados</h2>
+                    <p>Profesionales altamente calificados y comprometidos con su caso.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/images/abogado.png" alt="Retrato de [Nombre Socio 1]">
+                        <div class="team-info">
+                            <h5>[Nombre Socio Fundador]</h5>
+                            <span>Socio Fundador | Especialista en Derecho Corporativo</span>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/abogado.png" alt="Retrato de [Nombre Socia 2]">
+                        <div class="team-info">
+                            <h5>[Nombre Socia Principal]</h5>
+                            <span>Socia | Jefa de Litigios</span>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/abogado.png" alt="Retrato de [Nombre Abogado 3]">
+                        <div class="team-info">
+                            <h5>[Nombre Abogado Senior]</h5>
+                            <span>Abogado Senior | Especialista en Derecho Inmobiliario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Lo que dicen nuestros clientes</h2>
+                </div>
+                <div class="testimonial-card">
+                    <blockquote>
+                        "La asesoría de [Nombre de la Firma] fue crucial para el éxito de nuestra fusión. Su profesionalismo y atención al detalle superaron todas nuestras expectativas. Altamente recomendados."
+                    </blockquote>
+                    <cite>– CEO, Empresa Tecnológica S.A.</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section-padding">
+            <div class="container">
+                 <div class="section-title">
+                    <h2>Análisis y Publicaciones Recientes</h2>
+                    <p>Manténgase informado con la perspectiva de nuestros expertos.</p>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-post">
+                        <p class="post-meta">Derecho Corporativo | 15 de Octubre, 2025</p>
+                        <h4><a href="#">Claves de la nueva Ley de Protección de Datos para Empresas</a></h4>
+                        <p>Analizamos el impacto y los pasos a seguir para el cumplimiento normativo...</p>
+                    </article>
+                     <article class="blog-post">
+                        <p class="post-meta">Litigios | 02 de Octubre, 2025</p>
+                        <h4><a href="#">La mediación como herramienta estratégica para evitar juicios largos</a></h4>
+                        <p>Descubra cómo un proceso de mediación bien llevado puede ahorrar tiempo y recursos...</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section-padding bg-dark">
+            <div class="container contact-layout">
+                <div class="contact-details">
+                    <h3>Información de Contacto</h3>
+                    <p>Nuestras oficinas están abiertas para atenderle. Agende una cita para garantizar la máxima confidencialidad y atención.</p>
+                    <ul>
+                        <li><strong>Dirección:</strong> Av. del Libertador 1234, Piso 10, Buenos Aires, Argentina</li>
+                        <li><strong>Teléfono:</strong> +54 11 1234 5678</li>
+                        <li><strong>Email:</strong> <a href="mailto:consultas@firma.com">consultas@firma.com</a></li>
+                        <li><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00 hs.</li>
+                    </ul>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Envíenos un Mensaje</h3>
+                    <form class="contact-form">
+                        <input type="text" name="name" placeholder="Nombre Completo" required>
+                        <input type="email" name="email" placeholder="Correo Electrónico" required>
+                        <select name="service">
+                            <option value="">Seleccione un área de interés...</option>
+                            <option value="corporativo">Derecho Corporativo</option>
+                            <option value="litigios">Litigios</option>
+                            <option value="familia">Derecho de Familia</option>
+                            <option value="otro">Otra Consulta</option>
+                        </select>
+                        <textarea name="message" rows="5" placeholder="Describa brevemente su situación" required></textarea>
+                        <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <h5>[Nombre de la Firma]</h5>
+                <p>Comprometidos con la defensa de sus derechos y el éxito de sus proyectos desde 2005.</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navegación</h5>
+                <ul>
+                    <li><a href="#nosotros">La Firma</a></li>
+                    <li><a href="#areas">Áreas de Práctica</a></li>
+                    <li><a href="#equipo">Abogados</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                 <h5>Contacto Directo</h5>
+                 <p>+54 11 1234 5678</p>
+                 <p>consultas@firma.com</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 [Nombre de la Firma]. Todos los derechos reservados. | <a href="#">Aviso Legal y Política de Privacidad</a></p>
+        </div>
+    </footer>
+
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('is-active');
+            mainNav.classList.toggle('is-active');
+        });
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
