@@ -414,7 +414,7 @@
         .floating-whatsapp-btn {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 20px;
             width: 56px;
             height: 56px;
             background-color: #25D366;
@@ -428,6 +428,54 @@
         }
         .floating-whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.25); }
         .floating-whatsapp-btn svg { width: 28px; height: 28px; }
+
+        /* Estilos para la barra de promoción */
+        .promo-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            overflow: hidden;
+            position: relative;
+            z-index: 100;
+        }
+
+        .promo-text {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+
+        .promo-text span {
+            padding: 0 50px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-bar {
+                font-size: 12px;
+                padding: 10px 0;
+            }
+        }
+
+        /* Fix para el carrusel en móviles */
+        .blog-carousel {
+            overflow: hidden;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+        }
     </style>
 
 
