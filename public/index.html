@@ -90,10 +90,6 @@
             z-index: 1000
         }
 
-        .chat-opener:hover {
-            transform: scale(1.1)
-        }
-
         .chat-window {
             width: 90%;
             max-width: 527px;
@@ -371,20 +367,47 @@
             /* Color de estrella llena/hover */
         }
 
-        /* Estilos para el carrusel de blog */
-        .blog-carousel .swiper-slide {
-            height: auto;
-            display: flex;
+    /* Estilos para el carrusel de blog */
+    .blog-carousel { position: relative; }
+    .blog-carousel .swiper-wrapper { align-items: stretch; }
+    .blog-carousel .swiper-slide { height: auto; display: flex; }
+    .blog-carousel .swiper-slide > a { width: 100%; display: flex; flex-direction: column; height: 100%; }
+    /* Ubicar los bullets bajo el carrusel y centrados */
+        .blog-carousel .swiper-pagination { position: static; margin-top: 1.5rem; display: flex; justify-content: center; }
+        .blog-carousel .swiper-pagination-bullet {
+            width: 10px; height: 10px; margin: 0 6px;
+            background-color: #cbd5e1; opacity: 1;
+            transition: transform .2s ease, background-color .2s ease;
         }
-
-        .blog-carousel .swiper-slide>a {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+        .blog-carousel .swiper-pagination-bullet-active { background-color: #2563eb; transform: scale(1.2); }
+        /* Flechas de navegación del carrusel */
+        .blog-carousel .swiper-button-prev,
+        .blog-carousel .swiper-button-next {
+            position: absolute;
+            top: 45%;
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.95);
+            color: #1f2937; /* gray-800 */
+            box-shadow: 0 10px 20px rgba(0,0,0,.12);
+            border: 1px solid #e5e7eb; /* gray-200 */
+            display: none; /* oculto en mobile */
+            align-items: center;
+            justify-content: center;
         }
-
-        .blog-carousel .swiper-pagination-bullet-active {
-            background-color: #2563eb;
+        .blog-carousel .swiper-button-prev { left: -16px; }
+        .blog-carousel .swiper-button-next { right: -16px; }
+        .blog-carousel .swiper-button-prev::after,
+        .blog-carousel .swiper-button-next::after { font-size: 18px; font-weight: 700; }
+        .blog-carousel .swiper-button-prev,
+        .blog-carousel .swiper-button-next { transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+        .blog-carousel .swiper-button-prev:hover,
+        .blog-carousel .swiper-button-next:hover { background-color: #1f2937; color: #fff; transform: translateY(-1px); }
+        .blog-carousel .swiper-button-disabled { opacity: .4; pointer-events: none; }
+        @media (min-width: 768px) { /* md: */
+            .blog-carousel .swiper-button-prev,
+            .blog-carousel .swiper-button-next { display: flex; }
         }
 
         /* Botón flotante de WhatsApp */
@@ -579,10 +602,9 @@
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Optimización para que te
                             encuentren en Google</li>
                     </ul>
-                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Web%20Emprendedor."
-                        target="_blank"
+                    <a href="/planes/emprendedor.html"
                         class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
-                        ¡Consultar por este plan!
+                        Ver detalles del plan
                     </a>
                 </div>
 
@@ -629,10 +651,9 @@
                     </ul>
 
 
-                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Web%20Corporativa."
-                        target="_blank"
+                    <a href="/planes/corporativa.html"
                         class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
-                        ¡Consultar por este plan!
+                        Ver detalles del plan
                     </a>
                 </div>
 
@@ -675,10 +696,9 @@
                                 class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Carrito de compras fácil de usar
                         </li>
                     </ul>
-                    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quisiera%20consultar%20por%20el%20Plan%20Tienda%20Online."
-                        target="_blank"
+                    <a href="/planes/tienda.html"
                         class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
-                        ¡Consultar por este plan!
+                        Ver detalles del plan
                     </a>
                 </div>
             </div>
@@ -963,8 +983,11 @@
                         </a>
                     </div>
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination mt-8"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-prev" aria-label="Anterior"></div>
+                <div class="swiper-button-next" aria-label="Siguiente"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -1343,11 +1366,24 @@
             // --- INICIALIZACIÓN DEL CARRUSEL DE BLOG ---
             var swiper = new Swiper('.blog-carousel', {
                 slidesPerView: 1,
-                spaceBetween: 30,
+                spaceBetween: 24,
+                autoHeight: false,
+                loop: true,
+                speed: 600,
+                autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+                navigation: {
+                    nextEl: '.blog-carousel .swiper-button-next',
+                    prevEl: '.blog-carousel .swiper-button-prev',
+                },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.blog-carousel .swiper-pagination',
                     clickable: true,
                 },
+                keyboard: { enabled: true },
+                a11y: { enabled: true },
+                grabCursor: true,
+                watchOverflow: true,
+                threshold: 5,
                 breakpoints: {
                     640: {
                         slidesPerView: 2,
@@ -1355,10 +1391,20 @@
                     },
                     1024: {
                         slidesPerView: 3,
-                        spaceBetween: 30,
+                        spaceBetween: 24,
                     },
                 }
             });
+
+            // Respetar "reduced motion" del sistema: pausar autoplay si corresponde
+            try {
+                var mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+                if (mediaQuery.matches && swiper.autoplay) swiper.autoplay.stop();
+                mediaQuery.addEventListener('change', function(e){
+                    if (!swiper.autoplay) return;
+                    if (e.matches) swiper.autoplay.stop(); else swiper.autoplay.start();
+                });
+            } catch (_) {}
 
             // --- CÓDIGO DEL CONTADOR REGRESIVO ---
             const countdownElement = document.getElementById('countdown');
