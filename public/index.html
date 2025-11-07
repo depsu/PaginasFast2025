@@ -1310,13 +1310,13 @@
     </div>
 
     <!-- Modal de Reseñas -->
-    <div id="reviews-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+    <div id="reviews-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0" role="dialog" aria-modal="true" aria-labelledby="reviews-modal-title">
         <div class="bg-white rounded-2xl p-8 max-w-2xl w-full relative transform scale-95 transition-transform duration-300 review-modal-content">
             <button id="close-reviews-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
             
             <!-- Vista de Lista de Reseñas -->
             <div id="reviews-list-view">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Todas las Reseñas</h3>
+                <h3 id="reviews-modal-title" class="text-2xl font-bold text-gray-900 mb-4">Todas las Reseñas</h3>
                 <div id="all-reviews-container" class="reviews-list-container pr-4 -mr-4">
                     <!-- Las reseñas se cargarán aquí -->
                 </div>
@@ -2063,8 +2063,8 @@
                 const createStarIcons = (rating) => {
                     let stars = '';
                     for (let i = 0; i < 5; i++) {
-                        const icon = i < rating ? 'star" fill="currentColor' : 'star';
-                        stars += `<i data-feather="${icon}" class="w-5 h-5"></i>`;
+                        const isFilled = i < rating;
+                        stars += `<i data-feather="star" class="w-5 h-5"${isFilled ? ' fill="currentColor"' : ''}></i>`;
                     }
                     return `<div class="flex text-yellow-500">${stars}</div>`;
                 };
@@ -2087,28 +2087,59 @@
                     feather.replace();
                 };
 
+                const focusableSelector = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+                let lastFocusedElement = null;
+
                 const openReviewsModal = () => {
                     renderAllReviews();
                     reviewsListView.classList.remove('hidden');
                     addReviewView.classList.add('hidden');
                     successMessageView.classList.add('hidden');
                     reviewsModal.classList.remove('hidden');
+                    lastFocusedElement = document.activeElement;
                     setTimeout(() => {
                         reviewsModal.classList.add('opacity-100');
                         modalContent.classList.add('scale-100');
+                        const firstFocusable = modalContent.querySelector(focusableSelector);
+                        if (firstFocusable) firstFocusable.focus();
                     }, 10);
                 };
 
                 const closeReviewsModal = () => {
                     reviewsModal.classList.remove('opacity-100');
                     modalContent.classList.remove('scale-100');
-                    setTimeout(() => reviewsModal.classList.add('hidden'), 300);
+                    setTimeout(() => {
+                        reviewsModal.classList.add('hidden');
+                        if (lastFocusedElement) lastFocusedElement.focus();
+                    }, 300);
                 };
 
                 openModalBtn.addEventListener('click', openReviewsModal);
                 closeModalBtn.addEventListener('click', closeReviewsModal);
                 reviewsModal.addEventListener('click', (e) => {
                     if (e.target === reviewsModal) closeReviewsModal();
+                });
+
+                // Trap focus inside modal
+                reviewsModal.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        e.preventDefault();
+                        closeReviewsModal();
+                        return;
+                    }
+                    if (e.key === 'Tab') {
+                        const focusable = Array.from(modalContent.querySelectorAll(focusableSelector)).filter(el => !el.hasAttribute('disabled'));
+                        if (focusable.length === 0) return;
+                        const first = focusable[0];
+                        const last = focusable[focusable.length - 1];
+                        if (e.shiftKey && document.activeElement === first) {
+                            e.preventDefault();
+                            last.focus();
+                        } else if (!e.shiftKey && document.activeElement === last) {
+                            e.preventDefault();
+                            first.focus();
+                        }
+                    }
                 });
 
                 showAddReviewFormBtn.addEventListener('click', () => {
