@@ -18,9 +18,10 @@
     <meta name="description"
         content="Mientras lees esto, un cliente buscó tu servicio, encontró a tu competencia y cerró un trato. ¿Duele? Tengo el plan para que eso no vuelva a pasar. Hablemos.">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script src="https://unpkg.com/feather-icons" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <style>
         body {
@@ -461,6 +462,11 @@
             }
         }
 
+        /* Respetar reduced motion para la barra de promoción */
+        @media (prefers-reduced-motion: reduce) {
+            .promo-text { animation: none !important; transform: none !important; }
+        }
+
         @media (max-width: 768px) {
             .promo-bar {
                 font-size: 12px;
@@ -480,7 +486,8 @@
 
 
 
-    <link href="/output.css" rel="stylesheet">
+    <link rel="preload" href="/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/output.css"></noscript>
 
 </head>
 
@@ -756,7 +763,7 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/3 text-center">
-                    <img loading="lazy" src="/image/logoPaginasFast.webp"
+                    <img loading="lazy" decoding="async" width="256" height="256" src="/image/logoPaginasFast.webp"
                         alt="Logo de PaginasFast, diseño web rápido en Chile"
                         class="rounded-full w-64 h-64 mx-auto shadow-xl border-4 border-white object-cover">
                 </div>
@@ -936,7 +943,7 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/abogados.webp"
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/abogados.webp"
                         alt="Página web profesional para un moderno estudio de abogados"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
@@ -948,7 +955,7 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -959,7 +966,7 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" src="/image/dental.webp" alt="Página web para consulta médica"
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/dental.webp" alt="Página web para consulta médica"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -1406,53 +1413,74 @@
         </svg>
     </a>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer/>
+
+
+    <!-- Swiper se cargará de forma diferida -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
 
-            // --- INICIALIZACIÓN DEL CARRUSEL DE BLOG ---
-            var swiper = new Swiper('.blog-carousel', {
-                slidesPerView: 1,
-                spaceBetween: 24,
-                autoHeight: false,
-                loop: true,
-                speed: 600,
-                autoplay: { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
-                navigation: {
-                    nextEl: '.blog-carousel .swiper-button-next',
-                    prevEl: '.blog-carousel .swiper-button-prev',
-                },
-                pagination: {
-                    el: '.blog-carousel .swiper-pagination',
-                    clickable: true,
-                },
-                keyboard: { enabled: true },
-                a11y: { enabled: true },
-                grabCursor: true,
-                watchOverflow: true,
-                threshold: 5,
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
+            // Lazy-load Swiper cuando #blog aparece
+            const blogSection = document.getElementById('blog');
+            let swiperInstance = null;
+            function initSwiper() {
+                if (swiperInstance || typeof Swiper === 'undefined') return;
+                const isMobile = window.matchMedia('(max-width:640px)').matches;
+                swiperInstance = new Swiper('.blog-carousel', {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                    autoHeight: false,
+                    loop: !isMobile,
+                    speed: 600,
+                    autoplay: isMobile ? false : { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+                    navigation: {
+                        nextEl: '.blog-carousel .swiper-button-next',
+                        prevEl: '.blog-carousel .swiper-button-prev',
                     },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 24,
+                    pagination: {
+                        el: '.blog-carousel .swiper-pagination',
+                        clickable: true,
                     },
-                }
-            });
-
-            // Respetar "reduced motion" del sistema: pausar autoplay si corresponde
-            try {
-                var mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-                if (mediaQuery.matches && swiper.autoplay) swiper.autoplay.stop();
-                mediaQuery.addEventListener('change', function(e){
-                    if (!swiper.autoplay) return;
-                    if (e.matches) swiper.autoplay.stop(); else swiper.autoplay.start();
+                    keyboard: { enabled: true },
+                    a11y: { enabled: true },
+                    grabCursor: true,
+                    watchOverflow: true,
+                    threshold: 5,
+                    breakpoints: {
+                        640: { slidesPerView: 2, spaceBetween: 20 },
+                        1024: { slidesPerView: 3, spaceBetween: 24 },
+                    }
                 });
-            } catch (_) {}
+                try {
+                    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+                    if (mq.matches && swiperInstance.autoplay) swiperInstance.autoplay.stop();
+                    mq.addEventListener('change', e => {
+                        if (!swiperInstance.autoplay) return;
+                        if (e.matches) swiperInstance.autoplay.stop(); else swiperInstance.autoplay.start();
+                    });
+                } catch(_) {}
+            }
+            function loadSwiperAssets() {
+                if (window.Swiper) { initSwiper(); return; }
+                const css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = 'https://unpkg.com/swiper/swiper-bundle.min.css';
+                document.head.appendChild(css);
+                const js = document.createElement('script');
+                js.src = 'https://unpkg.com/swiper/swiper-bundle.min.js';
+                js.onload = initSwiper;
+                document.body.appendChild(js);
+            }
+            if ('IntersectionObserver' in window && blogSection) {
+                const io = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => { if (entry.isIntersecting) { loadSwiperAssets(); obs.disconnect(); } });
+                }, { rootMargin: '200px' });
+                io.observe(blogSection);
+            } else {
+                setTimeout(loadSwiperAssets, 1500);
+            }
 
             // --- CÓDIGO DEL CONTADOR REGRESIVO ---
             const countdownElement = document.getElementById('countdown');
