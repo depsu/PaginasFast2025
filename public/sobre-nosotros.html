@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-586BLT8Z');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sobre nosotros | PaginasFast – Equipo digital en Chile</title>
+  <meta name="description"
+        content="Conoce PaginasFast: un equipo pequeño en Chile que crea páginas web rápidas, tiendas online, campañas de Google Ads, contenido, redes sociales, chatbots con IA y automatizaciones enfocadas en resultados.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#2563eb',
+              dark: '#1d4ed8',
+              soft: '#eff4ff'
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 40px rgba(15,23,42,.18)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
+        #020617;
+    }
+
+    .logo-pill {
+      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+    }
+
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+      background-color: #25D366;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      z-index: 40;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+    }
+
+    .pill-soft {
+      border-radius: 9999px;
+      border: 1px solid rgba(148,163,184,.5);
+      background: rgba(15,23,42,.85);
+      font-size: 11px;
+      padding: .35rem .75rem;
+    }
+
+    .step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+          style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
+      </span>
+      <div class="flex flex-col leading-tight">
+        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="/servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
+      <a href="/portafolio" class="text-slate-300 hover:text-white transition-colors">Portafolio</a>
+      <a href="/reseñas" class="text-slate-300 hover:text-white transition-colors">Reseñas</a>
+      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+      <a href="/sobre-nosotros" class="text-primary font-semibold">Sobre nosotros</a>
+      <button
+        id="cta-header"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+        Agendar llamada
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="mobile-menu-button"
+            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+      <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
+      <a href="/portafolio" class="text-slate-300 hover:text-white">Portafolio</a>
+      <a href="/reseñas" class="text-slate-300 hover:text-white">Reseñas</a>
+      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+      <a href="/sobre-nosotros" class="text-primary font-semibold">Sobre nosotros</a>
+      <button
+        id="cta-header-mobile"
+        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+        Agendar llamada
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="hero-gradient min-h-screen">
+  <!-- HERO SOBRE NOSOTROS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16">
+    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+      <a href="/" class="hover:text-slate-100">Inicio</a>
+      <span>/</span>
+      <span class="text-slate-300">Sobre nosotros</span>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Equipo pequeño, foco en resultados reales para negocios en Chile.
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+          Sobre PaginasFast:
+          <span class="block text-primary">menos bla bla, más clientes para tu negocio.</span>
+        </h1>
+
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+          PaginasFast nace para ayudar a negocios reales (no startups de revista) a tener presencia digital
+          clara, simple y que realmente se traduzca en llamadas, reservas o ventas.
+        </p>
+
+        <p class="mt-3 text-sm text-slate-300 max-w-xl">
+          No queremos que pierdas semanas discutiendo colores mientras tu competencia ya aparece en Google
+          y responde en WhatsApp. Nuestro foco es combinar páginas rápidas, campañas bien pensadas,
+          contenido claro y algo de IA para que tus clientes te encuentren y entiendan lo que haces.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="pill-soft">Basados en Chile</span>
+          <span class="pill-soft">Enfoque en pymes y profesionales</span>
+          <span class="pill-soft">Hablar claro, sin tecnicismos</span>
+          <span class="pill-soft">Uso práctico de IA, no moda</span>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <button
+            onclick="scrollContact('Quiero hablar con el equipo')"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+            Hablar con el equipo
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
+            </svg>
+          </button>
+          <a href="/portafolio"
+             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-2.5 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+            Ver proyectos reales
+          </a>
+        </div>
+      </div>
+
+      <!-- Tarjeta “Quiénes somos” -->
+      <aside class="relative">
+        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-violet-500/30 to-emerald-400/30 opacity-60 blur-3xl"></div>
+        <article class="relative rounded-3xl border border-slate-800 bg-slate-950/90 p-5 sm:p-6 shadow-soft">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-2">
+            Quiénes somos
+          </p>
+          <p class="text-sm text-slate-300">
+            Somos un equipo pequeño que combina
+            <span class="font-semibold text-slate-50">desarrollo web</span>,
+            <span class="font-semibold text-slate-50">marketing digital</span> y
+            <span class="font-semibold text-slate-50">uso práctico de IA</span>.
+          </p>
+          <p class="mt-3 text-sm text-slate-300">
+            Hablamos en sencillo, somos fanáticos de medir y preferimos entregar cosas que funcionen
+            a mostrar presentaciones llenas de palabras bonitas.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs text-slate-300">
+            <li>• Nos enfocamos en negocios que quieren resultados, no “solo tener una web bonita”.</li>
+            <li>• Te acompañamos en la parte técnica (web, anuncios, automatizaciones) y en la estrategia.</li>
+            <li>• Trabajamos con proyectos en Chile y también con gente afuera que atiende público chileno.</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+  </section>
+
+  <!-- NUESTRO PORQUÉ / VALORES -->
+  <section class="border-t border-slate-800/80 bg-slate-950/96">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.1fr)] items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Por qué existe PaginasFast
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Desde afuera parece que “hacer una página web” es fácil. En la práctica, muchas pymes terminan
+            con webs lentas, incompletas o sin conexión con su realidad: no se ve su propuesta de valor,
+            los formularios no funcionan bien y nadie responde a tiempo los mensajes.
+          </p>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Vimos muchas veces el mismo problema: negocios buenos, con buenos servicios, que pierden clientes
+            por detalles digitales que se podrían haber resuelto de forma simple y ordenada.
+          </p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5 text-xs sm:text-sm">
+              <p class="font-semibold text-slate-50">Hablar claro</p>
+              <p class="mt-1.5 text-slate-300">
+                Nos preocupamos de que tú entiendas qué se está haciendo y por qué, sin esconder nada
+                detrás de tecnicismos.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5 text-xs sm:text-sm">
+              <p class="font-semibold text-slate-50">Priorizar impacto</p>
+              <p class="mt-1.5 text-slate-300">
+                Primero trabajamos en lo que puede generar más clientes o alivio en el corto plazo.
+                Luego pulimos detalles.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5 text-xs sm:text-sm">
+              <p class="font-semibold text-slate-50">Ser honestos</p>
+              <p class="mt-1.5 text-slate-300">
+                Si algo no tiene sentido para tu negocio (por muy de moda que esté), te lo decimos y buscamos alternativas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6">
+          <h3 class="text-sm font-semibold text-slate-50">
+            En qué creemos (valores en sencillo)
+          </h3>
+          <dl class="mt-4 space-y-3 text-xs sm:text-sm text-slate-300">
+            <div>
+              <dt class="font-semibold text-slate-100">1. Menos ruido, más foco</dt>
+              <dd class="mt-1">
+                Hay mil herramientas, redes y tendencias. Nos concentramos en las pocas que tienen más sentido
+                para tu tamaño de negocio y tu realidad.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-slate-100">2. Constancia antes que magia</dt>
+              <dd class="mt-1">
+                Un sitio rápido, anuncios bien medidos y respuestas a tiempo suelen pesar más que
+                la “táctica secreta” de turno.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-slate-100">3. IA como ayuda, no como reemplazo</dt>
+              <dd class="mt-1">
+                La usamos para acelerar tareas (textos, ideas, automatizaciones), pero siempre con criterio humano
+                y adaptado a tu negocio.
+              </dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-slate-100">4. Respeto por tu tiempo</dt>
+              <dd class="mt-1">
+                Sabemos que tienes mil cosas. Por eso nuestros procesos están pensados para pedirte
+                solo lo realmente necesario.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS (METODOLOGÍA) -->
+  <section class="border-t border-slate-800/80 bg-slate-950/98">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Cómo trabajamos, paso a paso
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+            La idea no es llenar tu calendario de reuniones, sino avanzar con claridad.
+            Este es el flujo básico que aplicamos a webs, anuncios, contenido e incluso IA.
+          </p>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-sm">
+          El objetivo es que en poco tiempo ya tengas algo andando (web, campañas, automatización)
+          y luego podamos ir mejorando con datos reales.
+        </p>
+      </div>
+
+      <div class="mt-7 grid gap-4 md:grid-cols-4 text-xs sm:text-sm">
+        <!-- Paso 1 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-2">
+          <div class="step-badge bg-blue-500/15 text-blue-300 border border-blue-500/50 mb-1">
+            1
+          </div>
+          <p class="font-semibold text-slate-50">Entender tu realidad</p>
+          <p class="text-slate-300">
+            Conversamos de forma simple: qué vendes, a quién, cómo te llegan los clientes hoy y qué
+            te gustaría que pasara en los próximos meses.
+          </p>
+        </div>
+        <!-- Paso 2 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-2">
+          <div class="step-badge bg-violet-500/15 text-violet-300 border border-violet-500/50 mb-1">
+            2
+          </div>
+          <p class="font-semibold text-slate-50">Diseñar una ruta simple</p>
+          <p class="text-slate-300">
+            Definimos un plan realista: qué tipo de web necesitas, qué canales usar, qué podemos automatizar
+            y qué dejamos para una segunda etapa.
+          </p>
+        </div>
+        <!-- Paso 3 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-2">
+          <div class="step-badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/50 mb-1">
+            3
+          </div>
+          <p class="font-semibold text-slate-50">Construir y lanzar</p>
+          <p class="text-slate-300">
+            Armamos la web, campañas o automatizaciones, probamos todo y lanzamos lo antes posible
+            para empezar a medir datos reales.
+          </p>
+        </div>
+        <!-- Paso 4 -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-2">
+          <div class="step-badge bg-amber-500/15 text-amber-300 border border-amber-500/50 mb-1">
+            4
+          </div>
+          <p class="font-semibold text-slate-50">Ajustar con datos</p>
+          <p class="text-slate-300">
+            Miramos qué consultas llegan, en qué parte se pierden los clientes, y ajustamos texto,
+            anuncios o procesos para mejorar cada mes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN ES / PARA QUIÉN NO -->
+  <section class="border-t border-slate-800/80 bg-slate-950/96">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="grid gap-7 md:grid-cols-2 items-start">
+        <div class="rounded-3xl border border-emerald-500/40 bg-emerald-500/5 p-5 sm:p-6">
+          <h3 class="text-sm sm:text-base font-semibold text-emerald-300">
+            Para quién sí es PaginasFast
+          </h3>
+          <ul class="mt-3 space-y-2 text-xs sm:text-sm text-slate-200">
+            <li>• Pymes, emprendedores y profesionales que ya venden algo y quieren ordenar su presencia digital.</li>
+            <li>• Negocios que no tienen tiempo para volverse expertos en marketing, pero sí pueden tomar decisiones.</li>
+            <li>• Personas que valoran hablar claro y ver avances concretos, aunque sean pequeños al inicio.</li>
+            <li>• Proyectos que quieren usar IA y automatizaciones de forma práctica, no como adorno.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-rose-500/40 bg-rose-500/5 p-5 sm:p-6">
+          <h3 class="text-sm sm:text-base font-semibold text-rose-300">
+            Para quién no es (y está bien)
+          </h3>
+          <ul class="mt-3 space-y-2 text-xs sm:text-sm text-slate-200">
+            <li>• Quienes buscan solo “una web bonita” sin intención de usarla para vender o comunicar mejor.</li>
+            <li>• Empresas que quieren resultados sin revisar mensajes, sin contestar clientes o sin ajustar procesos internos.</li>
+            <li>• Personas que esperan una “fórmula mágica” que funcione igual para todos los rubros.</li>
+            <li>• Proyectos que no están dispuestos a compartir datos mínimos para poder mejorar (consultas, ventas, etc.).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO / CULTURA -->
+  <section class="border-t border-slate-800/80 bg-slate-950/98">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.1fr)] items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Cómo nos gusta trabajar contigo
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Preferimos relaciones de largo plazo, aunque partamos por algo pequeño. Una landing, una primera campaña,
+            un chatbot sencillo… la idea es construir confianza paso a paso.
+          </p>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-300">
+            <li>• Hacemos preguntas incómodas cuando es necesario (por ejemplo, si tu oferta no está clara).</li>
+            <li>• Valoramos que nos cuentes la verdad de tu situación, incluso si los números no son “bonitos”.</li>
+            <li>• Preferimos decir “no sé, déjame revisarlo” antes que inventar una respuesta rápida.</li>
+            <li>• Celebramos contigo los avances (la primera reserva, el primer lead, la primera venta online).</li>
+          </ul>
+          <p class="mt-3 text-xs sm:text-sm text-slate-400">
+            Nuestro objetivo no es llenar un portafolio de diseños perfectos, sino ayudar a que tu negocio
+            tenga más aire, más control y menos caos digital.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6">
+          <h3 class="text-sm sm:text-base font-semibold text-slate-50">
+            Un equipo pequeño, con cabeza analítica y corazón de pyme
+          </h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            Somos personas que también han estado “al otro lado”: armando emprendimientos, lidiando con correos,
+            proveedores, bancos y clientes que escriben a las 11 de la noche.
+          </p>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Por eso tratamos de que la experiencia de trabajar contigo sea lo más liviana posible:
+          </p>
+          <ul class="mt-3 space-y-2 text-xs sm:text-sm text-slate-300">
+            <li>• Centralizamos información (documentos, accesos, resumen de métricas) para que no se pierda nada.</li>
+            <li>• Grabamos o resumimos los puntos importantes para que puedas revisarlos después con calma.</li>
+            <li>• Siempre dejamos claro “cuál es el siguiente paso” y quién tiene que hacerlo.</li>
+          </ul>
+          <p class="mt-3 text-xs sm:text-sm text-slate-400">
+            No queremos convertirte en experto en marketing digital. Queremos ser tu equipo digital de confianza,
+            que se preocupa de que todo esté andando y mejorando poco a poco.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI FAQ -->
+  <section class="border-t border-slate-800/80 bg-slate-950/96">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div class="max-w-md">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Preguntas frecuentes sobre trabajar con nosotros
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Cada proyecto es distinto, pero estas son algunas de las preguntas que más aparecen al inicio.
+          </p>
+        </div>
+
+        <div class="flex-1 space-y-4 text-xs sm:text-sm text-slate-300">
+          <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+            <summary class="cursor-pointer font-semibold text-slate-50">
+              ¿Necesito tener todo claro antes de contactarlos?
+            </summary>
+            <p class="mt-2">
+              No. De hecho, es normal llegar con una idea general y muchas dudas. Parte de nuestro trabajo
+              es ayudarte a ordenar la priorización: qué hacer primero, qué dejar para después y qué quizás no tiene sentido hacer.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+            <summary class="cursor-pointer font-semibold text-slate-50">
+              ¿Trabajan solo con negocios en Chile?
+            </summary>
+            <p class="mt-2">
+              Nuestro foco principal es Chile, pero podemos trabajar con proyectos de otros países,
+              especialmente si venden o atienden también a personas en Chile o Latinoamérica.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+            <summary class="cursor-pointer font-semibold text-slate-50">
+              ¿Cuánto se involucran en la parte de contenido y textos?
+            </summary>
+            <p class="mt-2">
+              Mucho. Te pedimos información base (servicios, precios, forma de trabajar) y desde ahí
+              proponemos textos claros que cualquier persona pueda entender. Podemos apoyarnos en IA,
+              pero siempre revisando y adaptando al lenguaje de tu rubro.
+            </p>
+          </details>
+
+          <details class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+            <summary class="cursor-pointer font-semibold text-slate-50">
+              ¿Qué pasa después de lanzar la web o las campañas?
+            </summary>
+            <p class="mt-2">
+              Podemos seguir acompañándote con mejoras, nuevas secciones, optimización de anuncios
+              o automatizaciones. También podemos dejar todo documentado si quieres que alguien de tu equipo
+              continúe.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL CONTACTO -->
+  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="max-w-xl">
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-50">
+            ¿Te gustaría que fuéramos tu “equipo digital” de confianza?
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            Escríbenos y cuéntanos en pocas líneas a qué te dedicas y qué te gustaría mejorar:
+            tu web, tu forma de conseguir clientes, tus procesos internos o todo lo anterior.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20%22Sobre%20nosotros%22%20de%20PaginasFast%20y%20quiero%20conversar%20mi%20caso."
+             target="_blank"
+             class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm sm:text-base font-semibold text-white hover:bg-emerald-600">
+            Hablar por WhatsApp
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 32 32" fill="currentColor">
+              <path d="M16.003 3C9.384 3 4 8.383 4 15.001c0 2.648.842 5.1 2.277 7.116L4 29l7.063-2.24A11.9 11.9 0 0 0 16.003 27C22.621 27 28 21.617 28 15 28 8.383 22.621 3 16.003 3zm6.417 17.17c-.268.755-1.322 1.385-2.022 1.47-.536.064-1.239.115-3.593-.77-3.02-1.187-4.957-4.102-5.112-4.295-.153-.191-1.22-1.62-1.22-3.087 0-1.466.77-2.183 1.043-2.484.269-.3.59-.375.787-.375.192 0 .384.002.553.01.178.008.415-.067.65.497.248.597.842 2.065.914 2.214.07.149.118.321.021.512-.095.191-.142.31-.279.476-.137.165-.29.369-.414.495-.137.137-.279.287-.12.562.153.256.68 1.118 1.46 1.81 1.004.897 1.85 1.184 2.116 1.316.268.128.425.108.58-.065.153-.174.67-.777.85-1.042.179-.264.358-.22.604-.132.246.087 1.562.736 1.83.87.269.128.446.191.512.298.07.107.07.625-.198 1.38z"/>
+            </svg>
+          </a>
+          <button
+            id="cta-bottom"
+            class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+            Agendar una videollamada
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+          <span class="text-[11px] text-slate-400">
+            Desarrollo web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones.
+          </span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+        <a href="/blog" class="hover:text-slate-200">Blog</a>
+        <a href="/sobre-nosotros" class="hover:text-slate-200">Sobre nosotros</a>
+        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+      </div>
+    </div>
+    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+      © 2025 PaginasFast. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- Botón WhatsApp flotante -->
+<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20la%20p%C3%A1gina%20%22Sobre%20nosotros%22%20de%20PaginasFast."
+   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+    <defs>
+      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#57d163"></stop>
+        <stop offset="1" stop-color="#23b33a"></stop>
+      </linearGradient>
+      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+      </filter>
+    </defs>
+    <path fill="#b3b3b3"
+          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+          filter="url(#a)"></path>
+    <path fill="#fff"
+          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+    </path>
+    <path fill="url(#b)"
+          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+    </path>
+    <path fill="#fff" fill-rule="evenodd"
+          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+    </path>
+  </svg>
+</a>
+
+<!-- JS -->
+<script>
+  // Menú móvil
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // Scroll a contacto
+  function scrollContact(context) {
+    const section = document.getElementById('contacto');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (context) {
+      console.log('Contexto de contacto:', context);
+    }
+  }
+
+  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact('Agendar videollamada desde Sobre nosotros'));
+</script>
+</body>
+</html>
