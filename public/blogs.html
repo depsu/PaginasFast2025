@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Google Tag Manager -->
   <script>
@@ -21,7 +22,7 @@
 
   <title>Blog | PaginasFast – Guías simples de marketing digital y web</title>
   <meta name="description"
-        content="Artículos simples y directos sobre páginas web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones para negocios en Chile.">
+    content="Artículos simples y directos sobre páginas web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones para negocios en Chile.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -62,14 +63,14 @@
 
     .hero-gradient {
       background:
-        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
-        radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
-        radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
+        radial-gradient(circle at top left, rgba(59, 130, 246, .25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129, 140, 248, .2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56, 189, 248, .14), transparent 55%),
         #020617;
     }
 
     .logo-pill {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .45), rgba(37, 99, 235, .9));
     }
 
     .floating-whatsapp-btn {
@@ -83,22 +84,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, .35);
       z-index: 40;
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
     .floating-whatsapp-btn:hover {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
     }
 
     .tag-pill {
       font-size: 11px;
       border-radius: 9999px;
       padding: 0.25rem 0.6rem;
-      border: 1px solid rgba(148,163,184,.6);
-      background: rgba(15,23,42,.85);
+      border: 1px solid rgba(148, 163, 184, .6);
+      background: rgba(15, 23, 42, .85);
     }
 
     .filter-pill {
@@ -106,703 +107,704 @@
     }
 
     .filter-pill.active {
-      background-color: rgba(15,23,42,.95);
+      background-color: rgba(15, 23, 42, .95);
       color: #e5e7eb;
       border-color: #64748b;
     }
 
     .filter-pill.inactive {
-      background-color: rgba(15,23,42,.75);
+      background-color: rgba(15, 23, 42, .75);
       color: #cbd5f5;
       border-color: #475569;
     }
   </style>
 </head>
+
 <body class="bg-slate-950 text-slate-50 antialiased">
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
-          style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-2">
-      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
-      </span>
-      <div class="flex flex-col leading-tight">
-        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="/servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
-      <a href="/portafolio" class="text-slate-300 hover:text-white transition-colors">Portafolio</a>
-      <a href="/reseñas" class="text-slate-300 hover:text-white transition-colors">Reseñas</a>
-      <a href="/blog" class="text-primary font-semibold">Blog</a>
-      <button
-        id="cta-header"
-        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
-        Agendar llamada
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile button -->
-    <button id="mobile-menu-button"
-            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-      <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
-      <a href="/portafolio" class="text-slate-300 hover:text-white">Portafolio</a>
-      <a href="/reseñas" class="text-slate-300 hover:text-white">Reseñas</a>
-      <a href="/blog" class="text-primary font-semibold">Blog</a>
-      <button
-        id="cta-header-mobile"
-        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
-        Agendar llamada
-      </button>
-    </div>
-  </div>
-</header>
-
-<main class="hero-gradient min-h-screen">
-  <!-- HERO BLOG -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16">
-    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
-      <a href="/" class="hover:text-slate-100">Inicio</a>
-      <span>/</span>
-      <span class="text-slate-300">Blog</span>
-    </div>
-
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
-      <div>
-        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Blog para gente que quiere resultados, no tecnicismos.
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
-          Blog de PaginasFast:
-          <span class="block text-primary">marketing digital explicado en sencillo.</span>
-        </h1>
-
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
-          Artículos cortos y claros sobre páginas web, tiendas online, campañas de Google Ads,
-          redes sociales, SEO, chatbots de IA y automatizaciones para negocios en Chile.
-        </p>
-
-        <div class="mt-6 grid gap-4 sm:grid-cols-3 max-w-2xl text-xs sm:text-sm text-slate-300">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
-            <p class="font-semibold text-slate-50">Lenguaje simple</p>
-            <p class="mt-1.5">
-              Sin humo ni palabras raras. Ejemplos cercanos a la realidad de pymes y emprendedores.
-            </p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
-            <p class="font-semibold text-slate-50">Aplicable a tu negocio</p>
-            <p class="mt-1.5">
-              En cada artículo te damos ideas concretas para implementar, aunque tengas poco tiempo.
-            </p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
-            <p class="font-semibold text-slate-50">Foco en resultados</p>
-            <p class="mt-1.5">
-              Todo lo que publicamos apunta a conseguir más clientes o mejores procesos, no solo “likes”.
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#lista-articulos"
-             class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Ver artículos
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M19.5 8.25 12 15.75 4.5 8.25"/>
-            </svg>
-          </a>
-          <a href="#newsletter"
-             class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-2.5 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-            Recibir tips por correo
-          </a>
-        </div>
-      </div>
-
-      <!-- Artículo destacado -->
-      <aside class="relative">
-        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-violet-500/30 to-emerald-400/30 opacity-60 blur-3xl"></div>
-        <article class="relative rounded-3xl border border-slate-800 bg-slate-950/90 p-5 sm:p-6 shadow-soft">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-2">
-            Artículo destacado
-          </p>
-          <a href="/blog/primera-pagina-web-sin-complicarse"
-             class="block">
-            <h2 class="text-lg sm:text-xl font-semibold text-slate-50">
-              Cómo decidir si tu negocio realmente necesita una página web (y qué tipo)
-            </h2>
-            <p class="mt-2 text-sm text-slate-300">
-              No todos los negocios necesitan lo mismo: a veces basta una landing simple, otras una tienda
-              o un sitio más completo. En este artículo te ayudamos a tomar la decisión con ejemplos reales.
-            </p>
-          </a>
-
-          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-pill">Guía básica</span>
-              <span class="tag-pill">Sitios web</span>
-              <span class="tag-pill">Emprendedores</span>
-            </div>
-            <p>Lectura: 7 min</p>
-          </div>
-        </article>
-      </aside>
-    </div>
-  </section>
-
-  <!-- FILTROS Y BUSCADOR -->
-  <section class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
-        <!-- Buscador -->
-        <div class="w-full lg:max-w-md">
-          <label for="search-input" class="block text-xs font-medium text-slate-300 mb-1.5">
-            Buscar en el blog
-          </label>
-          <div class="relative">
-            <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-500">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                   viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M21 21l-4.35-4.35M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/>
-              </svg>
-            </span>
-            <input id="search-input" type="text"
-                   placeholder="Ej: Google Ads, tienda online, SEO, IA…"
-                   class="block w-full rounded-2xl border border-slate-700 bg-slate-900/80 pl-9 pr-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-          </div>
-          <p class="mt-1 text-[11px] text-slate-500">
-            Filtra por tema, herramienta o tipo de problema.
-          </p>
-        </div>
-
-        <!-- Filtros -->
-        <div class="flex-1">
-          <p class="text-xs font-medium text-slate-300 mb-2">
-            Filtrar por categoría
-          </p>
-          <div class="flex flex-wrap gap-2 text-[11px] sm:text-xs">
-            <button class="filter-pill active rounded-full border px-3 py-1.5"
-                    data-filter="all">
-              Todo
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="web">
-              Sitios web
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="tienda">
-              Tiendas online
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="ads">
-              Google Ads
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="redes">
-              Redes sociales
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="seo">
-              SEO / contenidos
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="ia">
-              IA / chatbots
-            </button>
-            <button class="filter-pill inactive rounded-full border px-3 py-1.5"
-                    data-filter="automatizacion">
-              Automatizaciones
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LISTA DE ARTÍCULOS -->
-  <section id="lista-articulos" class="border-t border-slate-800/80 bg-slate-950/98">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-      <div class="grid gap-6 lg:grid-cols-3">
-        <!-- Columna 1 -->
-        <div class="space-y-4">
-          <!-- Artículo 1 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="web"
-                   data-title="cómo decidir si tu negocio necesita página web"
-                   data-excerpt="ayuda a decidir si tu negocio necesita una web y de qué tipo">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Sitios web</span>
-              <span>Lectura: 7 min</span>
-            </div>
-            <a href="/blog/primera-pagina-web-sin-complicarse" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                Cómo decidir si tu negocio necesita una página web (y qué tipo)
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Diferencias entre landing page, sitio institucional y tienda online, con ejemplos de casos típicos en Chile.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Guía / Nivel inicial</p>
-              <p>Ideal para: servicios, profesionales, turismo.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 2 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="ads"
-                   data-title="errores comunes google ads pymes chile"
-                   data-excerpt="errores de campañas en google ads que queman presupuesto">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Google Ads</span>
-              <span>Lectura: 6 min</span>
-            </div>
-            <a href="/blog/errores-comunes-google-ads-pymes-chile" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                7 errores comunes en Google Ads que hacen que tu presupuesto se evapore
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Desde campañas sin límite claro hasta mandar tráfico a páginas lentas o confusas.
-                Explicado con ejemplos simples.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Errores / Checklist</p>
-              <p>Ideal para: quienes ya pautan o van a partir.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 3 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="ia automatizacion"
-                   data-title="usos simples de chatbots ia en negocios chilenos"
-                   data-excerpt="ejemplos concretos de uso de ia en atención de clientes">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">IA / chatbots</span>
-              <span>Lectura: 5 min</span>
-            </div>
-            <a href="/blog/ideas-para-usar-chatbots-ia-en-tu-negocio" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                5 usos simples de chatbots con IA para negocios chilenos
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Desde responder preguntas frecuentes hasta precalificar clientes antes de agendar una llamada.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Ideas / Aplicaciones</p>
-              <p>Ideal para: servicios, educación, turismo.</p>
-            </div>
-          </article>
-        </div>
-
-        <!-- Columna 2 -->
-        <div class="space-y-4">
-          <!-- Artículo 4 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="tienda"
-                   data-title="checklist para lanzar tienda online chile"
-                   data-excerpt="pasos básicos para lanzar tienda que no espante clientes">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Tiendas online</span>
-              <span>Lectura: 8 min</span>
-            </div>
-            <a href="/blog/checklist-para-lanzar-tu-primera-tienda-online" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                Checklist básico para lanzar tu primera tienda online sin espantar clientes
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Lo mínimo razonable que una tienda debería tener antes de invertir en publicidad:
-                medios de pago, fotos, textos y tiempos de entrega claros.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Checklist / Práctico</p>
-              <p>Ideal para: ecommerce que recién arranca.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 5 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="seo"
-                   data-title="seo contenido para pymes chile"
-                   data-excerpt="cómo escribir contenido que google entienda y clientes también">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">SEO / contenidos</span>
-              <span>Lectura: 9 min</span>
-            </div>
-            <a href="/blog/seo-contenidos-para-pymes-en-chile" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                SEO explicado con peras y manzanas para pymes en Chile
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Qué es realmente el SEO, qué cosas sí valen la pena hacer y qué promesas deberías mirar con sospecha.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Conceptos / Ejemplos</p>
-              <p>Ideal para: negocios locales, profesionales.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 6 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="automatizacion"
-                   data-title="automatizaciones sencillas que ahorran tiempo"
-                   data-excerpt="ideas de automatización para tareas repetitivas">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Automatizaciones</span>
-              <span>Lectura: 6 min</span>
-            </div>
-            <a href="/blog/automatizaciones-simples-para-pymes" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                Automatizaciones simples que te ahorran horas cada mes
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Ejemplos aterrizados: desde guardar leads en una hoja de cálculo hasta enviar resúmenes de consultas por correo.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Ideas / Paso a paso</p>
-              <p>Ideal para: quienes se sienten “atrapados” en tareas repetitivas.</p>
-            </div>
-          </article>
-        </div>
-
-        <!-- Columna 3 -->
-        <div class="space-y-4">
-          <!-- Artículo 7 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="redes"
-                   data-title="qué publicar en redes sociales si vendes servicios"
-                   data-excerpt="ideas de contenido para servicios profesionales y pymes">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Redes sociales</span>
-              <span>Lectura: 5 min</span>
-            </div>
-            <a href="/blog/que-publicar-en-redes-si-vendes-servicios" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                ¿Qué publicar en redes si vendes servicios y no quieres parecer un spammer?
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Ideas de contenido para estudios jurídicos, contadores, terapeutas, centros educacionales y más.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Ideas / Estrategia</p>
-              <p>Ideal para: servicios profesionales.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 8 -->
-          <article class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="web ads"
-                   data-title="por qué tu sitio no convierte aunque tenga visitas"
-                   data-excerpt="analizamos problemas de conversión y llamadas a la acción">
-            <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
-              <span class="tag-pill">Sitios web</span>
-              <span>Lectura: 7 min</span>
-            </div>
-            <a href="/blog/por-que-tu-sitio-no-convierte" class="block">
-              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-                5 motivos por los que tu sitio recibe visitas pero casi nadie te escribe
-              </h2>
-              <p class="mt-2 text-xs sm:text-sm text-slate-300">
-                Problemas típicos de mensajes confusos, llamados a la acción escondidos y formularios que espantan clientes.
-              </p>
-            </a>
-            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
-              <p>Diagnóstico / Checklist</p>
-              <p>Ideal para: quienes ya tienen web activa.</p>
-            </div>
-          </article>
-
-          <!-- Artículo 9 (próximamente) -->
-          <article class="post-card rounded-3xl border border-dashed border-slate-700 bg-slate-900/60 p-4 sm:p-5 flex flex-col h-full"
-                   data-category="web tienda ads redes seo ia automatizacion"
-                   data-title="próximos artículos"
-                   data-excerpt="temas futuros del blog paginasfast">
-            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-2">
-              Próximos temas
-            </p>
-            <h2 class="text-sm sm:text-base font-semibold text-slate-50">
-              Lo que se viene en el blog
-            </h2>
-            <p class="mt-2 text-xs sm:text-sm text-slate-300">
-              Historias de proyectos reales (con números), guías por rubro y ejemplos de mejoras paso a paso.
-            </p>
-            <ul class="mt-3 text-[11px] text-slate-400 space-y-1.5">
-              <li>• Cómo preparar tu negocio antes de invertir en anuncios.</li>
-              <li>• Casos reales de mejora de conversión en landing pages.</li>
-              <li>• Ejemplos de automatizaciones pequeñas que hacen gran diferencia.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-
-      <p class="mt-8 text-xs sm:text-sm text-slate-400 max-w-3xl">
-        Si te interesa que escribamos un artículo sobre un tema específico (por ejemplo un rubro o problema puntual),
-        puedes contarnos al final de esta página o por WhatsApp. Eso nos ayuda a priorizar contenidos que realmente te sirven.
-      </p>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER / SUGERIR TEMA -->
-  <section id="newsletter" class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            ¿Quieres recibir estos contenidos ordenados y explicados según tu caso?
-          </h2>
-          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-            Puedes dejar tu correo y te enviaremos solo correos útiles:
-            guías, ejemplos reales y mejoras que podrías aplicar en tu negocio.
-            Nada de spam diario ni mails vacíos.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li>• Máximo 1–2 correos al mes.</li>
-            <li>• Enfocados en pymes y profesionales en Chile.</li>
-            <li>• Puedes darte de baja con un clic.</li>
-          </ul>
-        </div>
-
-        <!-- Form newsletter -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
-            Recibir tips por correo
-          </p>
-          <form id="newsletter-form" class="mt-3 space-y-3">
-            <div>
-              <label for="newsletter-email" class="block text-xs font-medium text-slate-300 mb-1">
-                Correo
-              </label>
-              <input id="newsletter-email" name="email" type="email" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                     placeholder="Ej: nombre@tucorreo.cl">
-            </div>
-            <div>
-              <label for="newsletter-business" class="block text-xs font-medium text-slate-300 mb-1">
-                Tipo de negocio (opcional)
-              </label>
-              <input id="newsletter-business" name="business" type="text"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                     placeholder="Ej: cabañas, estudio jurídico, tienda online, colegio…">
-            </div>
-            <div>
-              <label for="newsletter-topic" class="block text-xs font-medium text-slate-300 mb-1">
-                Tema que más te interesa
-              </label>
-              <select id="newsletter-topic" name="topic"
-                      class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                <option value="">Seleccionar…</option>
-                <option value="web">Sitios web</option>
-                <option value="tienda">Tiendas online</option>
-                <option value="ads">Google Ads</option>
-                <option value="redes">Redes sociales</option>
-                <option value="seo">SEO / contenidos</option>
-                <option value="ia">IA / chatbots</option>
-                <option value="automatizacion">Automatizaciones</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <button type="submit"
-                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Quiero recibir correos útiles
-            </button>
-            <p class="text-[11px] text-slate-500">
-              Usaremos tu correo solo para enviarte contenido de PaginasFast. Nada de listas compradas ni reenvíos raros.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL CONTACTO -->
-  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div class="max-w-xl">
-          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-50">
-            ¿Te gustaría que revisáramos tu web, campañas o ideas de automatización?
-          </h2>
-          <p class="mt-2 text-sm sm:text-base text-slate-300">
-            Puedes escribirnos por WhatsApp o agendar una llamada para revisar tu situación
-            y ver qué mejoras tienen más sentido para tu negocio.
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20el%20blog%20de%20PaginasFast%20y%20quiero%20revisar%20mi%20caso."
-             target="_blank"
-             class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm sm:text-base font-semibold text-white hover:bg-emerald-600">
-            Hablar por WhatsApp
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 32 32" fill="currentColor">
-              <path d="M16.003 3C9.384 3 4 8.383 4 15.001c0 2.648.842 5.1 2.277 7.116L4 29l7.063-2.24A11.9 11.9 0 0 0 16.003 27C22.621 27 28 21.617 28 15 28 8.383 22.621 3 16.003 3zm6.417 17.17c-.268.755-1.322 1.385-2.022 1.47-.536.064-1.239.115-3.593-.77-3.02-1.187-4.957-4.102-5.112-4.295-.153-.191-1.22-1.62-1.22-3.087 0-1.466.77-2.183 1.043-2.484.269-.3.59-.375.787-.375.192 0 .384.002.553.01.178.008.415-.067.65.497.248.597.842 2.065.914 2.214.07.149.118.321.021.512-.095.191-.142.31-.279.476-.137.165-.29.369-.414.495-.137.137-.279.287-.12.562.153.256.68 1.118 1.46 1.81 1.004.897 1.85 1.184 2.116 1.316.268.128.425.108.58-.065.153-.174.67-.777.85-1.042.179-.264.358-.22.604-.132.246.087 1.562.736 1.83.87.269.128.446.191.512.298.07.107.07.625-.198 1.38z"/>
-            </svg>
-          </a>
-          <button
-            id="cta-bottom"
-            class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-            Agendar una videollamada
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-800 bg-slate-950">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
-          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
         </span>
         <div class="flex flex-col leading-tight">
-          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
-          <span class="text-[11px] text-slate-400">
-            Desarrollo web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones.
-          </span>
+          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
         </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
+        <a href="/portafolio" class="text-slate-300 hover:text-white transition-colors">Portafolio</a>
+        <a href="/reseñas" class="text-slate-300 hover:text-white transition-colors">Reseñas</a>
+        <a href="/blog" class="text-primary font-semibold">Blog</a>
+        <button id="cta-header"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          Agendar llamada
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
       </div>
-      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
-        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
-        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
-        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
-        <a href="/blog" class="hover:text-slate-200">Blog</a>
-        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
+        <a href="/portafolio" class="text-slate-300 hover:text-white">Portafolio</a>
+        <a href="/reseñas" class="text-slate-300 hover:text-white">Reseñas</a>
+        <a href="/blog" class="text-primary font-semibold">Blog</a>
+        <button id="cta-header-mobile"
+          class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+          Agendar llamada
+        </button>
       </div>
     </div>
-    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
-      © 2025 PaginasFast. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+  </header>
 
-<!-- Botón WhatsApp flotante -->
-<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20el%20blog%20de%20PaginasFast%20y%20quiero%20conversar%20un%20proyecto."
-   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
-    <path d="M16.003 3C9.384 3 4 8.383 4 15.001c0 2.648.842 5.1 2.277 7.116L4 29l7.063-2.24A11.9 11.9 0 0 0 16.003 27C22.621 27 28 21.617 28 15 28 8.383 22.621 3 16.003 3zm6.417 17.17c-.268.755-1.322 1.385-2.022 1.47-.536.064-1.239.115-3.593-.77-3.02-1.187-4.957-4.102-5.112-4.295-.153-.191-1.22-1.62-1.22-3.087 0-1.466.77-2.183 1.043-2.484.269-.3.59-.375.787-.375.192 0 .384.002.553.01.178.008.415-.067.65.497.248.597.842 2.065.914 2.214.07.149.118.321.021.512-.095.191-.142.31-.279.476-.137.165-.29.369-.414.495-.137.137-.279.287-.12.562.153.256.68 1.118 1.46 1.81 1.004.897 1.85 1.184 2.116 1.316.268.128.425.108.58-.065.153-.174.67-.777.85-1.042.179-.264.358-.22.604-.132.246.087 1.562.736 1.83.87.269.128.446.191.512.298.07.107.07.625-.198 1.38z"/>
-  </svg>
-</a>
+  <main class="hero-gradient min-h-screen">
+    <!-- HERO BLOG -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16">
+      <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+        <a href="/" class="hover:text-slate-100">Inicio</a>
+        <span>/</span>
+        <span class="text-slate-300">Blog</span>
+      </div>
 
-<!-- JS -->
-<script>
-  // Menú móvil
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Blog para gente que quiere resultados, no tecnicismos.
+          </div>
 
-  // Scroll a contacto
-  function scrollContact(context) {
-    const section = document.getElementById('contacto');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    if (context) {
-      console.log('Contexto de contacto:', context);
-    }
-  }
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+            Blog de PaginasFast:
+            <span class="block text-primary">marketing digital explicado en sencillo.</span>
+          </h1>
 
-  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact('Agendar videollamada desde blog'));
+          <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+            Artículos cortos y claros sobre páginas web, tiendas online, campañas de Google Ads,
+            redes sociales, SEO, chatbots de IA y automatizaciones para negocios en Chile.
+          </p>
 
-  // Filtros y buscador
-  const filterPills = document.querySelectorAll('.filter-pill');
-  const postCards = document.querySelectorAll('.post-card');
-  const searchInput = document.getElementById('search-input');
+          <div class="mt-6 grid gap-4 sm:grid-cols-3 max-w-2xl text-xs sm:text-sm text-slate-300">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+              <p class="font-semibold text-slate-50">Lenguaje simple</p>
+              <p class="mt-1.5">
+                Sin humo ni palabras raras. Ejemplos cercanos a la realidad de pymes y emprendedores.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+              <p class="font-semibold text-slate-50">Aplicable a tu negocio</p>
+              <p class="mt-1.5">
+                En cada artículo te damos ideas concretas para implementar, aunque tengas poco tiempo.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-3.5">
+              <p class="font-semibold text-slate-50">Foco en resultados</p>
+              <p class="mt-1.5">
+                Todo lo que publicamos apunta a conseguir más clientes o mejores procesos, no solo “likes”.
+              </p>
+            </div>
+          </div>
 
-  function aplicarFiltros() {
-    const activePill = document.querySelector('.filter-pill.active');
-    const filter = activePill ? activePill.getAttribute('data-filter') : 'all';
-    const query = (searchInput?.value || '').toLowerCase().trim();
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#lista-articulos"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Ver artículos
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25 12 15.75 4.5 8.25" />
+              </svg>
+            </a>
+            <a href="#newsletter"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-2.5 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              Recibir tips por correo
+            </a>
+          </div>
+        </div>
 
-    postCards.forEach(card => {
-      const categories = (card.getAttribute('data-category') || '').split(' ');
-      const title = (card.getAttribute('data-title') || '').toLowerCase();
-      const excerpt = (card.getAttribute('data-excerpt') || '').toLowerCase();
+        <!-- Artículo destacado -->
+        <aside class="relative">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-violet-500/30 to-emerald-400/30 opacity-60 blur-3xl">
+          </div>
+          <article class="relative rounded-3xl border border-slate-800 bg-slate-950/90 p-5 sm:p-6 shadow-soft">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-2">
+              Artículo destacado
+            </p>
+            <a href="/blog/primera-pagina-web-sin-complicarse" class="block">
+              <h2 class="text-lg sm:text-xl font-semibold text-slate-50">
+                Cómo decidir si tu negocio realmente necesita una página web (y qué tipo)
+              </h2>
+              <p class="mt-2 text-sm text-slate-300">
+                No todos los negocios necesitan lo mismo: a veces basta una landing simple, otras una tienda
+                o un sitio más completo. En este artículo te ayudamos a tomar la decisión con ejemplos reales.
+              </p>
+            </a>
 
-      const coincideCategoria = filter === 'all' || categories.includes(filter);
-      const coincideBusqueda = !query || title.includes(query) || excerpt.includes(query);
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
+              <div class="flex flex-wrap gap-2">
+                <span class="tag-pill">Guía básica</span>
+                <span class="tag-pill">Sitios web</span>
+                <span class="tag-pill">Emprendedores</span>
+              </div>
+              <p>Lectura: 7 min</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
 
-      if (coincideCategoria && coincideBusqueda) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
+    <!-- FILTROS Y BUSCADOR -->
+    <section class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+          <!-- Buscador -->
+          <div class="w-full lg:max-w-md">
+            <label for="search-input" class="block text-xs font-medium text-slate-300 mb-1.5">
+              Buscar en el blog
+            </label>
+            <div class="relative">
+              <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 21l-4.35-4.35M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" />
+                </svg>
+              </span>
+              <input id="search-input" type="text" placeholder="Ej: Google Ads, tienda online, SEO, IA…"
+                class="block w-full rounded-2xl border border-slate-700 bg-slate-900/80 pl-9 pr-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <p class="mt-1 text-[11px] text-slate-500">
+              Filtra por tema, herramienta o tipo de problema.
+            </p>
+          </div>
 
-  filterPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      filterPills.forEach(p => {
-        p.classList.remove('active');
-        p.classList.add('inactive');
+          <!-- Filtros -->
+          <div class="flex-1">
+            <p class="text-xs font-medium text-slate-300 mb-2">
+              Filtrar por categoría
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px] sm:text-xs">
+              <button class="filter-pill active rounded-full border px-3 py-1.5" data-filter="all">
+                Todo
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="web">
+                Sitios web
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="tienda">
+                Tiendas online
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="ads">
+                Google Ads
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="redes">
+                Redes sociales
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="seo">
+                SEO / contenidos
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="ia">
+                IA / chatbots
+              </button>
+              <button class="filter-pill inactive rounded-full border px-3 py-1.5" data-filter="automatizacion">
+                Automatizaciones
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA DE ARTÍCULOS -->
+    <section id="lista-articulos" class="border-t border-slate-800/80 bg-slate-950/98">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="grid gap-6 lg:grid-cols-3">
+            <!-- Artículo 1 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="web" data-title="cómo decidir si tu negocio necesita página web"
+              data-excerpt="ayuda a decidir si tu negocio necesita una web y de qué tipo">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Sitios web</span>
+                <span>Lectura: 7 min</span>
+              </div>
+              <a href="/blog/primera-pagina-web-sin-complicarse" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  Cómo decidir si tu negocio necesita una página web (y qué tipo)
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Diferencias entre landing page, sitio institucional y tienda online, con ejemplos de casos típicos en
+                  Chile.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Guía / Nivel inicial</p>
+                <p>Ideal para: servicios, profesionales, turismo.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="ads" data-title="errores comunes google ads pymes chile"
+              data-excerpt="errores de campañas en google ads que queman presupuesto">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Google Ads</span>
+                <span>Lectura: 6 min</span>
+              </div>
+              <a href="/blog/errores-comunes-google-ads-pymes-chile" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  7 errores comunes en Google Ads que hacen que tu presupuesto se evapore
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Desde campañas sin límite claro hasta mandar tráfico a páginas lentas o confusas.
+                  Explicado con ejemplos simples.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Errores / Checklist</p>
+                <p>Ideal para: quienes ya pautan o van a partir.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="ia automatizacion" data-title="usos simples de chatbots ia en negocios chilenos"
+              data-excerpt="ejemplos concretos de uso de ia en atención de clientes">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">IA / chatbots</span>
+                <span>Lectura: 5 min</span>
+              </div>
+              <a href="/blog/ideas-para-usar-chatbots-ia-en-tu-negocio" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  5 usos simples de chatbots con IA para negocios chilenos
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Desde responder preguntas frecuentes hasta precalificar clientes antes de agendar una llamada.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Ideas / Aplicaciones</p>
+                <p>Ideal para: servicios, educación, turismo.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="tienda" data-title="checklist para lanzar tienda online chile"
+              data-excerpt="pasos básicos para lanzar tienda que no espante clientes">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Tiendas online</span>
+                <span>Lectura: 8 min</span>
+              </div>
+              <a href="/blog/checklist-para-lanzar-tu-primera-tienda-online" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  Checklist básico para lanzar tu primera tienda online sin espantar clientes
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Lo mínimo razonable que una tienda debería tener antes de invertir en publicidad:
+                  medios de pago, fotos, textos y tiempos de entrega claros.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Checklist / Práctico</p>
+                <p>Ideal para: ecommerce que recién arranca.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="seo" data-title="seo contenido para pymes chile"
+              data-excerpt="cómo escribir contenido que google entienda y clientes también">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">SEO / contenidos</span>
+                <span>Lectura: 9 min</span>
+              </div>
+              <a href="/blog/seo-contenidos-para-pymes-en-chile" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  SEO explicado con peras y manzanas para pymes en Chile
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Qué es realmente el SEO, qué cosas sí valen la pena hacer y qué promesas deberías mirar con sospecha.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Conceptos / Ejemplos</p>
+                <p>Ideal para: negocios locales, profesionales.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="automatizacion" data-title="automatizaciones sencillas que ahorran tiempo"
+              data-excerpt="ideas de automatización para tareas repetitivas">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Automatizaciones</span>
+                <span>Lectura: 6 min</span>
+              </div>
+              <a href="/blog/automatizaciones-simples-para-pymes" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  Automatizaciones simples que te ahorran horas cada mes
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Ejemplos aterrizados: desde guardar leads en una hoja de cálculo hasta enviar resúmenes de consultas
+                  por correo.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Ideas / Paso a paso</p>
+                <p>Ideal para: quienes se sienten “atrapados” en tareas repetitivas.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 7 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="redes" data-title="qué publicar en redes sociales si vendes servicios"
+              data-excerpt="ideas de contenido para servicios profesionales y pymes">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Redes sociales</span>
+                <span>Lectura: 5 min</span>
+              </div>
+              <a href="/blog/que-publicar-en-redes-si-vendes-servicios" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  ¿Qué publicar en redes si vendes servicios y no quieres parecer un spammer?
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Ideas de contenido para estudios jurídicos, contadores, terapeutas, centros educacionales y más.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Ideas / Estrategia</p>
+                <p>Ideal para: servicios profesionales.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 8 -->
+            <article
+              class="post-card rounded-3xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 flex flex-col "
+              data-category="web ads" data-title="por qué tu sitio no convierte aunque tenga visitas"
+              data-excerpt="analizamos problemas de conversión y llamadas a la acción">
+              <div class="flex items-center justify-between gap-3 text-[11px] text-slate-400 mb-2">
+                <span class="tag-pill">Sitios web</span>
+                <span>Lectura: 7 min</span>
+              </div>
+              <a href="/blog/por-que-tu-sitio-no-convierte" class="block">
+                <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                  5 motivos por los que tu sitio recibe visitas pero casi nadie te escribe
+                </h2>
+                <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                  Problemas típicos de mensajes confusos, llamados a la acción escondidos y formularios que espantan
+                  clientes.
+                </p>
+              </a>
+              <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400">
+                <p>Diagnóstico / Checklist</p>
+                <p>Ideal para: quienes ya tienen web activa.</p>
+              </div>
+            </article>
+
+            <!-- Artículo 9 (próximamente) -->
+            <article
+              class="post-card rounded-3xl border border-dashed border-slate-700 bg-slate-900/60 p-4 sm:p-5 flex flex-col "
+              data-category="web tienda ads redes seo ia automatizacion" data-title="próximos artículos"
+              data-excerpt="temas futuros del blog paginasfast">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400 mb-2">
+                Próximos temas
+              </p>
+              <h2 class="text-sm sm:text-base font-semibold text-slate-50">
+                Lo que se viene en el blog
+              </h2>
+              <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                Historias de proyectos reales (con números), guías por rubro y ejemplos de mejoras paso a paso.
+              </p>
+              <ul class="mt-3 text-[11px] text-slate-400 space-y-1.5">
+                <li>• Cómo preparar tu negocio antes de invertir en anuncios.</li>
+                <li>• Casos reales de mejora de conversión en landing pages.</li>
+                <li>• Ejemplos de automatizaciones pequeñas que hacen gran diferencia.</li>
+              </ul>
+            </article>
+        </div>
+
+        <p class="mt-8 text-xs sm:text-sm text-slate-400 max-w-3xl">
+          Si te interesa que escribamos un artículo sobre un tema específico (por ejemplo un rubro o problema puntual),
+          puedes contarnos al final de esta página o por WhatsApp. Eso nos ayuda a priorizar contenidos que realmente te
+          sirven.
+        </p>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER / SUGERIR TEMA -->
+<section id="newsletter" class="border-t border-slate-800/80 bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              ¿Quieres recibir estos contenidos ordenados y explicados según tu caso?
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+              Puedes dejar tu correo y te enviaremos solo correos útiles:
+              guías, ejemplos reales y mejoras que podrías aplicar en tu negocio.
+              Nada de spam diario ni mails vacíos.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Máximo 1–2 correos al mes.</li>
+              <li>• Enfocados en pymes y profesionales en Chile.</li>
+              <li>• Puedes darte de baja con un clic.</li>
+            </ul>
+          </div>
+
+          <!-- Form newsletter -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+              Recibir tips por correo
+            </p>
+            <form id="newsletter-form" class="mt-3 space-y-3">
+              <div>
+                <label for="newsletter-email" class="block text-xs font-medium text-slate-300 mb-1">
+                  Correo
+                </label>
+                <input id="newsletter-email" name="email" type="email" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Ej: nombre@tucorreo.cl">
+              </div>
+              <div>
+                <label for="newsletter-business" class="block text-xs font-medium text-slate-300 mb-1">
+                  Tipo de negocio (opcional)
+                </label>
+                <input id="newsletter-business" name="business" type="text"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Ej: cabañas, estudio jurídico, tienda online, colegio…">
+              </div>
+              <div>
+                <label for="newsletter-topic" class="block text-xs font-medium text-slate-300 mb-1">
+                  Tema que más te interesa
+                </label>
+                <select id="newsletter-topic" name="topic"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+                  <option value="">Seleccionar…</option>
+                  <option value="web">Sitios web</option>
+                  <option value="tienda">Tiendas online</option>
+                  <option value="ads">Google Ads</option>
+                  <option value="redes">Redes sociales</option>
+                  <option value="seo">SEO / contenidos</option>
+                  <option value="ia">IA / chatbots</option>
+                  <option value="automatizacion">Automatizaciones</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <button type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                Quiero recibir correos útiles
+              </button>
+              <p class="text-[11px] text-slate-500">
+                Usaremos tu correo solo para enviarte contenido de PaginasFast. Nada de listas compradas ni reenvíos
+                raros.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL CONTACTO -->
+<section id="contacto" class="border-t border-slate-800/80 bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div class="max-w-xl">
+            <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-50">
+              ¿Te gustaría que revisáramos tu web, campañas o ideas de automatización?
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-300">
+              Puedes escribirnos por WhatsApp o agendar una llamada para revisar tu situación
+              y ver qué mejoras tienen más sentido para tu negocio.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20el%20blog%20de%20PaginasFast%20y%20quiero%20revisar%20mi%20caso."
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm sm:text-base font-semibold text-white hover:bg-emerald-600">
+              Hablar por WhatsApp
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 32 32"
+                fill="currentColor">
+                <path
+                  d="M16.003 3C9.384 3 4 8.383 4 15.001c0 2.648.842 5.1 2.277 7.116L4 29l7.063-2.24A11.9 11.9 0 0 0 16.003 27C22.621 27 28 21.617 28 15 28 8.383 22.621 3 16.003 3zm6.417 17.17c-.268.755-1.322 1.385-2.022 1.47-.536.064-1.239.115-3.593-.77-3.02-1.187-4.957-4.102-5.112-4.295-.153-.191-1.22-1.62-1.22-3.087 0-1.466.77-2.183 1.043-2.484.269-.3.59-.375.787-.375.192 0 .384.002.553.01.178.008.415-.067.65.497.248.597.842 2.065.914 2.214.07.149.118.321.021.512-.095.191-.142.31-.279.476-.137.165-.29.369-.414.495-.137.137-.279.287-.12.562.153.256.68 1.118 1.46 1.81 1.004.897 1.85 1.184 2.116 1.316.268.128.425.108.58-.065.153-.174.67-.777.85-1.042.179-.264.358-.22.604-.132.246.087 1.562.736 1.83.87.269.128.446.191.512.298.07.107.07.625-.198 1.38z" />
+              </svg>
+            </a>
+            <button id="cta-bottom"
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              Agendar una videollamada
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+          </span>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+            <span class="text-[11px] text-slate-400">
+              Desarrollo web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones.
+            </span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+          <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+          <a href="/blog" class="hover:text-slate-200">Blog</a>
+          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+        </div>
+      </div>
+      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+        © 2025 PaginasFast. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20llegu%C3%A9%20desde%20el%20blog%20de%20PaginasFast%20y%20quiero%20conversar%20un%20proyecto."
+    target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+      <path
+        d="M16.003 3C9.384 3 4 8.383 4 15.001c0 2.648.842 5.1 2.277 7.116L4 29l7.063-2.24A11.9 11.9 0 0 0 16.003 27C22.621 27 28 21.617 28 15 28 8.383 22.621 3 16.003 3zm6.417 17.17c-.268.755-1.322 1.385-2.022 1.47-.536.064-1.239.115-3.593-.77-3.02-1.187-4.957-4.102-5.112-4.295-.153-.191-1.22-1.62-1.22-3.087 0-1.466.77-2.183 1.043-2.484.269-.3.59-.375.787-.375.192 0 .384.002.553.01.178.008.415-.067.65.497.248.597.842 2.065.914 2.214.07.149.118.321.021.512-.095.191-.142.31-.279.476-.137.165-.29.369-.414.495-.137.137-.279.287-.12.562.153.256.68 1.118 1.46 1.81 1.004.897 1.85 1.184 2.116 1.316.268.128.425.108.58-.065.153-.174.67-.777.85-1.042.179-.264.358-.22.604-.132.246.087 1.562.736 1.83.87.269.128.446.191.512.298.07.107.07.625-.198 1.38z" />
+    </svg>
+  </a>
+
+  <!-- JS -->
+  <script>
+    // Menú móvil
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-      pill.classList.add('active');
-      pill.classList.remove('inactive');
-      aplicarFiltros();
-    });
-  });
+    }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      aplicarFiltros();
-    });
-  }
+    // Scroll a contacto
+    function scrollContact(context) {
+      const section = document.getElementById('contacto');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (context) {
+        console.log('Contexto de contacto:', context);
+      }
+    }
 
-  // Newsletter (placeholder)
-  const newsletterForm = document.getElementById('newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(newsletterForm);
-      const email = data.get('email') || '';
-      alert(`¡Gracias! Te consideraremos para futuros envíos de contenido a: ${email}`);
-      newsletterForm.reset();
-      // Aquí podrías hacer un fetch a /api/newsletter en tu backend.
+    const ctaHeader = document.getElementById('cta-header');
+    if (ctaHeader) {
+      ctaHeader.addEventListener('click', () => scrollContact());
+    }
+
+    const ctaHeaderMobile = document.getElementById('cta-header-mobile');
+    if (ctaHeaderMobile) {
+      ctaHeaderMobile.addEventListener('click', () => scrollContact());
+    }
+
+    const ctaBottom = document.getElementById('cta-bottom');
+    if (ctaBottom) {
+      ctaBottom.addEventListener('click', () => scrollContact('Agendar videollamada desde blog'));
+    }
+
+    // Filtros y buscador
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const postCards = document.querySelectorAll('.post-card');
+    const searchInput = document.getElementById('search-input');
+
+    function aplicarFiltros() {
+      const activePill = document.querySelector('.filter-pill.active');
+      const filter = activePill ? activePill.getAttribute('data-filter') : 'all';
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+      postCards.forEach(card => {
+        const categoriesAttr = card.getAttribute('data-category') || '';
+        const categories = categoriesAttr.split(' ').filter(Boolean);
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const excerpt = (card.getAttribute('data-excerpt') || '').toLowerCase();
+
+        const coincideCategoria = filter === 'all' || categories.indexOf(filter) !== -1;
+        const coincideBusqueda =
+          !query || title.indexOf(query) !== -1 || excerpt.indexOf(query) !== -1;
+
+        if (coincideCategoria && coincideBusqueda) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('active');
+          p.classList.add('inactive');
+        });
+        pill.classList.add('active');
+        pill.classList.remove('inactive');
+        aplicarFiltros();
+      });
     });
-  }
-</script>
+
+    if (searchInput) {
+      searchInput.addEventListener('input', aplicarFiltros);
+    }
+
+    // Newsletter (placeholder)
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(newsletterForm);
+        const email = data.get('email') || '';
+        alert('¡Gracias! Te consideraremos para futuros envíos de contenido a: ' + email);
+        newsletterForm.reset();
+        // Aquí podrías hacer un fetch a /api/newsletter en tu backend.
+      });
+    }
+  </script>
+
 </body>
+
 </html>

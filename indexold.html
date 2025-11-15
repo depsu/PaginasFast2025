@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-586BLT8Z');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Competencia te Roba Clientes en Google | Recupéralos Ahora</title>
+    <meta name="description"
+        content="Mientras lees esto, un cliente buscó tu servicio, encontró a tu competencia y cerró un trato. ¿Duele? Tengo el plan para que eso no vuelva a pasar. Hablemos.">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <script src="https://unpkg.com/feather-icons" defer></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0, #c3cfe2 100%)
+        }
+
+        .cta-button {
+            transition: .3s
+        }
+
+        .chat-opener,
+        .chat-window {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            transition: transform .3s, opacity .3s;
+            display: flex
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15)
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .12)
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: 1s ease-in-out infinite spin
+        }
+
+        .loader-dark {
+            border: 3px solid rgba(0, 0, 0, .2);
+            border-top-color: #3b82f6
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .chat-opener {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #3b82f6, #6d28d9);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+            cursor: pointer;
+            z-index: 1000
+        }
+
+        .chat-window {
+            width: 90%;
+            max-width: 527px;
+            height: 70vh;
+            max-height: 600px;
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            flex-direction: column;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, .3);
+            transform: translateY(20px) scale(.95);
+            opacity: 0;
+            z-index: 999;
+            pointer-events: none
+        }
+
+        .chat-window.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .chat-opener.hidden {
+            transform: scale(0);
+            opacity: 0
+        }
+
+        .chat-header {
+            background-color: #1f2937;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #374151;
+            color: #fff
+        }
+
+        .chat-header-title {
+            font-weight: 700
+        }
+
+        .chat-close-btn {
+            background: 0 0;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.5rem;
+            width: 40px;
+            cursor: pointer
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: .6rem 1rem;
+            border-radius: 1.25rem;
+            word-wrap: break-word;
+            line-height: 1.5;
+            color: #fff
+        }
+
+        .user-bubble {
+            background-color: #3b82f6;
+            border-bottom-right-radius: .375rem;
+            align-self: flex-end
+        }
+
+        .bot-bubble {
+            background-color: #374151;
+            color: #d1d5db;
+            border-bottom-left-radius: .375rem;
+            align-self: flex-start
+        }
+
+        .summary-notification {
+            background-color: #4f46e520;
+            color: #c7d2fe;
+            border: 1px solid #4f46e5;
+            border-radius: .5rem;
+            padding: 1rem;
+            font-size: .9em;
+            text-align: left
+        }
+
+        .chat-input-form {
+            display: flex;
+            gap: .5rem;
+            padding: .75rem;
+            border-top: 1px solid #374151;
+            background-color: #1f2937
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            border-radius: 9999px;
+            padding: .75rem 1rem;
+            color: #fff;
+            outline: 0
+        }
+
+        .chat-input:focus {
+            border-color: #3b82f6
+        }
+
+        .chat-send-btn {
+            background-color: #3b82f6;
+            color: #fff;
+            border-radius: 50%;
+            padding: .75rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px
+        }
+
+        .chat-send-btn:hover {
+            background-color: #2563eb
+        }
+
+        .chat-send-btn:disabled {
+            background-color: #374151;
+            cursor: not-allowed
+        }
+
+        .modal {
+            transition: opacity .3s
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: .75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)
+        }
+
+        .faq-item {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .3s ease-in-out
+        }
+
+        .faq-item[open] {
+            grid-template-rows: 1fr
+        }
+
+        .faq-content {
+            overflow: hidden
+        }
+
+        .faq-summary {
+            list-style: none
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none
+        }
+
+        .faq-icon {
+            transition: transform .3s ease-in-out
+        }
+
+        .faq-item[open]>.faq-summary .faq-icon {
+            transform: rotate(180deg)
+        }
+
+        .quick-reply-btn {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 9999px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .quick-reply-btn:hover {
+            background-color: #4338ca;
+        }
+
+        /* Estilos para la nueva sección de reseñas */
+        .review-summary-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .star-rating-summary .star-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .star-rating-summary .progress-bar {
+            flex-grow: 1;
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .star-rating-summary .progress {
+            height: 100%;
+            background-color: #f59e0b;
+            border-radius: 9999px;
+        }
+
+        .review-card {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
+        }
+
+        .review-card:last-child {
+            border-bottom: none;
+        }
+
+        /* Estilos para el modal de reseñas */
+        .review-modal-content {
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .reviews-list-container {
+            overflow-y: auto;
+            flex: 1 1 auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        #reviews-list-view, #add-review-view {
+            display: flex;
+            flex-direction: column;
+            min-height: 0; /* permite que el contenedor scroll pueda contraerse */
+        }
+
+        /* Estilos para el formulario de añadir reseña */
+        .star-rating-input {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 0.25rem;
+        }
+
+        .star-rating-input input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating-input label {
+            cursor: pointer;
+            color: #d1d5db;
+            /* Color de estrella vacía */
+            transition: color 0.2s;
+        }
+
+        .star-rating-input input[type="radio"]:checked~label,
+        .star-rating-input label:hover,
+        .star-rating-input label:hover~label {
+            color: #f59e0b;
+            /* Color de estrella llena/hover */
+        }
+
+    /* Estilos para el carrusel de blog */
+    .blog-carousel { position: relative; }
+    .blog-carousel .swiper-wrapper { align-items: stretch; }
+    .blog-carousel .swiper-slide { height: auto; display: flex; }
+    .blog-carousel .swiper-slide > a { width: 100%; display: flex; flex-direction: column; height: 100%; }
+    /* Ubicar los bullets bajo el carrusel y centrados */
+        .blog-carousel .swiper-pagination { position: static; margin-top: 1.5rem; display: flex; justify-content: center; }
+        .blog-carousel .swiper-pagination-bullet {
+            width: 10px; height: 10px; margin: 0 6px;
+            background-color: #cbd5e1; opacity: 1;
+            transition: transform .2s ease, background-color .2s ease;
+        }
+        .blog-carousel .swiper-pagination-bullet-active { background-color: #2563eb; transform: scale(1.2); }
+        /* Flechas de navegación del carrusel */
+        .blog-carousel .swiper-button-prev,
+        .blog-carousel .swiper-button-next {
+            position: absolute;
+            top: 45%;
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.95);
+            color: #1f2937; /* gray-800 */
+            box-shadow: 0 10px 20px rgba(0,0,0,.12);
+            border: 1px solid #e5e7eb; /* gray-200 */
+            display: none; /* oculto en mobile */
+            align-items: center;
+            justify-content: center;
+        }
+        .blog-carousel .swiper-button-prev { left: -16px; }
+        .blog-carousel .swiper-button-next { right: -16px; }
+        .blog-carousel .swiper-button-prev::after,
+        .blog-carousel .swiper-button-next::after { font-size: 18px; font-weight: 700; }
+        .blog-carousel .swiper-button-prev,
+        .blog-carousel .swiper-button-next { transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+        .blog-carousel .swiper-button-prev:hover,
+        .blog-carousel .swiper-button-next:hover { background-color: #1f2937; color: #fff; transform: translateY(-1px); }
+        .blog-carousel .swiper-button-disabled { opacity: .4; pointer-events: none; }
+        @media (min-width: 768px) { /* md: */
+            .blog-carousel .swiper-button-prev,
+            .blog-carousel .swiper-button-next { display: flex; }
+        }
+
+        /* Botón flotante de WhatsApp */
+        .floating-whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 56px;
+            height: 56px;
+            background-color: #25D366;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,.2);
+            z-index: 1100;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .floating-whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.25); }
+        .floating-whatsapp-btn svg { width: 28px; height: 28px; }
+
+
+        /* Fix para el carrusel en móviles */
+        .blog-carousel {
+            overflow: hidden;
+        }
+
+        .swiper-container {
+            overflow: hidden;
+        }
+    </style>
+
+
+
+    <link rel="preload" href="/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/output.css"></noscript>
+
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">
+                <span class="text-blue-600">Paginas</span>Fast.
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium">Servicios</a>
+                <a href="#nuestro-compromiso" class="text-gray-600 hover:text-blue-600 font-medium">Nuestro
+                    Compromiso</a>
+                <a href="#portafolio" class="text-gray-600 hover:text-blue-600 font-medium">Proyectos</a>
+                <a href="#blog" class="text-gray-600 hover:text-blue-600 font-medium">Blog</a>
+                <a href="#contacto" id="nav-contact-btn"
+                    class="bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors cursor-pointer">Cotizar
+                    Página Web</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden" aria-label="Abrir menú de navegación">
+                <i data-feather="menu" class="h-6 w-6 text-gray-800"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#servicios" class="block py-2 text-gray-600 hover:text-blue-600">Servicios</a>
+            <a href="#nuestro-compromiso" class="block py-2 text-gray-600 hover:text-blue-600">Nuestro Compromiso</a>
+            <a href="#portafolio" class="block py-2 text-gray-600 hover:text-blue-600">Proyectos</a>
+            <a href="#blog" class="block py-2 text-gray-600 hover:text-blue-600">Blog</a>
+            <a href="#contacto"
+                class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar
+                Página Web</a>
+        </div>
+    </header>
+
+    <main class="gradient-bg">
+        <section class="container mx-auto px-6 py-20 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                Oferta Páginas Web para Pymes <span class="text-blue-600">Crece con nosotros</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Creamos páginas webs, para impulsar tu pyme, <strong>Mostrarle al mundo lo que Tu empresa o servicio
+                    Vale y puede
+                    Ofrecer,</strong> posicionandote en Google para conseguir más clientes.</p>
+            <a href="#servicios"
+                class="cta-button inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700">
+                Quiero más Clientes
+            </a>
+        </section>
+    </main>
+
+    <section id="como-vender-mas" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">La Ecuación es Simple: Mejor Web = Más Clientes
+            </h2>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto pb-8">Más clientes = Más dinero. No es magia, es estrategia.
+                tu página rápida y profesional generará confianza, te posicionará como profesional y guiará a los
+                visitantes a
+                convertirse en clientes.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="text-center">
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="bg-blue-100 rounded-full p-4">
+                            <i data-feather="clock" class="h-8 w-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Atrae Clientes, No Solo Visitas</h3>
+                    <p class="text-gray-600">
+                        Tu página estará capturando el interés de tus futuros clientes y crecerás como una bola de
+                        nieve.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="bg-blue-100 rounded-full p-4">
+                            <i data-feather="award" class="h-8 w-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Proyecta Autoridad y Confianza</h3>
+                    <p class="text-gray-600">
+                        La primera impresión es crucial. Un diseño profesional y una carga rápida demuestran que eres un
+                        experto serio, generando la confianza necesaria para atraer a ese cliente.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="flex justify-center items-center mb-4">
+                        <div class="bg-blue-100 rounded-full p-4">
+                            <i data-feather="dollar-sign" class="h-8 w-8 text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Convierte Visitas en Dinero</h3>
+                    <p class="text-gray-600">
+                        Cada botón y formulario está optimizado para que el cliente <b>no abandone y te contácte.</b>
+                        Hacemos que para tus visitantes sea
+                        increíblemente fácil y tentador contactarte o comprar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Planes Diseñados para Superar a tu Competencia
+                </h2>
+                <p class="text-gray-600 mt-2">No pierdas el tiempo. Asegura tu 30% de descuento y empieza con solo
+                    $19.000.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start">
+                        <div class="text-blue-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <path
+                                    d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                                </path>
+                                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                                <circle cx="15" cy="9" r="1"></circle>
+                            </svg>
+                        </div>
+                        <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Web Emprendedor</h3>
+                    <div class="my-4 text-center">
+                        <span class="text-2xl font-semibold text-gray-400 line-through mr-2">$79.000</span>
+                        <span class="text-4xl font-extrabold text-gray-900">$55.000</span>
+                        <p class="text-gray-500 text-sm">CLP / Pago único</p>
+                    </div>
+                    <p class="text-gray-600 mb-6 flex-grow">Apostamos por que tus servicios serán unicos, <b>debes dar
+                            el salto ahora,</b> junto a nosotros</p>
+                    <ul class="text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>3 a 5 Secciones estratégicas</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Diseño que se adapta a móviles
+                        </li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Formulario para recibir contactos
+                            y whatsapp</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Hosting Gratis</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Optimización para que te
+                            encuentren en Google</li>
+                    </ul>
+                    <a href="/planes/emprendedor.html"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        Ver detalles del plan
+                    </a>
+                </div>
+
+                <div
+                    class="service-card bg-blue-600 text-white rounded-xl p-8 shadow-xl transition-all duration-300 transform md:scale-105 flex flex-col hover:md:scale-110 hover:-translate-y-2">
+                    <div class="flex justify-between items-start">
+                        <div class="text-white mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <span class="bg-white text-red-500 text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Web Corporativa</h3>
+                    <div class="my-4 text-center">
+                        <span class="text-2xl font-semibold text-blue-200 line-through mr-2">$200.000</span>
+                        <span class="text-4xl font-extrabold text-white">$139.000</span>
+                        <p class="text-blue-50 text-sm">CLP / Pago único</p>
+                    </div>
+                    <p class="text-white mb-6 flex-grow">La solución definitiva para consolidar tu marca, dominar tu
+                        mercado y convertir tu web en una máquina de atraer clientes.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-300 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Hasta 10 secciones y Multi páginas</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Diseño Premium a la medida de tu
+                            marca</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Blog para atraer y educar a tus
+                            clientes</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>SEO Avanzado para superar a tu
+                            competencia</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Hosting y Dominio Gratis</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>ChatBot con IA</li>
+                    </ul>
+
+
+                    <a href="/planes/corporativa.html"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        Ver detalles del plan
+                    </a>
+                </div>
+
+                <div
+                    class="service-card bg-white rounded-xl p-8 shadow-md transition-all duration-300 border border-gray-200 flex flex-col hover:shadow-xl hover:-translate-y-2">
+                    <div class="flex justify-between items-start">
+                        <div class="text-blue-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-10 w-10">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-30% OFF</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Tienda Online</h3>
+                    <div class="my-4 text-center">
+                        <span class="text-2xl font-semibold text-gray-400 line-through mr-2">$200.000</span>
+                        <span class="text-4xl font-extrabold text-gray-900">$139.000</span>
+                        <p class="text-gray-500 text-sm">CLP / Pago único</p>
+                    </div>
+                    <p class="text-gray-600 mb-6 flex-grow">Vende tus productos sin parar con una tienda online robusta,
+                        segura y optimizada para una experiencia de compra fácil.</p>
+                    <ul class="text-gray-700 space-y-3 mb-8">
+                        <li class="flex items-center font-bold"><i data-feather="zap"
+                                class="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
+                        </li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Catálogo de productos ilimitado
+                        </li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Integración con WebPay y
+                            MercadoPago</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Sistema para gestionar tu
+                            inventario</li>
+                        <li class="flex items-center"><i data-feather="check-circle"
+                                class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"></i>Carrito de compras fácil de usar
+                        </li>
+                    </ul>
+                    <a href="/planes/tienda.html"
+                        class="plan-cta-btn w-full mt-auto text-center bg-blue-100 text-blue-700 font-semibold py-3 rounded-lg hover:bg-blue-200 transition-colors">
+                        Ver detalles del plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="nuestro-compromiso" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 text-center">
+                    <img loading="lazy" decoding="async" width="256" height="256" src="/image/logoPaginasFast.webp"
+                        alt="Logo de PaginasFast, diseño web rápido en Chile"
+                        class="rounded-full w-64 h-64 mx-auto shadow-xl border-4 border-white object-cover">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-blue-600 font-semibold mb-2">NO CREAMOS PÁGINAS, CREAMOS NEGOCIOS</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dejar nuestra huella en el mundo,
+                        haciendo crecer a las pymes en Chile</h2>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Hola, soy <span class="font-bold text-gray-800">Alejandro Rivera</span>, fundador de
+                        PaginasFast. Mi
+                        única misión es que tu inversión en una página web se traduzca en un salto para que tu negocio
+                        crezca como una bola de nieve.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Hay mucha gente haciando páginas Webs. Pero pocos que realmente entienden que una página,
+                        enfocada en posicionarse en Google y que la gente entre y disfrute estar en ella. hace 1.000
+                        veces la diferencia.
+                    </p>
+                    <div class="border-l-4 border-blue-500 pl-4 bg-white p-4 rounded-r-lg">
+                        <p class="text-gray-700 italic font-medium">"Cada segundo que un cliente potencial pasa en una
+                            web lenta o confusa es dinero que pierdes. Me comprometo personalmente a entregarte un sitio
+                            web tan rápido y eficaz que cada visita cuente."</p>
+                        <p class="font-semibold mt-2">- Alejandro Rivera, CEO de PaginasFast</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">La Confianza que Construimos</h2>
+                <p class="text-gray-600 mt-2">Nuestros clientes son nuestro mayor orgullo. Esto es lo que dicen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Columna de Resumen de Calificaciones -->
+                <div class="lg:col-span-1 review-summary-card">
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-4xl font-extrabold text-gray-900">4.9</h3>
+                        <div class="flex text-yellow-500">
+                            <i data-feather="star" fill="currentColor" class="w-6 h-6"></i>
+                            <i data-feather="star" fill="currentColor" class="w-6 h-6"></i>
+                            <i data-feather="star" fill="currentColor" class="w-6 h-6"></i>
+                            <i data-feather="star" fill="currentColor" class="w-6 h-6"></i>
+                            <i data-feather="star" fill="currentColor" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-1">Basado en 152 reseñas</p>
+
+                    <div class="mt-6 space-y-2 star-rating-summary">
+                        <div class="star-row">
+                            <span class="text-sm font-medium text-gray-700">5 estrellas</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%;"></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500">144</span>
+                        </div>
+                        <div class="star-row">
+                            <span class="text-sm font-medium text-gray-700">4 estrellas</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 3%;"></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500">5</span>
+                        </div>
+                        <div class="star-row">
+                            <span class="text-sm font-medium text-gray-700">3 estrellas</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 2%;"></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500">3</span>
+                        </div>
+                        <div class="star-row">
+                            <span class="text-sm font-medium text-gray-700">2 estrellas</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%;"></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500">0</span>
+                        </div>
+                        <div class="star-row">
+                            <span class="text-sm font-medium text-gray-700">1 estrella</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%;"></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-500">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna de Reseñas Recientes -->
+                <div class="lg:col-span-2">
+                    <div id="recent-reviews-container">
+                        <!-- Las reseñas se cargarán aquí dinámicamente -->
+                        <div class="review-card">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-500">
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-900">¡Resultados que no esperaba!</h4>
+                            <p class="text-gray-600 my-2">"Desde que lanzamos la nueva web con PaginasFast, las solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente marcan la diferencia."</p>
+                            <div class="text-sm text-gray-500">
+                                <span>Carlos Vega, Constructora Vega Ltda.</span> &mdash; <time datetime="2024-05-15">15 de Mayo, 2024</time>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-500">
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-900">Aumenté mis ventas un 40%</h4>
+                            <p class="text-gray-600 my-2">"Estaba perdiendo clientes por mi antigua página. Alex y su equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer mes. ¡Totalmente recomendado!"</p>
+                            <div class="text-sm text-gray-500">
+                                <span>Ana Fuentes, Moda con Sentido</span> &mdash; <time datetime="2024-05-10">10 de Mayo, 2024</time>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-500">
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                    <i data-feather="star" fill="currentColor" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-lg text-gray-900">Profesionalismo de otro nivel</h4>
+                            <p class="text-gray-600 my-2">"El profesionalismo y el enfoque en resultados es de otro nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para crecer."</p>
+                            <div class="text-sm text-gray-500">
+                                <span>Javier Torres, Consultor de Negocios</span> &mdash; <time datetime="2024-04-28">28 de Abril, 2024</time>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button id="open-reviews-modal-btn" class="cta-button inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700">
+                            Ver todas las reseñas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portafolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Historias de Éxito de Negocios Como el Tuyo
+                </h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Llevamos 8 años, No solo creamos páginas web. Construimos herramientas
+                    que ayudan a profesionales y pymes a crecer.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center mb-16">
+                <div>
+                    <h3 class="text-4xl font-extrabold text-blue-600">+150</h3>
+                    <p class="text-gray-600 font-semibold">Proyectos Completados</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-extrabold text-blue-600">98%</h3>
+                    <p class="text-gray-600 font-semibold">Clientes Satisfechos</p>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h3 class="text-4xl font-extrabold text-blue-600">+60%</h3>
+                    <p class="text-gray-600 font-semibold">Aumento Promedio en clientes</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative rounded-lg overflow-hidden shadow-lg">
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/abogados.webp"
+                        alt="Página web profesional para un moderno estudio de abogados"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Estudios de Abogados</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Web corporativa que genera confianza y
+                                captura consultas legales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative rounded-lg overflow-hidden shadow-lg">
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Restaurantes y cafeterías</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Página con menú online y sistema de
+                                reservas que aumentó los pedidos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative rounded-lg overflow-hidden shadow-lg">
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/dental.webp" alt="Página web para consulta médica"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-2xl font-bold">Consulta Médica</h3>
+                            <p class="text-blue-300 font-semibold">Resultado: Sitio web profesional que permite a los
+                                pacientes agendar horas fácilmente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Blog y Recursos</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Aprende cómo potenciar tu negocio en línea con consejos prácticos y estrategias comprobadas.</p>
+            </div>
+            <!-- Swiper -->
+            <div class="swiper-container blog-carousel">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <a href="/blog1.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
+                                <i data-feather="trending-up" class="text-white w-20 h-20"></i>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Beneficios de Tener una Página Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Descubre por qué tu empresa o pyme necesita presencia digital para crecer en el mercado actual.</p>
+                                <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
+                                    Leer más
+                                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <a href="/blog2.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-48 flex items-center justify-center">
+                                <i data-feather="layout" class="text-white w-20 h-20"></i>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Buena vs Mala Página Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Aprende a identificar las características que distinguen una página web efectiva de una que ahuyenta clientes.</p>
+                                <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
+                                    Leer más
+                                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <a href="/blog3.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div class="bg-gradient-to-br from-green-500 to-green-700 h-48 flex items-center justify-center">
+                                <i data-feather="target" class="text-white w-20 h-20"></i>
+                            </div>
+                            <div class="p-6 flex-grow flex flex-col">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Cómo Generar Tráfico Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Conoce estrategias efectivas como Google Ads para atraer clientes y los costos aproximados involucrados.</p>
+                                <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
+                                    Leer más
+                                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-prev" aria-label="Anterior"></div>
+                <div class="swiper-button-next" aria-label="Siguiente"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <div class="bg-white p-8 rounded-xl shadow-2xl inline-block">
+                <div class="flex items-center justify-center space-x-2 text-yellow-500 mb-2">
+                    <i data-feather="star" fill="currentColor"></i>
+                    <i data-feather="star" fill="currentColor"></i>
+                    <i data-feather="star" fill="currentColor"></i>
+                    <i data-feather="star" fill="currentColor"></i>
+                    <i data-feather="star" fill="currentColor"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">Garantía de Satisfacción 100%</h3>
+                <p class="text-gray-600 mt-1">No consideramos el proyecto terminado hasta que estés completamente feliz
+                    con tu nueva web.</p>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-8">¿Listo para que tu Negocio Despegue?</h2>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">La consulta es gratis. El potencial de crecimiento,
+                ilimitado. Hablemos.</p>
+            <button id="open-modal-btn"
+                class="mt-8 cta-button inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700">
+                Agendar Mi Llamada Estratégica
+            </button>
+        </div>
+    </section>
+
+
+
+
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Preguntas Frecuentes</h2>
+                <p class="text-gray-600 mt-2">Respuestas a las dudas más comunes de nuestros clientes.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4" id="faq-container">
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Por qué mi negocio necesita una página web?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            Una página web es tu vendedor 24/7. Te permite atraer clientes fuera de tu horario y
+                            ubicación, genera confianza profesional y te da una plataforma propia para mostrar tus
+                            productos o servicios sin depender de las comisiones o reglas de redes sociales.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Qué es el hosting y el dominio?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            El <strong>dominio</strong> es la dirección de tu sitio (ej: `paginasfast.cl`). El
+                            <strong>hosting</strong> es el espacio en internet donde se guardan los archivos de tu web
+                            para que sea visible. En PaginasFast, podemos asesorarte para adquirir ambos, aunque el
+                            costo de estos servicios es aparte de nuestros planes.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿En cuánto tiempo estará lista mi página?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            El plan "Web Emprendedor" suele tardar entre 1 y 3 días hábiles. Los planes "Corporativo" o
+                            "Tienda Online" pueden tomar de 7 a 10 días hábiles, dependiendo de la complejidad y la
+                            rapidez con la que recibamos el material (textos, imágenes) de tu parte.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="border rounded-lg overflow-hidden faq-item">
+                    <summary
+                        class="flex items-center justify-between w-full p-4 font-semibold cursor-pointer faq-summary">
+                        <span>¿Cómo puedo contactar con ustedes?</span>
+                        <svg class="w-5 h-5 faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <div class="px-4 pb-4 text-gray-700">
+                            ¡Es muy fácil! Puedes agendar una llamada directamente desde el botón en nuestra sección de
+                            <a href="#contacto" class="text-blue-600 hover:underline">Contacto</a>, o iniciar una
+                            conversación con nuestro asistente virtual haciendo clic en el ícono de chat en la esquina
+                            inferior derecha.
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "¿Por qué mi negocio necesita una página web?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una página web es tu vendedor 24/7. Te permite atraer clientes fuera de tu horario y ubicación, genera confianza profesional y te da una plataforma propia para mostrar tus productos o servicios sin depender de las comisiones o reglas de redes sociales."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿Qué es el hosting y el dominio?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El dominio es la dirección de tu sitio (ej: paginasfast.com). El hosting es el espacio en internet donde se guardan los archivos de tu web para que sea visible. En PaginasFast, podemos asesorarte para adquirir ambos, aunque el costo de estos servicios es aparte de nuestros planes."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿En cuánto tiempo estará lista mi página?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El plan 'Web Emprendedor' suele tardar entre 5 y 7 días hábiles. Los planes 'Corporativo' o 'Tienda Online' pueden tomar de 10 a 15 días hábiles, dependiendo de la complejidad y la rapidez con la que recibamos el material (textos, imágenes) de tu parte."
+            }
+        },{
+            "@type": "Question",
+            "name": "¿Cómo puedo contactar con ustedes?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Es muy fácil! Puedes agendar una llamada directamente desde el botón en nuestra sección de Contacto, o iniciar una conversación con nuestro asistente virtual haciendo clic en el ícono de chat en la esquina inferior derecha."
+            }
+        }]
+        }
+</script>
+
+
+
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4"><span class="text-blue-500">Paginas</span>Fast.</h3>
+                    <p class="text-gray-300">Convertimos tu presencia online en tu mayor activo de ventas.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#servicios" class="text-gray-300 hover:text-white">Planes Web</a></li>
+                        <li><a href="#portafolio" class="text-gray-300 hover:text-white">Proyectos</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#contacto" class="text-gray-300 hover:text-white">Cotizar</a></li>
+                    </ul>
+                </div>
+                <!-- <div>
+                    <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                    <p class="text-gray-300">contacto@paginasfast.cl</p>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                        <a href="#" class="text-gray-300 hover:text-white"
+                            aria-label="Visita nuestro perfil de Twitter"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"
+                            aria-label="Visita nuestro perfil de LinkedIn"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"
+                            aria-label="Visita nuestro perfil de Instagram"><i data-feather="instagram"></i></a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-6 text-center text-gray-200">
+                <p>&copy; 2025 PaginasFast. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chat-opener" class="chat-opener">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+            </path>
+        </svg>
+    </div>
+
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <span class="chat-header-title">IA Bot</span>
+            <button id="chat-close-btn" class="chat-close-btn">&times;</button>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <div class="chat-bubble bot-bubble">
+                ¡Hola!, te ayudaré con tus dudas. ¿Cómo prefieres que
+                sigamos?
+                <div class="quick-replies mt-3 flex flex-wrap gap-2">
+                    <button class="quick-reply-btn" data-message="Quiero hacer una consulta">💬 Hacer una
+                        consulta</button>
+                    <button class="quick-reply-btn" data-action="whatsapp">✅ Ir a WhatsApp</button>
+                    <button class="quick-reply-btn" data-action="open-contact-modal">📞 Agendar una llamada</button>
+                </div>
+            </div>
+        </div>
+        <form id="chat-form" class="chat-input-form">
+            <input type="text" id="user-input" placeholder="Escribe tu respuesta..." class="chat-input"
+                autocomplete="one-time-code">
+            <button type="submit" id="send-button" class="chat-send-btn" aria-label="Enviar mensaje">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" style="width: 20px; height: 20px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div id="contact-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
+            <button id="close-modal-btn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Asesoría gratuita para tu web</h3>
+            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu negocio.</p>
+            <form id="contact-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                    <input type="text" id="name-modal" name="name" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                    <input type="email" id="email-modal" name="email" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                </div>
+                <div class="mb-6">
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
+                    <input type="tel" id="contact-phone-input" name="phone"
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                    <span class="btn-text">Enviar Solicitud</span>
+                    <div class="loader loader-dark hidden"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Reseñas -->
+    <div id="reviews-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0" role="dialog" aria-modal="true" aria-labelledby="reviews-modal-title">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl w-full relative transform scale-95 transition-transform duration-300 review-modal-content">
+            <button id="close-reviews-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+            
+            <!-- Vista de Lista de Reseñas -->
+            <div id="reviews-list-view">
+                <h3 id="reviews-modal-title" class="text-2xl font-bold text-gray-900 mb-4">Todas las Reseñas</h3>
+                <div id="all-reviews-container" class="reviews-list-container pr-4 -mr-4">
+                    <!-- Las reseñas se cargarán aquí -->
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-200 text-center">
+                    <button id="show-add-review-form-btn" class="cta-button inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-700">
+                        Escribir una reseña
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vista de Formulario para Añadir Reseña -->
+            <div id="add-review-view" class="hidden">
+                <div class="flex items-center mb-6">
+                    <button id="back-to-reviews-list-btn" class="text-gray-600 hover:text-blue-600 mr-4">
+                        <i data-feather="arrow-left" class="w-6 h-6"></i>
+                    </button>
+                    <h3 class="text-2xl font-bold text-gray-900">Escribe tu Reseña</h3>
+                </div>
+                <form id="add-review-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="review-name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <input type="text" id="review-name" name="name" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="review-project" class="block text-sm font-medium text-gray-700 mb-1">Página Realizada (ej. miempresa.cl)</label>
+                            <input type="text" id="review-project" name="project" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="review-title" class="block text-sm font-medium text-gray-700 mb-1">Título de la reseña</label>
+                        <input type="text" id="review-title" name="title" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="review-comment" class="block text-sm font-medium text-gray-700 mb-1">Comentario</label>
+                        <textarea id="review-comment" name="comment" rows="4" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Calificación</label>
+                        <div class="star-rating-input">
+                            <input type="radio" id="star5" name="rating" value="5" required/><label for="star5" title="5 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"><i data-feather="star" class="w-8 h-8"></i></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                        <span class="btn-text">Enviar Reseña</span>
+                        <div class="loader loader-dark hidden"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Mensaje de éxito -->
+            <div id="review-success-message" class="hidden text-center py-12">
+                <div class="flex justify-center items-center mx-auto bg-green-100 rounded-full w-16 h-16 mb-4">
+                    <i data-feather="check" class="text-green-600 w-10 h-10"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900">¡Reseña enviada con éxito!</h3>
+                <p class="text-gray-600 mt-2">Gracias por compartir tu opinión con nosotros.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20necesito%20m%C3%A1s%20informaci%C3%B3n%20para%20crear%20mi%20p%C3%A1gina%20web"
+        id="boton-whatsapp-flotante" target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="30px" height="30px">
+            <defs>
+                <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#57d163"></stop>
+                    <stop offset="1" stop-color="#23b33a"></stop>
+                </linearGradient>
+                <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+                    <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+                </filter>
+            </defs>
+            <path fill="#b3b3b3"
+                d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+                filter="url(#a)"></path>
+            <path fill="#fff"
+                d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+            </path>
+            <path fill="url(#linearGradient1780)"
+                d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.559 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.524h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.929z">
+            </path>
+            <path fill="url(#b)"
+                d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+            </path>
+            <path fill="#fff" fill-rule="evenodd"
+                d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+            </path>
+        </svg>
+    </a>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer/>
+
+
+    <!-- Swiper se cargará de forma diferida -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            feather.replace();
+
+            // Lazy-load Swiper cuando #blog aparece
+            const blogSection = document.getElementById('blog');
+            let swiperInstance = null;
+            function initSwiper() {
+                if (swiperInstance || typeof Swiper === 'undefined') return;
+                const isMobile = window.matchMedia('(max-width:640px)').matches;
+                swiperInstance = new Swiper('.blog-carousel', {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                    autoHeight: false,
+                    loop: !isMobile,
+                    speed: 600,
+                    autoplay: isMobile ? false : { delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true },
+                    navigation: {
+                        nextEl: '.blog-carousel .swiper-button-next',
+                        prevEl: '.blog-carousel .swiper-button-prev',
+                    },
+                    pagination: {
+                        el: '.blog-carousel .swiper-pagination',
+                        clickable: true,
+                    },
+                    keyboard: { enabled: true },
+                    a11y: { enabled: true },
+                    grabCursor: true,
+                    watchOverflow: true,
+                    threshold: 5,
+                    breakpoints: {
+                        640: { slidesPerView: 2, spaceBetween: 20 },
+                        1024: { slidesPerView: 3, spaceBetween: 24 },
+                    }
+                });
+                try {
+                    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+                    if (mq.matches && swiperInstance.autoplay) swiperInstance.autoplay.stop();
+                    mq.addEventListener('change', e => {
+                        if (!swiperInstance.autoplay) return;
+                        if (e.matches) swiperInstance.autoplay.stop(); else swiperInstance.autoplay.start();
+                    });
+                } catch(_) {}
+            }
+            function loadSwiperAssets() {
+                if (window.Swiper) { initSwiper(); return; }
+                const css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = 'https://unpkg.com/swiper/swiper-bundle.min.css';
+                document.head.appendChild(css);
+                const js = document.createElement('script');
+                js.src = 'https://unpkg.com/swiper/swiper-bundle.min.js';
+                js.onload = initSwiper;
+                document.body.appendChild(js);
+            }
+            if ('IntersectionObserver' in window && blogSection) {
+                const io = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => { if (entry.isIntersecting) { loadSwiperAssets(); obs.disconnect(); } });
+                }, { rootMargin: '200px' });
+                io.observe(blogSection);
+            } else {
+                setTimeout(loadSwiperAssets, 1500);
+            }
+
+            // --- CÓDIGO DEL CONTADOR REGRESIVO ---
+            const countdownElement = document.getElementById('countdown');
+            const countdownCloneElement = document.getElementById('countdown-clone');
+
+            // 1. Establecer la fecha de fin de la oferta (31 de octubre a medianoche)
+            const endDate = new Date(new Date().getFullYear(), 9, 31, 23, 59, 59); // Mes 9 es Octubre (0-11)
+
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = endDate - now;
+
+                // Si la oferta ya terminó
+                if (timeLeft < 0) {
+                    countdownElement.textContent = "Oferta Terminada";
+                    if (countdownCloneElement) countdownCloneElement.textContent = "Oferta Terminada";
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                // 2. Calcular días, horas, minutos y segundos
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // 3. Formatear y mostrar el resultado
+                const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                countdownElement.textContent = countdownText;
+                if (countdownCloneElement) countdownCloneElement.textContent = countdownText;
+            }
+
+            // Actualizar el contador cada segundo
+            const timerInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Llamada inicial para que no haya un segundo de retraso
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- LÓGICA DEL MODAL DE CONTACTO GENERAL ---
+            const contactModal = document.getElementById('contact-modal');
+            if (contactModal) {
+                const contactModalContent = contactModal.querySelector('div');
+                const openModalBtn = document.getElementById('open-modal-btn');
+                const closeModalBtn = document.getElementById('close-modal-btn');
+                const navContactBtn = document.getElementById('nav-contact-btn');
+                const contactForm = document.getElementById('contact-form');
+
+                const openContactModal = () => {
+                    contactModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        contactModal.classList.add('opacity-100');
+                        contactModalContent.classList.add('scale-100');
+                    }, 10);
+                };
+                const closeContactModal = () => {
+                    contactModal.classList.remove('opacity-100');
+                    contactModalContent.classList.remove('scale-100');
+                    setTimeout(() => contactModal.classList.add('hidden'), 300);
+                };
+
+                if (openModalBtn) openModalBtn.addEventListener('click', openContactModal);
+                if (navContactBtn) {
+                    navContactBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openContactModal();
+                    });
+                }
+                if (closeModalBtn) closeModalBtn.addEventListener('click', closeContactModal);
+                contactModal.addEventListener('click', (e) => {
+                    if (e.target === contactModal) closeContactModal();
+                });
+
+                if (contactForm) {
+                    contactForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const submitButton = contactForm.querySelector('button[type="submit"]');
+                        const buttonText = submitButton.querySelector('.btn-text');
+                        const buttonLoader = submitButton.querySelector('.loader');
+                        submitButton.disabled = true;
+                        buttonText.classList.add('hidden');
+                        buttonLoader.classList.remove('hidden');
+                        const name = document.getElementById('name-modal').value;
+                        const email = document.getElementById('email-modal').value;
+                        // CORRECCIÓN: Se usa el nuevo ID "contact-phone-input"
+                        const phone = document.getElementById('contact-phone-input').value;
+                        try {
+                            const response = await fetch('/api/send-contact-form', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ name, email, phone }),
+                            });
+                            if (!response.ok) throw new Error('Falló el envío del formulario');
+                            window.dataLayer.push({ 'event': 'formulario_enviado_ok' });
+                            alert(`¡Gracias ${name}! Hemos recibido tu solicitud y te contactaremos pronto.`);
+                            closeContactModal();
+                            contactForm.reset();
+                        } catch (error) {
+                            console.error('Error en el formulario de contacto:', error);
+                            alert('Lo sentimos, ocurrió un error al enviar tu solicitud. Por favor, intenta de nuevo.');
+                        } finally {
+                            submitButton.disabled = false;
+                            buttonText.classList.remove('hidden');
+                            buttonLoader.classList.add('hidden');
+                        }
+                    });
+                }
+            }
+
+
+            // --- LÓGICA DEL CHATBOT ---
+            const chatOpener = document.getElementById('chat-opener');
+            const chatWindow = document.getElementById('chat-window');
+            if (chatOpener && chatWindow) {
+                const closeChatBtn = document.getElementById('chat-close-btn');
+                const chatCTAs = document.querySelectorAll('.chat-cta');
+                const chatFormEl = document.getElementById('chat-form');
+                const userInput = document.getElementById('user-input');
+                const chatMessages = document.getElementById('chat-messages');
+                const sendButton = document.getElementById('send-button');
+
+                let conversationHistory = [];
+                let conversationEnded = false;
+                let interactionCount = 0;
+                let inactivityTimer = null;
+                let inactivityEmailSent = false;
+
+                const openChat = () => {
+                    chatWindow.classList.add('open');
+                    chatOpener.classList.add('hidden');
+                    setTimeout(() => userInput.focus(), 300);
+                };
+
+                const closeChat = () => {
+                    chatWindow.classList.remove('open');
+                    chatOpener.classList.remove('hidden');
+                    if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                        sendPartialLeadSummary('INCOMPLETO_POR_CIERRE');
+                    }
+                };
+
+                chatOpener.addEventListener('click', openChat);
+                if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
+
+                chatCTAs.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        openChat();
+                        const plan = btn.dataset.plan;
+                        if (plan) {
+                            setTimeout(() => {
+                                const message = `Hola, estoy interesado en el plan "${plan}".`;
+                                handleNewMessage(message);
+                            }, 300);
+                        }
+                    });
+                });
+
+                if (chatFormEl) {
+                    chatFormEl.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        handleNewMessage(userInput.value.trim());
+                    });
+                }
+
+                if (chatMessages) {
+                    chatMessages.addEventListener('click', function (e) {
+                        // Asegurarse de que el clic fue en un botón de respuesta rápida
+                        if (e.target.classList.contains('quick-reply-btn')) {
+                            const button = e.target;
+                            const action = button.dataset.action;
+                            const message = button.dataset.message;
+
+                            // Opción 1: El botón envía un mensaje predefinido al chat
+                            if (message) {
+                                handleNewMessage(message); // Llama a la función que procesa los mensajes
+                                button.parentElement.remove(); // Elimina los botones después del clic
+                            }
+                            // Opción 2: El botón ejecuta una acción específica
+                            else if (action) {
+                                switch (action) {
+                                    case 'whatsapp':
+                                        // Abre el enlace del botón flotante de WhatsApp en una nueva pestaña
+                                        const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                                        window.open(whatsappUrl, '_blank');
+                                        appendMessage('¡Perfecto! Te estoy redirigiendo a WhatsApp.', 'bot');
+                                        break;
+
+                                    case 'open-contact-modal':
+                                        // Abre el modal de contacto general y cierra el chat para no superponerlos
+                                        const contactModal = document.getElementById('contact-modal');
+                                        if (contactModal) {
+                                            // Reutilizamos la lógica que ya tienes para abrir el modal
+                                            contactModal.classList.remove('hidden');
+                                            setTimeout(() => {
+                                                contactModal.classList.add('opacity-100');
+                                                contactModal.querySelector('div').classList.add('scale-100');
+                                            }, 10);
+                                        }
+                                        // Cerramos el chat
+                                        const chatWindow = document.getElementById('chat-window');
+                                        if (chatWindow) chatWindow.classList.remove('open');
+                                        const chatOpener = document.getElementById('chat-opener');
+                                        if (chatOpener) chatOpener.classList.remove('hidden');
+                                        break;
+                                }
+                                button.parentElement.remove(); // Elimina los botones después de la acción
+                            }
+                        }
+                    });
+                }
+
+
+
+                async function handleNewMessage(message) {
+                    if (conversationEnded || !message) return;
+                    appendMessage(message, 'user');
+                    conversationHistory.push({ role: 'user', parts: [{ text: message }] });
+                    userInput.value = '';
+                    userInput.focus();
+                    interactionCount++;
+                    resetInactivityTimer();
+                    toggleLoading(true);
+
+                    const minimumWait = new Promise(resolve => setTimeout(resolve, 1500)); // Un poco menos de espera
+
+                    try {
+                        const [botResponse] = await Promise.all([getBotResponse(), minimumWait]);
+
+                        // Verificamos la respuesta original para la lógica de conversión
+                        const isConversion = botResponse.includes("[CONVERSION_SUCCESS]");
+
+                        // Limpiamos la respuesta ANTES de guardarla y mostrarla
+                        const cleanedBotResponse = botResponse.replace("[CONVERSION_SUCCESS]", "").trim();
+
+                        conversationHistory.push({ role: 'model', parts: [{ text: cleanedBotResponse }] });
+
+                        // Ocultamos el indicador de "escribiendo..."
+                        toggleLoading(false);
+
+                        // Mostramos la respuesta ya limpia
+                        processBotResponse(cleanedBotResponse);
+
+                        // Si fue una conversión, ejecutamos las acciones finales
+                        if (isConversion) {
+                            conversationEnded = true;
+                            userInput.disabled = true;
+                            userInput.placeholder = "Conversación finalizada.";
+                            window.dataLayer.push({ 'event': 'chatbot_lead_generado' });
+                            console.log("Evento 'chatbot_lead_generado' enviado a dataLayer.");
+                            clearTimeout(inactivityTimer);
+                            appendMessage("¡Genial! Hemos recibido tus datos. En breve te hablaremos por WhatsApp. 👍", 'bot');
+                            triggerSummaryGeneration();
+                            setTimeout(() => {
+                                mostrarEnlaceWhatsAppBubble();
+                            }, 1200);
+                        }
+                    } catch (error) {
+                        console.error("Error obteniendo respuesta del bot:", error);
+                        toggleLoading(false); // Asegúrate de detener la carga en caso de error
+                        appendErrorMessage();
+                    }
+                    // La llamada a toggleLoading(false) se movió dentro del bloque try
+                }
+
+                function resetInactivityTimer() {
+                    clearTimeout(inactivityTimer);
+                    if (interactionCount >= 3 && !conversationEnded && !inactivityEmailSent) {
+                        inactivityTimer = setTimeout(() => {
+                            sendPartialLeadSummary('INCOMPLETO_POR_INACTIVIDAD');
+                        }, 60000);
+                    }
+                }
+
+                async function sendPartialLeadSummary(status) {
+                    if (inactivityEmailSent || conversationEnded) return;
+                    inactivityEmailSent = true;
+                    clearTimeout(inactivityTimer);
+                    const leadData = extractData(conversationHistory);
+                    const conversationText = formatConversation(conversationHistory);
+                    try {
+                        const response = await fetch('/api/send-summary', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ leadData, conversationText, status: status }),
+                        });
+                        if (response.ok) {
+                            console.log(`Correo de lead parcial (${status}) enviado con éxito.`);
+                        } else {
+                            console.error(`Fallo al enviar correo de lead parcial (${status}). Estado: ${response.status}`);
+                        }
+                    } catch (error) {
+                        console.error(`Error de red al enviar el resumen por ${status}:`, error);
+                    }
+                }
+
+                async function triggerSummaryGeneration() {
+                    // Si ya se envió un correo parcial, no hagas nada.
+                    if (inactivityEmailSent) {
+                        console.log("El correo de lead parcial ya fue enviado, no se enviará el correo final.");
+                        return;
+                    }
+
+                    // Esta función ahora solo se encarga de la lógica de fondo.
+                    try {
+                        const leadData = extractData(conversationHistory);
+                        const conversationText = formatConversation(conversationHistory);
+                        const response = await fetch('/api/send-summary', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ leadData, conversationText, status: 'COMPLETADO' }),
+                        });
+
+                        if (response.ok) {
+                            console.log("Correo de lead completado enviado con éxito.");
+                        } else {
+                            console.error(`Fallo al enviar correo de lead completado. Estado: ${response.status}`);
+                        }
+                        // MENSAJE DE ÉXITO ELIMINADO DE AQUÍ
+                    } catch (error) {
+                        console.error("Error en el proceso de envío de resumen:", error);
+
+                        // Mantenemos un mensaje de error por si algo falla, para que el usuario sepa.
+                        appendMessage("Tuvimos un problema al procesar tu solicitud, pero ¡no te preocupes! Guardamos tu número y un agente te contactará igualmente.", 'bot');
+                    }
+                }
+
+                function extractData(history) {
+                    const data = { telefono: "No proporcionado" };
+                    // Expresión regular para buscar números de teléfono chilenos.
+                    const phoneRegex = /(?:\+?56\s?)?(?:9\s?)?[\d\s-]{8,12}/;
+
+                    // Recorre el historial buscando un número en los mensajes del usuario
+                    for (const message of history) {
+                        if (message.role === 'user') {
+                            const phoneMatch = message.parts[0].text.match(phoneRegex);
+                            if (phoneMatch) {
+                                // Limpia el número de espacios o guiones y lo asigna
+                                data.telefono = phoneMatch[0].replace(/\s|-/g, '');
+                                break; // Se detiene al encontrar el primer número
+                            }
+                        }
+                    }
+                    return data;
+                }
+
+                function formatConversation(history) {
+                    return history.map(msg => {
+                        const prefix = msg.role === 'user' ? 'Cliente:' : 'WebExpert:';
+                        return `${prefix} ${msg.parts[0].text.replace(/<[^>]*>/g, '')}`;
+                    }).join('\n');
+                }
+
+                function appendMessage(message, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'bot-bubble');
+                    const formattedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*/g, '').replace(/\n/g, '<br>');
+                    messageDiv.innerHTML = formattedMessage;
+                    chatMessages.appendChild(messageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function appendErrorMessage() {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.classList.add('chat-bubble', 'bot-bubble');
+                    errorDiv.style.backgroundColor = '#4c1d1d';
+                    errorDiv.style.border = '1px solid #c2410c';
+                    const whatsappUrl = document.getElementById('boton-whatsapp-flotante').href;
+                    const contactModalTrigger = `document.getElementById('open-modal-btn').click(); document.getElementById('chat-close-btn').click();`;
+                    errorDiv.innerHTML = `<p style="margin-bottom: 0.75rem;">Ups, parece que mi conexión falló por un momento. 😥</p><p style="margin-bottom: 1rem;">No te preocupes, puedes contactarnos directamente por aquí:</p><div style="display: flex; flex-direction: column; gap: 8px;"><a href="${whatsappUrl}" target="_blank" class="quick-reply-btn" style="background-color: #25D366; text-align: center; display: block; text-decoration: none;">Contactar por WhatsApp</a><button onclick="${contactModalTrigger}" class="quick-reply-btn" style="background-color: #3b82f6; text-align: center; display: block; width: 100%;">Abrir Formulario de Contacto</button></div>`;
+                    chatMessages.appendChild(errorDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function processBotResponse(fullResponse) {
+                    const parts = fullResponse.split('[SPLIT]');
+                    let delay = 0;
+                    parts.forEach((part) => {
+                        const message = part.trim();
+                        if (message) {
+                            setTimeout(() => {
+                                appendMessage(message, 'bot');
+                            }, delay);
+                            delay += 800;
+                        }
+                    });
+                    setTimeout(() => toggleLoading(false), delay);
+                }
+
+                function toggleLoading(isLoading) {
+                    const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 20px; height: 20px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>`;
+                    if (sendButton) {
+                        sendButton.disabled = isLoading;
+                        sendButton.innerHTML = isLoading ? `<div class="loader"></div>` : sendIcon;
+                    }
+                    if (userInput) userInput.disabled = isLoading;
+                    const existingIndicator = document.getElementById('typing-indicator');
+                    if (isLoading && !existingIndicator) {
+                        const indicatorDiv = document.createElement('div');
+                        indicatorDiv.id = 'typing-indicator';
+                        indicatorDiv.classList.add('chat-bubble', 'bot-bubble');
+                        indicatorDiv.innerHTML = `<div class="typing-indicator"><span></span><span></span><span></span></div>`;
+                        chatMessages.appendChild(indicatorDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    } else if (!isLoading && existingIndicator) {
+                        existingIndicator.remove();
+                    }
+                }
+
+                async function callGemini(payload) {
+                    const response = await fetch('/api/chat', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        throw new Error(`Error en la API: ${response.status}`);
+                    }
+                    const result = await response.json();
+                    return result.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "No he podido procesar eso. ¿Podemos intentarlo de nuevo?";
+                }
+
+                function extraerDatosDeConversacion(historial) {
+                    let nombre = null;
+                    let plan = null;
+                    const planRegex = /interesado en el plan "([^"]+)"/i;
+                    for (const mensaje of historial) {
+                        if (mensaje.role === 'user') {
+                            const match = mensaje.parts[0].text.match(planRegex);
+                            if (match && match[1]) {
+                                plan = match[1];
+                                break;
+                            }
+                        }
+                    }
+                    for (let i = historial.length - 1; i >= 0; i--) {
+                        const entrada = historial[i];
+                        const entradaAnterior = historial[i - 1];
+                        if (entrada.role === 'user' && entradaAnterior && entradaAnterior.role === 'model' && entradaAnterior.parts[0].text.toLowerCase().includes('tu nombre')) {
+                            nombre = entrada.parts[0].text;
+                            break;
+                        }
+                    }
+                    if (!nombre) {
+                        const nombreModal = document.getElementById('name-modal')?.value;
+                        if (nombreModal) {
+                            nombre = nombreModal;
+                        }
+                    }
+                    return { nombre, plan };
+                }
+
+                function generarEnlaceWhatsApp(datos = {}) {
+                    const telefono = "56930153632";
+                    const mensajePorDefecto = "Hola, quiero comenzar con el desarrollo de mi web hoy.";
+                    let mensajeFinal = mensajePorDefecto;
+                    try {
+                        const { nombre, plan } = datos;
+                        if (nombre && plan) {
+                            mensajeFinal = `Hola soy ${nombre} y quiero comenzar el desarrollo de mi web con el plan ${plan}.`;
+                        } else if (nombre) {
+                            mensajeFinal = `Hola, soy ${nombre} quiero comenzar con el desarrollo de mi web.`;
+                        }
+                    } catch (error) {
+                        console.error("Error al construir el mensaje de WhatsApp, usando el predeterminado.", error);
+                    }
+                    const mensajeCodificado = encodeURIComponent(mensajeFinal);
+                    return `https://api.whatsapp.com/send?phone=${telefono}&text=${mensajeCodificado}`;
+                }
+
+                function mostrarEnlaceWhatsAppBubble() {
+                    try {
+                        const datosExtraidos = extraerDatosDeConversacion(conversationHistory);
+                        const finalUrl = generarEnlaceWhatsApp(datosExtraidos);
+                        const bubbleDiv = document.createElement('div');
+                        bubbleDiv.classList.add('chat-bubble', 'bot-bubble');
+                        bubbleDiv.style.backgroundColor = '#25D366';
+                        bubbleDiv.style.border = '1px solid #128C7E';
+                        bubbleDiv.innerHTML = `<a href="${finalUrl}" target="_blank" style="color: white; text-decoration: underline; font-weight: bold;">Click aquí para continuar en WhatsApp</a>`;
+                        chatMessages.appendChild(bubbleDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    } catch (error) {
+                        console.error("Error al mostrar la burbuja de WhatsApp:", error);
+                    }
+                }
+
+                async function getBotResponse() {
+                    const systemInstructionText = `
+    [PERSONALIDAD]
+    - Eres entusiasta, proactivo y súper claro. Evita el lenguaje técnico complicado.
+    - Eres muy eficiente y vas directo al punto.
+    - Evitas gastar textos innecesarios, saludando, ya que el cliente ya está interactuando contigo.
+
+    [ROL]
+    Eres un consultor de ventas de PaginasFast. Tu objetivo principal es responder las dudas de forma breve y solicitar número de WhatsApp para continuar hablando por ahí.
+
+    [BASE DE CONOCIMIENTO DE PAGINASFAST]
+
+    - **Oferta Actual:** Plan estratégico con 30% de descuento. Válido por octubre.
+    - **Planes y Precios (con descuento):**
+      - **Web Emprendedor:** $55.000 (Antes $79.000). Incluye 3-5 secciones, diseño adaptable, SEO básico. Ideal para empezar.
+      - **Web Corporativa:** $139.000 (Antes $200.000). Incluye hasta 10 secciones, diseño premium, blog, SEO avanzado, ChatBot con IA. Para dominar el mercado.
+      - **Tienda Online:** $139.000 (Antes $200.000). Incluye catálogo ilimitado, pagos con WebPay/MercadoPago.
+    - **Servicios Adicionales:** SEO Avanzado ($100.000), Mantenimiento Web ($50.000/mes), Gestión RRSS ($150.000/mes).
+    - **Todos los planes incluyen:** Dominio .cl gratis por 1 año, Hosting premium, SSL gratis, Soporte 24/7. 
+    - **Se aceptan todos metodos de pago:** Tarjetas, Transferencias, MercadoPago.
+    - **Como comenzar: **Contacta por WhatsApp o formulario, nos mencionas de que quieres que trate tu página web y se paga un abono de 19.900.
+    - **Tiempos de Entrega:** Emprendedor (5-7 días hábiles), Corporativa/Tienda (10-15 días hábiles).
+    - **Garantía:** 100% de satisfacción.
+
+    [REGLAS DE CONVERSACIÓN]
+    1.  **INICIO:** Responde 1 o 2 preguntas del usuario de forma breve y clara usando la [BASE DE CONOCIMIENTO]. Genera confianza.
+    2.  **DISPARADORES DE CONVERSIÓN:** Si el usuario pregunta por precios, cómo empezar, o después de haber respondido a su consulta inicial, inicia INMEDIATAMENTE el [PROTOCOLO DE CONVERSIÓN]. No esperes más.
+    
+    [PROTOCOLO DE CONVERSIÓN - GUIÓN OBLIGATORIO]
+    Sigue estos pasos EN ORDEN:
+    1.  **Pivote:** Usa una frase de transición. Ejemplo: "responder brevemente, y solicitar número de whatsapp para continuar hablando por ahí."
+    2.  **Confirmación y Cierre:** Cuando te dé el número, confirma y finaliza. Ejemplo: "¡Perfecto, continuaremos por whatsapp, te mandaremos un mensaje.[CONVERSION_SUCCESS]"
+
+    [MANEJO DE OBJECIONES]
+    - Si el usuario duda o no quiere dar su número de teléfono, NO INSISTAS.
+    - En su lugar, responde amablemente: "No hay problema. Si prefieres, puedes dejarnos tus datos en nuestro formulario de contacto o seguir explorando la página. ¡Estamos aquí para ayudar!". No intentes volver a pedir el número después de esto.
+
+    [ETIQUETA DE ÉXITO OBLIGATORIA]
+    - Cuando el usuario proporcione un número de teléfono válido, TU RESPUESTA DE CONFIRMACIÓN DEBE terminar OBLIGATORIAMENTE con la etiqueta '[CONVERSION_SUCCESS]'.
+    `;
+                    const payload = {
+                        contents: conversationHistory.slice(-8),
+                        system_instruction: { parts: [{ text: systemInstructionText }] },
+                        generationConfig: { temperature: 0.3, topP: 1, maxOutputTokens: 250 }
+                    };
+                    return await callGemini(payload);
+                }
+            }
+
+            // Lógica para FAQ
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                const detailsElements = faqContainer.querySelectorAll('details');
+                detailsElements.forEach(details => {
+                    details.addEventListener('toggle', () => {
+                        if (details.open) {
+                            detailsElements.forEach(otherDetails => {
+                                if (otherDetails !== details) otherDetails.removeAttribute('open');
+                            });
+                        }
+                    });
+                });
+            }
+
+            // --- LÓGICA DE LA NUEVA SECCIÓN DE RESEÑAS ---
+            const allReviewsData = [
+                { rating: 5, title: "¡Resultados que no esperaba!", comment: "Desde que lanzamos la nueva web con PaginasFast, las solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente marcan la diferencia.", name: "Carlos Vega", project: "Constructora Vega Ltda.", date: "2024-05-15" },
+                { rating: 5, title: "Aumenté mis ventas un 40%", comment: "Estaba perdiendo clientes por mi antigua página. Alex y su equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer mes. ¡Totalmente recomendado!", name: "Ana Fuentes", project: "Moda con Sentido", date: "2024-05-10" },
+                { rating: 5, title: "Profesionalismo de otro nivel", comment: "El profesionalismo y el enfoque en resultados es de otro nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para crecer.", name: "Javier Torres", project: "Consultor de Negocios", date: "2024-04-28" },
+                { rating: 5, title: "Mi clínica ahora luce profesional", comment: "La nueva página para mi consulta dental ha mejorado la imagen y facilitado que los pacientes agenden citas. El equipo fue muy atento.", name: "Dra. Isabel Muñoz", project: "Clínica Dental Sonrisa Plena", date: "2024-04-15" },
+                { rating: 4, title: "Buen servicio, entrega rápida", comment: "Cumplieron con los plazos y el resultado fue muy bueno. La comunicación fue fluida durante todo el proceso. Recomendado.", name: "Marcos Rojas", project: "Servicios de Contabilidad Rojas", date: "2024-03-20" },
+                { rating: 5, title: "¡Excelente trabajo!", comment: "Muy contenta con mi nueva web. Es rápida, fácil de navegar y exactamente lo que quería para mi emprendimiento. ¡Gracias!", name: "Sofía Castro", project: "Artesanías del Sur", date: "2024-03-05" }
+            ];
+
+            const reviewsModal = document.getElementById('reviews-modal');
+            if (reviewsModal) {
+                const openModalBtn = document.getElementById('open-reviews-modal-btn');
+                const closeModalBtn = document.getElementById('close-reviews-modal-btn');
+                const modalContent = reviewsModal.querySelector('.review-modal-content');
+                const allReviewsContainer = document.getElementById('all-reviews-container');
+                
+                const reviewsListView = document.getElementById('reviews-list-view');
+                const addReviewView = document.getElementById('add-review-view');
+                const showAddReviewFormBtn = document.getElementById('show-add-review-form-btn');
+                const backToReviewsListBtn = document.getElementById('back-to-reviews-list-btn');
+                const addReviewForm = document.getElementById('add-review-form');
+                const successMessageView = document.getElementById('review-success-message');
+
+                const createStarIcons = (rating) => {
+                    let stars = '';
+                    for (let i = 0; i < 5; i++) {
+                        const isFilled = i < rating;
+                        stars += `<i data-feather="star" class="w-5 h-5"${isFilled ? ' fill="currentColor"' : ''}></i>`;
+                    }
+                    return `<div class="flex text-yellow-500">${stars}</div>`;
+                };
+
+                const renderAllReviews = () => {
+                    allReviewsContainer.innerHTML = '';
+                    allReviewsData.forEach(review => {
+                        const reviewEl = document.createElement('div');
+                        reviewEl.className = 'review-card';
+                        reviewEl.innerHTML = `
+                            <div class="flex items-center mb-2">${createStarIcons(review.rating)}</div>
+                            <h4 class="font-bold text-lg text-gray-900">${review.title}</h4>
+                            <p class="text-gray-600 my-2">"${review.comment}"</p>
+                            <div class="text-sm text-gray-500">
+                                <span>${review.name}, ${review.project}</span> &mdash; <time datetime="${review.date}">${new Date(review.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                            </div>
+                        `;
+                        allReviewsContainer.appendChild(reviewEl);
+                    });
+                    feather.replace();
+                };
+
+                const focusableSelector = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+                let lastFocusedElement = null;
+
+                const openReviewsModal = () => {
+                    renderAllReviews();
+                    reviewsListView.classList.remove('hidden');
+                    addReviewView.classList.add('hidden');
+                    successMessageView.classList.add('hidden');
+                    reviewsModal.classList.remove('hidden');
+                    lastFocusedElement = document.activeElement;
+                    setTimeout(() => {
+                        reviewsModal.classList.add('opacity-100');
+                        modalContent.classList.add('scale-100');
+                        const firstFocusable = modalContent.querySelector(focusableSelector);
+                        if (firstFocusable) firstFocusable.focus();
+                    }, 10);
+                };
+
+                const closeReviewsModal = () => {
+                    reviewsModal.classList.remove('opacity-100');
+                    modalContent.classList.remove('scale-100');
+                    setTimeout(() => {
+                        reviewsModal.classList.add('hidden');
+                        if (lastFocusedElement) lastFocusedElement.focus();
+                    }, 300);
+                };
+
+                openModalBtn.addEventListener('click', openReviewsModal);
+                closeModalBtn.addEventListener('click', closeReviewsModal);
+                reviewsModal.addEventListener('click', (e) => {
+                    if (e.target === reviewsModal) closeReviewsModal();
+                });
+
+                // Trap focus inside modal
+                reviewsModal.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        e.preventDefault();
+                        closeReviewsModal();
+                        return;
+                    }
+                    if (e.key === 'Tab') {
+                        const focusable = Array.from(modalContent.querySelectorAll(focusableSelector)).filter(el => !el.hasAttribute('disabled'));
+                        if (focusable.length === 0) return;
+                        const first = focusable[0];
+                        const last = focusable[focusable.length - 1];
+                        if (e.shiftKey && document.activeElement === first) {
+                            e.preventDefault();
+                            last.focus();
+                        } else if (!e.shiftKey && document.activeElement === last) {
+                            e.preventDefault();
+                            first.focus();
+                        }
+                    }
+                });
+
+                showAddReviewFormBtn.addEventListener('click', () => {
+                    reviewsListView.classList.add('hidden');
+                    addReviewView.classList.remove('hidden');
+                    feather.replace(); // Re-render icons for the star rating input
+                });
+
+                backToReviewsListBtn.addEventListener('click', () => {
+                    addReviewView.classList.add('hidden');
+                    reviewsListView.classList.remove('hidden');
+                });
+
+                addReviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const submitButton = addReviewForm.querySelector('button[type="submit"]');
+                    const buttonText = submitButton.querySelector('.btn-text');
+                    const buttonLoader = submitButton.querySelector('.loader');
+                    
+                    submitButton.disabled = true;
+                    buttonText.classList.add('hidden');
+                    buttonLoader.classList.remove('hidden');
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        addReviewView.classList.add('hidden');
+                        successMessageView.classList.remove('hidden');
+                        feather.replace();
+
+                        setTimeout(() => {
+                            closeReviewsModal();
+                            // Reset form for next time
+                            submitButton.disabled = false;
+                            buttonText.classList.remove('hidden');
+                            buttonLoader.classList.add('hidden');
+                            addReviewForm.reset();
+                        }, 1500); // Close modal after 1.5 seconds
+
+                    }, 1000);
+                });
+            }
+
+        });
+    </script>
+</body>
+
+</html>
