@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-586BLT8Z');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SEO práctico + contenidos que venden | PaginasFast – Más visitas y más clientes</title>
+  <meta name="description"
+        content="SEO sin humo para negocios reales. Optimizamos tu web, definimos palabras clave y creamos contenidos claros que explican lo que haces y convierten visitas en contactos.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#2563eb',
+              dark: '#1d4ed8',
+              soft: '#eff4ff'
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 40px rgba(15,23,42,.18)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom right, rgba(15,23,42,.88), rgba(15,23,42,.94));
+      border: 1px solid rgba(148,163,184,.4);
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
+        #020617;
+    }
+
+    .logo-pill {
+      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+    }
+
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+      background-color: #25D366;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      z-index: 40;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+          style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
+      </span>
+      <div class="flex flex-col leading-tight">
+        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+      <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+      <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
+      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+      <button
+        id="cta-header"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+        Agendar llamada
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="mobile-menu-button"
+            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+      <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+      <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
+      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+      <button
+        id="cta-header-mobile"
+        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+        Agendar llamada
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="hero-gradient min-h-screen">
+  <!-- HERO SEO & CONTENIDOS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
+    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+      <a href="/servicios" class="hover:text-slate-100">Servicios</a>
+      <span>/</span>
+      <span class="text-slate-300">SEO & contenidos</span>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Servicio · SEO práctico + contenidos que explican y venden
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+          SEO sin humo y textos claros para atraer visitas que sí quieren comprarte.
+        </h1>
+
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+          Combinamos SEO técnico básico, palabras clave aterrizadas a tu rubro y contenidos bien escritos
+          para que tu web aparezca mejor en Google y las personas entiendan rápido qué haces y cómo los ayudas.
+        </p>
+
+        <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">Pensado para Chile y tu rubro</p>
+            <p class="mt-1 text-slate-400">
+              Buscamos cómo la gente realmente te busca: por comuna, ciudad, problema, oficio, etc.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">SEO sin tecnicismos vacíos</p>
+            <p class="mt-1 text-slate-400">
+              Explicamos en simple qué se va a hacer, qué puedes esperar y en qué plazos es realista ver cambios.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">Contenido que convierte</p>
+            <p class="mt-1 text-slate-400">
+              No solo queremos visitas; queremos que más personas rellenen formularios, agenden o te escriban.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <button
+            id="cta-hero"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+            Quiero mejorar mi SEO y contenidos
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
+            </svg>
+          </button>
+
+          <a href="#planes"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+            Ver planes de SEO & contenidos
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-400">
+          Ideal para: servicios profesionales, cabañas y turismo, salud, construcción, tiendas online y negocios
+          que hoy casi no reciben visitas desde Google o reciben tráfico pero pocos contactos.
+        </p>
+      </div>
+
+      <!-- Panel lateral resumen -->
+      <div class="relative">
+        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-violet-300/40 opacity-60 blur-3xl"></div>
+        <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+          <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
+          <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué incluye el servicio de SEO & contenidos</h2>
+
+          <ul class="mt-4 space-y-2 text-sm text-slate-200">
+            <li>• Revisión de tu sitio actual (estructura, velocidad, títulos, textos, llamadas a la acción).</li>
+            <li>• Investigación de palabras clave realistas para tu rubro y tu zona.</li>
+            <li>• Ajustes on-page: títulos, descripciones, encabezados, URLs, textos y enlaces internos.</li>
+            <li>• Propuesta de contenidos: páginas nuevas, landings, artículos, secciones de preguntas frecuentes.</li>
+          </ul>
+
+          <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
+            <p><span class="font-semibold text-slate-100">Enfoque:</span> más visitas desde Google que tengan sentido para ti (no solo visitas “bonitas” en un gráfico).</p>
+            <p><span class="font-semibold text-slate-100">Formato:</span> puedes dejar que nosotros escribamos los textos o escribirlos tú con una pauta clara.</p>
+          </div>
+
+          <button
+            id="cta-card"
+            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+            Quiero que revisen mi web y mi SEO actual
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ PROBLEMAS RESUELVE -->
+  <section class="border-t border-slate-800/80 bg-slate-950/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Qué problema resuelve un buen SEO con contenidos claros
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          No es solo “poner más palabras clave”. Se trata de hacer que Google entienda tu sitio y que las personas
+          que llegan entiendan qué haces, cuánto aproximadamente cuesta y cómo avanzar contigo.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3 text-xs sm:text-sm">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">No te encuentran cuando te buscan</h3>
+          <p class="mt-2 text-slate-300">
+            Quizás hoy apareces en Google por tu nombre, pero no por lo que haces. Ajustamos tu sitio
+            para que puedas competir en búsquedas como “rubro + ciudad/comuna” y problemas concretos que tu servicio soluciona.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-slate-300">
+            <li>• Optimización de títulos, descripciones y encabezados.</li>
+            <li>• Páginas específicas para servicios y zonas importantes.</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">Recibes visitas pero pocos contactos</h3>
+          <p class="mt-2 text-slate-300">
+            Revisamos si tus textos responden las dudas típicas: qué haces, cuánto cuesta (aunque sea un rango),
+            cómo se contrata, tiempos, garantías, etc. A veces el problema no es el tráfico, sino la claridad.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-slate-300">
+            <li>• Mejoramos llamados a la acción y formularios.</li>
+            <li>• Añadimos secciones que generan confianza (pruebas, preguntas frecuentes, casos).</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">Evitas el típico “SEO humo”</h3>
+          <p class="mt-2 text-slate-300">
+            Nada de reportes con 20 métricas que no significan nada. Hablamos de páginas, posiciones,
+            consultas que te traen tráfico y, sobre todo, contactos reales generados desde Google.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-slate-300">
+            <li>• Explicaciones en simple, sin palabras rebuscadas.</li>
+            <li>• Acciones concretas que puedes entender y ver en tu sitio.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES / TIPOS DE SERVICIO -->
+  <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Formas de trabajar SEO & contenidos
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+            Dependiendo de tu situación actual podemos partir con un impulso inicial,
+            avanzar con acompañamiento mensual o enfocarnos fuerte en SEO local y fichas.
+          </p>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
+          En una llamada revisamos tu sitio, tu rubro y tu ciudad, y te proponemos un enfoque realista
+          según tu presupuesto y tu punto de partida.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <!-- Plan SEO Inicial -->
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">SEO Inicial</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Impulso para tu sitio actual</h3>
+          <p class="mt-1 text-xs text-slate-400">Para webs que ya existen, pero nunca han sido trabajadas en SEO.</p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $160.000</p>
+          <p class="text-[11px] text-slate-400">Trabajo puntual en 1–2 meses según tamaño del sitio.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• Auditoría básica de tu sitio y tu presencia en Google.</li>
+            <li>• Ajuste de las principales páginas: inicio, servicios, contacto, etc.</li>
+            <li>• Propuesta de nuevas secciones/páginas clave para tu rubro.</li>
+            <li>• Checklist simple con buenas prácticas para mantener el SEO en el tiempo.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+            onclick="scrollContact('SEO Inicial – Impulso para tu sitio')">
+            Cotizar SEO inicial
+          </button>
+        </article>
+
+        <!-- Plan SEO + Contenidos Mensuales -->
+        <article class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
+          <div class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+            Recomendado
+          </div>
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">SEO + Contenidos</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Trabajo mensual con contenidos nuevos</h3>
+          <p class="mt-1 text-xs text-slate-400">
+            Para crecer en el tiempo con artículos, páginas y secciones que ataquen más búsquedas.
+          </p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $220.000/mes</p>
+          <p class="text-[11px] text-slate-400">Incluye horas de SEO técnico + redacción o revisión de contenidos.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• Plan de contenidos mensual basado en palabras clave reales.</li>
+            <li>• Redacción de artículos o landings (o revisión si prefieres escribir tú).</li>
+            <li>• Ajustes y mejoras continuas en las páginas que ya existen.</li>
+            <li>• Revisión de métricas básicas y próximos pasos recomendados.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
+            onclick="scrollContact('SEO + Contenidos Mensuales')">
+            Cotizar SEO + contenidos
+          </button>
+        </article>
+
+        <!-- Plan SEO Local -->
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">SEO Local</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Negocios por comuna/ciudad + fichas</h3>
+          <p class="mt-1 text-xs text-slate-400">
+            Ideal para negocios locales que dependen mucho de búsquedas con ubicación.
+          </p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $140.000</p>
+          <p class="text-[11px] text-slate-400">Trabajo puntual o con mínimas mantenciones según el caso.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• Optimización de páginas enfocadas en comunas / sectores específicos.</li>
+            <li>• Revisión de ficha de Google (si aplica) y recomendaciones de mejora.</li>
+            <li>• Ideas de contenidos que respondan las dudas típicas de gente de tu zona.</li>
+            <li>• Orientado a servicios locales, turismo, salud, talleres, etc.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+            onclick="scrollContact('SEO Local y fichas')">
+            Cotizar SEO local
+          </button>
+        </article>
+      </div>
+
+      <p class="mt-4 text-[11px] text-slate-500">
+        Los valores exactos dependen del tamaño de tu sitio, la competencia de tu rubro y si necesitas que escribamos todo
+        o prefieres escribir con nuestra guía. En la propuesta te lo dejamos desglosado.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESO DE TRABAJO -->
+  <section class="border-t border-slate-800/80 bg-slate-950/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Cómo trabajamos SEO & contenidos contigo
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          No necesitas saber SEO. Tu rol es contarnos cómo funciona tu negocio,
+          qué clientes quieres atraer y qué preguntas te hacen siempre.
+          Nosotros lo bajamos a un plan y a textos concretos.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico rápido</h3>
+          <p class="mt-2 text-slate-300">
+            Revisamos tu web, vemos si apareces por algo en Google, qué competencia principal tienes
+            y si la base técnica de tu sitio está decente o hay que arreglar cosas urgentes.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Palabras clave + estructura</h3>
+          <p class="mt-2 text-slate-300">
+            Definimos las búsquedas más realistas y armamos una estructura de páginas y secciones para atacarlas:
+            servicios, zonas, preguntas frecuentes, artículos, etc.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Implementación y textos</h3>
+          <p class="mt-2 text-slate-300">
+            Ajustamos títulos, descripciones, encabezados y textos importantes. Si incluye contenidos nuevos,
+            los redactamos o revisamos contigo antes de publicarlos.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Medición simple y siguientes pasos</h3>
+          <p class="mt-2 text-slate-300">
+            Vemos qué páginas empiezan a moverse, qué términos te traen tráfico
+            y definimos qué conviene seguir creando o corrigiendo en los próximos meses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-slate-800/80 bg-slate-950/95">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Preguntas frecuentes sobre SEO & contenidos
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          Algunas dudas típicas cuando alguien empieza a trabajar SEO por primera vez o quiere ordenar lo que ya tiene.
+        </p>
+      </div>
+
+      <div class="mt-8 space-y-3 text-sm">
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿En cuánto tiempo voy a aparecer primero en Google?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Depende de tu rubro, ciudad y competencia. En búsquedas muy competidas nadie serio puede prometer “estar primero”.
+            Lo que sí se puede hacer es mejorar posiciones, apuntar a términos más alcanzables y medir si eso se traduce
+            en más contactos. En la llamada te damos una idea honesta de qué tan competitivo es tu caso.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Necesito sí o sí tener un blog?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            No siempre. Para muchos negocios es más importante tener buenas páginas de servicio, zonas claras
+            y una sección de preguntas frecuentes potente. El blog ayuda cuando quieres atacar dudas más largas
+            o educar a tu cliente, pero no es obligatorio para todos.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿En qué se diferencia esto de hacer solo campañas de Google Ads?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Con Google Ads pagas por cada clic. El SEO busca construir una base para que, con el tiempo,
+            lleguen visitas orgánicas sin pagar por clic. Lo ideal suele ser combinar ambas cosas:
+            anuncios para resultados rápidos y SEO para ir bajando la dependencia a la publicidad pagada.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              Ya tengo textos, ¿sirven o hay que reescribir todo?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Muchos textos se pueden mejorar en vez de partir desde cero. A veces basta con ordenar la información,
+            agregar ejemplos, responder preguntas que hoy no están y ajustar títulos. Solo reescribimos completo
+            cuando de verdad no hay cómo rescatarlo o no refleja bien lo que haces.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Puedo escribir yo los contenidos y que ustedes los revisen?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Sí. Podemos armar una pauta con estructura, ejemplos de títulos y apuntes de SEO
+            para que tú escribas con tu estilo, y luego nosotros corregimos y optimizamos
+            antes de subirlo a la web.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Hay contrato mínimo si elijo un plan mensual?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Lo recomendable en SEO es pensar al menos en 3–6 meses para ver cambios sólidos,
+            pero podemos partir con un periodo más corto y evaluar. Lo importante es que tengamos
+            claro desde el inicio qué esperas conseguir y en qué plazos es razonable.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACTO -->
+  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Veamos si tiene sentido trabajar tu SEO & contenidos ahora
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+            Cuéntanos qué tipo de negocio tienes, si ya estás recibiendo clientes desde Google
+            o si prácticamente nadie llega por ahí. Con eso te podemos decir si conviene invertir fuerte,
+            hacer un impulso inicial o si hay otros pasos previos.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300">
+            <li>• Revisión honesta de tu punto de partida.</li>
+            <li>• Ideas concretas de páginas y contenidos que tendría sentido crear.</li>
+            <li>• Próximos pasos claros, con un lenguaje que puedas entender.</li>
+          </ul>
+          <button
+            id="cta-bottom"
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+            Quiero que revisen mi SEO & contenidos
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Formulario -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
+          <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y te contactamos para una revisión inicial.</p>
+
+          <form id="contact-form" class="mt-4 space-y-3">
+            <div>
+              <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+              <input id="name" name="name" type="text" required
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
+              <input id="email" name="email" type="email" required
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
+              <input id="phone" name="phone" type="tel"
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
+              <input id="service" name="service" type="text" value="SEO & contenidos"
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
+              <textarea id="message" name="message" rows="3"
+                        class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="Ej: rubro, sitio actual si lo tienes, ciudad o comunas donde trabajas, qué te gustaría mejorar en Google."></textarea>
+            </div>
+            <button type="submit"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Enviar consulta
+            </button>
+            <p class="text-[11px] text-slate-500">
+              Usamos tus datos solo para responder a tu mensaje. Nada de spam.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+          <span class="text-[11px] text-slate-400">Desarrollo web, tiendas online, Google Ads, SEO, chatbots con IA y automatizaciones.</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+      </div>
+    </div>
+    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+      © 2025 PaginasFast. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- Botón WhatsApp flotante -->
+<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20mejorar%20mi%20SEO%20y%20contenidos%20para%20mi%20negocio"
+   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+    <defs>
+      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#57d163"></stop>
+        <stop offset="1" stop-color="#23b33a"></stop>
+      </linearGradient>
+      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+      </filter>
+    </defs>
+    <path fill="#b3b3b3"
+          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+          filter="url(#a)"></path>
+    <path fill="#fff"
+          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+    </path>
+    <path fill="url(#b)"
+          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+    </path>
+    <path fill="#fff" fill-rule="evenodd"
+          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+    </path>
+  </svg>
+</a>
+
+<!-- JS mínimo -->
+<script>
+  // menú móvil
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // scroll a contacto (con posible preselección de plan)
+  function scrollContact(plan) {
+    const section = document.getElementById('contacto');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      const serviceField = document.getElementById('service');
+      if (serviceField) {
+        if (plan) {
+          serviceField.value = `SEO & contenidos – ${plan}`;
+        } else {
+          serviceField.value = 'SEO & contenidos';
+        }
+      }
+    }
+  }
+  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
+
+  // envío básico del formulario (placeholder)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const name = formData.get('name') || '';
+      alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre SEO & contenidos. Te contactaremos pronto.`);
+      contactForm.reset();
+      // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
+    });
+  }
+</script>
+</body>
+</html>

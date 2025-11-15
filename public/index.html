@@ -18,7 +18,7 @@
     <meta name="description"
         content="Mientras lees esto, un cliente buscó tu servicio, encontró a tu competencia y cerró un trato. ¿Duele? Tengo el plan para que eso no vuelva a pasar. Hablemos.">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+    <script src="https://cdn.tailwindcss.com"></script> 
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script src="https://unpkg.com/feather-icons" defer></script>
@@ -430,49 +430,6 @@
         .floating-whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.25); }
         .floating-whatsapp-btn svg { width: 28px; height: 28px; }
 
-        /* Estilos para la barra de promoción */
-        .promo-bar {
-            background: linear-gradient(90deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-            padding: 12px 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 14px;
-            overflow: hidden;
-            position: relative;
-            z-index: 100;
-        }
-
-        .promo-text {
-            display: inline-flex;
-            white-space: nowrap;
-            animation: scroll 20s linear infinite;
-        }
-
-        .promo-text span {
-            padding: 0 50px;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Respetar reduced motion para la barra de promoción */
-        @media (prefers-reduced-motion: reduce) {
-            .promo-text { animation: none !important; transform: none !important; }
-        }
-
-        @media (max-width: 768px) {
-            .promo-bar {
-                font-size: 12px;
-                padding: 10px 0;
-            }
-        }
 
         /* Fix para el carrusel en móviles */
         .blog-carousel {
@@ -492,14 +449,6 @@
 </head>
 
 <body class="bg-white text-gray-800">
-    <div class="promo-bar">
-        <div class="promo-text">
-            <span>⚠️ TUS CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
-                    id="countdown"></strong></span>
-            <span>⚠️ CLIENTES ESTÁN ENCONTRANDO A TU COMPETENCIA EN GOOGLE. Oferta termina en: <strong
-                    id="countdown-clone"></strong></span>
-        </div>
-    </div>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"

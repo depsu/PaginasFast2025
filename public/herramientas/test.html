@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Validador</title>
+</head>
+<body>
+
+  <h1>Prueba del Validador</h1>
+  <p>Debajo se carga el validador por iframe con auto-ajuste de altura.</p>
+
+  <!-- Validador de dominios (PaginasFast) -->
+  <iframe id="validator-frame" src="./validador-de-dominio.html" title="Validador de dominios" style="width:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <script>(function(){
+    function onMsg(e){
+      try { var f = document.getElementById('validator-frame'); } catch(_) { return; }
+      if (!f || !e || !e.data) return;
+      if (e.data.type === 'domain-validator:height' && e.source === f.contentWindow) {
+        try { f.style.height = (e.data.height || 360) + 'px'; } catch(_) {}
+      }
+    }
+    window.addEventListener('message', onMsg, false);
+  })();</script>
+</body>
+</html>

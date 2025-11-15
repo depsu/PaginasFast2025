@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validador de dominios</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      font-weight: 500;
+    }
+
+    #domain-result {
+      font-size: 0.98rem;
+      margin-top: 8px;
+    }
+
+    small.help {
+      display: block;
+      color: #6b7280;
+      margin: 6px 0 12px;
+    }
+
+    .muted {
+      color: #6b7280;
+    }
+
+    .status {
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+      line-height: 1.35;
+    }
+    .status.ok { background: #ecfdf5; color: #065f46; }
+    .status.error { background: #fee2e2; color: #991b1b; }
+    .status.warn { background: #fff7ed; color: #9a3412; }
+
+    details {
+      margin-top: 20px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    details pre, details textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background: #0b102027;
+      color: #111827;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    details textarea {
+      min-height: 110px;
+      resize: vertical;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .row {
+      display: flex; gap: 8px; align-items: center; margin-top: 8px;
+    }
+    .btn-secondary {
+      background: #111827; color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Validador de dominios</h1>
+  <p>Escribe un dominio y te diré si parece estar disponible (según DNS).</p>
+
+  <form id="domain-form">
+    <input
+      type="text"
+      id="domain-input"
+      placeholder="ej: paginasfast.cl"
+      value="paginasfast.cl"
+    />
+    <button type="submit">Validar</button>
+  </form>
+
+  <small class="help">Nota: este es un chequeo orientativo. La disponibilidad real depende del registro oficial (NIC o registrador).</small>
+
+  <p id="domain-result" class="muted">Ingresa un dominio para comenzar.</p>
+
+  <details>
+    <summary><strong>Instalar este validador en tu web (iframe)</strong></summary>
+    <p style="margin: 8px 0 12px">Copia y pega este código en tu página para incluir el validador:</p>
+    <textarea id="embed-code" readonly></textarea>
+    <div class="row">
+      <button id="copy-embed" type="button" class="btn-secondary">Copiar iframe</button>
+      <span class="muted" id="copy-state" aria-live="polite"></span>
+    </div>
+    <p class="muted" style="margin-top:10px">El alto del iframe se ajusta automáticamente.</p>
+  </details>
+
+  <script>
+    const form = document.getElementById("domain-form");
+    const input = document.getElementById("domain-input");
+    const result = document.getElementById("domain-result");
+    const embedTextarea = document.getElementById("embed-code");
+    const copyBtn = document.getElementById("copy-embed");
+    const copyState = document.getElementById("copy-state");
+
+    // Si se carga embebido, informar altura al padre para auto-ajuste
+    function postHeightToParent() {
+      try {
+        const h = document.documentElement.scrollHeight;
+        parent.postMessage({ type: 'domain-validator:height', height: h, src: location.href }, '*');
+      } catch (_) { /* ignorar */ }
+    }
+    window.addEventListener('load', postHeightToParent);
+    window.addEventListener('resize', () => { postHeightToParent(); });
+
+    function normalizarEntrada(valor) {
+      let v = valor.trim().toLowerCase();
+      // Quitar protocolo y ruta si vienen pegados
+      v = v.replace(/^https?:\/\//, '').split('/')[0].split('#')[0].split('?')[0];
+      // Quitar punto final y espacios
+      v = v.replace(/\.$/, '').trim();
+      return v;
+    }
+
+    function esDominioConFormatoValido(dominio) {
+      // Validación básica para dominios ASCII (ej: algo.tld)
+      const regex = /^(?!-)[a-z0-9-]{1,63}(?<!-)\.[a-z]{2,}$/;
+      return regex.test(dominio);
+    }
+
+    async function consultaDNS(dominio, tipo) {
+      const url = `https://dns.google/resolve?name=${encodeURIComponent(dominio)}&type=${encodeURIComponent(tipo)}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Error en la API DNS');
+      return response.json();
+    }
+
+    async function validarDisponibilidad(dominio) {
+      // Consultar A, AAAA y NS para aumentar certeza
+      const tipos = ['A', 'AAAA', 'NS'];
+      const resultados = await Promise.allSettled(tipos.map(t => consultaDNS(dominio, t)));
+
+      // Si cualquiera devuelve Answer con registros, asumimos que el dominio tiene DNS configurado
+      for (const r of resultados) {
+        if (r.status === 'fulfilled') {
+          const data = r.value;
+          if (data.Status === 0 && Array.isArray(data.Answer) && data.Answer.length > 0) {
+            return { estado: 'no-disponible', detalle: `❌ El dominio ${dominio} NO está disponible (ya tiene registros DNS).` };
+          }
+        }
+      }
+
+      // Si todos fallan con NXDOMAIN o sin Answer, probablemente no existe aún
+      let todosSinRegistros = true;
+      for (const r of resultados) {
+        if (r.status === 'fulfilled') {
+          const data = r.value;
+          if (data.Status === 0 && Array.isArray(data.Answer) && data.Answer.length > 0) {
+            todosSinRegistros = false;
+            break;
+          }
+        }
+      }
+
+      if (todosSinRegistros) {
+        return { estado: 'posible', detalle: `✅ El dominio ${dominio} podría estar disponible (no se encontraron registros DNS).` };
+      }
+
+      return { estado: 'desconocido', detalle: `⚠️ No se pudo determinar con certeza. Intenta con otro TLD o verifica en tu registrador.` };
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const domain = normalizarEntrada(input.value);
+
+      if (!domain) {
+        result.className = 'status warn';
+        result.textContent = "Por favor, escribe un dominio.";
+        return;
+      }
+
+      if (!esDominioConFormatoValido(domain)) {
+        result.className = 'status error';
+        result.textContent = "El formato del dominio no es válido (ej: paginasfast.cl).";
+        return;
+      }
+
+      result.className = 'status warn';
+      result.textContent = "Comprobando dominio...";
+
+      try {
+        const { estado, detalle } = await validarDisponibilidad(domain);
+        if (estado === 'no-disponible') {
+          result.className = 'status error';
+        } else if (estado === 'posible') {
+          result.className = 'status ok';
+        } else {
+          result.className = 'status warn';
+        }
+        result.textContent = detalle;
+      } catch (error) {
+        console.error(error);
+        result.className = 'status error';
+        result.textContent =
+          "No se pudo validar el dominio. Inténtalo de nuevo más tarde.";
+      }
+    });
+
+    // Validar automáticamente paginasfast.cl al cargar la página
+    window.addEventListener("load", () => {
+      form.dispatchEvent(new Event("submit"));
+      // Generar código de inserción con la URL absoluta actual del validador
+      let embedSrc;
+      try {
+        const isHttp = /^https?:/.test(location.origin);
+        embedSrc = isHttp ? (location.origin + location.pathname) : 'https://tu-dominio.com/herramientas/validador-de-dominio.html';
+      } catch (_) {
+        embedSrc = 'https://tu-dominio.com/herramientas/validador-de-dominio.html';
+      }
+      const embed = getDomainValidatorEmbed({ src: embedSrc });
+      if (embedTextarea) embedTextarea.value = embed;
+    });
+
+    // Función pública para generar el snippet de iframe
+    function getDomainValidatorEmbed({ src = 'https://tu-dominio.com/herramientas/validador-de-dominio.html', height = 360, title = 'Validador de dominios' } = {}) {
+      const code = `<!-- Validador de dominios (PaginasFast) -->\n<iframe src="${src}" title="${title}" style="width:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>\n<script>(function(){\n  function onMsg(e){ try{ var o=new URL('${src}').origin; }catch(_){ return; } if(e && e.data && e.data.type==='domain-validator:height' && e.origin===o){ var frames=document.querySelectorAll('iframe[src^="${src}"]'); frames.forEach(function(f){ try{ f.style.height=(e.data.height||${height})+'px'; }catch(_){} }); }}\n  window.addEventListener('message', onMsg, false);\n})();<\/script>`;
+      return code;
+    }
+    window.getDomainValidatorEmbed = getDomainValidatorEmbed;
+
+    // Copiar al portapapeles
+    copyBtn?.addEventListener('click', async () => {
+      if (!embedTextarea) return;
+      try {
+        await navigator.clipboard.writeText(embedTextarea.value);
+        copyState.textContent = 'Copiado';
+        setTimeout(() => copyState.textContent = '', 1500);
+      } catch (_) {
+        copyState.textContent = 'No se pudo copiar';
+        setTimeout(() => copyState.textContent = '', 1500);
+      }
+    });
+  </script>
+</body>
+
+</html>

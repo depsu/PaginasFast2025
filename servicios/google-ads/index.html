@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start': new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-586BLT8Z');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Google Ads para Negocios Reales | PaginasFast – Más clientes, no solo clics</title>
+  <meta name="description"
+        content="Creamos y optimizamos campañas de Google Ads para emprendedores y PYMEs en Chile. Más leads, más llamadas y más ventas con una estrategia clara y medible.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#2563eb',
+              dark: '#1d4ed8',
+              soft: '#eff4ff'
+            }
+          },
+          boxShadow: {
+            soft: '0 20px 40px rgba(15,23,42,.18)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom right, rgba(15,23,42,.88), rgba(15,23,42,.94));
+      border: 1px solid rgba(148,163,184,.4);
+    }
+
+    .hero-gradient {
+      background: radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
+      radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
+      radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
+      #020617;
+    }
+
+    .logo-pill {
+      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+    }
+
+    .floating-whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 56px;
+      height: 56px;
+      background-color: #25D366;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      z-index: 40;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .floating-whatsapp-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+          style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
+      </span>
+      <div class="flex flex-col leading-tight">
+        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+      <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+      <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
+      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+      <button
+        id="cta-header"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+        Agendar llamada
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile button -->
+    <button id="mobile-menu-button"
+            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+      <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+      <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
+      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+      <button
+        id="cta-header-mobile"
+        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+        Agendar llamada
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="hero-gradient min-h-screen">
+  <!-- HERO GOOGLE ADS -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
+    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+      <a href="/servicios" class="hover:text-slate-100">Servicios</a>
+      <span>/</span>
+      <span class="text-slate-300">Google Ads</span>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Servicio · Google Ads para negocios reales
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+          Campañas de Google Ads pensadas para conseguir clientes, no solo clics.
+        </h1>
+
+        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+          Diseñamos y optimizamos tus campañas para que las personas correctas vean tu anuncio
+          en el momento correcto, con un mensaje claro y una página que realmente convierte.
+        </p>
+
+        <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">Estrategia antes que botones</p>
+            <p class="mt-1 text-slate-400">Definimos objetivos claros, palabras clave y estructura de campañas antes de gastar.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">Seguimiento real de resultados</p>
+            <p class="mt-1 text-slate-400">Medimos llamadas, formularios y ventas, no solo impresiones y clics.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+            <p class="font-semibold text-slate-50">Explicado sin tecnicismos</p>
+            <p class="mt-1 text-slate-400">Informes simples con conclusiones claras y próximos pasos accionables.</p>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <button
+            id="cta-hero"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+            Quiero una propuesta de Google Ads
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
+            </svg>
+          </button>
+
+          <a href="#planes"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+            Ver planes de Google Ads
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-400">
+          Ideal para: servicios profesionales, salud, turismo, cursos, tiendas online y negocios locales
+          que quieren contacto directo (llamadas, WhatsApp, formularios) desde Google.
+        </p>
+      </div>
+
+      <!-- Panel lateral resumen -->
+      <div class="relative">
+        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-emerald-300/40 opacity-60 blur-3xl"></div>
+        <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+          <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
+          <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué hacemos con tu cuenta de Google Ads</h2>
+
+          <ul class="mt-4 space-y-2 text-sm text-slate-200">
+            <li>• Auditoría o creación de cuenta desde cero.</li>
+            <li>• Estructura de campañas y grupos de anuncios ordenada.</li>
+            <li>• Investigación de palabras clave (búsqueda y negativas).</li>
+            <li>• Creación de anuncios de texto, extensiones y creatividades básicas.</li>
+            <li>• Seguimiento de conversiones y ajustes periódicos.</li>
+          </ul>
+
+          <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
+            <p><span class="font-semibold text-slate-100">Recomendado desde:</span> presupuestos mensuales de anuncios desde aprox. $100.000 CLP.</p>
+            <p><span class="font-semibold text-slate-100">Incluye:</span> gestión y optimización. La inversión en anuncios se paga directo a Google.</p>
+          </div>
+
+          <button
+            id="cta-card"
+            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+            Quiero que revisen mi caso
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE EL SERVICIO -->
+  <section class="border-t border-slate-800/80 bg-slate-950/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Qué incluye el servicio de Google Ads
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          No se trata de “apretar el botón de promocionar”. Diseñamos campañas con lógica de negocio,
+          analizando cómo llega el cliente, qué busca y qué tiene que pasar para que te contacte.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">1. Diagnóstico y estrategia</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            Revisamos cómo estás consiguiendo clientes hoy, qué servicios/productos quieres impulsar,
+            qué te deja más margen y qué tipo de contacto esperas desde Google (llamadas, formularios, WhatsApp).
+          </p>
+          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+            <li>• Definición de objetivos (leads, reservas, ventas online, etc.).</li>
+            <li>• Priorización de servicios/productos a promocionar.</li>
+            <li>• Revisión rápida de tu página / landing y mejoras mínimas sugeridas.</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">2. Estructura y palabras clave</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            Armamos una cuenta ordenada: campañas separadas por objetivo, grupos de anuncios por intención,
+            palabras clave que tienen sentido y lista de negativas para evitar clics basura.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+            <li>• Investigación de palabras de alto y medio intent de compra.</li>
+            <li>• Lista inicial de términos negativos para filtrar búsquedas no relevantes.</li>
+            <li>• Configuración de tipos de concordancia (frase, exacta, amplia con control).</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">3. Creatividades y anuncios</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            Escribimos anuncios que hablen en lenguaje humano, resalten tus ventajas reales
+            (no solo “el mejor servicio”) y lleven a una página coherente con el mensaje.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+            <li>• Anuncios de búsqueda con varios títulos y descripciones.</li>
+            <li>• Extensiones (llamadas, enlaces de sitio, texto destacado, ubicaciones, etc.).</li>
+            <li>• Creatividades básicas para campañas de Display / Discovery (si aplica).</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">4. Seguimiento, optimización y reportes</h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            No dejamos las campañas “tiradas”. Medimos, apagamos lo que no funciona y empujamos
+            lo que sí, siempre con datos y sentido comercial.
+          </p>
+          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+            <li>• Revisión periódica de pujas, términos de búsqueda y anuncios.</li>
+            <li>• Ajustes por horario, dispositivo, zona geográfica (si tiene sentido).</li>
+            <li>• Reportes simples con aprendizajes claros y siguientes pasos.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES GOOGLE ADS -->
+  <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Planes de gestión de Google Ads
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+            Los valores dependen del rubro, la competencia y el alcance de las campañas.
+            Estos rangos te sirven como referencia para entender el orden de magnitud.
+          </p>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
+          La inversión en anuncios se paga directo a Google. Nuestros honorarios son por la planificación,
+          configuración, optimización y reportes.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <!-- Plan 1 -->
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 1</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Presencia Inteligente</h3>
+          <p class="mt-1 text-xs text-slate-400">Para negocios que recién empiezan con Google Ads.</p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $90.000</p>
+          <p class="text-[11px] text-slate-400">Honorarios de gestión mensuales. Presupuesto de anuncios aparte.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• 1 a 2 campañas principales.</li>
+            <li>• Hasta ciertos grupos de anuncios por campaña (a definir).</li>
+            <li>• Revisión y ajustes básicos durante el mes.</li>
+            <li>• Reporte simple al final del periodo.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+            onclick="scrollContact('Presencia Inteligente')">
+            Cotizar este plan
+          </button>
+        </article>
+
+        <!-- Plan 2 -->
+        <article class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
+          <div class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+            Más elegido
+          </div>
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 2</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Leads Constantes</h3>
+          <p class="mt-1 text-xs text-slate-400">Para quienes ya invierten algo en Google Ads y quieren orden, foco y volumen controlado de leads.</p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $150.000</p>
+          <p class="text-[11px] text-slate-400">Honorarios de gestión. Ideal para presupuestos de anuncios medios.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• Estructura de campañas más completa (servicios, zonas, tipos de búsqueda).</li>
+            <li>• Optimización más frecuente durante el mes.</li>
+            <li>• Seguimiento de conversiones (formularios, llamadas, etc.).</li>
+            <li>• Reporte mensual con insights y sugerencias concretas.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
+            onclick="scrollContact('Leads Constantes')">
+            Cotizar este plan
+          </button>
+        </article>
+
+        <!-- Plan 3 -->
+        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 3</p>
+          <h3 class="mt-1 text-sm font-semibold text-slate-50">Escalable / a Medida</h3>
+          <p class="mt-1 text-xs text-slate-400">Para negocios donde Google Ads es un canal principal de ventas.</p>
+          <p class="mt-4 text-2xl font-bold text-slate-50">A convenir</p>
+          <p class="text-[11px] text-slate-400">Se define según volumen, países, idiomas y complejidad de seguimiento.</p>
+          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+            <li>• Más campañas, más tipos (búsqueda, display, performance max, etc.).</li>
+            <li>• Test A/B de anuncios y landings coordinado.</li>
+            <li>• Reuniones de revisión más frecuentes.</li>
+            <li>• Roadmap de crecimiento y automatizaciones futuras.</li>
+          </ul>
+          <button
+            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+            onclick="scrollContact('Escalable / a Medida')">
+            Hablar sobre este plan
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO DE TRABAJO -->
+  <section class="border-t border-slate-800/80 bg-slate-950/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Cómo trabajamos tus campañas de Google Ads
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          La idea es evitar la típica historia de “pagué anuncios, gasté plata y no sé qué pasó”.
+          Por eso trabajamos con un proceso claro y transparente.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Entendemos tu negocio</h3>
+          <p class="mt-2 text-slate-300">
+            Hablamos de tus servicios/productos, márgenes, zonas donde puedes atender
+            y qué tipo de cliente quieres atraer (y cual no).
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Armamos la estructura</h3>
+          <p class="mt-2 text-slate-300">
+            Creamos campañas, grupos de anuncios y palabras clave con una lógica que se pueda entender
+            y optimizar mes a mes.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Lanzamos y optimizamos</h3>
+          <p class="mt-2 text-slate-300">
+            Dejamos correr las campañas, analizamos qué términos traen buenos contactos
+            y vamos ajustando lo que no sirve.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
+          <h3 class="mt-2 text-sm font-semibold text-slate-50">Reportes y siguientes pasos</h3>
+          <p class="mt-2 text-slate-300">
+            Te mostramos resultados en lenguaje simple, proponemos ajustes y evaluamos si tiene sentido
+            aumentar, mantener o redistribuir el presupuesto.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-slate-800/80 bg-slate-950/95">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+          Preguntas frecuentes sobre Google Ads
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-300">
+          Las dudas típicas antes de empezar a invertir en anuncios (o volver a intentarlo).
+        </p>
+      </div>
+
+      <div class="mt-8 space-y-3 text-sm">
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Cuál es el presupuesto mínimo recomendado para anuncios?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Depende del rubro y la competencia, pero para tener data que sirva y no quedarte corto en pocos días,
+            suele ser razonable partir desde unos $100.000–$150.000 CLP mensuales en anuncios. En la llamada revisamos
+            tu caso específico y ajustamos.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿El valor del servicio incluye lo que se paga a Google?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            No. Nosotros cobramos por la planificación, configuración y gestión de las campañas.
+            El presupuesto de anuncios se paga directo a Google desde tu cuenta, así tienes control y transparencia
+            de lo que se invierte.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Pueden usar una cuenta de Google Ads que ya tengo?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Sí. De hecho, muchas veces partimos auditando la cuenta que ya tienes, rescatando lo que funciona
+            y ordenando o apagando lo que está mal configurado. Si conviene empezar desde cero, te lo diremos con argumentos.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Hay permanencia mínima o contrato anual?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Recomendamos trabajar al menos 2 a 3 meses para tener aprendizajes reales y no sacar conclusiones
+            con poca data. Pero no obligamos a contratos eternos: lo conversamos claramente en la propuesta
+            según tu situación.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Qué pasa si mi página no está preparada para convertir?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Lo hablamos desde el inicio. Si la página está muy lejos de lo ideal, podemos partir por
+            una landing rápida y clara (con PaginasFast) antes de meterle mucho presupuesto a anuncios
+            que van a una página que no convence.
+          </p>
+        </details>
+
+        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+            <span class="font-semibold text-slate-100 text-sm">
+              ¿Pueden coordinar también otras cosas como Google Analytics y Tag Manager?
+            </span>
+            <span
+              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+              →
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300">
+            Sí, podemos ayudarte a dejar lo básico de medición andando (Analytics, Tag Manager, conversiones)
+            o coordinar con tu equipo técnico si ya tienes herramientas configuradas. Mientras más clara la medición,
+            mejor podemos optimizar.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACTO -->
+  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Conversemos si tiene sentido invertir en Google Ads para tu negocio
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+            Cuéntanos qué ofreces, en qué zonas atiendes, cómo estás generando clientes hoy y qué esperas
+            de Google Ads: más leads, más reservas, más ventas online, etc. Si vemos que no es el canal adecuado,
+            también te lo diremos.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300">
+            <li>• Llamada o videollamada corta, sin compromiso.</li>
+            <li>• Explicación simple de escenarios realistas (qué se puede esperar y qué no).</li>
+            <li>• Propuesta con pasos claros y números aterrizados a tu realidad.</li>
+          </ul>
+          <button
+            id="cta-bottom"
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+            Quiero una propuesta de Google Ads
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Formulario -->
+        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
+          <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y revisamos si Google Ads calza con tu negocio.</p>
+
+          <form id="contact-form" class="mt-4 space-y-3">
+            <div>
+              <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+              <input id="name" name="name" type="text" required
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
+              <input id="email" name="email" type="email" required
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
+              <input id="phone" name="phone" type="tel"
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
+              <input id="service" name="service" type="text" value="Google Ads"
+                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+            </div>
+            <div>
+              <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
+              <textarea id="message" name="message" rows="3"
+                        class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        placeholder="Ej: ofrezco estos servicios/productos, atiendo en estas zonas, invierto tanto al mes, etc."></textarea>
+            </div>
+            <button type="submit"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Enviar consulta
+            </button>
+            <p class="text-[11px] text-slate-500">
+              Usamos tus datos solo para responder a tu mensaje. Nada de spam.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-800 bg-slate-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+          <span class="text-[11px] text-slate-400">Desarrollo web, tiendas online, Google Ads y sistemas para negocios reales.</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+      </div>
+    </div>
+    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+      © 2025 PaginasFast. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- Botón WhatsApp flotante -->
+<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20Google%20Ads"
+   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+    <defs>
+      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#57d163"></stop>
+        <stop offset="1" stop-color="#23b33a"></stop>
+      </linearGradient>
+      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+      </filter>
+    </defs>
+    <path fill="#b3b3b3"
+          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+          filter="url(#a)"></path>
+    <path fill="#fff"
+          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+    </path>
+    <path fill="url(#b)"
+          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+    </path>
+    <path fill="#fff" fill-rule="evenodd"
+          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+    </path>
+  </svg>
+</a>
+
+<!-- JS mínimo -->
+<script>
+  // menú móvil
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // scroll a contacto (con posible preselección de plan)
+  function scrollContact(plan) {
+    const section = document.getElementById('contacto');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      const serviceField = document.getElementById('service');
+      if (serviceField) {
+        if (plan) {
+          serviceField.value = `Google Ads – ${plan}`;
+        } else {
+          serviceField.value = 'Google Ads';
+        }
+      }
+    }
+  }
+  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
+  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
+
+  // envío básico del formulario (placeholder)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const name = formData.get('name') || '';
+      alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre Google Ads. Te contactaremos pronto.`);
+      contactForm.reset();
+      // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
+    });
+  }
+</script>
+</body>
+</html>
