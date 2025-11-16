@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ofertas y Packs | PaginasFast</title>
+  <meta name="description"
+    content="Ofertas, descuentos y packs especiales en páginas web, Google Ads y automatizaciones con IA para PYMEs en Chile. Contrata tu sistema de crecimiento digital con condiciones especiales.">
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#2563eb',
+              dark: '#1d4ed8',
+              soft: '#eff4ff',
+            },
+          },
+          boxShadow: {
+            soft: '0 20px 40px rgba(15,23,42,.18)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom right,
+          rgba(15, 23, 42, 0.92),
+          rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-gradient {
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129, 140, 248, 0.2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56, 189, 248, 0.14), transparent 55%),
+        #020617;
+      background-size: 140% 140%;
+      animation: heroGradientMove 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGradientMove {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    .logo-pill {
+      background: radial-gradient(circle at top left,
+          rgba(59, 130, 246, 0.45),
+          rgba(37, 99, 235, 0.9));
+    }
+
+    /* Animaciones suaves */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .fade-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .fade-delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    .fade-delay-4 {
+      transition-delay: 0.32s;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        opacity: 0.25;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(1.06);
+      }
+
+      100% {
+        opacity: 0.25;
+        transform: scale(1);
+      }
+    }
+
+    .glow-pulse {
+      animation: glowPulse 8s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-gradient {
+        animation: none !important;
+      }
+
+      .fade-in-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .glow-pulse {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+  <!-- NAVBAR (coherente con la home) -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
+        </span>
+        <div class="flex flex-col leading-tight">
+          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/#servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+        <a href="/ofertas" class="text-primary font-semibold">Ofertas</a>
+        <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+        <button id="cta-header"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          Agendar llamada
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="/#servicios" class="text-slate-300 hover:text-white">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+        <a href="/ofertas" class="text-primary font-semibold">Ofertas</a>
+        <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+        <button id="cta-header-mobile"
+          class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+          Agendar llamada
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / OFERTAS -->
+  <main class="relative hero-gradient min-h-screen overflow-hidden">
+    <!-- Fondo decorativo -->
+    <div class="pointer-events-none absolute inset-0 opacity-20">
+      <div class="w-full h-full bg-[radial-gradient(circle_at_center,_rgba(148,163,184,0.18),_transparent_60%)]"></div>
+    </div>
+    <div
+      class="pointer-events-none absolute -top-32 -right-40 h-72 w-72 rounded-full bg-blue-500/40 blur-3xl opacity-60 glow-pulse">
+    </div>
+    <div
+      class="pointer-events-none absolute -bottom-40 -left-32 h-72 w-72 rounded-full bg-emerald-400/30 blur-3xl opacity-60 glow-pulse">
+    </div>
+
+    <section class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-20 lg:pb-24">
+      <!-- Breadcrumb / título -->
+      <p class="fade-in-up fade-delay-1 text-xs font-medium text-slate-400 mb-2">
+        Inicio · <span class="text-slate-200">Ofertas</span>
+      </p>
+
+      <div class="grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-10 items-start">
+        <div>
+          <h1
+            class="fade-in-up fade-delay-2 text-3xl sm:text-4xl lg:text-4xl xl:text-[2.6rem] font-extrabold tracking-tight text-slate-50 leading-tight max-w-2xl">
+            Ofertas y packs especiales
+            <span class="block mt-1 bg-gradient-to-r from-blue-400 via-sky-300 to-emerald-300 bg-clip-text text-transparent">
+              para acelerar tu crecimiento digital.
+            </span>
+          </h1>
+
+          <p class="fade-in-up fade-delay-3 mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+            Promos pensadas para PYMEs que quieren resultados rápidos:
+            página web profesional, campañas bien hechas y automatizaciones con IA
+            a un precio más conveniente cuando contratas en conjunto.
+          </p>
+
+          <div class="fade-in-up fade-delay-4 mt-6 flex flex-wrap items-center gap-3">
+            <button
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-blue-500/40 transition-all">
+              Quiero esta oferta
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+            <span class="text-xs sm:text-sm text-slate-400">
+              Cupos limitados por mes para cuidar la calidad de implementación.
+            </span>
+          </div>
+
+          <div class="fade-in-up fade-delay-4 mt-7 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px]">
+            <div class="flex items-center gap-3">
+              <div class="h-8 w-8 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-300">
+                ✓
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">Descuentos reales</p>
+                <p class="text-slate-400">No “desde”, sino precios concretos y claros.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-8 w-8 rounded-xl bg-sky-500/15 flex items-center justify-center text-sky-300">
+                ⚡
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">Implementación rápida</p>
+                <p class="text-slate-400">Páginas y campañas listas en semanas, no meses.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="h-8 w-8 rounded-xl bg-violet-500/15 flex items-center justify-center text-violet-300">
+                ✦
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100">IA incluida</p>
+                <p class="text-slate-400">Textos, embudos y automatizaciones con IA supervisada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta resumen de oferta principal -->
+        <aside class="fade-in-up fade-delay-3">
+          <div class="relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/60 via-sky-400/40 to-emerald-300/40 opacity-70 blur-3xl">
+            </div>
+            <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+              <div class="flex items-center justify-between gap-2">
+                <span
+                  class="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-3 py-1 text-[11px] font-semibold text-emerald-300 uppercase tracking-[0.16em]">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Pack más elegido
+                </span>
+                <span class="text-[11px] text-amber-300 font-medium">
+                  Ahorra hasta un 25%
+                </span>
+              </div>
+
+              <h2 class="mt-4 text-lg font-semibold text-slate-50">
+                Pack “Sistema completo de crecimiento”
+              </h2>
+              <p class="mt-2 text-sm text-slate-300">
+                Web profesional + Google Ads + chatbot IA + automatizaciones básicas
+                para responder a cada lead sin que tengas que estar pegado al celular.
+              </p>
+
+              <div class="mt-4 flex items-end gap-3">
+                <div>
+                  <p class="text-xs text-slate-400 line-through">Antes: $1.190.000 + IVA</p>
+                  <p class="text-2xl font-bold text-slate-50">Ahora: $890.000 + IVA</p>
+                  <p class="text-[11px] text-slate-400">Pago único por implementación. Tráfico se paga aparte.</p>
+                </div>
+                <div class="ml-auto text-right text-xs">
+                  <p class="text-slate-400">Cupos mes actual:</p>
+                  <p class="font-semibold text-emerald-300">3 / 5 disponibles</p>
+                </div>
+              </div>
+
+              <ul class="mt-4 space-y-2 text-xs text-slate-300">
+                <li>• Sitio web multipágina optimizado para conversión</li>
+                <li>• Setup de 1 campaña de Google Ads con hasta 3 grupos</li>
+                <li>• Chatbot IA básico entrenado con info de tu negocio</li>
+                <li>• Automatización simple: formulario → email/WhatsApp</li>
+                <li>• Reunión inicial + revisión posterior al primer mes</li>
+              </ul>
+
+              <button
+                class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                Quiero cotizar este pack
+              </button>
+              <p class="mt-2 text-[11px] text-slate-400">
+                Sin pago automático. Te enviamos propuesta formal y boleta/factura.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OFERTAS DESTACADAS -->
+    <section class="relative z-10 border-t border-slate-800/80 bg-slate-950/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Ofertas vigentes
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+              Puedes partir por algo pequeño o ir directo al sistema completo.
+              Todos los planes pueden crecer contigo y tu negocio.
+            </p>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400">
+            Valores referenciales en CLP. Ajustables según complejidad del proyecto.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Oferta 1 -->
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                WEB EXPRESS
+              </p>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] text-emerald-300 font-medium">
+                Ideal para partir
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Landing page + formulario</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Página única enfocada en un servicio principal, lista para enviar tráfico
+              desde redes sociales o campañas pequeñas.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $490.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $390.000 + IVA</p>
+              <p class="text-[11px] text-slate-400 mt-1">Incluye dominio y hosting el primer año (opcional).</p>
+            </div>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Diseño adaptado a tu marca</li>
+              <li>• Versión móvil optimizada</li>
+              <li>• 1 formulario conectado a tu correo</li>
+              <li>• Textos optimizados con IA supervisada</li>
+              <li>• Entrega estimada: 7 a 10 días hábiles</li>
+            </ul>
+            <button
+              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-slate-50/10">
+              Ver detalles / cotizar
+            </button>
+          </article>
+
+          <!-- Oferta 2 -->
+          <article
+            class="relative rounded-2xl border border-blue-500/80 bg-slate-900/90 p-5 flex flex-col shadow-soft">
+            <div
+              class="absolute -top-3 left-4 inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold text-white shadow-md">
+              Más contratado
+            </div>
+            <div class="flex items-center justify-between gap-2 mt-1">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                WEB + TRÁFICO
+              </p>
+              <span class="rounded-full bg-sky-500/10 px-2.5 py-1 text-[11px] text-sky-300 font-medium">
+                Mejor balance
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Sitio multipágina + Google Ads inicial</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Para negocios que necesitan aparecer en Google con un sitio serio y
+              campañas bien armadas desde el inicio.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $890.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $720.000 + IVA</p>
+              <p class="text-[11px] text-slate-400 mt-1">No incluye presupuesto de anuncios. Mínimo sugerido: $150.000.</p>
+            </div>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• 3 a 5 secciones (Inicio, Servicios, Sobre mí, Contacto, etc.)</li>
+              <li>• Indexación básica en Google</li>
+              <li>• Setup de 1 campaña de búsqueda con extensiones</li>
+              <li>• 2 ajustes de campaña el primer mes</li>
+              <li>• Reunión de entrega + seguimiento a los 30 días</li>
+            </ul>
+            <button
+              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Quiero reservar este pack
+            </button>
+          </article>
+
+          <!-- Oferta 3 -->
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-violet-500/70 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                IA & AUTOMATIZACIÓN
+              </p>
+              <span class="rounded-full bg-violet-500/10 px-2.5 py-1 text-[11px] text-violet-300 font-medium">
+                Para escalar
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Chatbot + automatizaciones clave</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Pensado para negocios que ya reciben muchos mensajes y quieren
+              filtrar curiosos, responder rápido y no perder oportunidades calientes.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $690.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $540.000 + IVA</p>
+              <p class="text-[11px] text-slate-400 mt-1">Incluye hasta 2 flujos de automatización simples.</p>
+            </div>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Chatbot IA entrenado con info de tu negocio</li>
+              <li>• Integración en tu sitio o landing</li>
+              <li>• Automatización: nuevo lead → planilla + correo</li>
+              <li>• Notificaciones básicas por WhatsApp (via API/de terceros)</li>
+              <li>• Capacitación breve para que entiendas el flujo</li>
+            </ul>
+            <button
+              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-violet-200 hover:bg-slate-50/10">
+              Ver si esto calza conmigo
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKS RECOMENDADOS -->
+    <section class="relative z-10 border-t border-slate-800/80 bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            ¿Cuál pack te conviene según tu situación?
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            No todos los negocios están en el mismo punto. Estos son los escenarios más comunes
+            que vemos en PaginasFast.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3 text-sm">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.18em]">Escenario 1</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-50">“No tengo web o la que tengo es muy antigua”</h3>
+            <p class="mt-2 text-slate-300">
+              Necesitas una base sólida antes de meterle mucho dinero a campañas.
+            </p>
+            <p class="mt-3 text-xs text-slate-400">Recomendado:</p>
+            <ul class="mt-1 space-y-1 text-slate-200 text-xs">
+              <li>• <span class="font-semibold">Web Express</span> si quieres algo simple para partir.</li>
+              <li>• <span class="font-semibold">Web + Tráfico</span> si ya tienes demanda y necesitas escalar.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col">
+            <p class="text-xs font-semibold text-sky-300 uppercase tracking-[0.18em]">Escenario 2</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-50">“Tengo web pero nadie la visita”</h3>
+            <p class="mt-2 text-slate-300">
+              Tu problema principal es el tráfico y cómo lo conviertes en cotizaciones reales.
+            </p>
+            <p class="mt-3 text-xs text-slate-400">Recomendado:</p>
+            <ul class="mt-1 space-y-1 text-slate-200 text-xs">
+              <li>• <span class="font-semibold">Web + Tráfico</span> si tu web se puede ajustar.</li>
+              <li>• <span class="font-semibold">Pack sistema completo</span> si hay que corregir varias cosas.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 flex flex-col">
+            <p class="text-xs font-semibold text-emerald-300 uppercase tracking-[0.18em]">Escenario 3</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-50">“Tengo muchas consultas y me saturo”</h3>
+            <p class="mt-2 text-slate-300">
+              Estás perdiendo oportunidades por no poder responder todo a tiempo.
+            </p>
+            <p class="mt-3 text-xs text-slate-400">Recomendado:</p>
+            <ul class="mt-1 space-y-1 text-slate-200 text-xs">
+              <li>• <span class="font-semibold">IA & Automatización</span> como complemento a lo que ya tienes.</li>
+              <li>• <span class="font-semibold">Sistema completo</span> si quieres ordenar todo el flujo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="relative z-10 border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50 text-center">
+          Preguntas frecuentes sobre las ofertas
+        </h2>
+
+        <div class="mt-8 space-y-5 text-sm">
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <summary
+              class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
+              <span>¿Estos precios son finales?</span>
+              <span
+                class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-2 text-slate-300 text-sm">
+              Son referencias muy cercanas a lo que suele salir cada proyecto. Si tu negocio es más complejo
+              (muchos servicios, integraciones especiales, etc.) ajustamos el valor en la propuesta formal.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <summary
+              class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
+              <span>¿Qué no está incluido en estos valores?</span>
+              <span
+                class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-2 text-slate-300 text-sm">
+              El presupuesto de publicidad (Google, Meta, etc.) siempre se paga aparte directo a cada plataforma.
+              También integraciones muy específicas de software propio o a medida pueden tener costo adicional.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <summary
+              class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
+              <span>¿Puedo partir con algo pequeño y después cambiarme a un pack mayor?</span>
+              <span
+                class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-2 text-slate-300 text-sm">
+              Sí. Muchos clientes comienzan con una Web Express y luego, cuando validan sus servicios, migran
+              a un sistema completo. Siempre tomamos en cuenta lo ya construido para no partir de cero.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <summary
+              class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
+              <span>¿Trabajan solo con negocios en Chile?</span>
+              <span
+                class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-2 text-slate-300 text-sm">
+              Hoy la mayoría de nuestros clientes están en Chile, pero también podemos trabajar con negocios de otros
+              países de habla hispana siempre que podamos coordinar horarios y medios de pago.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="relative z-10 border-t border-slate-800/80 bg-slate-950">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="rounded-3xl border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+          <div class="flex-1">
+            <p class="text-xs font-semibold text-primary uppercase tracking-[0.22em]">¿Dudas?</p>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Conversemos 20 minutos y te digo qué pack te conviene.
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+              No todos los negocios necesitan lo mismo. En una llamada rápida revisamos dónde estás hoy,
+              qué estás perdiendo y cuál oferta tiene más sentido para ti.
+            </p>
+          </div>
+          <div class="w-full max-w-sm">
+            <button
+              class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Agendar llamada sobre ofertas
+            </button>
+            <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20ofertas%20de%20PaginasFast"
+              target="_blank"
+              class="mt-3 w-full inline-flex items-center justify-center gap-2 rounded-full border border-slate-600 px-6 py-2.5 text-sm font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              O hablar directo por WhatsApp
+            </a>
+            <p class="mt-2 text-[11px] text-slate-500 text-center">
+              No hacemos spam. Si no calzamos, igual te dejamos con claridad de pasos a seguir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+          </span>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+            <span class="text-[11px] text-slate-400">Web + tráfico + IA para PYMEs en Chile.</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <a href="/" class="hover:text-slate-200">Inicio</a>
+          <a href="/#servicios" class="hover:text-slate-200">Servicios</a>
+          <a href="/ofertas" class="hover:text-slate-200">Ofertas</a>
+          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+        </div>
+      </div>
+      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+        © 2025 PaginasFast. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Animaciones fade-in
+    (function () {
+      const elements = document.querySelectorAll('.fade-in-up');
+      if (!elements.length) return;
+
+      const prefersReduced = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        elements.forEach(el => el.classList.add('show'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      elements.forEach(el => observer.observe(el));
+    })();
+  </script>
+</body>
+
+</html>
