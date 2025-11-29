@@ -4,17 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Apoyo Emprendedor | PaginasFast</title>
+    <title>Pack Inicio Digital | PaginasFast</title>
     <meta name="description"
-        content="Plan Apoyo Emprendedor: tu primera página web profesional desde $59.000. Elige entre Web Express o Web Express + Tráfico y paga en línea con Mercado Pago.">
+        content="Todo lo que necesitas para empezar en internet: Web profesional, dominio .cl gratis, hosting y botones de contacto directo. Simple y rápido.">
 
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- Tailwind -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -29,13 +26,16 @@
                     },
                     colors: {
                         primary: {
-                            DEFAULT: '#2563eb',
+                            DEFAULT: '#2563eb', // Azul vibrante pero accesible
                             dark: '#1d4ed8',
                         },
+                        accent: {
+                            DEFAULT: '#10b981', // Verde esmeralda para cosas "Gratis" o positivas
+                        }
                     },
                     boxShadow: {
-                        soft: '0 18px 40px rgba(15,23,42,.22)',
-                    },
+                        glow: '0 0 20px rgba(37, 99, 235, 0.25)',
+                    }
                 },
             },
         };
@@ -43,1677 +43,247 @@
 
     <style>
         body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc; /* Slate 50 */
         }
 
-        .hero-gradient {
-            background:
-                radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%),
-                radial-gradient(circle at top right, rgba(129, 140, 248, 0.2), transparent 55%),
-                radial-gradient(circle at bottom, rgba(56, 189, 248, 0.14), transparent 55%),
-                #020617;
-            background-size: 140% 140%;
-            animation: heroGradientMove 22s ease-in-out infinite alternate;
+        /* Efecto de fondo sutil */
+        .bg-grid {
+            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
+                linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+            opacity: 0.1;
         }
 
-        @keyframes heroGradientMove {
-            0% {
-                background-position: 0% 0%;
-            }
-
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-
-        .logo-pill {
-            background: radial-gradient(circle at top left,
-                    rgba(59, 130, 246, 0.45),
-                    rgba(37, 99, 235, 0.9));
-        }
-
-        .range-input {
-            accent-color: #2563eb;
-        }
-
-        /* Simulador "potenciado" por extras */
-        #trafficSimulatorCard {
-            transition: background-color 0.35s ease, border-color 0.35s ease,
-                box-shadow 0.35s ease, transform 0.2s ease;
-        }
-
-        #trafficSimulatorCard.boost-1 {
-            background: radial-gradient(circle at top left,
-                    rgba(22, 163, 74, 0.10),
-                    rgba(15, 23, 42, 1));
-            border-color: rgba(34, 197, 94, 0.50);
-            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.18);
-        }
-
-        #trafficSimulatorCard.boost-2 {
-            background: radial-gradient(circle at top left,
-                    rgba(22, 163, 74, 0.18),
-                    rgba(15, 23, 42, 1));
-            border-color: rgba(34, 197, 94, 0.75);
-            box-shadow: 0 14px 32px rgba(22, 163, 74, 0.25);
-        }
-
-        #trafficSimulatorCard.boost-3 {
-            background: radial-gradient(circle at top left,
-                    rgba(22, 163, 74, 0.25),
-                    rgba(15, 23, 42, 1));
-            border-color: rgba(34, 197, 94, 0.95);
-            box-shadow: 0 18px 40px rgba(22, 163, 74, 0.35);
-        }
-
-        #trafficBoostBadge {
-            transition: opacity 0.25s ease, transform 0.25s ease;
-        }
-
-        @keyframes boostSpin {
-            0% {
-                transform: rotate(0deg) scale(1);
-            }
-
-            40% {
-                transform: rotate(10deg) scale(1.05);
-            }
-
-            80% {
-                transform: rotate(-5deg) scale(1.02);
-            }
-
-            100% {
-                transform: rotate(0deg) scale(1);
-            }
-        }
-
-        #trafficBoostBadge.spin #trafficBoostBadgeIcon {
-            animation: boostSpin 0.9s ease-in-out;
-        }
-
-        /* Sección colapsable de extras (fade + altura) */
-        #boost-content-inner {
-            max-height: 96px;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-            position: relative;
-        }
-
-        #boost-fade {
-            position: absolute;
-            inset-inline: 0;
-            bottom: 0;
-            height: 40px;
-            background: linear-gradient(to top,
-                    rgba(15, 23, 42, 1),
-                    rgba(15, 23, 42, 0));
-            pointer-events: none;
-            transition: opacity 0.35s ease;
-        }
-
-        #boost-options.open #boost-content-inner {
-            max-height: 600px;
-        }
-
-        #boost-options.open #boost-fade {
-            opacity: 0;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .hero-gradient {
-                animation: none !important;
-            }
-
-            #trafficSimulatorCard {
-                transition: none !important;
-            }
-
-            #boost-content-inner,
-            #boost-fade {
-                transition: none !important;
-            }
+        .check-icon {
+            color: #34d399; /* Emerald 400 */
         }
     </style>
 </head>
 
-<body class="bg-slate-950 text-slate-50 antialiased">
+<body class="antialiased pb-24">
 
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-grid"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-3xl"></div>
+    </div>
 
-
-
-
-
-
-    <!-- NAVBAR simple -->
-    <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <!-- Logo -->
+    <header class="relative z-20 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
             <a href="/" class="flex items-center gap-2">
-                <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-                    <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
+                <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg">
+                    PF
                 </span>
-                <div class="flex flex-col leading-tight">
-                    <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-                    <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Apoyo emprendedor</span>
-                </div>
+                <span class="font-bold text-lg tracking-tight">PaginasFast</span>
             </a>
-
-            <div class="hidden md:flex items-center gap-6 text-sm">
-                <a href="/#servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
-                <a href="/ofertas" class="text-slate-300 hover:text-white transition-colors">Ofertas</a>
-                <a href="/ofertas/apoyo-emprendedor" class="text-primary font-semibold">Apoyo emprendedor</a>
-            </div>
-
-            <button id="mobile-menu-button"
-                class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </nav>
-
-        <!-- Menú móvil -->
-        <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
-            <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-                <a href="/#servicios" class="text-slate-300 hover:text-white">Servicios</a>
-                <a href="/ofertas" class="text-slate-300 hover:text-white">Ofertas</a>
-                <a href="/ofertas/apoyo-emprendedor" class="text-primary font-semibold">Apoyo emprendedor</a>
-            </div>
+            <a href="https://wa.me/56900000000" class="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                ¿Tienes dudas?
+            </a>
         </div>
     </header>
 
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12">
 
-    <!-- BANNER PROYECTOS CON IPHONE CAROUSEL -->
-<section class="mt-12 sm:mt-16">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2 items-center">
-      <!-- TEXTO IZQUIERDA -->
-      <div>
-        <p class="text-xs font-semibold text-sky-400 uppercase tracking-[0.22em] mb-2">
-          PROYECTOS REALES
-        </p>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
-          Así se ven las páginas de otros
-          <span class="text-primary">emprendedores</span> en su celular.
-        </h2>
-        <p class="mt-3 text-sm sm:text-base text-slate-300">
-          Usamos el mismo sistema que tendrás tú: Web Express pensada para verse
-          increíble en el teléfono, donde realmente te encuentran tus clientes.
-        </p>
-
-        <ul class="mt-4 space-y-2 text-sm text-slate-300">
-          <li>• Diseños claros, sin “letras chicas” ni ruido visual.</li>
-          <li>• Siempre optimizadas primero para celular, después para escritorio.</li>
-          <li>• Textos escritos en simple, como si le hablaras a tu cliente en persona.</li>
-        </ul>
-
-        <button
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
-          Quiero que mi página se vea así
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- IPHONE + CARRUSEL DERECHA -->
-      <div class="relative flex justify-center lg:justify-end">
-        <!-- Glow detrás del teléfono -->
-        <div
-          class="pointer-events-none absolute inset-y-6 -left-4 -right-4 bg-gradient-to-tr from-blue-500/30 via-cyan-400/20 to-emerald-400/20 blur-3xl opacity-60">
-        </div>
-
-        <div class="relative z-10 flex flex-col items-center gap-4">
-          <!-- Marco tipo iPhone -->
-          <div
-            class="relative w-[210px] sm:w-[230px] md:w-[260px] aspect-[9/19] rounded-[2.5rem] border border-slate-500/60 bg-slate-900 shadow-2xl overflow-hidden">
-            <!-- notch / cámara -->
-            <div
-              class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 rounded-full bg-black/60 flex items-center justify-center">
-              <span class="w-8 h-2 rounded-full bg-black/70"></span>
-            </div>
-
-            <!-- Pantalla (imagen del proyecto) -->
-            <img
-              id="phone-project-image"
-              src="/img/proyectos/proyecto1.jpg"
-              alt="Proyecto web en un teléfono"
-              class="w-full h-full object-cover transition-opacity duration-500"
-            >
-          </div>
-
-          <!-- Controles del carrusel -->
-          <div class="flex flex-col items-center gap-3">
-            <!-- Nombre del proyecto -->
-            <p id="phone-project-title" class="text-xs sm:text-sm font-medium text-slate-200">
-              Emprendimiento 1 · Servicios locales
+        <section class="text-center mb-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-wider uppercase mb-4">
+                Especial Emprendedores 2025
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Tu negocio en internet.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                    Profesional, fácil y rápido.
+                </span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+                Olvídate de tecnicismos. Obten una página web diseñada para vender, 
+                con botones de WhatsApp y llamadas listos para usar. 
+                <strong class="text-white">Nosotros hacemos todo el trabajo técnico.</strong>
             </p>
 
-            <!-- Puntos -->
-            <div class="flex items-center gap-2">
-              <!-- Cambia data-slide según la cantidad de proyectos -->
-              <button type="button" data-slide="0"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-500"></button>
-              <button type="button" data-slide="1"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
-              <button type="button" data-slide="2"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
+            <div class="relative mx-auto w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden mb-12 transform hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-xl z-20 flex justify-center">
+                    <div class="w-16 h-4 bg-slate-900 rounded-b-lg"></div>
+                </div>
+                <img src="/img/proyectos/proyecto1.jpg" alt="Tu página en celular" class="w-full h-full object-cover opacity-90">
+                
+                <div class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur rounded-xl p-3 border border-slate-700 text-left">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <p class="text-[10px] text-emerald-400 font-bold uppercase">Online 24/7</p>
+                    </div>
+                    <p class="text-xs text-white font-medium leading-tight">
+                        Tus clientes te encuentran y te contactan con un clic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Todo lo que necesitas para vender</h2>
+                <p class="text-slate-400 mt-2">Sin letra chica. Un solo pago, todo incluido.</p>
             </div>
 
-            <!-- Botones Anterior / Siguiente -->
-            <div class="flex items-center gap-3 text-[11px] sm:text-xs">
-              <button id="phone-prev"
-                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
-                ← Anterior
-              </button>
-              <button id="phone-next"
-                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
-                Siguiente →
-              </button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Botón de WhatsApp</h3>
+                    <p class="text-sm text-slate-400">Tus clientes tocan un botón y abren chat directo contigo. Sin marcar números.</p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-blue-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Botón de Llamar</h3>
+                    <p class="text-sm text-slate-400">Facilita que te llamen con un solo clic desde el celular. Ideal para urgencias o deliverys.</p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-purple-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Diseño Impactante</h3>
+                    <p class="text-sm text-slate-400">Un banner principal con tu oferta clara e imágenes de calidad que den confianza.</p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-pink-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Formulario de Cotización</h3>
+                    <p class="text-sm text-slate-400">Recibe pedidos o consultas directo a tu correo, ordenados y claros.</p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-yellow-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Sección de Reseñas</h3>
+                    <p class="text-sm text-slate-400">Mostramos lo que dicen tus clientes felices para convencer a los nuevos.</p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-orange-500/50 transition-colors group">
+                    <div class="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Tus Servicios</h3>
+                    <p class="text-sm text-slate-400">Lista clara de lo que haces y cuánto cobras (opcional), fácil de leer.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 mb-20">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">
+                Además, incluimos todo lo técnico <span class="text-emerald-400">GRATIS</span> por el primer año
+            </h3>
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
+                    <div class="bg-emerald-500/20 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold">Dominio .CL Gratis</h4>
+                        <p class="text-sm text-slate-400">Tu nombre en internet (ej: tudespacho.cl) es tuyo gratis por un año.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
+                    <div class="bg-blue-500/20 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold">Hosting de Calidad Gratis</h4>
+                        <p class="text-sm text-slate-400">El "espacio" donde vive tu web. Rápido y seguro, gratis por un año.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
+                    <div class="bg-indigo-500/20 p-2 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold">SEO Básico (Aparece en Google)</h4>
+                        <p class="text-sm text-slate-400">Configuramos tu página para que Google sepa quién eres y qué vendes.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="flex flex-col items-center justify-center p-4 bg-slate-800/30 rounded-xl text-center">
+                        <span class="text-2xl mb-1">📍</span>
+                        <span class="text-xs font-semibold text-slate-300">Mapa de Ubicación</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center p-4 bg-slate-800/30 rounded-xl text-center">
+                        <span class="text-2xl mb-1">🔒</span>
+                        <span class="text-xs font-semibold text-slate-300">Sitio Seguro (SSL)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center bg-gradient-to-br from-blue-900/40 to-slate-900 border border-blue-500/30 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/20 blur-3xl rounded-full pointer-events-none"></div>
+
+            <p class="text-sm font-bold text-blue-300 uppercase tracking-widest mb-2">Oferta por tiempo limitado</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Pack Inicio Digital</h2>
+            
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <span class="text-slate-400 text-lg line-through decoration-red-500 decoration-2">$70.000</span>
+                <span class="text-5xl font-black text-white">$59.000</span>
             </div>
 
-            <p class="text-[10px] text-slate-500 text-center max-w-xs">
-              Son ejemplos de cómo se ven las Web Express en el celular.
-              La tuya tendrá tus colores, tus textos y tu estilo.
+            <p class="text-slate-300 text-sm mb-8 max-w-md mx-auto">
+                Pago único anual. Sin mensualidades sorpresa. <br>
+                Incluye diseño web + dominio + hosting por un año.
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+            <button id="main-cta-button" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-lg font-bold rounded-full shadow-lg shadow-blue-600/40 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto">
+                <span>¡Lo quiero! Empezar ahora</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </button>
+            
+            <p class="mt-4 text-xs text-slate-500">
+                Garantía de satisfacción: Revisas el diseño antes de aprobarlo.
+            </p>
+        </section>
 
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="hero-gradient min-h-screen">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
-
-            <!-- Hero -->
-            <section class="text-center max-w-3xl mx-auto">
-                <p class="text-[11px] font-semibold text-slate-400 uppercase tracking-[0.22em]">
-                    Oferta especial para quienes recién comienzan
-                </p>
-                <h1 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-50">
-                    Tu primera página web, sin enredos.
-                </h1>
-                <p class="mt-3 text-sm sm:text-base text-slate-300">
-                    Elige entre <strong>Web Express</strong> o <strong>Web Express + Tráfico</strong>.
-                    Menos texto técnico, más acción. Pagas directo en la web con Mercado Pago.
-                </p>
-
-                <div
-                    class="mt-4 inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-800 px-3 py-1">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="text-[11px] text-slate-300">Cupos limitados por mes para mantener la calidad.</span>
-                </div>
-            </section>
-
-            <!-- Selección de plan -->
-            <section class="mt-10">
-                <div class="max-w-4xl mx-auto">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <!-- Card Web Express -->
-                        <button type="button" data-plan="express"
-                            class="plan-card group rounded-2xl border border-blue-500/80 bg-slate-900/90 p-4 sm:p-5 text-left shadow-soft cursor-pointer ring-2 ring-blue-500/70">
-                            <div class="flex items-center justify-between gap-2">
-                                <div>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
-                                        Web Express
-                                    </p>
-                                    <h2 class="mt-1 text-base sm:text-lg font-semibold text-slate-50">
-                                        Para dar tu primer paso digital
-                                    </h2>
-                                </div>
-                                <span
-                                    class="rounded-full bg-emerald-500/15 text-emerald-300 text-[11px] px-2.5 py-1 font-medium">
-                                    Más económica
-                                </span>
-                            </div>
-                            <p class="mt-3 text-sm text-slate-300">
-                                Una sola página clara, con tu oferta, fotos y botón de contacto.
-                            </p>
-                            <p class="mt-3 text-xs text-slate-400">
-                                Desde <span class="text-emerald-300 font-semibold">$59.000</span> (primer año).
-                            </p>
-                        </button>
-
-                        <!-- Card Web Express + Tráfico -->
-                        <button type="button" data-plan="express-traffic"
-                            class="plan-card group rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 text-left cursor-pointer hover:border-blue-500/60 hover:shadow-soft transition-all">
-                            <div class="flex items-center justify-between gap-2">
-                                <div>
-                                    <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
-                                        Web Express + Tráfico
-                                    </p>
-                                    <h2 class="mt-1 text-base sm:text-lg font-semibold text-slate-50">
-                                        Página + personas entrando a verla
-                                    </h2>
-                                </div>
-                                <span
-                                    class="rounded-full bg-sky-500/15 text-sky-300 text-[11px] px-2.5 py-1 font-medium">
-                                    Para ir más rápido
-                                </span>
-                            </div>
-                            <p class="mt-3 text-sm text-slate-300">
-                                Incluye Web Express y configuración inicial de campañas.
-                            </p>
-                            <p class="mt-3 text-xs text-slate-400">
-                                Pagas la web + extras, y tú decides cuánto invertir en anuncios.
-                            </p>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Detalles de los planes -->
-                <div class="max-w-4xl mx-auto mt-8 space-y-8">
-
-                    <!-- PLAN 1: WEB EXPRESS -->
-                    <div data-plan-detail="express"
-                        class="plan-detail rounded-3xl border border-slate-800 bg-slate-950/80 p-5 sm:p-7">
-                        <div class="md:grid md:grid-cols-2 md:gap-6">
-                            <!-- Columna izquierda -->
-                            <div class="space-y-4 md:pr-4">
-                                <div>
-                                    <h3 class="text-lg sm:text-xl font-bold text-slate-50">
-                                        Web Express · Apoyo emprendedor
-                                    </h3>
-                                    <p class="mt-2 text-sm text-slate-300">
-                                        Ideal si estás recién empezando, tienes una idea clara y quieres una página
-                                        simple que diga quién eres, qué ofreces y cómo te pueden contactar.
-                                    </p>
-                                </div>
-
-                                <div class="space-y-2 text-sm text-slate-200">
-                                    <p class="font-semibold">Desglose simple:</p>
-                                    <ul class="space-y-1 text-slate-300">
-                                        <li>• Desarrollo de la página:
-                                            <span class="line-through text-slate-500">$70.000</span> →
-                                            <strong>$35.000</strong>
-                                        </li>
-                                        <li>• Dominio .cl (1 año): <strong>$15.000</strong></li>
-                                        <li>• Hosting (donde vive tu web): opción económica o de por vida.</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Datos del cliente -->
-                                <div class="space-y-3 text-sm">
-                                    <p class="text-xs text-slate-400 font-semibold uppercase tracking-[0.18em]">
-                                        Datos para tu pedido
-                                    </p>
-
-                                    <div class="space-y-3">
-                                        <div>
-                                            <label for="domain-express" class="block text-xs text-slate-300 mb-1">
-                                                Dominio que te gustaría <span class="text-slate-500">(opcional)</span>
-                                            </label>
-                                            <input id="domain-express" type="text"
-                                                class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none focus:border-blue-500"
-                                                placeholder="ej: mitaller.cl" />
-                                        </div>
-
-                                        <div>
-                                            <label for="contact-express" class="block text-xs text-slate-300 mb-1">
-                                                WhatsApp o correo para contactarte <span class="text-rose-400">*</span>
-                                            </label>
-                                            <input id="contact-express" type="text"
-                                                class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none focus:border-blue-500"
-                                                placeholder="ej: +569 1234 5678 o nombre@correo.cl" />
-                                        </div>
-                                    </div>
-                                    <p class="text-[11px] text-slate-500">
-                                        Usamos estos datos solo para coordinar tu página y reservar el dominio si está
-                                        disponible.
-                                    </p>
-                                </div>
-
-                                <!-- Hosting -->
-                                <div class="text-sm">
-                                    <p class="text-slate-300 mb-2 font-semibold">Elige el tipo de hosting:</p>
-                                    <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-200">
-                                        <label
-                                            class="flex items-center gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 cursor-pointer">
-                                            <input type="radio" name="hosting-option" value="9000" checked
-                                                class="h-3 w-3">
-                                            <div class="flex flex-col">
-                                                <span>Opción económica</span>
-                                                <span class="text-slate-400">Hosting anual · $9.000</span>
-                                            </div>
-                                        </label>
-                                        <label
-                                            class="flex items-center gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 cursor-pointer">
-                                            <input type="radio" name="hosting-option" value="60000" class="h-3 w-3">
-                                            <div class="flex flex-col">
-                                                <span>Opción de por vida</span>
-                                                <span class="text-slate-400">Pago único · $60.000</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Columna derecha -->
-                            <div class="space-y-4 mt-6 md:mt-0">
-                                <!-- Imagen -->
-                                <div
-                                    class="aspect-video rounded-2xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500">
-                                    Aquí puedes poner una imagen simple:
-                                    emprendedor/a frente al notebook viendo su primera web.
-                                </div>
-
-                                <!-- Cuotas -->
-                                <div class="flex items-center justify-center gap-2 text-[11px] text-slate-300">
-                                    <span
-                                        class="inline-flex items-center justify-center h-7 px-2 rounded-full bg-slate-900/90 border border-slate-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
-                                            <path d="M2 10h20" />
-                                        </svg>
-                                        Hasta <strong class="mx-1">3 o 6 cuotas</strong> sin interés
-                                    </span>
-                                </div>
-                                <p class="text-[10px] text-slate-500 text-center -mt-1">
-                                    *Depende de tu tarjeta y de cómo esté configurado Mercado Pago.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Total + botón -->
-                        <div class="mt-6 space-y-2 text-sm">
-                            <p class="text-xs text-slate-400">
-                                Total a pagar hoy (web + dominio + hosting elegido):
-                            </p>
-                            <p id="totalWebExpress" class="text-2xl font-bold text-emerald-300">$59.000</p>
-
-                            <button id="pay-web-express"
-                                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
-                                Pagar Web Express –
-                                <span id="btnTotalWebExpress" class="font-bold">$59.000</span>
-                            </button>
-                            <p class="text-[11px] text-slate-500 text-center">
-                                Después del pago te escribimos por WhatsApp o correo con los próximos pasos.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- PLAN 2: WEB EXPRESS + TRÁFICO -->
-                    <div data-plan-detail="express-traffic"
-                        class="plan-detail hidden rounded-3xl border border-slate-800 bg-slate-950/80 p-5 sm:p-7">
-                        <div class="md:grid md:grid-cols-2 md:gap-6">
-                            <!-- Columna izquierda: info, datos, hosting -->
-                            <div class="space-y-4 md:pr-4">
-                                <div>
-                                    <h3 class="text-lg sm:text-xl font-bold text-slate-50">
-                                        Web Express + Tráfico
-                                    </h3>
-                                    <p class="mt-2 text-sm text-slate-300">
-                                        Incluye todo lo del plan Web Express, más la configuración inicial de campañas
-                                        para que personas interesadas empiecen a llegar a tu página.
-                                    </p>
-                                </div>
-
-                                <div class="text-sm space-y-2 text-slate-300">
-                                    <p><strong>Cómo se cobra de forma simple:</strong></p>
-                                    <ul class="space-y-1">
-                                        <li>• <strong>Web Express</strong>: se paga una vez (igual que el otro plan).
-                                        </li>
-                                        <li>• <strong>Extras opcionales</strong>: SEO, chatbot, multipágina.</li>
-                                        <li>• <strong>Gestión de campañas + inversión en anuncios</strong>: se definen
-                                            contigo aparte.</li>
-                                    </ul>
-                                    <p class="text-xs text-slate-500">
-                                        La idea es que tengas el control: tú decides cuánto poner en anuncios y podemos
-                                        ir ajustando.
-                                    </p>
-                                </div>
-
-                                <!-- Datos del cliente -->
-                                <div class="space-y-3 text-sm">
-                                    <p class="text-xs text-slate-400 font-semibold uppercase tracking-[0.18em]">
-                                        Datos para tu pedido
-                                    </p>
-
-                                    <div class="space-y-3">
-                                        <div>
-                                            <label for="domain-express-traffic"
-                                                class="block text-xs text-slate-300 mb-1">
-                                                Dominio que te gustaría <span class="text-slate-500">(opcional)</span>
-                                            </label>
-                                            <input id="domain-express-traffic" type="text"
-                                                class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none focus:border-blue-500"
-                                                placeholder="ej: mitaller.cl" />
-                                        </div>
-
-                                        <div>
-                                            <label for="contact-express-traffic"
-                                                class="block text-xs text-slate-300 mb-1">
-                                                WhatsApp o correo para contactarte <span class="text-rose-400">*</span>
-                                            </label>
-                                            <input id="contact-express-traffic" type="text"
-                                                class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 placeholder-slate-500 outline-none focus:border-blue-500"
-                                                placeholder="ej: +569 1234 5678 o nombre@correo.cl" />
-                                        </div>
-                                    </div>
-                                    <p class="text-[11px] text-slate-500">
-                                        Usamos estos datos para configurar bien las campañas y coordinar contigo.
-                                    </p>
-                                </div>
-
-                                <!-- Hosting -->
-                                <div class="text-sm">
-                                    <p class="text-slate-300 mb-2 font-semibold">Elige el tipo de hosting:</p>
-                                    <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-200">
-                                        <label
-                                            class="flex items-center gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 cursor-pointer">
-                                            <input type="radio" name="hosting-option-traffic" value="9000" checked
-                                                class="h-3 w-3">
-                                            <div class="flex flex-col">
-                                                <span>Opción económica</span>
-                                                <span class="text-slate-400">Hosting anual · $9.000</span>
-                                            </div>
-                                        </label>
-                                        <label
-                                            class="flex items-center gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 px-3 py-2 cursor-pointer">
-                                            <input type="radio" name="hosting-option-traffic" value="60000"
-                                                class="h-3 w-3">
-                                            <div class="flex flex-col">
-                                                <span>Opción de por vida</span>
-                                                <span class="text-slate-400">Pago único · $60.000</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Columna derecha: simulador + opciones + imagen -->
-                            <div class="space-y-4 mt-6 md:mt-0">
-                                <!-- Simulador -->
-                                <div id="trafficSimulatorCard"
-                                    class="rounded-2xl bg-slate-900/90 border border-slate-700 px-4 py-4 text-sm">
-                                    <div class="flex items-start justify-between gap-2 mb-1">
-                                        <p class="text-xs text-slate-400">
-                                            ¿Cuánto te gustaría invertir en anuncios al mes?
-                                        </p>
-                                        <div id="trafficBoostBadge"
-                                            class="hidden ml-2 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 border border-emerald-500/60 px-2 py-0.5 text-[10px] text-emerald-200">
-                                            <span id="trafficBoostBadgeIcon" class="inline-block">⚡</span>
-                                            <span id="trafficBoostBadgeText">Resultados potenciados x1</span>
-                                        </div>
-                                    </div>
-
-                                    <input id="trafficBudget" type="range" min="50000" max="1000000" step="50000"
-                                        value="100000" class="w-full range-input">
-                                    <div class="flex justify-between text-[11px] text-slate-500 mt-1">
-                                        <span>$50.000</span>
-                                        <span>$1.000.000</span>
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <p class="text-xs text-slate-400">Tu inversión mensual estimada:</p>
-                                        <p id="trafficBudgetLabel" class="text-lg font-semibold text-slate-50">$100.000
-                                        </p>
-                                    </div>
-
-                                    <div class="mt-3 grid grid-cols-2 gap-3 text-[11px]">
-                                        <div class="rounded-xl bg-slate-950/80 border border-slate-700 p-2">
-                                            <p class="text-slate-400">Visitas a la página</p>
-                                            <p id="trafficVisits" class="mt-1 text-lg font-semibold text-slate-50">500
-                                            </p>
-                                            <p class="mt-1 text-slate-500">Suponiendo ~$200 por persona que entra.</p>
-                                        </div>
-                                        <div class="rounded-xl bg-slate-950/80 border border-slate-700 p-2">
-                                            <p class="text-slate-400">
-                                                Clientes/consultas estimadas al mes
-                                            </p>
-                                            <p id="trafficLeads" class="mt-1 text-lg font-semibold text-emerald-300">15
-                                            </p>
-                                            <p class="mt-1 text-slate-500">
-                                                Calculado con una tasa estimada de
-                                                <span id="trafficRateLabel" class="font-semibold">3%</span>.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <p class="mt-2 text-[11px] text-slate-500">
-                                        No es una promesa, es un mapa simple para entender tamaños. La tasa puede subir
-                                        si activas opciones
-                                        que ayudan a convertir mejor.
-                                    </p>
-                                </div>
-
-                                <!-- Opciones para potenciar resultados (colapsable) -->
-                                <div id="boost-options"
-                                    class="rounded-2xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-xs">
-                                    <div class="flex items-start justify-between gap-3">
-                                        <div>
-                                            <p class="text-slate-200 font-semibold text-sm">
-                                                ¿Quieres mejorar estos resultados? (opcional)
-                                            </p>
-                                            <p class="text-slate-400 mt-1">
-                                                SEO, chatbot y multipágina pueden ayudarte a conseguir más clientes con
-                                                las mismas visitas.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Contenido colapsable -->
-                                    <div class="mt-3 relative">
-                                        <div id="boost-content-inner" class="space-y-3 pr-1">
-                                            <!-- SEO premium -->
-                                            <div
-                                                class="rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2.5">
-                                                <div class="flex items-start justify-between gap-2">
-                                                    <label class="flex items-start gap-2 cursor-pointer">
-                                                        <input id="addon-seo" type="checkbox" data-price="40000"
-                                                            class="mt-0.5 h-3 w-3">
-                                                        <div>
-                                                            <p class="text-slate-100 font-semibold">SEO Premium (+2% de
-                                                                conversión)</p>
-                                                            <p class="text-slate-400">
-                                                                Analizamos a tu competencia con IA y ajustamos palabras
-                                                                clave para que te encuentren
-                                                                primero en Google.
-                                                            </p>
-                                                        </div>
-                                                    </label>
-                                                    <button type="button"
-                                                        class="h-5 w-5 rounded-full border border-slate-600 text-[10px] flex items-center justify-center text-slate-300 hover:border-emerald-400 hover:text-emerald-300"
-                                                        data-addon-info="seo-info">
-                                                        ?
-                                                    </button>
-                                                </div>
-                                                <p class="mt-1 text-[11px] text-emerald-300 font-medium">
-                                                    +$40.000 una sola vez · ayuda a conseguir visitas más calificadas.
-                                                </p>
-                                                <p id="seo-info" class="mt-1 text-[11px] text-slate-400 hidden">
-                                                    Revisamos qué hacen los competidores que hoy aparecen arriba en
-                                                    Google, detectamos
-                                                    oportunidades y usamos IA para proponer textos y términos que
-                                                    aumenten la probabilidad de que
-                                                    te encuentren a ti primero.
-                                                </p>
-                                            </div>
-
-                                            <!-- Chatbot -->
-                                            <div
-                                                class="rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2.5">
-                                                <div class="flex items-start justify-between gap-2">
-                                                    <label class="flex items-start gap-2 cursor-pointer">
-                                                        <input id="addon-chatbot" type="checkbox" data-price="50000"
-                                                            class="mt-0.5 h-3 w-3">
-                                                        <div>
-                                                            <p class="text-slate-100 font-semibold">Chatbot con IA (+2%
-                                                                de conversión)</p>
-                                                            <p class="text-slate-400">
-                                                                Un asistente en tu web que responde dudas frecuentes y
-                                                                filtra curiosos para que tú
-                                                                atiendas a los realmente interesados.
-                                                            </p>
-                                                        </div>
-                                                    </label>
-                                                    <button type="button"
-                                                        class="h-5 w-5 rounded-full border border-slate-600 text-[10px] flex items-center justify-center text-slate-300 hover:border-emerald-400 hover:text-emerald-300"
-                                                        data-addon-info="chatbot-info">
-                                                        ?
-                                                    </button>
-                                                </div>
-                                                <p class="mt-1 text-[11px] text-emerald-300 font-medium">
-                                                    +$50.000 una sola vez · ideal si recibes muchas preguntas repetidas.
-                                                </p>
-                                                <p id="chatbot-info" class="mt-1 text-[11px] text-slate-400 hidden">
-                                                    Configuramos un chatbot básico entrenado con la información de tu
-                                                    negocio para responder
-                                                    “¿precio?”, horarios, ubicación y preguntas frecuentes sin que
-                                                    tengas que estar pegado al
-                                                    celular.
-                                                </p>
-                                            </div>
-
-                                            <!-- Multipágina -->
-                                            <div
-                                                class="rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2.5">
-                                                <div class="flex items-start justify-between gap-2">
-                                                    <label class="flex items-start gap-2 cursor-pointer">
-                                                        <input id="addon-multipage" type="checkbox" data-price="35000"
-                                                            class="mt-0.5 h-3 w-3">
-                                                        <div>
-                                                            <p class="text-slate-100 font-semibold">Sitio multipágina
-                                                                (+1.5% de conversión)</p>
-                                                            <p class="text-slate-400">
-                                                                En vez de una sola página, creamos secciones separadas
-                                                                (inicio, servicios, quiénes
-                                                                somos, etc.).
-                                                            </p>
-                                                        </div>
-                                                    </label>
-                                                    <button type="button"
-                                                        class="h-5 w-5 rounded-full border border-slate-600 text-[10px] flex items-center justify-center text-slate-300 hover:border-emerald-400 hover:text-emerald-300"
-                                                        data-addon-info="multipage-info">
-                                                        ?
-                                                    </button>
-                                                </div>
-                                                <p class="mt-1 text-[11px] text-emerald-300 font-medium">
-                                                    +$35.000 · sirve para negocios con más servicios o información.
-                                                </p>
-                                                <p id="multipage-info" class="mt-1 text-[11px] text-slate-400 hidden">
-                                                    Una estructura multipágina permite explicar mejor cada servicio,
-                                                    mostrar más testimonios
-                                                    y responder objeciones, lo que suele traducirse en más confianza y
-                                                    mejor tasa de conversión.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div id="boost-fade"></div>
-                                    </div>
-
-                                    <!-- Toggle colapsable -->
-                                    <button id="boost-toggle" type="button"
-                                        class="mt-3 w-full inline-flex items-center justify-center gap-2 text-[11px] text-slate-300">
-                                        <span class="underline underline-offset-2">Ver opciones para potenciar
-                                            resultados</span>
-                                        <span>↓</span>
-                                    </button>
-                                </div>
-
-                                <!-- Imagen -->
-                                <div
-                                    class="aspect-video rounded-2xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500">
-                                    Aquí puedes poner una imagen tipo gráfico subiendo,
-                                    o personas visitando una página desde el celular.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Total + botón + promo + transferencia -->
-                        <div class="mt-6 space-y-2 text-sm">
-                            <p class="text-xs text-slate-400">
-                                Total a pagar hoy (web + dominio + hosting + extras seleccionados):
-                            </p>
-                            <p id="totalWebExpressTraffic" class="text-2xl font-bold text-emerald-300">$0</p>
-
-                            <p id="trafficHostingPromo" class="text-[11px] text-emerald-300 hidden">
-                                Promo secreta: al seleccionar los 3 servicios extra, obtienes
-                                <strong>hosting de por vida GRATIS</strong> (−$60.000). Esta oferta es por tener los 3
-                                servicios
-                                seleccionados, pero no le digas a nadie 🤫
-                            </p>
-
-                            <button id="pay-web-express-traffic"
-                                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
-                                Pagar Web Express + Tráfico –
-                                <span id="btnTotalWebExpressTraffic" class="font-bold">$0</span>
-                            </button>
-                            <p class="text-[11px] text-slate-500 text-center">
-                                La gestión mensual de campañas y la inversión en anuncios se definen contigo después,
-                                según tu realidad.
-                            </p>
-
-                            <!-- Cuotas -->
-                            <div class="mt-2 flex items-center justify-center gap-2 text-[11px] text-slate-300">
-                                <span
-                                    class="inline-flex items-center justify-center h-7 px-2 rounded-full bg-slate-900/90 border border-slate-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
-                                        <path d="M2 10h20" />
-                                    </svg>
-                                    Hasta <strong class="mx-1">3 o 6 cuotas</strong> sin interés
-                                </span>
-                            </div>
-                            <p class="text-[10px] text-slate-500 text-center -mt-1">
-                                *Depende de tu tarjeta y de cómo esté configurado Mercado Pago.
-                            </p>
-
-                            <!-- Opción transferencia -->
-                            <button id="transfer-toggle-traffic" type="button"
-                                class="mt-3 w-full text-[12px] text-slate-300 underline underline-offset-2">
-                                Prefiero pagar por transferencia bancaria
-                            </button>
-
-                            <div id="transfer-info-traffic"
-                                class="hidden mt-3 rounded-2xl border border-slate-700 bg-slate-900/90 px-4 py-3 text-[11px] text-slate-300">
-                                <p>
-                                    Te enviaremos los datos de transferencia por WhatsApp. Después envíanos el
-                                    comprobante por ahí para
-                                    confirmar tu pedido.
-                                </p>
-                                <button id="btnTransferWhatsApp" type="button"
-                                    class="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500/90 hover:bg-emerald-600 px-4 py-2 text-xs font-semibold text-slate-950">
-                                    <span
-                                        class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600">
-                                        <!-- Icono WhatsApp simple -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-3.5 w-3.5"
-                                            fill="currentColor">
-                                            <path
-                                                d="M20.52 3.48A11.8 11.8 0 0 0 12.01 0C5.73 0 .6 5.13.6 11.4c0 2.01.53 3.98 1.54 5.72L0 24l6.08-2.09a11.38 11.38 0 0 0 5.93 1.62h.01c6.28 0 11.4-5.13 11.4-11.41 0-3.04-1.19-5.89-3.4-8.06Zm-8.5 18.2h-.01a9.5 9.5 0 0 1-4.84-1.33l-.35-.21-3.61 1.24 1.2-3.52-.23-.36a9.47 9.47 0 0 1-1.46-5.1c0-5.25 4.27-9.52 9.52-9.52 2.54 0 4.93.99 6.72 2.79a9.45 9.45 0 0 1 2.79 6.73c0 5.25-4.27 9.52-9.53 9.52Zm5.23-7.13c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15-.19.29-.74.93-.9 1.12-.17.19-.34.21-.63.06-.29-.15-1.23-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.14-.14.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43 0 1.43 1.02 2.81 1.16 3 .14.19 2 3.05 4.84 4.28.68.3 1.21.48 1.63.61.68.22 1.3.19 1.79.11.55-.08 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34Z" />
-                                        </svg>
-                                    </span>
-                                    <span>Continuar por WhatsApp</span>
-                                </button>
-                                <p class="mt-1 text-[10px] text-slate-400 flex items-center gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-3.5 w-3.5"
-                                        fill="none" stroke="currentColor" stroke-width="1.6">
-                                        <path d="M3 10.5 12 3l9 7.5v9H3z" />
-                                        <path d="M9 21v-6h6v6" />
-                                    </svg>
-                                    Usaremos WhatsApp para enviarte los datos del banco y revisar tu comprobante.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-
-
-            <!-- PASO A PASO DESPUÉS DEL PAGO -->
-            <section class="mt-12 sm:mt-16">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-                        ¿Qué pasa después de pagar? Paso a paso.
-                    </h2>
-                    <p class="mt-3 text-sm sm:text-base text-slate-300">
-                        Queremos que todo sea claro y sin sustos. Este es exactamente el camino
-                        desde que pagas hasta que ves tu página lista en tu celular.
-                    </p>
-                </div>
-
-                <div class="mt-8 grid gap-6 md:grid-cols-4 text-sm">
-                    <!-- Paso 1 -->
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
-                        <div
-                            class="aspect-video rounded-xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500 px-3 text-center">
-                            Imagen sugerida:<br>
-                            Pantalla de celular o computador mostrando Mercado Pago con alguien sonriendo
-                            mientras confirma el pago.
-                        </div>
-                        <div class="text-left">
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.18em]">
-                                Paso 1
-                            </p>
-                            <h3 class="mt-1 text-base font-semibold text-slate-50">
-                                Pagas tu plan de forma segura
-                            </h3>
-                            <p class="mt-1 text-slate-300">
-                                Eliges Web Express o Web Express + Tráfico y pagas con Mercado Pago,
-                                igual que cuando compras en cualquier tienda online.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Paso 2 -->
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
-                        <div
-                            class="aspect-video rounded-xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500 px-3 text-center">
-                            Imagen sugerida:<br>
-                            Persona rellenando un formulario muy simple en el celular o notebook
-                            (con poquitas preguntas grandes y claras).
-                        </div>
-                        <div class="text-left">
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.18em]">
-                                Paso 2
-                            </p>
-                            <h3 class="mt-1 text-base font-semibold text-slate-50">
-                                Recibes un formulario muy simple
-                            </h3>
-                            <p class="mt-1 text-slate-300">
-                                Te llega un formulario con preguntas básicas: qué haces, a quién vendes,
-                                cómo te pueden contactar y qué quieres destacar. No necesitas saber de tecnología.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Paso 3 -->
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
-                        <div
-                            class="aspect-video rounded-xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500 px-3 text-center">
-                            Imagen sugerida:<br>
-                            Equipo o persona frente al computador diseñando una página web
-                            con bloques claros y ordenados.
-                        </div>
-                        <div class="text-left">
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.18em]">
-                                Paso 3
-                            </p>
-                            <h3 class="mt-1 text-base font-semibold text-slate-50">
-                                Nosotros armamos tu página
-                            </h3>
-                            <p class="mt-1 text-slate-300">
-                                Con la información del formulario creamos la primera versión de tu Web Express:
-                                ordenamos textos, añadimos imágenes y dejamos todo listo para que puedas verla.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Paso 4 -->
-                    <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
-                        <div
-                            class="aspect-video rounded-xl bg-slate-900/90 border border-dashed border-slate-700 flex items-center justify-center text-[11px] text-slate-500 px-3 text-center">
-                            Imagen sugerida:<br>
-                            Persona sosteniendo el celular viendo su página y marcando detalles
-                            con el dedo (como si estuviera diciendo “esto cambiaría aquí”).
-                        </div>
-                        <div class="text-left">
-                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-[0.18em]">
-                                Paso 4
-                            </p>
-                            <h3 class="mt-1 text-base font-semibold text-slate-50">
-                                La ves en tu celular y pedimos tus cambios
-                            </h3>
-                            <p class="mt-1 text-slate-300">
-                                Te enviamos el link para que veas tu página desde tu teléfono.
-                                Nos dices qué cambiar: textos, fotos, colores, detalles…
-                                ajustamos hasta que quedes 100% satisfech@.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mensaje tranquilizador -->
-                <div
-                    class="max-w-3xl mx-auto mt-8 rounded-2xl border border-slate-800 bg-slate-950/80 px-4 sm:px-6 py-4">
-                    <p class="text-xs sm:text-sm text-slate-300 text-center">
-                        <strong>No tienes que saber de tecnología.</strong>
-                        Tu parte es contar tu negocio en el formulario y revisar la página desde tu celular.
-                        <br class="hidden sm:block" />
-                        <span class="text-slate-400">
-                            De lo técnico, nos preocupamos nosotros.
-                        </span>
-                    </p>
-                </div>
-            </section>
-
-
-            <!-- PREGUNTAS FRECUENTES -->
-            <section class="mt-12 sm:mt-16 border-t border-slate-800/70 pt-10">
-                <div class="max-w-3xl mx-auto">
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50 text-center">
-                        Preguntas y respuestas rápidas
-                    </h2>
-                    <p class="mt-3 text-sm sm:text-base text-slate-300 text-center">
-                        Si estás recién entrando al mundo digital, es normal que tengas dudas.
-                        Aquí van las más comunes, explicadas en simple.
-                    </p>
-
-                    <div class="mt-8 space-y-4 text-sm">
-                        <!-- Pregunta 1 -->
-                        <details class="group rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                            <summary
-                                class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
-                                <span>¿Qué pasa si no me gusta la primera versión de la página?</span>
-                                <span
-                                    class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
-                                    +
-                                </span>
-                            </summary>
-                            <p class="mt-2 text-slate-300 text-sm">
-                                Justamente por eso está el paso donde la ves desde tu celular.
-                                Sobre esa primera versión nos dices qué cambiar:
-                                textos, fotos, colores, orden, etc. La idea es ajustar juntos
-                                hasta que sientas que la web te representa de verdad.
-                            </p>
-                        </details>
-
-                        <!-- Pregunta 2 -->
-                        <details class="group rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                            <summary
-                                class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
-                                <span>No tengo logo ni fotos profesionales, ¿igual puedo comprar?</span>
-                                <span
-                                    class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
-                                    +
-                                </span>
-                            </summary>
-                            <p class="mt-2 text-slate-300 text-sm">
-                                Sí, sin problema. Podemos partir con una versión simple:
-                                colores que te gusten, tipografía limpia y fotos de apoyo de bancos de imágenes.
-                                Más adelante, cuando tengas logo y fotos propias, se pueden reemplazar.
-                            </p>
-                        </details>
-
-                        <!-- Pregunta 3 -->
-                        <details class="group rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                            <summary
-                                class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
-                                <span>¿Hay pagos mensuales obligatorios o “sorpresas” después?</span>
-                                <span
-                                    class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
-                                    +
-                                </span>
-                            </summary>
-                            <p class="mt-2 text-slate-300 text-sm">
-                                En el plan Apoyo Emprendedor la idea es que todo sea claro:
-                                pagas tu Web Express y lo único que puede ser anual es el hosting
-                                (si eliges la opción económica) y el dominio .cl, como cualquier sitio.
-                                No te vamos a amarrar a una mantención mensual obligatoria escondida.
-                            </p>
-                        </details>
-
-                        <!-- Pregunta 4 -->
-                        <details class="group rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                            <summary
-                                class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
-                                <span>¿Cuánto se demora más o menos en estar lista la página?</span>
-                                <span
-                                    class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
-                                    +
-                                </span>
-                            </summary>
-                            <p class="mt-2 text-slate-300 text-sm">
-                                Depende mucho de qué tan rápido completes el formulario
-                                y qué tan claro tengas tu servicio. Pero en general,
-                                desde que envías el formulario hasta que ves la primera versión,
-                                la idea es que sean días, no meses. Al comprar te damos un estimado
-                                más concreto según la carga de trabajo del momento.
-                            </p>
-                        </details>
-
-                        <!-- Pregunta 5 -->
-                        <details class="group rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                            <summary
-                                class="flex items-center justify-between cursor-pointer list-none text-slate-100 font-medium gap-2">
-                                <span>Si después quiero algo más grande que una Web Express, ¿se puede?</span>
-                                <span
-                                    class="h-6 w-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-open:rotate-45 transition-transform">
-                                    +
-                                </span>
-                            </summary>
-                            <p class="mt-2 text-slate-300 text-sm">
-                                Claro. Este plan está pensado como puerta de entrada.
-                                Más adelante podemos crecer a un sitio con más páginas,
-                                conectar campañas más avanzadas o sumar automatizaciones con IA.
-                                Lo bueno es que ya partes con una base ordenada.
-                            </p>
-                        </details>
-                    </div>
-                </div>
-            </section>
-
-
-        </div>
     </main>
 
-    <!-- Barra fija de pago (solo escritorio) -->
-    <div id="stickyPayBar"
-        class="hidden md:block md:fixed md:bottom-0 md:left-0 md:right-0 md:z-40 md:pointer-events-none">
-        <div id="stickyPayInner"
-            class="max-w-6xl mx-auto w-full px-4 pb-4 transform translate-y-full opacity-0 transition-all duration-300">
-            <div
-                class="flex items-center justify-between gap-3 rounded-2xl bg-slate-950/95 border border-slate-800 shadow-soft px-4 py-3 pointer-events-auto">
-                <div class="text-xs sm:text-sm text-slate-300">
-                    <p id="stickyPayLabel" class="font-medium text-slate-100">
-                        Pagar Web Express
-                    </p>
-                    <p class="text-[11px] text-slate-400">
-                        El total se actualiza según el plan y las opciones que selecciones.
-                    </p>
-                </div>
-                <button id="stickyPayButton"
-                    class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-xs sm:text-sm font-semibold text-white hover:bg-primary-dark">
-                    <span id="stickyPayAmount">$0</span>
-                </button>
+    <div class="fixed bottom-0 left-0 right-0 bg-slate-950/95 border-t border-slate-800 p-4 z-50 md:hidden backdrop-blur-lg">
+        <div class="flex items-center justify-between gap-4">
+            <div class="flex flex-col">
+                <span class="text-[10px] text-slate-400 uppercase">Total a pagar</span>
+                <span class="text-xl font-bold text-white">$59.000</span>
             </div>
+            <button onclick="document.getElementById('main-cta-button').click()" class="flex-1 bg-blue-600 text-white font-bold py-3 px-4 rounded-full text-sm shadow-glow">
+                Pedir mi Web
+            </button>
         </div>
     </div>
 
-
-
-
-    <!-- FOOTER simple -->
-    <footer class="border-t border-slate-800 bg-slate-950">
-        <div
-            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <p class="text-[11px] text-slate-500">
-                © 2025 PaginasFast · Plan Apoyo Emprendedor.
+    <footer class="border-t border-slate-800 bg-slate-950 mt-12 pb-24 md:pb-8">
+        <div class="max-w-5xl mx-auto px-4 py-8 text-center">
+            <p class="text-slate-500 text-xs">
+                © 2025 PaginasFast. Ayudando a emprendedores a digitalizarse.
             </p>
-            <div class="flex flex-wrap gap-3 text-[11px] text-slate-400">
-                <a href="/" class="hover:text-slate-200">Inicio</a>
-                <a href="/ofertas" class="hover:text-slate-200">Otras ofertas</a>
-            </div>
         </div>
     </footer>
 
-   <script>
-
-
-
-(function () {
-    const imgEl = document.getElementById('phone-project-image');
-    const titleEl = document.getElementById('phone-project-title');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevBtn = document.getElementById('phone-prev');
-    const nextBtn = document.getElementById('phone-next');
-
-    if (!imgEl || !titleEl || !dots.length) return;
-
-    // Aquí configuras tus proyectos
-    const projects = [
-      {
-        src: '/img/proyectos/proyecto1.jpg',
-        title: 'Emprendimiento 1 · Servicios locales'
-      },
-      {
-        src: '/img/proyectos/proyecto2.jpg',
-        title: 'Emprendimiento 2 · Venta de productos'
-      },
-      {
-        src: '/img/proyectos/proyecto3.jpg',
-        title: 'Emprendimiento 3 · Turismo / Cabañas'
-      }
-    ];
-
-    let current = 0;
-
-    function updateDots() {
-      dots.forEach((dot, index) => {
-        if (index === current) {
-          dot.classList.remove('bg-slate-700');
-          dot.classList.add('bg-slate-500');
-        } else {
-          dot.classList.remove('bg-slate-500');
-          dot.classList.add('bg-slate-700');
-        }
-      });
-    }
-
-    function showSlide(index) {
-      if (index < 0) index = projects.length - 1;
-      if (index >= projects.length) index = projects.length - 1;
-
-      current = index;
-      imgEl.style.opacity = 0;
-
-      setTimeout(() => {
-        imgEl.src = projects[current].src;
-        imgEl.alt = projects[current].title;
-        titleEl.textContent = projects[current].title;
-        imgEl.style.opacity = 1;
-        updateDots();
-      }, 200);
-    }
-
-    // Click en puntos
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
-        if (!isNaN(slideIndex)) showSlide(slideIndex);
-      });
-    });
-
-    // Botones anterior/siguiente
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        const newIndex = current - 1 < 0 ? projects.length - 1 : current - 1;
-        showSlide(newIndex);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const newIndex = current + 1 >= projects.length ? 0 : current + 1;
-        showSlide(newIndex);
-      });
-    }
-
-    // Auto-rotación suave
-    setInterval(() => {
-      const newIndex = current + 1 >= projects.length ? 0 : current + 1;
-      showSlide(newIndex);
-    }, 7000);
-
-    // Estado inicial
-    showSlide(0);
-  })();
-
-
-
-  // =========================
-  // Menú móvil
-  // =========================
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-
-  // =========================
-  // Barra fija de pago (lee el plan activo y el total)
-  // =========================
-  function updateStickyPayBar() {
-    const inner = document.getElementById('stickyPayInner');
-    const labelEl = document.getElementById('stickyPayLabel');
-    const amountEl = document.getElementById('stickyPayAmount');
-    if (!inner || !labelEl || !amountEl) return;
-
-    const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
-    if (!activePlanDetail) return;
-
-    let label = 'Pagar';
-    let amount = '$0';
-
-    const plan = activePlanDetail.getAttribute('data-plan-detail');
-    if (plan === 'express') {
-      label = 'Pagar Web Express';
-      const totalEl = document.getElementById('totalWebExpress');
-      if (totalEl) amount = totalEl.textContent.trim();
-    } else if (plan === 'express-traffic') {
-      label = 'Pagar Web Express + Tráfico';
-      const totalEl = document.getElementById('totalWebExpressTraffic');
-      if (totalEl) amount = totalEl.textContent.trim();
-    }
-
-    labelEl.textContent = label;
-    amountEl.textContent = amount;
-  }
-
-  // =========================
-  // Selector de planes (cards)
-  // =========================
-  const planButtons = document.querySelectorAll('.plan-card[data-plan]');
-  const planDetails = document.querySelectorAll('.plan-detail[data-plan-detail]');
-
-  function selectPlan(plan) {
-    planButtons.forEach(btn => {
-      const isActive = btn.dataset.plan === plan;
-      if (isActive) {
-        btn.classList.add('border-blue-500', 'bg-slate-900/90', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
-      } else {
-        btn.classList.remove('border-blue-500', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
-        btn.classList.add('border-slate-800', 'bg-slate-900/80');
-      }
-    });
-
-    planDetails.forEach(detail => {
-      detail.classList.toggle('hidden', detail.dataset.planDetail !== plan);
-    });
-
-    // actualizar barra fija cuando cambia de plan
-    updateStickyPayBar();
-  }
-
-  planButtons.forEach(btn => {
-    btn.addEventListener('click', () => selectPlan(btn.dataset.plan));
-  });
-
-  // Plan por defecto: Web Express
-  selectPlan('express');
-
-  // =========================
-  // Calculadora Web Express (plan 1)
-  // =========================
-  (function () {
-    const radios = document.querySelectorAll('input[name="hosting-option"]');
-    const totalEl = document.getElementById('totalWebExpress');
-    const btnTotalEl = document.getElementById('btnTotalWebExpress');
-    if (!radios.length || !totalEl || !btnTotalEl) return;
-
-    const desarrollo = 35000;
-    const dominio = 15000;
-
-    function updateTotal() {
-      const checked = document.querySelector('input[name="hosting-option"]:checked');
-      const hosting = checked ? parseInt(checked.value, 10) : 0;
-      const total = desarrollo + dominio + hosting;
-      const formatted = '$' + total.toLocaleString('es-CL');
-      totalEl.textContent = formatted;
-      btnTotalEl.textContent = formatted;
-      updateStickyPayBar();
-    }
-
-    radios.forEach(r => r.addEventListener('change', updateTotal));
-    updateTotal();
-  })();
-
-  // =========================
-  // Plan Web Express + Tráfico (totales + extras + simulador + promo hosting + visual)
-  // =========================
-  (function () {
-    // --- Totales + promo ---
-    const hostingRadios = document.querySelectorAll('input[name="hosting-option-traffic"]');
-    const seoAddon = document.getElementById('addon-seo');
-    const chatbotAddon = document.getElementById('addon-chatbot');
-    const multipageAddon = document.getElementById('addon-multipage');
-    const totalTrafficEl = document.getElementById('totalWebExpressTraffic');
-    const btnTotalTrafficEl = document.getElementById('btnTotalWebExpressTraffic');
-    const promoEl = document.getElementById('trafficHostingPromo');
-
-    const desarrollo = 35000;
-    const dominio = 15000;
-
-    function getAddonPrice(addonEl) {
-      if (!addonEl || !addonEl.checked) return 0;
-      const value = parseInt(addonEl.dataset.price || '0', 10);
-      return isNaN(value) ? 0 : value;
-    }
-
-    function getHostingTraffic() {
-      const checked = document.querySelector('input[name="hosting-option-traffic"]:checked');
-      return checked ? parseInt(checked.value, 10) || 0 : 0;
-    }
-
-    function getExtrasCount() {
-      let count = 0;
-      if (seoAddon && seoAddon.checked) count++;
-      if (chatbotAddon && chatbotAddon.checked) count++;
-      if (multipageAddon && multipageAddon.checked) count++;
-      return count;
-    }
-
-    function updateTrafficTotal() {
-      if (!totalTrafficEl || !btnTotalTrafficEl) return;
-
-      const rawHosting = getHostingTraffic();
-      const extrasCount = getExtrasCount();
-
-      let hostingForTotal = rawHosting;
-      let hostingDiscount = 0;
-
-      // Promo: hosting de por vida gratis si hay 3 extras y se eligió hosting de por vida (60.000)
-      if (rawHosting === 60000 && extrasCount === 3) {
-        hostingForTotal = 0;
-        hostingDiscount = 60000;
-      }
-
-      const addons =
-        getAddonPrice(seoAddon) +
-        getAddonPrice(chatbotAddon) +
-        getAddonPrice(multipageAddon);
-
-      const total = desarrollo + dominio + hostingForTotal + addons;
-      const formatted = '$' + total.toLocaleString('es-CL');
-      totalTrafficEl.textContent = formatted;
-      btnTotalTrafficEl.textContent = formatted;
-
-      if (promoEl) {
-        if (hostingDiscount > 0) {
-          promoEl.classList.remove('hidden');
-        } else {
-          promoEl.classList.add('hidden');
-        }
-      }
-
-      updateStickyPayBar();
-    }
-
-    // --- Simulador ---
-    const budgetRange = document.getElementById('trafficBudget');
-    const budgetLabel = document.getElementById('trafficBudgetLabel');
-    const visitsEl = document.getElementById('trafficVisits');
-    const leadsEl = document.getElementById('trafficLeads');
-    const rateLabelEl = document.getElementById('trafficRateLabel');
-    const simulatorCard = document.getElementById('trafficSimulatorCard');
-    const boostBadge = document.getElementById('trafficBoostBadge');
-    const boostBadgeIcon = document.getElementById('trafficBoostBadgeIcon');
-    const boostBadgeText = document.getElementById('trafficBoostBadgeText');
-
-    const baseRate = 0.03; // 3%
-
-    function getConversionBonus() {
-      let bonus = 0;
-      if (seoAddon && seoAddon.checked) bonus += 0.02;        // +2%
-      if (chatbotAddon && chatbotAddon.checked) bonus += 0.02; // +2%
-      if (multipageAddon && multipageAddon.checked) bonus += 0.015; // +1.5%
-      return bonus;
-    }
-
-    function formatCLP(value) {
-      return '$' + value.toLocaleString('es-CL');
-    }
-
-    function formatPercent(rate) {
-      const val = rate * 100;
-      const str = val.toFixed(1);
-      return str.endsWith('.0') ? str.slice(0, -2) + '%' : str + '%';
-    }
-
-    function updateBoostVisual() {
-      if (!simulatorCard) return;
-      const extrasCount = getExtrasCount();
-
-      simulatorCard.classList.remove('boost-1', 'boost-2', 'boost-3');
-
-      if (!boostBadge) return;
-
-      if (extrasCount === 0) {
-        boostBadge.classList.add('hidden');
-        return;
-      }
-
-      boostBadge.classList.remove('hidden');
-
-      if (extrasCount === 1) {
-        simulatorCard.classList.add('boost-1');
-        boostBadgeText.textContent = 'Resultados potenciados x1';
-        boostBadge.classList.remove('spin');
-      } else if (extrasCount === 2) {
-        simulatorCard.classList.add('boost-2');
-        boostBadgeText.textContent = 'Resultados potenciados x2';
-        boostBadge.classList.remove('spin');
-      } else if (extrasCount === 3) {
-        simulatorCard.classList.add('boost-3');
-        boostBadgeText.textContent = 'Resultados potenciados x3';
-        // Disparar una pequeña animación
-        boostBadge.classList.remove('spin');
-        // Forzar reflow para reiniciar animación si se vuelve a 3 más adelante
-        void boostBadge.offsetWidth;
-        boostBadge.classList.add('spin');
-      }
-    }
-
-    function updateSimulator() {
-      if (!budgetRange || !budgetLabel || !visitsEl || !leadsEl || !rateLabelEl) return;
-
-      const budget = parseInt(budgetRange.value, 10) || 0;
-      const cpc = 200; // costo por clic estimado
-      const visits = Math.round(budget / cpc);
-
-      const rate = baseRate + getConversionBonus();
-      const leads = Math.round(visits * rate);
-
-      budgetLabel.textContent = formatCLP(budget);
-      visitsEl.textContent = visits.toLocaleString('es-CL');
-      leadsEl.textContent = leads.toLocaleString('es-CL');
-      rateLabelEl.textContent = formatPercent(rate);
-
-      updateBoostVisual();
-    }
-
-    hostingRadios.forEach(r => r.addEventListener('change', () => {
-      updateTrafficTotal();
-    }));
-    [seoAddon, chatbotAddon, multipageAddon].forEach(addon => {
-      if (!addon) return;
-      addon.addEventListener('change', () => {
-        updateTrafficTotal();
-        updateSimulator();
-      });
-    });
-
-    if (budgetRange) {
-      budgetRange.addEventListener('input', updateSimulator);
-    }
-
-    // Inicializar total + simulador
-    updateTrafficTotal();
-    updateSimulator();
-
-    // Toggle textos de ayuda de los addons
-    const infoButtons = document.querySelectorAll('[data-addon-info]');
-    infoButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-addon-info');
-        const infoEl = document.getElementById(id);
-        if (!infoEl) return;
-        infoEl.classList.toggle('hidden');
-      });
-    });
-
-    // Colapsable de opciones
-    const boostOptions = document.getElementById('boost-options');
-    const boostToggle = document.getElementById('boost-toggle');
-    if (boostOptions && boostToggle) {
-      boostToggle.addEventListener('click', () => {
-        const isOpen = boostOptions.classList.toggle('open');
-        if (isOpen) {
-          boostToggle.innerHTML =
-            '<span class="underline underline-offset-2">Ocultar opciones para potenciar resultados</span><span>↑</span>';
-        } else {
-          boostToggle.innerHTML =
-            '<span class="underline underline-offset-2">Ver opciones para potenciar resultados</span><span>↓</span>';
-        }
-      });
-    }
-  })();
-
-  // =========================
-  // Botones de pago + transferencia (lógica de click)
-  // =========================
-  (function () {
-    const btnExpress = document.getElementById('pay-web-express');
-    const btnExpressTraffic = document.getElementById('pay-web-express-traffic');
-
-    if (btnExpress) {
-      btnExpress.addEventListener('click', function () {
-        const domain = (document.getElementById('domain-express')?.value || '').trim();
-        const contact = (document.getElementById('contact-express')?.value || '').trim();
-
-        if (!contact) {
-          alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
-          return;
-        }
-
-        console.log('Web Express ->', { dominio: domain, contacto: contact });
-
-        // Aquí rediriges a tu endpoint de Mercado Pago para Web Express
-        // window.location.href = `/api/mercadopago/web-express?...`;
-      });
-    }
-
-    if (btnExpressTraffic) {
-      btnExpressTraffic.addEventListener('click', function () {
-        const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
-        const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
-        const budget = (document.getElementById('trafficBudget')?.value || '').trim();
-        const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
-
-        if (!contact) {
-          alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
-          return;
-        }
-
-        console.log('Web Express + Tráfico (Mercado Pago) ->', {
-          dominio: domain,
-          contacto: contact,
-          presupuestoAnuncios: budget,
-          total
+    <script>
+        // Script simple para el botón
+        document.getElementById('main-cta-button').addEventListener('click', function() {
+            // Aquí podrías abrir el modal de pago o redirigir a WhatsApp
+            const message = "Hola! Me interesa el Pack Inicio Digital de $59.000. Quiero empezar.";
+            window.location.href = `https://wa.me/56900000000?text=${encodeURIComponent(message)}`;
         });
-
-        // Aquí rediriges a tu endpoint de Mercado Pago para Web Express + Tráfico
-        // window.location.href = `/api/mercadopago/web-express-traffic?...`;
-      });
-    }
-
-    // Transferencia (toggle)
-    const transferToggle = document.getElementById('transfer-toggle-traffic');
-    const transferInfo = document.getElementById('transfer-info-traffic');
-    const btnTransferWhatsApp = document.getElementById('btnTransferWhatsApp');
-
-    if (transferToggle && transferInfo) {
-      transferToggle.addEventListener('click', () => {
-        transferInfo.classList.toggle('hidden');
-      });
-    }
-
-    if (btnTransferWhatsApp) {
-      btnTransferWhatsApp.addEventListener('click', () => {
-        const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
-        const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
-        const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
-
-        const mensaje =
-          `Hola, quiero pagar mi plan Web Express + Tráfico por transferencia.` +
-          `%0A%0ADominio: ${domain || '(por definir)'}` +
-          `%0AContacto: ${contact || '(no indicado)'}` +
-          `%0ATotal: ${total}`;
-
-        // REEMPLAZA 569XXXXXXXX por tu número de WhatsApp real
-        const telefono = '569XXXXXXXX';
-        const url = `https://wa.me/${telefono}?text=${mensaje}`;
-
-        console.log('Transferencia Web Express + Tráfico -> WhatsApp', { url });
-
-        // Cuando tengas el número real, descomenta esto:
-        // window.open(url, '_blank');
-      });
-    }
-  })();
-
-  // =========================
-  // Barra fija de pago: mostrar / ocultar según scroll (solo escritorio)
-  // =========================
-  (function () {
-    const inner = document.getElementById('stickyPayInner');
-    if (!inner) return;
-
-    function handleStickyScroll() {
-      const isDesktop = window.innerWidth >= 768; // md
-      const threshold = 150; // px desde arriba
-
-      if (!isDesktop) {
-        // en móvil siempre oculto
-        inner.classList.add('translate-y-full', 'opacity-0');
-        return;
-      }
-
-      if (window.scrollY > threshold) {
-        // aparece suave
-        inner.classList.remove('translate-y-full', 'opacity-0');
-      } else {
-        // se esconde suave hacia abajo
-        inner.classList.add('translate-y-full', 'opacity-0');
-      }
-    }
-
-    window.addEventListener('scroll', handleStickyScroll);
-    window.addEventListener('resize', handleStickyScroll);
-    // estado inicial
-    handleStickyScroll();
-  })();
-
-  // =========================
-  // El botón fijo reutiliza la lógica de los botones originales
-  // =========================
-  (function () {
-    const stickyBtn = document.getElementById('stickyPayButton');
-    if (!stickyBtn) return;
-
-    stickyBtn.addEventListener('click', function () {
-      const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
-      if (!activePlanDetail) return;
-
-      const plan = activePlanDetail.getAttribute('data-plan-detail');
-      if (plan === 'express') {
-        document.getElementById('pay-web-express')?.click();
-      } else if (plan === 'express-traffic') {
-        document.getElementById('pay-web-express-traffic')?.click();
-      }
-    });
-  })();
-
-  // =========================
-  // Inicializar barra fija al cargar
-  // =========================
-  updateStickyPayBar();
-</script>
-
+    </script>
 </body>
-
 </html>
