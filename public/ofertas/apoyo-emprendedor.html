@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pack Inicio Digital | PaginasFast</title>
+    <title>Pack Inicio Profesional | PaginasFast</title>
     <meta name="description"
-        content="Todo lo que necesitas para empezar en internet: Web profesional, dominio .cl gratis, hosting y botones de contacto directo. Simple y rápido.">
-
+        content="Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.">
     <link rel="icon" type="image/png" href="/favicon.png" />
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
-                        primary: {
-                            DEFAULT: '#2563eb', // Azul vibrante pero accesible
-                            dark: '#1d4ed8',
+                        dark: {
+                            900: '#0B0F19', // Fondo principal muy oscuro
+                            800: '#151B2B', // Fondo secundario
+                            700: '#1E293B', // Bordes
                         },
-                        accent: {
-                            DEFAULT: '#10b981', // Verde esmeralda para cosas "Gratis" o positivas
+                        brand: {
+                            500: '#3B82F6', // Azul vibrante
+                            400: '#60A5FA',
+                            glow: 'rgba(59, 130, 246, 0.5)'
                         }
                     },
-                    boxShadow: {
-                        glow: '0 0 20px rgba(37, 99, 235, 0.25)',
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 },
             },
@@ -43,247 +52,607 @@
 
     <style>
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background-color: #020617; /* Slate 950 */
-            color: #f8fafc; /* Slate 50 */
+            background-color: #0B0F19;
+            color: #F1F5F9;
+            overflow-x: hidden;
         }
 
-        /* Efecto de fondo sutil */
-        .bg-grid {
-            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
-                linear-gradient(to bottom, #1e293b 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-            opacity: 0.1;
+        /* Efectos de fondo modernos */
+        .bg-glow-top {
+            position: absolute;
+            width: 600px;
+            max-width: 100vw;
+            /* <-- ESTA LÍNEA EVITA EL DESBORDE */
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            pointer-events: none;
         }
 
-        .check-icon {
-            color: #34d399; /* Emerald 400 */
+        /* Tarjetas con efecto vidrio sutil */
+        .glass-card {
+            background: rgba(21, 27, 43, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Gradiente de texto */
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-brand {
+            background: linear-gradient(135deg, #60A5FA 0%, #34D399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 
-<body class="antialiased pb-24">
+<body class="antialiased">
 
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <div class="absolute inset-0 bg-grid"></div>
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-3xl"></div>
+    <div class="bg-glow-top"></div>
+    <div
+        class="fixed bottom-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none z-0">
     </div>
 
-    <header class="relative z-20 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/" class="flex items-center gap-2">
-                <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg">
-                    PF
-                </span>
-                <span class="font-bold text-lg tracking-tight">PaginasFast</span>
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-transform duration-500 ease-in-out">
+        <div class="absolute inset-0 bg-dark-900/80 backdrop-blur-md border-b border-white/5"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+            <a href="/" class="flex items-center gap-2 group">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                    <span class="font-bold text-white text-xs">PF</span>
+                </div>
+                <span class="font-bold text-lg text-slate-200 tracking-tight">PaginasFast</span>
             </a>
-            <a href="https://wa.me/56900000000" class="text-sm font-medium text-slate-300 hover:text-white flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                ¿Tienes dudas?
-            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#beneficios" class="hover:text-white transition-colors">Beneficios</a>
+                <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
+                <a href="#testimonios" class="hover:text-white transition-colors">Reseñas</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/56900000000" target="_blank"
+                    class="flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 text-sm font-medium transition-all group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:scale-110 transition-transform"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.29-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    <span class="hidden sm:inline">WhatsApp</span>
+                </a>
+
+                <a href="#contacto"
+                    class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-sm font-medium text-white group">
+                    Cotizar
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 text-brand-400 group-hover:translate-x-0.5 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12">
+    <main class="relative z-10 pt-32 pb-20">
 
-        <section class="text-center mb-16">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-wider uppercase mb-4">
-                Especial Emprendedores 2025
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                Tu negocio en internet.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                    Profesional, fácil y rápido.
-                </span>
-            </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-                Olvídate de tecnicismos. Obten una página web diseñada para vender, 
-                con botones de WhatsApp y llamadas listos para usar. 
-                <strong class="text-white">Nosotros hacemos todo el trabajo técnico.</strong>
-            </p>
-
-            <div class="relative mx-auto w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden mb-12 transform hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-xl z-20 flex justify-center">
-                    <div class="w-16 h-4 bg-slate-900 rounded-b-lg"></div>
-                </div>
-                <img src="/img/proyectos/proyecto1.jpg" alt="Tu página en celular" class="w-full h-full object-cover opacity-90">
-                
-                <div class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur rounded-xl p-3 border border-slate-700 text-left">
-                    <div class="flex items-center gap-2 mb-1">
-                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <p class="text-[10px] text-emerald-400 font-bold uppercase">Online 24/7</p>
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 lg:mb-32">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Plan Apoyo
+                            Emprendedor</span>
                     </div>
-                    <p class="text-xs text-white font-medium leading-tight">
-                        Tus clientes te encuentran y te contactan con un clic.
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                        Eleva tu negocio con una <span class="text-gradient-brand">presencia digital</span> de alto
+                        nivel.
+                    </h1>
+
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
+                        Diseño estratégico, tecnología rápida y herramientas de conversión integradas.
+                        La solución profesional para quienes se toman su emprendimiento en serio.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contacto"
+                            class="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all flex items-center gap-2">
+                            Empezar Proyecto
+                        </a>
+                        <a href="https://wa.me/56900000000" target="_blank"
+                            class="px-8 py-4 bg-dark-800 border border-white/10 hover:border-white/20 text-slate-200 font-semibold rounded-xl transition-all flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.29-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
+                            Consulta Rápida
+                        </a>
+                    </div>
+
+                    <div class="mt-8 flex items-center gap-4 text-xs text-slate-500 font-medium">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full border-2 border-dark-900 bg-slate-700"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-dark-900 bg-slate-600"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-dark-900 bg-slate-500"></div>
+                        </div>
+                        <p>+150 Emprendedores confían en nosotros</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-8 animate-float">
+
+                    <div
+                        class="relative w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+
+                        <div class="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-xl z-20 flex justify-center">
+                            <div class="w-16 h-4 bg-slate-900 rounded-b-lg"></div>
+                        </div>
+
+                        <img id="phone-screen-img" src="/img/proyectos/proyecto1.jpg" alt="Ejemplo de página web"
+                            class="w-full h-full object-cover transition-opacity duration-700 ease-in-out">
+
+                        <div
+                            class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-md rounded-xl p-3 border border-slate-700/50 text-left shadow-lg">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                                <p class="text-[10px] text-emerald-400 font-bold uppercase tracking-wide">Online 24/7
+                                </p>
+                            </div>
+                            <p class="text-xs text-white font-medium leading-tight">
+                                Tus clientes te encuentran y te contactan con un clic.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/40 border border-slate-700/50 backdrop-blur-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-slate-500" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span id="phone-url-text"
+                            class="text-xs font-mono text-emerald-400/90 tracking-wide transition-opacity duration-500">
+                            tupanaderia.cl
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Diseñado para convertir visitas en clientes</h2>
+                <p class="text-slate-400">Cada elemento de tu web tiene un propósito estratégico.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card md:col-span-2 rounded-3xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-48 h-48 text-brand-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center mb-6 text-brand-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Sistema de Conversión Directa</h3>
+                        <p class="text-slate-400 mb-6 max-w-md">Integramos botones flotantes de WhatsApp y Llamada en
+                            posiciones estratégicas. Tus clientes no tendrán que buscar cómo contactarte.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> WhatsApp API
+                                Integrado</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Botón de llamada
+                                "One-Tap"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 text-purple-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Diseño Premium</h3>
+                    <p class="text-slate-400 text-sm">Banner principal impactante y estructura visual limpia que
+                        transmite confianza inmediata.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-6 text-orange-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">SEO Base</h3>
+                    <p class="text-slate-400 text-sm">Tu sitio estructurado para que Google entienda qué vendes y dónde
+                        estás.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-yellow-500/20 flex items-center justify-center mb-6 text-yellow-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Prueba Social</h3>
+                    <p class="text-slate-400 text-sm">Sección dedicada a reseñas de clientes para aumentar tu autoridad.
                     </p>
                 </div>
-            </div>
-        </section>
 
-        <section class="mb-20">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">Todo lo que necesitas para vender</h2>
-                <p class="text-slate-400 mt-2">Sin letra chica. Un solo pago, todo incluido.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Botón de WhatsApp</h3>
-                    <p class="text-sm text-slate-400">Tus clientes tocan un botón y abren chat directo contigo. Sin marcar números.</p>
-                </div>
-
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-blue-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Botón de Llamar</h3>
-                    <p class="text-sm text-slate-400">Facilita que te llamen con un solo clic desde el celular. Ideal para urgencias o deliverys.</p>
-                </div>
-
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-purple-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Diseño Impactante</h3>
-                    <p class="text-sm text-slate-400">Un banner principal con tu oferta clara e imágenes de calidad que den confianza.</p>
-                </div>
-
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-pink-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Formulario de Cotización</h3>
-                    <p class="text-sm text-slate-400">Recibe pedidos o consultas directo a tu correo, ordenados y claros.</p>
-                </div>
-
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-yellow-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Sección de Reseñas</h3>
-                    <p class="text-sm text-slate-400">Mostramos lo que dicen tus clientes felices para convencer a los nuevos.</p>
-                </div>
-
-                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-2xl hover:border-orange-500/50 transition-colors group">
-                    <div class="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Tus Servicios</h3>
-                    <p class="text-sm text-slate-400">Lista clara de lo que haces y cuánto cobras (opcional), fácil de leer.</p>
+                <div
+                    class="glass-card rounded-3xl p-8 group flex flex-col justify-center border-emerald-500/30 bg-emerald-900/10">
+                    <h3 class="text-lg font-bold text-emerald-400 mb-4 uppercase tracking-wider text-xs">Incluido Gratis
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-white font-medium">
+                            <span
+                                class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xs">✓</span>
+                            Dominio .CL
+                        </li>
+                        <li class="flex items-center gap-3 text-white font-medium">
+                            <span
+                                class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xs">✓</span>
+                            Hosting Alta Velocidad
+                        </li>
+                        <li class="flex items-center gap-3 text-white font-medium">
+                            <span
+                                class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xs">✓</span>
+                            Certificado SSL (Candado)
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 mb-20">
-            <h3 class="text-2xl font-bold text-white mb-8 text-center">
-                Además, incluimos todo lo técnico <span class="text-emerald-400">GRATIS</span> por el primer año
-            </h3>
-            
-            <div class="space-y-4">
-                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-                    <div class="bg-emerald-500/20 p-2 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+
+
+
+
+
+        <section id="testimonios"
+            class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 py-12 border-t border-b border-white/5 bg-white/[0.02]">
+            <div class="text-center mb-12">
+                <span class="text-blue-400 font-semibold tracking-wider text-xs uppercase">Confianza</span>
+                <h2 class="text-2xl font-bold text-white mt-2">Lo que dicen nuestros clientes</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dark-900 p-6 rounded-2xl border border-white/5">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <div>
-                        <h4 class="text-white font-bold">Dominio .CL Gratis</h4>
-                        <p class="text-sm text-slate-400">Tu nombre en internet (ej: tudespacho.cl) es tuyo gratis por un año.</p>
+                    <p class="text-slate-300 italic mb-4">"Necesitaba algo rápido y profesional. El diseño superó mis
+                        expectativas y los clientes ahora me contactan directo por WhatsApp."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-700"></div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Carlos M.</p>
+                            <p class="text-slate-500 text-xs">Servicios de Construcción</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-                    <div class="bg-blue-500/20 p-2 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                <div class="bg-dark-900 p-6 rounded-2xl border border-white/5">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                     </div>
-                    <div>
-                        <h4 class="text-white font-bold">Hosting de Calidad Gratis</h4>
-                        <p class="text-sm text-slate-400">El "espacio" donde vive tu web. Rápido y seguro, gratis por un año.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4 bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-                    <div class="bg-indigo-500/20 p-2 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-bold">SEO Básico (Aparece en Google)</h4>
-                        <p class="text-sm text-slate-400">Configuramos tu página para que Google sepa quién eres y qué vendes.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4 pt-4">
-                    <div class="flex flex-col items-center justify-center p-4 bg-slate-800/30 rounded-xl text-center">
-                        <span class="text-2xl mb-1">📍</span>
-                        <span class="text-xs font-semibold text-slate-300">Mapa de Ubicación</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center p-4 bg-slate-800/30 rounded-xl text-center">
-                        <span class="text-2xl mb-1">🔒</span>
-                        <span class="text-xs font-semibold text-slate-300">Sitio Seguro (SSL)</span>
+                    <p class="text-slate-300 italic mb-4">"No entiendo nada de tecnología, pero ellos se encargaron de
+                        todo. El hosting y dominio incluidos me facilitaron la vida."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-700"></div>
+                        <div>
+                            <p class="text-white font-bold text-sm">Ana P.</p>
+                            <p class="text-slate-500 text-xs">Pastelería Artesanal</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="text-center bg-gradient-to-br from-blue-900/40 to-slate-900 border border-blue-500/30 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/20 blur-3xl rounded-full pointer-events-none"></div>
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-32 relative">
 
-            <p class="text-sm font-bold text-blue-300 uppercase tracking-widest mb-2">Oferta por tiempo limitado</p>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Pack Inicio Digital</h2>
-            
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <span class="text-slate-400 text-lg line-through decoration-red-500 decoration-2">$70.000</span>
-                <span class="text-5xl font-black text-white">$59.000</span>
+            <div
+                class="absolute -top-24 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-600/10 blur-[100px] rounded-full pointer-events-none">
             </div>
 
-            <p class="text-slate-300 text-sm mb-8 max-w-md mx-auto">
-                Pago único anual. Sin mensualidades sorpresa. <br>
-                Incluye diseño web + dominio + hosting por un año.
-            </p>
+            <div
+                class="relative z-10 bg-[#0F1420] border border-white/10 rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
 
-            <button id="main-cta-button" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-lg font-bold rounded-full shadow-lg shadow-blue-600/40 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto">
-                <span>¡Lo quiero! Empezar ahora</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </button>
-            
-            <p class="mt-4 text-xs text-slate-500">
-                Garantía de satisfacción: Revisas el diseño antes de aprobarlo.
-            </p>
+                <div class="h-1 w-full bg-gradient-to-r from-blue-600 via-emerald-500 to-blue-600 opacity-50"></div>
+
+                <div class="grid lg:grid-cols-12 min-h-[500px]">
+
+                    <div
+                        class="lg:col-span-7 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-white/5 bg-gradient-to-b from-transparent to-white/[0.02]">
+
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 mb-6">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Disponibilidad Inmediata
+                        </div>
+
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                            Tu negocio, <br>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">profesionalizado
+                                hoy mismo.</span>
+                        </h2>
+
+                        <p class="text-slate-400 mb-10 text-lg leading-relaxed">
+                            Un sistema llave en mano. Nosotros nos encargamos de la complejidad técnica, tú te encargas
+                            de recibir a los clientes.
+                        </p>
+
+                        <div class="space-y-5">
+                            <div class="flex gap-4 items-start group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-500/20 transition-colors">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Sitio Web Profesional Completo</h4>
+                                    <p class="text-sm text-slate-500">Diseño moderno, carga rápida y adaptado a
+                                        celulares.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/20 transition-colors">
+                                    <svg class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Infraestructura Gratis (1 Año)</h4>
+                                    <p class="text-sm text-slate-500">Dominio .CL + Hosting de alto rendimiento
+                                        incluidos.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4 items-start group">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 group-hover:bg-purple-500/20 transition-colors">
+                                    <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Herramientas de Venta</h4>
+                                    <p class="text-sm text-slate-500">Botones de WhatsApp, Llamada y Formulario
+                                        integrados, Google Maps.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-[#0B0E14] p-8 md:p-12 flex flex-col justify-center relative">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none">
+                        </div>
+
+                        <div class="relative z-10 text-center">
+                            <p class="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2">Inversión Total
+                            </p>
+
+                            <div class="flex items-center justify-center gap-3 mb-1">
+                                <span class="text-2xl text-slate-600 line-through decoration-slate-600">$90.000</span>
+                                <span class="text-5xl font-black text-white tracking-tight">$59.000</span>
+                            </div>
+                            <p class="text-slate-500 text-xs mb-8">Pago único • Sin mensualidades ocultas</p>
+
+                            <div class="space-y-4">
+
+                                <a href="TU_LINK_DE_MERCADO_PAGO"
+                                    class="group relative w-full flex flex-col items-center justify-center bg-blue-600 hover:bg-blue-500 border border-transparent rounded-xl py-4 px-6 transition-all shadow-xl shadow-blue-900/20 transform hover:-translate-y-0.5">
+                                    <div class="flex items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/90"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                        </svg>
+                                        <span class="text-white font-bold text-lg">Pagar con Tarjeta</span>
+                                    </div>
+                                    <span class="text-blue-100/60 text-[10px] mt-1 font-medium tracking-wide">VÍA
+                                        MERCADO PAGO · SEGURO SSL</span>
+                                </a>
+
+                                <div class="relative flex py-1 items-center">
+                                    <div class="flex-grow border-t border-white/5"></div>
+                                    <span
+                                        class="flex-shrink-0 mx-3 text-slate-600 text-[10px] uppercase font-bold">O</span>
+                                    <div class="flex-grow border-t border-white/5"></div>
+                                </div>
+
+                                <a href="https://wa.me/56900000000?text=Hola,%20me%20interesa%20el%20Pack%20Web%20de%20$59.000,%20quiero%20pagar%20con%20transferencia."
+                                    target="_blank"
+                                    class="w-full flex items-center justify-center gap-2 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-emerald-500/30 text-slate-300 hover:text-white rounded-xl py-3.5 px-6 transition-all group">
+                                    <span class="font-medium text-sm">Transferencia Bancaria</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-4 w-4 text-emerald-500/70 group-hover:text-emerald-400 transition-colors"
+                                        viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.29-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-black/40 border-t border-white/5 p-4 flex flex-wrap justify-center gap-6 md:gap-12 text-[11px] text-slate-500 uppercase font-semibold tracking-wider">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span>Pago 100% Seguro</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Garantía de Satisfacción</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <span>Soporte Dedicado</span>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
     </main>
 
-    <div class="fixed bottom-0 left-0 right-0 bg-slate-950/95 border-t border-slate-800 p-4 z-50 md:hidden backdrop-blur-lg">
-        <div class="flex items-center justify-between gap-4">
-            <div class="flex flex-col">
-                <span class="text-[10px] text-slate-400 uppercase">Total a pagar</span>
-                <span class="text-xl font-bold text-white">$59.000</span>
+    <footer class="border-t border-white/5 bg-dark-900 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 font-semibold text-sm">PaginasFast</span>
+                <span class="text-slate-700">|</span>
+                <span class="text-slate-600 text-xs">© 2025</span>
             </div>
-            <button onclick="document.getElementById('main-cta-button').click()" class="flex-1 bg-blue-600 text-white font-bold py-3 px-4 rounded-full text-sm shadow-glow">
-                Pedir mi Web
-            </button>
-        </div>
-    </div>
-
-    <footer class="border-t border-slate-800 bg-slate-950 mt-12 pb-24 md:pb-8">
-        <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-            <p class="text-slate-500 text-xs">
-                © 2025 PaginasFast. Ayudando a emprendedores a digitalizarse.
-            </p>
+            <div class="flex gap-6 text-xs text-slate-500">
+                <a href="#" class="hover:text-white transition-colors">Términos</a>
+                <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                <a href="#" class="hover:text-white transition-colors">Soporte</a>
+            </div>
         </div>
     </footer>
 
+    <div class="fixed bottom-4 left-4 right-4 z-50 md:hidden animate-in slide-in-from-bottom duration-500">
+        <a href="#contacto"
+            class="flex items-center justify-between bg-brand-500 text-white p-4 rounded-xl shadow-2xl shadow-blue-900/50 border border-white/10 backdrop-blur-md">
+            <div class="flex flex-col">
+                <span class="text-[10px] font-medium opacity-90 uppercase">Oferta Limitada</span>
+                <span class="font-bold text-lg">$59.000</span>
+            </div>
+            <div class="flex items-center gap-2 font-bold text-sm bg-white/20 px-4 py-2 rounded-lg">
+                Pedir Web
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </div>
+        </a>
+    </div>
+
+
     <script>
-        // Script simple para el botón
-        document.getElementById('main-cta-button').addEventListener('click', function() {
-            // Aquí podrías abrir el modal de pago o redirigir a WhatsApp
-            const message = "Hola! Me interesa el Pack Inicio Digital de $59.000. Quiero empezar.";
-            window.location.href = `https://wa.me/56900000000?text=${encodeURIComponent(message)}`;
+        (function () {
+            // Configura aquí tus proyectos (Imagen y URL falsa)
+            const projects = [
+                { img: '/images/destaperapido.cl.jpeg', url: 'destaperapido.cl' },
+                { img: '/images/innovabogados.cl.jpeg', url: 'innovabogados.cl' },
+                { img: '/images/fuesgostudio.cl.jpeg', url: 'fuesgostudio.cl' },
+                { img: '/images/cabañassantaregina.cl.jpeg', url: 'cabañassantaregina.cl' },
+                { img: '/images/aguswer.cl.jpeg', url: 'aguswer.cl' }
+
+            ];
+
+            let index = 0;
+            const imgEl = document.getElementById('phone-screen-img');
+            const urlEl = document.getElementById('phone-url-text');
+
+            // Función para cambiar la imagen con fade
+            function nextSlide() {
+                index = (index + 1) % projects.length;
+
+                // 1. Ocultar suavemente
+                imgEl.style.opacity = '0';
+                urlEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    // 2. Cambiar contenido
+                    imgEl.src = projects[index].img;
+                    urlEl.textContent = projects[index].url;
+
+                    // 3. Mostrar suavemente
+                    imgEl.style.opacity = '1';
+                    urlEl.style.opacity = '1';
+                }, 700); // Tiempo que coincide con la transición CSS
+            }
+
+            // Cambiar cada 4 segundos
+            setInterval(nextSlide, 4000);
+        })();
+
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Lógica de ocultar/mostrar
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Si baja y ha pasado 100px del tope -> Ocultar (mover hacia arriba)
+                navbar.classList.add('-translate-y-full');
+            } else {
+                // Si sube o está en el tope -> Mostrar (posición original)
+                navbar.classList.remove('-translate-y-full');
+            }
+
+            lastScrollY = currentScrollY;
         });
     </script>
+
 </body>
+
 </html>
