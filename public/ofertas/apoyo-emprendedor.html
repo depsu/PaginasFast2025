@@ -208,14 +208,14 @@
                 <div class="flex flex-col items-center gap-8 animate-float">
 
                     <div
-                        class="relative w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
+                        class="relative w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-800 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
 
                         <div class="absolute top-0 inset-x-0 h-6 bg-slate-800 rounded-b-xl z-20 flex justify-center">
                             <div class="w-16 h-4 bg-slate-900 rounded-b-lg"></div>
                         </div>
 
-                        <img id="phone-screen-img" src="/img/proyectos/proyecto1.jpg" alt="Ejemplo de página web"
-                            class="w-full h-full object-cover transition-opacity duration-700 ease-in-out">
+                        <img id="phone-screen-img" src="/images/destaperapido.cl.jpeg" alt="Ejemplo de página web"
+                            class="w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100">
 
                         <div
                             class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-md rounded-xl p-3 border border-slate-700/50 text-left shadow-lg">
@@ -559,6 +559,21 @@
             </div>
         </section>
 
+        <div id="cupos-container"
+            class="fixed top-20 left-0 right-0 z-40 flex justify-center pointer-events-none transition-all duration-500 ease-in-out opacity-0 -translate-y-4">
+            <div id="cupos-pill"
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 backdrop-blur-md shadow-lg shadow-emerald-900/20 transition-transform duration-300">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span id="cupos-text" class="text-xs font-bold text-emerald-400 tracking-wide font-mono">
+                    Quedan 3 cupos
+                </span>
+            </div>
+        </div>
+
     </main>
 
     <footer class="border-t border-white/5 bg-dark-900 py-12">
@@ -596,43 +611,66 @@
 
 
     <script>
-        (function () {
-            // Configura aquí tus proyectos (Imagen y URL falsa)
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Configuración de datos
             const projects = [
                 { img: '/images/destaperapido.cl.jpeg', url: 'destaperapido.cl' },
                 { img: '/images/innovabogados.cl.jpeg', url: 'innovabogados.cl' },
                 { img: '/images/fuesgostudio.cl.jpeg', url: 'fuesgostudio.cl' },
                 { img: '/images/cabañassantaregina.cl.jpeg', url: 'cabañassantaregina.cl' },
                 { img: '/images/aguswer.cl.jpeg', url: 'aguswer.cl' }
-
             ];
 
-            let index = 0;
+            // Elementos del DOM
             const imgEl = document.getElementById('phone-screen-img');
             const urlEl = document.getElementById('phone-url-text');
 
-            // Función para cambiar la imagen con fade
-            function nextSlide() {
-                index = (index + 1) % projects.length;
+            let currentIndex = 0;
+            const transitionDuration = 500; // 500ms (debe coincidir con la clase duration-500 de CSS)
+            const displayDuration = 3500;   // Tiempo que la imagen se queda quieta (3.5 seg)
 
-                // 1. Ocultar suavemente
+            // 2. Función de Pre-carga (La magia para evitar parpadeos)
+            const preloadImages = () => {
+                projects.forEach((project) => {
+                    const img = new Image();
+                    img.src = project.img;
+                });
+            };
+
+            // 3. Función del Ciclo
+            const cycleProjects = () => {
+                // A. Fase de Desvanecimiento (Salida)
                 imgEl.style.opacity = '0';
                 urlEl.style.opacity = '0';
 
                 setTimeout(() => {
-                    // 2. Cambiar contenido
-                    imgEl.src = projects[index].img;
-                    urlEl.textContent = projects[index].url;
+                    // B. Actualizar datos (mientras está invisible)
+                    currentIndex = (currentIndex + 1) % projects.length;
 
-                    // 3. Mostrar suavemente
-                    imgEl.style.opacity = '1';
-                    urlEl.style.opacity = '1';
-                }, 700); // Tiempo que coincide con la transición CSS
-            }
+                    // Cambiamos el src y el texto
+                    imgEl.src = projects[currentIndex].img;
+                    urlEl.textContent = projects[currentIndex].url;
 
-            // Cambiar cada 4 segundos
-            setInterval(nextSlide, 4000);
-        })();
+                    // Pequeña espera técnica para asegurar que el navegador procesó el cambio de src
+                    requestAnimationFrame(() => {
+                        // C. Fase de Aparición (Entrada)
+                        imgEl.style.opacity = '1';
+                        urlEl.style.opacity = '1';
+                    });
+
+                }, transitionDuration); // Esperamos a que termine de desvanecerse
+
+                // D. Programar el siguiente ciclo
+                // El tiempo total es: Tiempo visible + Tiempo de transición de salida
+                setTimeout(cycleProjects, displayDuration + transitionDuration);
+            };
+
+            // INICIO
+            preloadImages(); // Cargamos imágenes en caché
+
+            // Iniciamos el ciclo después de una breve espera inicial
+            setTimeout(cycleProjects, displayDuration);
+        });
 
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById('navbar');
@@ -651,6 +689,89 @@
 
             lastScrollY = currentScrollY;
         });
+
+
+
+
+        (function () {
+            // --- CONFIGURACIÓN ---
+            const TIEMPO_CAMBIO_1 = 30 * 1000;      // 30 segundos para bajar a 2
+            const TIEMPO_CAMBIO_2 = 2 * 60 * 1000;  // 2 minutos para bajar a 1
+            const TIEMPO_RESET = 60 * 60 * 1000;    // 1 hora para reiniciar el ciclo
+
+            const STORAGE_KEY = 'pf_cupos_start_time';
+
+            // Elementos del DOM
+            const container = document.getElementById('cupos-container');
+            const pill = document.getElementById('cupos-pill');
+            const textSpan = document.getElementById('cupos-text');
+
+            // --- LÓGICA ---
+            function initCupos() {
+                const now = Date.now();
+                let startTime = localStorage.getItem(STORAGE_KEY);
+
+                // Verificar si existe inicio o si ya pasó la hora de reset
+                if (!startTime || (now - parseInt(startTime) > TIEMPO_RESET)) {
+                    startTime = now;
+                    localStorage.setItem(STORAGE_KEY, startTime);
+                } else {
+                    startTime = parseInt(startTime);
+                }
+
+                // Iniciar el loop de chequeo
+                updateState(startTime); // Ejecutar una vez inmediatamente
+
+                // Mostrar el banner suavemente
+                setTimeout(() => {
+                    container.classList.remove('opacity-0', '-translate-y-4');
+                }, 500);
+
+                // Intervalo para actualizar cada segundo
+                setInterval(() => {
+                    updateState(startTime);
+                }, 1000);
+            }
+
+            let currentCupos = 3; // Estado local para detectar cambios
+
+            function updateState(startTime) {
+                const elapsed = Date.now() - startTime;
+                let cupos = 3;
+
+                if (elapsed >= TIEMPO_CAMBIO_2) {
+                    cupos = 1;
+                } else if (elapsed >= TIEMPO_CAMBIO_1) {
+                    cupos = 2;
+                }
+
+                // Si hay cambio de estado, actualizar texto y animar
+                if (cupos !== currentCupos) {
+                    triggerAnimation();
+                    currentCupos = cupos;
+                }
+
+                // Asegurar que el texto sea el correcto (por si se recarga la página)
+                const text = cupos === 1 ? "Queda 1 cupo" : `Quedan ${cupos} cupos`;
+                if (textSpan.innerText !== text) {
+                    textSpan.innerText = text;
+                    // Si es 1 cupo, ponerlo en rojo/alerta sutil o mantener verde
+                    if (cupos === 1) textSpan.classList.add('text-emerald-300');
+                }
+            }
+
+            function triggerAnimation() {
+                // Efecto Zoom (Scale)
+                pill.classList.add('scale-125', 'bg-emerald-900'); // Zoom + Flash de color fondo
+
+                setTimeout(() => {
+                    pill.classList.remove('scale-125', 'bg-emerald-900');
+                }, 300); // Duración del golpe visual
+            }
+
+            // Ejecutar al cargar
+            window.addEventListener('load', initCupos);
+        })();
     </script>
 
 </body>
