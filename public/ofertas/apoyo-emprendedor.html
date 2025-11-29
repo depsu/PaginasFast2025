@@ -9,6 +9,34 @@
         content="Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.">
     <link rel="icon" type="image/png" href="/favicon.png" />
 
+    <!-- SEO & Social Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://paginasfast.cl/ofertas/apoyo-emprendedor">
+    <meta property="og:title" content="Pack Inicio Profesional | PaginasFast">
+    <meta property="og:description"
+        content="Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.">
+    <meta property="og:image" content="https://paginasfast.cl/images/og-image-pack.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "name": "Pack Inicio Profesional",
+      "description": "Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.",
+      "price": "59000",
+      "priceCurrency": "CLP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://paginasfast.cl/ofertas/apoyo-emprendedor",
+      "provider": {
+        "@type": "Organization",
+        "name": "PaginasFast",
+        "url": "https://paginasfast.cl"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,12 +119,14 @@
         .text-gradient {
             background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .text-gradient-brand {
             background: linear-gradient(135deg, #60A5FA 0%, #34D399 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     </style>
@@ -129,7 +159,7 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/56900000000" target="_blank"
+                <a href="https://wa.me/56900000000" target="_blank" aria-label="Contactar por WhatsApp"
                     class="flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 text-sm font-medium transition-all group">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:scale-110 transition-transform"
                         fill="currentColor" viewBox="0 0 24 24">
@@ -139,7 +169,7 @@
                     <span class="hidden sm:inline">WhatsApp</span>
                 </a>
 
-                <a href="#contacto"
+                <a href="#pagar"
                     class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-sm font-medium text-white group">
                     Cotizar
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +183,7 @@
         </div>
     </header>
 
-    <main class="relative z-10 pt-32 pb-20">
+    <main class="relative z-10 pt-24 md:pt-32 pb-16 md:pb-20">
 
         <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 lg:mb-32">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -169,22 +199,22 @@
                             Emprendedor</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6">
                         Eleva tu negocio con una <span class="text-gradient-brand">presencia digital</span> de alto
                         nivel.
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
+                    <p class="text-base sm:text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
                         Diseño estratégico, tecnología rápida y herramientas de conversión integradas.
                         La solución profesional para quienes se toman su emprendimiento en serio.
                     </p>
 
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contacto"
+                        <a href="#pagar"
                             class="px-8 py-4 bg-brand-500 hover:bg-brand-400 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all flex items-center gap-2">
                             Empezar Proyecto
                         </a>
-                        <a href="https://wa.me/56900000000" target="_blank"
+                        <a href="https://wa.me/56900000000" target="_blank" aria-label="Consulta rápida por WhatsApp"
                             class="px-8 py-4 bg-dark-800 border border-white/10 hover:border-white/20 text-slate-200 font-semibold rounded-xl transition-all flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" viewBox="0 0 24 24"
                                 fill="currentColor">
@@ -478,7 +508,8 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 bg-[#0B0E14] p-8 md:p-12 flex flex-col justify-center relative">
+                    <div id="pagar"
+                        class="lg:col-span-5 bg-[#0B0E14] p-8 md:p-12 flex flex-col justify-center relative">
                         <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent pointer-events-none">
                         </div>
 
@@ -591,22 +622,36 @@
         </div>
     </footer>
 
-    <div class="fixed bottom-4 left-4 right-4 z-50 md:hidden animate-in slide-in-from-bottom duration-500">
-        <a href="#contacto"
-            class="flex items-center justify-between bg-brand-500 text-white p-4 rounded-xl shadow-2xl shadow-blue-900/50 border border-white/10 backdrop-blur-md">
-            <div class="flex flex-col">
-                <span class="text-[10px] font-medium opacity-90 uppercase">Oferta Limitada</span>
-                <span class="font-bold text-lg">$59.000</span>
-            </div>
-            <div class="flex items-center gap-2 font-bold text-sm bg-white/20 px-4 py-2 rounded-lg">
-                Pedir Web
+    <!-- Sticky CTA Mobile (Hidden initially) -->
+    <div id="sticky-cta"
+        class="fixed bottom-6 left-4 right-4 z-50 md:hidden transition-all duration-700 translate-y-[200%]">
+        <div
+            class="bg-dark-900/90 backdrop-blur-xl border border-white/10 p-2 rounded-2xl shadow-2xl flex gap-3 items-center">
+
+            <!-- Botón WhatsApp -->
+            <a href="https://wa.me/56900000000?text=Hola,%20tengo%20dudas%20sobre%20el%20Pack%20Emprendedor"
+                target="_blank" onclick="document.getElementById('sticky-cta').classList.add('translate-y-[200%]')"
+                class="flex-1 flex flex-col items-center justify-center gap-0.5 bg-white/5 border border-white/10 text-slate-300 py-2.5 rounded-xl active:scale-95 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-400" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.29-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+                <span class="text-[10px] font-bold">Dudas?</span>
+            </a>
+
+            <!-- Botón Acción -->
+            <a href="#pagar" onclick="document.getElementById('sticky-cta').classList.add('translate-y-[200%]')"
+                class="flex-[1.5] flex items-center justify-center gap-2 bg-brand-500 text-white py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/25 active:scale-95 transition-transform">
+                <span>Pedir Ahora</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-            </div>
-        </a>
+            </a>
+
+        </div>
     </div>
 
 
@@ -670,10 +715,19 @@
 
             // Iniciamos el ciclo después de una breve espera inicial
             setTimeout(cycleProjects, displayDuration);
+
+            // 4. Lógica del Sticky CTA (Aparece a los 10 segundos)
+            setTimeout(() => {
+                const stickyCta = document.getElementById('sticky-cta');
+                if (stickyCta) {
+                    stickyCta.classList.remove('translate-y-[200%]');
+                }
+            }, 10000); // 10 segundos
         });
 
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById('navbar');
+        const cuposContainer = document.getElementById('cupos-container');
 
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
@@ -682,9 +736,13 @@
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
                 // Si baja y ha pasado 100px del tope -> Ocultar (mover hacia arriba)
                 navbar.classList.add('-translate-y-full');
+                // Mover el contador de cupos hacia arriba para ocupar el espacio
+                if (cuposContainer) cuposContainer.classList.add('-translate-y-16');
             } else {
                 // Si sube o está en el tope -> Mostrar (posición original)
                 navbar.classList.remove('-translate-y-full');
+                // Devolver el contador a su posición original (debajo del nav)
+                if (cuposContainer) cuposContainer.classList.remove('-translate-y-16');
             }
 
             lastScrollY = currentScrollY;
@@ -722,10 +780,10 @@
                 // Iniciar el loop de chequeo
                 updateState(startTime); // Ejecutar una vez inmediatamente
 
-                // Mostrar el banner suavemente
+                // Mostrar el banner suavemente después de 3 segundos
                 setTimeout(() => {
                     container.classList.remove('opacity-0', '-translate-y-4');
-                }, 500);
+                }, 3000);
 
                 // Intervalo para actualizar cada segundo
                 setInterval(() => {
@@ -752,11 +810,32 @@
                 }
 
                 // Asegurar que el texto sea el correcto (por si se recarga la página)
+                // Asegurar que el texto sea el correcto (por si se recarga la página)
                 const text = cupos === 1 ? "Queda 1 cupo" : `Quedan ${cupos} cupos`;
                 if (textSpan.innerText !== text) {
                     textSpan.innerText = text;
-                    // Si es 1 cupo, ponerlo en rojo/alerta sutil o mantener verde
-                    if (cupos === 1) textSpan.classList.add('text-emerald-300');
+                }
+
+                // Cambiar colores si queda 1 cupo
+                if (cupos === 1) {
+                    // Cambiar contenedor a naranja
+                    pill.classList.remove('bg-emerald-950/80', 'border-emerald-500/30', 'shadow-emerald-900/20');
+                    pill.classList.add('bg-orange-950/80', 'border-orange-500/30', 'shadow-orange-900/20');
+
+                    // Cambiar texto a naranja
+                    textSpan.classList.remove('text-emerald-400', 'text-emerald-300');
+                    textSpan.classList.add('text-orange-400');
+
+                    // Cambiar puntos (dots)
+                    const dots = pill.querySelectorAll('span span');
+                    if (dots.length >= 2) {
+                        // Dot animado
+                        dots[0].classList.remove('bg-emerald-400');
+                        dots[0].classList.add('bg-orange-400');
+                        // Dot fijo
+                        dots[1].classList.remove('bg-emerald-500');
+                        dots[1].classList.add('bg-orange-500');
+                    }
                 }
             }
 
