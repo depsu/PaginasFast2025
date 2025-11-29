@@ -179,6 +179,12 @@
 
 <body class="bg-slate-950 text-slate-50 antialiased">
 
+
+
+
+
+
+
     <!-- NAVBAR simple -->
     <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -217,6 +223,111 @@
             </div>
         </div>
     </header>
+
+
+    <!-- BANNER PROYECTOS CON IPHONE CAROUSEL -->
+<section class="mt-12 sm:mt-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-2 items-center">
+      <!-- TEXTO IZQUIERDA -->
+      <div>
+        <p class="text-xs font-semibold text-sky-400 uppercase tracking-[0.22em] mb-2">
+          PROYECTOS REALES
+        </p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+          Así se ven las páginas de otros
+          <span class="text-primary">emprendedores</span> en su celular.
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-slate-300">
+          Usamos el mismo sistema que tendrás tú: Web Express pensada para verse
+          increíble en el teléfono, donde realmente te encuentran tus clientes.
+        </p>
+
+        <ul class="mt-4 space-y-2 text-sm text-slate-300">
+          <li>• Diseños claros, sin “letras chicas” ni ruido visual.</li>
+          <li>• Siempre optimizadas primero para celular, después para escritorio.</li>
+          <li>• Textos escritos en simple, como si le hablaras a tu cliente en persona.</li>
+        </ul>
+
+        <button
+          class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
+          Quiero que mi página se vea así
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- IPHONE + CARRUSEL DERECHA -->
+      <div class="relative flex justify-center lg:justify-end">
+        <!-- Glow detrás del teléfono -->
+        <div
+          class="pointer-events-none absolute inset-y-6 -left-4 -right-4 bg-gradient-to-tr from-blue-500/30 via-cyan-400/20 to-emerald-400/20 blur-3xl opacity-60">
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center gap-4">
+          <!-- Marco tipo iPhone -->
+          <div
+            class="relative w-[210px] sm:w-[230px] md:w-[260px] aspect-[9/19] rounded-[2.5rem] border border-slate-500/60 bg-slate-900 shadow-2xl overflow-hidden">
+            <!-- notch / cámara -->
+            <div
+              class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 rounded-full bg-black/60 flex items-center justify-center">
+              <span class="w-8 h-2 rounded-full bg-black/70"></span>
+            </div>
+
+            <!-- Pantalla (imagen del proyecto) -->
+            <img
+              id="phone-project-image"
+              src="/img/proyectos/proyecto1.jpg"
+              alt="Proyecto web en un teléfono"
+              class="w-full h-full object-cover transition-opacity duration-500"
+            >
+          </div>
+
+          <!-- Controles del carrusel -->
+          <div class="flex flex-col items-center gap-3">
+            <!-- Nombre del proyecto -->
+            <p id="phone-project-title" class="text-xs sm:text-sm font-medium text-slate-200">
+              Emprendimiento 1 · Servicios locales
+            </p>
+
+            <!-- Puntos -->
+            <div class="flex items-center gap-2">
+              <!-- Cambia data-slide según la cantidad de proyectos -->
+              <button type="button" data-slide="0"
+                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-500"></button>
+              <button type="button" data-slide="1"
+                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
+              <button type="button" data-slide="2"
+                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
+            </div>
+
+            <!-- Botones Anterior / Siguiente -->
+            <div class="flex items-center gap-3 text-[11px] sm:text-xs">
+              <button id="phone-prev"
+                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
+                ← Anterior
+              </button>
+              <button id="phone-next"
+                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
+                Siguiente →
+              </button>
+            </div>
+
+            <p class="text-[10px] text-slate-500 text-center max-w-xs">
+              Son ejemplos de cómo se ven las Web Express en el celular.
+              La tuya tendrá tus colores, tus textos y tu estilo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="hero-gradient min-h-screen">
@@ -1069,6 +1180,99 @@
     </footer>
 
    <script>
+
+
+
+(function () {
+    const imgEl = document.getElementById('phone-project-image');
+    const titleEl = document.getElementById('phone-project-title');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('phone-prev');
+    const nextBtn = document.getElementById('phone-next');
+
+    if (!imgEl || !titleEl || !dots.length) return;
+
+    // Aquí configuras tus proyectos
+    const projects = [
+      {
+        src: '/img/proyectos/proyecto1.jpg',
+        title: 'Emprendimiento 1 · Servicios locales'
+      },
+      {
+        src: '/img/proyectos/proyecto2.jpg',
+        title: 'Emprendimiento 2 · Venta de productos'
+      },
+      {
+        src: '/img/proyectos/proyecto3.jpg',
+        title: 'Emprendimiento 3 · Turismo / Cabañas'
+      }
+    ];
+
+    let current = 0;
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        if (index === current) {
+          dot.classList.remove('bg-slate-700');
+          dot.classList.add('bg-slate-500');
+        } else {
+          dot.classList.remove('bg-slate-500');
+          dot.classList.add('bg-slate-700');
+        }
+      });
+    }
+
+    function showSlide(index) {
+      if (index < 0) index = projects.length - 1;
+      if (index >= projects.length) index = projects.length - 1;
+
+      current = index;
+      imgEl.style.opacity = 0;
+
+      setTimeout(() => {
+        imgEl.src = projects[current].src;
+        imgEl.alt = projects[current].title;
+        titleEl.textContent = projects[current].title;
+        imgEl.style.opacity = 1;
+        updateDots();
+      }, 200);
+    }
+
+    // Click en puntos
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIndex)) showSlide(slideIndex);
+      });
+    });
+
+    // Botones anterior/siguiente
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const newIndex = current - 1 < 0 ? projects.length - 1 : current - 1;
+        showSlide(newIndex);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const newIndex = current + 1 >= projects.length ? 0 : current + 1;
+        showSlide(newIndex);
+      });
+    }
+
+    // Auto-rotación suave
+    setInterval(() => {
+      const newIndex = current + 1 >= projects.length ? 0 : current + 1;
+      showSlide(newIndex);
+    }, 7000);
+
+    // Estado inicial
+    showSlide(0);
+  })();
+
+
+
   // =========================
   // Menú móvil
   // =========================

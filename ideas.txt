@@ -62,3 +62,15 @@ mejorar las páginas
 
 (publicar en facebook)
 (crear redes sociales)
+
+
+
+
+
+dejar portafolio y reseñas al final de la página de oferta
+
+dejar el nav más limpio
+
+agregar código con local storage... de que si visita el plan en oferta y entra a otras páginas... 
+hacer que sea más sensillo volver
+

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitud de cambios en su página web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    NOTA PARA EL DESARROLLADOR:
+    - Cambia el atributo "action" del formulario por la URL de tu servicio (Formspark, Formspree, etc.).
+    - El formulario usa enctype="multipart/form-data" para poder recibir imágenes (fotos y pantallazos).
+  -->
+
+  <style>
+    :root {
+      --color-fondo: #f5f5f5;
+      --color-card: #ffffff;
+      --color-principal: #2663eb;
+      --color-texto: #222222;
+      --color-suave: #666666;
+      --borde-suave: #dddddd;
+      --verde-fondo: #e7f6e9;
+      --verde-borde: #3aa655;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      font-size: 18px; /* letra grande para móvil */
+      line-height: 1.6;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .tarjeta {
+      background: var(--color-card);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-bottom: 16px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+      color: var(--color-principal);
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 12px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .nota {
+      font-size: 16px;
+      color: var(--color-suave);
+    }
+
+    .lista-simple {
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .lista-simple li {
+      margin-bottom: 4px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    .ejemplo {
+      font-size: 15px;
+      color: var(--color-suave);
+      margin-top: 2px;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 17px;
+      border-radius: 6px;
+      border: 1px solid var(--borde-suave);
+      margin-bottom: 4px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .grupo {
+      margin-bottom: 12px;
+    }
+
+    .seccion {
+      border-top: 1px solid #e3e3e3;
+      margin-top: 16px;
+      padding-top: 16px;
+    }
+
+    .seccion-titulo {
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: var(--color-principal);
+    }
+
+    /* Botones de acción (texto / foto / otro) */
+
+    .acciones-botones {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .accion-boton {
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid var(--color-principal);
+      background: #ffffff;
+      color: var(--color-principal);
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .accion-boton.activo {
+      background: var(--color-principal);
+      color: #ffffff;
+    }
+
+    .caja-accion {
+      border-radius: 8px;
+      border: 1px solid var(--borde-suave);
+      background: #fafafa;
+      padding: 12px;
+      margin-top: 8px;
+    }
+
+    .caja-accion-titulo {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .boton-guardar {
+      margin-top: 10px;
+      background: var(--color-principal);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 17px;
+      width: 100%;
+      max-width: 280px;
+      cursor: pointer;
+    }
+
+    .mensaje-accion {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    /* Cambios agregados (recuadros verdes) */
+
+    .cambios-agregados {
+      margin-top: 16px;
+    }
+
+    .cambios-lista {
+      margin-top: 8px;
+    }
+
+    .cambio-resumen {
+      border-radius: 8px;
+      background: var(--verde-fondo);
+      border: 1px solid var(--verde-borde);
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+
+    .cambio-tipo {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cambio-detalle {
+      font-size: 16px;
+      white-space: pre-line; /* respeta saltos de línea */
+    }
+
+    /* Botón de envío */
+
+    button[type="submit"] {
+      background: var(--color-principal);
+      color: #ffffff;
+      font-size: 18px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.95;
+    }
+
+    .pie {
+      font-size: 15px;
+      color: var(--color-suave);
+      margin-top: 10px;
+    }
+
+    /* Botón para subir archivos (global) */
+
+    .boton-archivo {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--color-principal);
+      color: var(--color-principal);
+      font-size: 17px;
+      cursor: pointer;
+      margin-top: 8px;
+      margin-bottom: 6px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .boton-archivo:hover {
+      background: #f0f3ff;
+    }
+
+    .texto-archivo {
+      display: block;
+      font-size: 15px;
+      color: var(--color-suave);
+      margin-top: 4px;
+    }
+
+    .radios {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    .radios label {
+      font-weight: 400;
+      display: inline-block;
+      margin-right: 16px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 17px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <!-- CABECERA -->
+    <div class="tarjeta">
+      <h1>Solicitud de cambios en su página web</h1>
+      <p><strong>Estimado/a cliente:</strong></p>
+      <p>
+        Aquí puede pedir sus cambios de forma <strong>simple y ordenada</strong>,
+        usando su celular o computador.
+      </p>
+      <p>
+        No necesita saber de computación. Si algo no lo entiende, puede dejarlo en blanco.
+      </p>
+      <p class="nota">
+        Le recomendamos completar este formulario con calma. Cuando termine, presione
+        el botón de enviar y yo recibiré todo junto.
+      </p>
+      <ul class="lista-simple">
+        <li>Primero escriba sus datos.</li>
+        <li>Luego use los botones para agregar cambios de texto, fotos u otros.</li>
+        <li>Al final puede subir fotos o pantallazos y enviar el formulario.</li>
+      </ul>
+    </div>
+
+    <!-- FORMULARIO PRINCIPAL -->
+    <form
+      class="tarjeta"
+      method="POST"
+      enctype="multipart/form-data"
+      action="ACTION_DE_TU_SERVICIO_DE_FORMULARIOS"
+      aria-label="Formulario de solicitud de cambios en su página web"
+    >
+      <!-- SECCIÓN 1: DATOS -->
+      <div class="seccion">
+        <div class="seccion-titulo">Sus datos</div>
+        <p class="nota">Esto es para saber quién envía los cambios y cómo contactarle.</p>
+
+        <div class="grupo">
+          <label for="nombre">Su nombre completo</label>
+          <p class="ejemplo">Ejemplo: Juan Pérez</p>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="grupo">
+          <label for="negocio">Nombre de su negocio o página</label>
+          <p class="ejemplo">Ejemplo: Cabañas El Descanso</p>
+          <input type="text" id="negocio" name="negocio" required>
+        </div>
+
+        <div class="grupo">
+          <label for="telefono">Teléfono (WhatsApp)</label>
+          <p class="ejemplo">Ejemplo: +56 9 1234 5678</p>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+
+        <div class="grupo">
+          <label for="correo">Correo electrónico (si tiene)</label>
+          <p class="ejemplo">Ejemplo: nombre@correo.cl</p>
+          <input type="email" id="correo" name="correo">
+        </div>
+      </div>
+
+      <!-- SECCIÓN 2: BOTONES PARA AGREGAR CAMBIOS -->
+      <div class="seccion">
+        <div class="seccion-titulo">¿Qué quiere hacer ahora?</div>
+        <p class="nota">
+          Elija una opción, complete el recuadro y toque “Guardar este cambio”.
+          Puede repetir las veces que necesite.
+        </p>
+
+        <div class="acciones-botones">
+          <button type="button" class="accion-boton" data-tipo="texto">
+            Cambiar texto
+          </button>
+          <button type="button" class="accion-boton" data-tipo="foto">
+            Cambiar foto / imagen
+          </button>
+          <button type="button" class="accion-boton" data-tipo="otro">
+            Otro tipo de cambio
+          </button>
+        </div>
+
+        <!-- Zona donde se muestra el formulario según el botón elegido -->
+        <div id="zona-form-accion"></div>
+
+        <!-- Mensaje de error / éxito -->
+        <div id="mensaje-accion" class="mensaje-accion"></div>
+      </div>
+
+      <!-- PLANTILLAS OCULTAS (se copian con JS según la acción elegida) -->
+
+      <!-- Plantilla: cambio de texto -->
+      <div id="plantilla-texto" class="caja-accion" style="display:none;">
+        <div class="caja-accion-titulo">Cambio de texto</div>
+        <p class="nota">
+          Aquí puede pedir que cambiemos un texto de la página.
+        </p>
+
+        <div class="grupo">
+          <label>¿Dónde está el texto que quiere cambiar?</label>
+          <p class="ejemplo">
+            Ejemplos: “Texto grande de bienvenida”, “Texto bajo la foto de la piscina”,
+            “Texto donde salen los precios”.
+          </p>
+          <textarea
+            name="texto_ubicacion"
+            placeholder="Escriba con sus palabras dónde está el texto."
+          ></textarea>
+        </div>
+
+        <div class="grupo">
+          <label>Texto actual (si lo recuerda)</label>
+          <p class="ejemplo">
+            Puede copiar y pegar el texto desde su página o escribirlo aproximadamente.
+          </p>
+          <textarea
+            name="texto_actual"
+            placeholder="Ejemplo: 'Bienvenidos a nuestras cabañas familiares'."
+          ></textarea>
+        </div>
+
+        <div class="grupo">
+          <label>Texto nuevo</label>
+          <p class="ejemplo">
+            Escriba aquí cómo quiere que quede el texto.
+          </p>
+          <textarea
+            name="texto_nuevo"
+            placeholder="Escriba el nuevo texto tal como quiere que aparezca."
+          ></textarea>
+        </div>
+
+        <button type="button" class="boton-guardar">
+          Guardar este cambio de texto
+        </button>
+      </div>
+
+      <!-- Plantilla: cambio de foto -->
+      <div id="plantilla-foto" class="caja-accion" style="display:none;">
+        <div class="caja-accion-titulo">Cambio de foto / imagen</div>
+        <p class="nota">
+          Más abajo podrá subir las fotos y pantallazos. Aquí solo explique qué
+          parte de la página quiere cambiar.
+        </p>
+
+        <div class="grupo">
+          <label>¿Qué foto o parte de la página quiere cambiar?</label>
+          <p class="ejemplo">
+            Ejemplos: “Foto grande de arriba”, “Foto de la habitación matrimonial”,
+            “Imagen que está al lado de los precios”.
+          </p>
+          <textarea
+            name="foto_ubicacion"
+            placeholder="Escriba con sus palabras qué foto o parte de la página es."
+          ></textarea>
+        </div>
+
+        <div class="grupo">
+          <label>¿Qué quiere que hagamos con esa foto?</label>
+          <p class="ejemplo">
+            Ejemplos: “Cambiarla por una nueva foto de día”, “Eliminarla”,
+            “Cambiarla por la foto nueva donde se ve la piscina”.
+          </p>
+          <textarea
+            name="foto_accion"
+            placeholder="Explique el cambio que desea."
+          ></textarea>
+        </div>
+
+        <button type="button" class="boton-guardar">
+          Guardar este cambio de foto
+        </button>
+      </div>
+
+      <!-- Plantilla: otro tipo de cambio -->
+      <div id="plantilla-otro" class="caja-accion" style="display:none;">
+        <div class="caja-accion-titulo">Otro tipo de cambio</div>
+        <p class="nota">
+          Aquí puede pedir cualquier otro cambio (nueva sección, botón, información extra, etc.).
+        </p>
+
+        <div class="grupo">
+          <label>Describa con calma el cambio que quiere</label>
+          <p class="ejemplo">
+            Ejemplos: “Agregar una sección con preguntas frecuentes”, “Agregar un mapa de ubicación”,
+            “Agregar una tabla con los precios por temporada”.
+          </p>
+          <textarea
+            name="otro_detalle"
+            placeholder="Escriba aquí lo que necesita."
+          ></textarea>
+        </div>
+
+        <button type="button" class="boton-guardar">
+          Guardar este otro cambio
+        </button>
+      </div>
+
+      <!-- SECCIÓN 3: CAMBIOS AGREGADOS (RESUMEN EN VERDE) -->
+      <div class="seccion cambios-agregados">
+        <div class="seccion-titulo">Cambios agregados</div>
+        <p class="nota">
+          Cada vez que guarde un cambio, aparecerá aquí en recuadros verdes.
+          Esto es solo un resumen para que vea lo que ya escribió.
+        </p>
+        <div id="cambios-lista" class="cambios-lista">
+          <p class="nota">Todavía no ha agregado cambios.</p>
+        </div>
+        <!-- Resumen completo que se enviará junto con el formulario -->
+        <textarea id="resumen_cambios" name="resumen_cambios" style="display:none;"></textarea>
+      </div>
+
+      <!-- SECCIÓN 4: FOTOS Y PANTALLAZOS (GLOBAL) -->
+      <div class="seccion">
+        <div class="seccion-titulo">Fotos y pantallazos</div>
+        <p>
+          Aquí puede subir todas las fotos y pantallazos que se relacionen con los cambios
+          que explicó arriba.
+        </p>
+        <p class="ejemplo">
+          Ejemplos:
+          <br>- Una foto de cómo se ve hoy la página (pantallazo).
+          <br>- Una foto nueva de las cabañas, habitaciones, piscina, etc.
+        </p>
+        <p class="nota">
+          Si no sabe hacer “captura de pantalla”, puede sacar una foto a la pantalla con el celular
+          y subirla aquí.
+        </p>
+
+        <div class="grupo">
+          <input
+            type="file"
+            id="archivos"
+            name="archivos[]"
+            accept="image/*"
+            multiple
+            style="display:none"
+          >
+          <label for="archivos" class="boton-archivo">
+            Tocar aquí para subir fotos o pantallazos
+          </label>
+          <span id="archivos-texto" class="texto-archivo">
+            No ha subido ninguna imagen todavía.
+          </span>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 5: URGENCIA -->
+      <div class="seccion">
+        <div class="seccion-titulo">¿Con qué urgencia necesita estos cambios?</div>
+        <p class="nota">
+          Esto es solo para organizar el trabajo. Siempre le confirmaré plazos y costos
+          antes de hacer cambios grandes.
+        </p>
+
+        <div class="radios">
+          <label>
+            <input type="radio" name="urgencia" value="sin_apuro" checked>
+            No hay apuro (cuando se pueda).
+          </label>
+        </div>
+        <div class="radios">
+          <label>
+            <input type="radio" name="urgencia" value="esta_semana">
+            Sería ideal dentro de esta semana.
+          </label>
+        </div>
+        <div class="radios">
+          <label>
+            <input type="radio" name="urgencia" value="urgente">
+            Es urgente (por favor conversemos primero).
+          </label>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 6: COMENTARIOS FINALES -->
+      <div class="seccion">
+        <div class="seccion-titulo">Comentarios finales (opcional)</div>
+        <p>
+          Si quiere aclarar algo más o dejar un mensaje adicional, puede escribirlo aquí.
+        </p>
+
+        <div class="grupo">
+          <label for="comentarios_finales">Mensaje final</label>
+          <textarea id="comentarios_finales" name="comentarios_finales"></textarea>
+        </div>
+      </div>
+
+      <!-- BOTÓN ENVIAR -->
+      <div class="seccion">
+        <button type="submit">Enviar mis cambios</button>
+        <p class="pie">
+          Al presionar el botón, sus respuestas y archivos me llegarán y yo le confirmaré
+          por WhatsApp o por correo.
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var zona = document.getElementById('zona-form-accion');
+      var mensaje = document.getElementById('mensaje-accion');
+      var botones = document.querySelectorAll('.accion-boton');
+      var listaCambios = document.getElementById('cambios-lista');
+      var resumenHidden = document.getElementById('resumen_cambios');
+      var inputArchivos = document.getElementById('archivos');
+      var textoArchivos = document.getElementById('archivos-texto');
+      var cambios = [];
+
+      // Manejo de botones de acción (texto / foto / otro)
+      botones.forEach(function(boton) {
+        boton.addEventListener('click', function() {
+          var tipo = boton.getAttribute('data-tipo');
+          botones.forEach(function(b) { b.classList.remove('activo'); });
+          boton.classList.add('activo');
+          if (mensaje) {
+            mensaje.textContent = '';
+            mensaje.style.color = '#2d7a36';
+          }
+          mostrarAccion(tipo);
+        });
+      });
+
+      function mostrarAccion(tipo) {
+        zona.innerHTML = '';
+        var plantilla = document.getElementById('plantilla-' + tipo);
+        if (!plantilla) return;
+        var clon = plantilla.cloneNode(true);
+        clon.style.display = 'block';
+        clon.removeAttribute('id');
+        zona.appendChild(clon);
+
+        var botonGuardar = clon.querySelector('.boton-guardar');
+        if (botonGuardar) {
+          botonGuardar.addEventListener('click', function() {
+            if (tipo === 'texto') guardarCambioTexto(clon);
+            else if (tipo === 'foto') guardarCambioFoto(clon);
+            else if (tipo === 'otro') guardarCambioOtro(clon);
+          });
+        }
+      }
+
+      function agregarCambio(tipoEtiqueta, descripcion) {
+        if (!descripcion || !descripcion.trim()) return;
+
+        cambios.push({ tipo: tipoEtiqueta, descripcion: descripcion });
+
+        // Actualizar resumen oculto para enviar en el formulario
+        if (resumenHidden) {
+          var texto = cambios.map(function(c, idx) {
+            return 'Cambio ' + (idx + 1) + ' (' + c.tipo + '):\n' + c.descripcion;
+          }).join('\n\n');
+          resumenHidden.value = texto;
+        }
+
+        // Actualizar lista visible de cambios (recuadros verdes)
+        if (listaCambios) {
+          listaCambios.innerHTML = '';
+          cambios.forEach(function(c) {
+            var div = document.createElement('div');
+            div.className = 'cambio-resumen';
+
+            var tipoDiv = document.createElement('div');
+            tipoDiv.className = 'cambio-tipo';
+            tipoDiv.textContent = c.tipo;
+
+            var descDiv = document.createElement('div');
+            descDiv.className = 'cambio-detalle';
+            descDiv.textContent = c.descripcion;
+
+            div.appendChild(tipoDiv);
+            div.appendChild(descDiv);
+            listaCambios.appendChild(div);
+          });
+        }
+
+        if (mensaje) {
+          mensaje.textContent = 'Cambio guardado. Puede agregar otro cambio o bajar y enviar el formulario cuando termine.';
+          mensaje.style.color = '#2d7a36';
+        }
+      }
+
+      function guardarCambioTexto(contenedor) {
+        var donde = contenedor.querySelector('textarea[name="texto_ubicacion"]');
+        var actual = contenedor.querySelector('textarea[name="texto_actual"]');
+        var nuevo = contenedor.querySelector('textarea[name="texto_nuevo"]');
+
+        var vDonde = (donde && donde.value || '').trim();
+        var vNuevo = (nuevo && nuevo.value || '').trim();
+        var errores = [];
+
+        if (!vDonde) errores.push('Indique dónde está el texto o qué texto quiere cambiar.');
+        if (!vNuevo) errores.push('Escriba el nuevo texto.');
+
+        if (errores.length) {
+          if (mensaje) {
+            mensaje.textContent = errores.join(' ');
+            mensaje.style.color = '#b3261e';
+          }
+          return;
+        }
+
+        var resumen = 'Dónde: ' + vDonde + '\n';
+        if (actual && actual.value.trim()) {
+          resumen += 'Texto actual (aprox.): ' + actual.value.trim() + '\n';
+        }
+        resumen += 'Texto nuevo: ' + vNuevo;
+
+        agregarCambio('Cambio de texto', resumen);
+
+        if (donde) donde.value = '';
+        if (actual) actual.value = '';
+        if (nuevo) nuevo.value = '';
+      }
+
+      function guardarCambioFoto(contenedor) {
+        var donde = contenedor.querySelector('textarea[name="foto_ubicacion"]');
+        var que = contenedor.querySelector('textarea[name="foto_accion"]');
+
+        var vDonde = (donde && donde.value || '').trim();
+        var vQue = (que && que.value || '').trim();
+        var errores = [];
+
+        if (!vDonde) errores.push('Describa qué foto o parte de la página quiere cambiar.');
+        if (!vQue) errores.push('Explique qué quiere que hagamos con esa foto.');
+
+        if (errores.length) {
+          if (mensaje) {
+            mensaje.textContent = errores.join(' ');
+            mensaje.style.color = '#b3261e';
+          }
+          return;
+        }
+
+        var resumen =
+          'Foto o parte de la página: ' + vDonde +
+          '\nAcción que desea: ' + vQue +
+          '\n(Recuerde que las fotos y pantallazos deben subirse en la sección de abajo.)';
+
+        agregarCambio('Cambio de foto / imagen', resumen);
+
+        if (donde) donde.value = '';
+        if (que) que.value = '';
+      }
+
+      function guardarCambioOtro(contenedor) {
+        var desc = contenedor.querySelector('textarea[name="otro_detalle"]');
+        var vDesc = (desc && desc.value || '').trim();
+
+        if (!vDesc) {
+          if (mensaje) {
+            mensaje.textContent = 'Describa con calma el cambio que desea.';
+            mensaje.style.color = '#b3261e';
+          }
+          return;
+        }
+
+        agregarCambio('Otro tipo de cambio', vDesc);
+
+        if (desc) desc.value = '';
+      }
+
+      // Texto para el input de archivos
+      if (inputArchivos && textoArchivos) {
+        inputArchivos.addEventListener('change', function() {
+          if (!inputArchivos.files || inputArchivos.files.length === 0) {
+            textoArchivos.textContent = 'No ha subido ninguna imagen todavía.';
+          } else if (inputArchivos.files.length === 1) {
+            textoArchivos.textContent = 'Ha subido 1 imagen.';
+          } else {
+            textoArchivos.textContent = 'Ha subido ' + inputArchivos.files.length + ' imágenes.';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

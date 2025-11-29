@@ -129,6 +129,50 @@
       animation: glowPulse 8s ease-in-out infinite;
     }
 
+    .oferta-card-agotada {
+      opacity: 0.55;
+      filter: grayscale(0.9);
+      position: relative;
+      pointer-events: none;
+    }
+
+    .oferta-card-agotada::after {
+      content: 'Agotado';
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(248, 113, 113, 0.12);
+      color: rgb(248, 113, 113);
+      border: 1px solid rgba(248, 113, 113, 0.4);
+    }
+
+    .oferta-cupos-barra {
+      position: relative;
+      width: 100%;
+      height: 0.45rem;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .oferta-cupos-barra-fill {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #22c55e, #3b82f6);
+      transition: width 0.4s ease-out;
+    }
+
+    .oferta-cupos-texto {
+      font-size: 0.68rem;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-gradient {
         animation: none !important;
@@ -362,43 +406,38 @@
         </div>
 
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <!-- Oferta 1 -->
+
+          <!-- Desarrollo Web One Page -->
           <article
-            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-blue-500/80 hover:shadow-soft transition-all">
+            class="oferta-card rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-blue-500/80 hover:shadow-soft transition-all cursor-pointer">
             <div class="flex items-center justify-between gap-2">
               <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
-                WEB EXPRESS
+                DESARROLLO WEB
               </p>
               <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] text-emerald-300 font-medium">
                 Ideal para partir
               </span>
             </div>
-            <h3 class="mt-3 text-lg font-semibold text-slate-50">Landing page + formulario</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              Página única enfocada en un servicio principal, lista para enviar tráfico
-              desde redes sociales o campañas pequeñas.
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Landing page “One Page Pro”</h3>
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              Una página única muy enfocada a conversión, perfecta para un servicio principal o lanzamiento puntual.
             </p>
             <div class="mt-4">
-              <p class="text-xs text-slate-400 line-through">Antes: $490.000 + IVA</p>
+              <p class="text-xs text-slate-400 line-through">Antes: $520.000 + IVA</p>
               <p class="text-2xl font-bold text-slate-50">Oferta: $390.000 + IVA</p>
-              <p class="text-[11px] text-slate-400 mt-1">Incluye dominio y hosting el primer año (opcional).</p>
             </div>
-            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-              <li>• Diseño adaptado a tu marca</li>
-              <li>• Versión móvil optimizada</li>
-              <li>• 1 formulario conectado a tu correo</li>
-              <li>• Textos optimizados con IA supervisada</li>
-              <li>• Entrega estimada: 7 a 10 días hábiles</li>
-            </ul>
-            <button
-              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-slate-50/10">
-              Ver detalles / cotizar
-            </button>
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="10" data-cupos-clave="oferta-onepage-pro" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/landing-one-page-pro.html"
+              class="oferta-link mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-slate-50/10">
+              Ver detalles de esta oferta
+            </a>
           </article>
 
-          <!-- Oferta 2 -->
+          <!-- Web + Tráfico (principal) -->
           <article
-            class="relative rounded-2xl border border-blue-500/80 bg-slate-900/90 p-5 flex flex-col shadow-soft">
+            class="oferta-card rounded-2xl border border-blue-500/80 bg-slate-900/90 p-5 flex flex-col shadow-soft cursor-pointer relative">
             <div
               class="absolute -top-3 left-4 inline-flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold text-white shadow-md">
               Más contratado
@@ -412,31 +451,25 @@
               </span>
             </div>
             <h3 class="mt-3 text-lg font-semibold text-slate-50">Sitio multipágina + Google Ads inicial</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              Para negocios que necesitan aparecer en Google con un sitio serio y
-              campañas bien armadas desde el inicio.
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              Para negocios que quieren aparecer fuerte en Google con un sitio serio y campañas bien armadas.
             </p>
             <div class="mt-4">
               <p class="text-xs text-slate-400 line-through">Antes: $890.000 + IVA</p>
               <p class="text-2xl font-bold text-slate-50">Oferta: $720.000 + IVA</p>
-              <p class="text-[11px] text-slate-400 mt-1">No incluye presupuesto de anuncios. Mínimo sugerido: $150.000.</p>
             </div>
-            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-              <li>• 3 a 5 secciones (Inicio, Servicios, Sobre mí, Contacto, etc.)</li>
-              <li>• Indexación básica en Google</li>
-              <li>• Setup de 1 campaña de búsqueda con extensiones</li>
-              <li>• 2 ajustes de campaña el primer mes</li>
-              <li>• Reunión de entrega + seguimiento a los 30 días</li>
-            </ul>
-            <button
-              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Quiero reservar este pack
-            </button>
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="8" data-cupos-clave="oferta-web-trafico" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/web-mas-trafico.html"
+              class="oferta-link mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Ver detalles / reservar cupo
+            </a>
           </article>
 
-          <!-- Oferta 3 -->
+          <!-- IA & Automatización leads -->
           <article
-            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-violet-500/70 hover:shadow-soft transition-all">
+            class="oferta-card rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-violet-500/70 hover:shadow-soft transition-all cursor-pointer">
             <div class="flex items-center justify-between gap-2">
               <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
                 IA & AUTOMATIZACIÓN
@@ -445,28 +478,107 @@
                 Para escalar
               </span>
             </div>
-            <h3 class="mt-3 text-lg font-semibold text-slate-50">Chatbot + automatizaciones clave</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              Pensado para negocios que ya reciben muchos mensajes y quieren
-              filtrar curiosos, responder rápido y no perder oportunidades calientes.
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Chatbot + automatizaciones de leads</h3>
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              Ideal si ya tienes flujo de mensajes y quieres filtrar curiosos, responder rápido y ordenar tus bases.
             </p>
             <div class="mt-4">
               <p class="text-xs text-slate-400 line-through">Antes: $690.000 + IVA</p>
               <p class="text-2xl font-bold text-slate-50">Oferta: $540.000 + IVA</p>
-              <p class="text-[11px] text-slate-400 mt-1">Incluye hasta 2 flujos de automatización simples.</p>
             </div>
-            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-              <li>• Chatbot IA entrenado con info de tu negocio</li>
-              <li>• Integración en tu sitio o landing</li>
-              <li>• Automatización: nuevo lead → planilla + correo</li>
-              <li>• Notificaciones básicas por WhatsApp (via API/de terceros)</li>
-              <li>• Capacitación breve para que entiendas el flujo</li>
-            </ul>
-            <button
-              class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-violet-200 hover:bg-slate-50/10">
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="5" data-cupos-clave="oferta-ia-auto" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/ia-automatizacion.html"
+              class="oferta-link mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-violet-200 hover:bg-slate-50/10">
               Ver si esto calza conmigo
-            </button>
+            </a>
           </article>
+
+          <!-- SEO & contenidos locales -->
+          <article
+            class="oferta-card rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-emerald-500/70 hover:shadow-soft transition-all cursor-pointer">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                SEO & CONTENIDOS
+              </p>
+              <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] text-emerald-300 font-medium">
+                Más visibilidad orgánica
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Pack SEO local + 4 artículos</h3>
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              Optimización básica on-page + 4 artículos pensados para atraer búsquedas locales de alto intento.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $620.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $490.000 + IVA</p>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="6" data-cupos-clave="oferta-seo-contenidos" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/seo-contenidos-locales.html"
+              class="oferta-link mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-emerald-200 hover:bg-slate-50/10">
+              Ver detalles del pack SEO
+            </a>
+          </article>
+
+          <!-- Google Ads solo servicio -->
+          <article
+            class="oferta-card rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-amber-500/70 hover:shadow-soft transition-all cursor-pointer">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                GOOGLE ADS
+              </p>
+              <span class="rounded-full bg-amber-500/10 px-2.5 py-1 text-[11px] text-amber-300 font-medium">
+                Solo campañas
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Setup + 30 días de optimización</h3>
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              Creamos y dejamos andando tus primeras campañas, con ajustes semanales para no botar el presupuesto.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $450.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $360.000 + IVA</p>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="7" data-cupos-clave="oferta-google-ads-setup" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/google-ads-setup.html"
+              class="oferta-link mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-amber-200 hover:bg-slate-50/10">
+              Ver oferta de Google Ads
+            </a>
+          </article>
+
+          <!-- Redes sociales contenido mensual -->
+          <article
+            class="oferta-card rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col hover:border-pink-500/70 hover:shadow-soft transition-all cursor-pointer">
+            <div class="flex items-center justify-between gap-2">
+              <p class="text-xs font-semibold text-primary uppercase tracking-[0.18em]">
+                REDES SOCIALES
+              </p>
+              <span class="rounded-full bg-pink-500/10 px-2.5 py-1 text-[11px] text-pink-300 font-medium">
+                Contenido + pauta
+              </span>
+            </div>
+            <h3 class="mt-3 text-lg font-semibold text-slate-50">Calendario + anuncios básicos</h3>
+            <p class="mt-2 text-sm text-slate-300 flex-1">
+              12 piezas para el mes + 2 campañas simples en Meta Ads alineadas con tu web y tus objetivos.
+            </p>
+            <div class="mt-4">
+              <p class="text-xs text-slate-400 line-through">Antes: $580.000 + IVA</p>
+              <p class="text-2xl font-bold text-slate-50">Oferta: $440.000 + IVA</p>
+            </div>
+            <div class="mt-4 flex items-center justify-between text-[11px] text-slate-400">
+              <span data-cupos-total="5" data-cupos-clave="oferta-redes-sociales" class="oferta-cupos"></span>
+            </div>
+            <a href="/ofertas/redes-sociales-contenido.html"
+              class="oferta-link mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-slate-50/5 px-4 py-2.5 text-sm font-semibold text-pink-200 hover:bg-slate-50/10">
+              Ver detalles del plan RRSS
+            </a>
+          </article>
+
         </div>
       </div>
     </section>
@@ -691,6 +803,106 @@
       }, { threshold: 0.12 });
 
       elements.forEach(el => observer.observe(el));
+    })();
+
+    // Gestión de cupos de ofertas con localStorage
+    (function () {
+      const CUPOS_KEY_PREFIX = 'paginasfast_cupos_';
+      const DECAY_HOURS = 24; // cada 24h se descuenta 1 cupo (si hay)
+
+      function getNow() {
+        return Date.now();
+      }
+
+      function loadState(clave, total) {
+        const key = CUPOS_KEY_PREFIX + clave;
+        try {
+          const raw = localStorage.getItem(key);
+          if (!raw) {
+            return { restantes: total, lastUpdate: getNow() };
+          }
+          const parsed = JSON.parse(raw);
+          if (typeof parsed.restantes !== 'number' || typeof parsed.lastUpdate !== 'number') {
+            return { restantes: total, lastUpdate: getNow() };
+          }
+          return parsed;
+        } catch (e) {
+          return { restantes: total, lastUpdate: getNow() };
+        }
+      }
+
+      function saveState(clave, state) {
+        const key = CUPOS_KEY_PREFIX + clave;
+        try {
+          localStorage.setItem(key, JSON.stringify(state));
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      function applyDecay(state) {
+        const now = getNow();
+        const diffMs = now - state.lastUpdate;
+        const steps = Math.floor(diffMs / (DECAY_HOURS * 60 * 60 * 1000));
+        if (steps <= 0 || state.restantes <= 0) {
+          return state;
+        }
+        const nuevosRestantes = Math.max(0, state.restantes - steps);
+        if (nuevosRestantes !== state.restantes) {
+          return { restantes: nuevosRestantes, lastUpdate: now };
+        }
+        return state;
+      }
+
+      function initCupos() {
+        const spans = document.querySelectorAll('.oferta-cupos');
+        if (!spans.length) return;
+
+        spans.forEach(span => {
+          const total = parseInt(span.getAttribute('data-cupos-total') || '0', 10);
+          const clave = span.getAttribute('data-cupos-clave') || '';
+          if (!total || !clave) return;
+
+          let state = loadState(clave, total);
+          state = applyDecay(state);
+          saveState(clave, state);
+
+          const restantes = state.restantes;
+          const card = span.closest('.oferta-card');
+          const link = card ? card.querySelector('.oferta-link') : null;
+
+          if (restantes <= 0 && card) {
+            card.classList.add('oferta-card-agotada');
+            if (link) {
+              link.setAttribute('aria-disabled', 'true');
+              link.removeAttribute('href');
+            }
+            span.innerHTML = '<span class="oferta-cupos-texto text-rose-300 font-semibold">Sin cupos disponibles este mes</span>';
+            return;
+          }
+
+          const usados = total - restantes;
+          const porcentaje = Math.min(100, Math.max(0, (usados / total) * 100));
+
+          span.innerHTML = `
+            <div class="flex items-center justify-between mb-1">
+              <span class="oferta-cupos-texto text-slate-400">Cupos usados: <span class="text-slate-200 font-semibold">${usados}</span> de ${total}</span>
+              <span class="oferta-cupos-texto ${restantes <= 2 ? 'text-amber-300 font-semibold' : 'text-emerald-300'}">
+                ${restantes} cupos restantes
+              </span>
+            </div>
+            <div class="oferta-cupos-barra">
+              <div class="oferta-cupos-barra-fill" style="width: ${porcentaje}%;"></div>
+            </div>
+          `;
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCupos);
+      } else {
+        initCupos();
+      }
     })();
   </script>
 </body>
