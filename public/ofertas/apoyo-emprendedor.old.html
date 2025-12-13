@@ -8,7 +8,7 @@
     <meta name="description"
         content="Plan Apoyo Emprendedor: tu primera página web profesional desde $59.000. Elige entre Web Express o Web Express + Tráfico y paga en línea con Mercado Pago.">
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/fav.ico" />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <!-- Tailwind -->
@@ -226,106 +226,103 @@
 
 
     <!-- BANNER PROYECTOS CON IPHONE CAROUSEL -->
-<section class="mt-12 sm:mt-16">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-2 items-center">
-      <!-- TEXTO IZQUIERDA -->
-      <div>
-        <p class="text-xs font-semibold text-sky-400 uppercase tracking-[0.22em] mb-2">
-          PROYECTOS REALES
-        </p>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
-          Así se ven las páginas de otros
-          <span class="text-primary">emprendedores</span> en su celular.
-        </h2>
-        <p class="mt-3 text-sm sm:text-base text-slate-300">
-          Usamos el mismo sistema que tendrás tú: Web Express pensada para verse
-          increíble en el teléfono, donde realmente te encuentran tus clientes.
-        </p>
+    <section class="mt-12 sm:mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-2 items-center">
+                <!-- TEXTO IZQUIERDA -->
+                <div>
+                    <p class="text-xs font-semibold text-sky-400 uppercase tracking-[0.22em] mb-2">
+                        PROYECTOS REALES
+                    </p>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                        Así se ven las páginas de otros
+                        <span class="text-primary">emprendedores</span> en su celular.
+                    </h2>
+                    <p class="mt-3 text-sm sm:text-base text-slate-300">
+                        Usamos el mismo sistema que tendrás tú: Web Express pensada para verse
+                        increíble en el teléfono, donde realmente te encuentran tus clientes.
+                    </p>
 
-        <ul class="mt-4 space-y-2 text-sm text-slate-300">
-          <li>• Diseños claros, sin “letras chicas” ni ruido visual.</li>
-          <li>• Siempre optimizadas primero para celular, después para escritorio.</li>
-          <li>• Textos escritos en simple, como si le hablaras a tu cliente en persona.</li>
-        </ul>
+                    <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                        <li>• Diseños claros, sin “letras chicas” ni ruido visual.</li>
+                        <li>• Siempre optimizadas primero para celular, después para escritorio.</li>
+                        <li>• Textos escritos en simple, como si le hablaras a tu cliente en persona.</li>
+                    </ul>
 
-        <button
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
-          Quiero que mi página se vea así
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
-        </button>
-      </div>
+                    <button
+                        class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-primary-dark">
+                        Quiero que mi página se vea así
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
 
-      <!-- IPHONE + CARRUSEL DERECHA -->
-      <div class="relative flex justify-center lg:justify-end">
-        <!-- Glow detrás del teléfono -->
-        <div
-          class="pointer-events-none absolute inset-y-6 -left-4 -right-4 bg-gradient-to-tr from-blue-500/30 via-cyan-400/20 to-emerald-400/20 blur-3xl opacity-60">
+                <!-- IPHONE + CARRUSEL DERECHA -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <!-- Glow detrás del teléfono -->
+                    <div
+                        class="pointer-events-none absolute inset-y-6 -left-4 -right-4 bg-gradient-to-tr from-blue-500/30 via-cyan-400/20 to-emerald-400/20 blur-3xl opacity-60">
+                    </div>
+
+                    <div class="relative z-10 flex flex-col items-center gap-4">
+                        <!-- Marco tipo iPhone -->
+                        <div
+                            class="relative w-[210px] sm:w-[230px] md:w-[260px] aspect-[9/19] rounded-[2.5rem] border border-slate-500/60 bg-slate-900 shadow-2xl overflow-hidden">
+                            <!-- notch / cámara -->
+                            <div
+                                class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 rounded-full bg-black/60 flex items-center justify-center">
+                                <span class="w-8 h-2 rounded-full bg-black/70"></span>
+                            </div>
+
+                            <!-- Pantalla (imagen del proyecto) -->
+                            <img id="phone-project-image" src="/img/proyectos/proyecto1.jpg"
+                                alt="Proyecto web en un teléfono"
+                                class="w-full h-full object-cover transition-opacity duration-500">
+                        </div>
+
+                        <!-- Controles del carrusel -->
+                        <div class="flex flex-col items-center gap-3">
+                            <!-- Nombre del proyecto -->
+                            <p id="phone-project-title" class="text-xs sm:text-sm font-medium text-slate-200">
+                                Emprendimiento 1 · Servicios locales
+                            </p>
+
+                            <!-- Puntos -->
+                            <div class="flex items-center gap-2">
+                                <!-- Cambia data-slide según la cantidad de proyectos -->
+                                <button type="button" data-slide="0"
+                                    class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-500"></button>
+                                <button type="button" data-slide="1"
+                                    class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
+                                <button type="button" data-slide="2"
+                                    class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
+                            </div>
+
+                            <!-- Botones Anterior / Siguiente -->
+                            <div class="flex items-center gap-3 text-[11px] sm:text-xs">
+                                <button id="phone-prev"
+                                    class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
+                                    ← Anterior
+                                </button>
+                                <button id="phone-next"
+                                    class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
+                                    Siguiente →
+                                </button>
+                            </div>
+
+                            <p class="text-[10px] text-slate-500 text-center max-w-xs">
+                                Son ejemplos de cómo se ven las Web Express en el celular.
+                                La tuya tendrá tus colores, tus textos y tu estilo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="relative z-10 flex flex-col items-center gap-4">
-          <!-- Marco tipo iPhone -->
-          <div
-            class="relative w-[210px] sm:w-[230px] md:w-[260px] aspect-[9/19] rounded-[2.5rem] border border-slate-500/60 bg-slate-900 shadow-2xl overflow-hidden">
-            <!-- notch / cámara -->
-            <div
-              class="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 rounded-full bg-black/60 flex items-center justify-center">
-              <span class="w-8 h-2 rounded-full bg-black/70"></span>
-            </div>
-
-            <!-- Pantalla (imagen del proyecto) -->
-            <img
-              id="phone-project-image"
-              src="/img/proyectos/proyecto1.jpg"
-              alt="Proyecto web en un teléfono"
-              class="w-full h-full object-cover transition-opacity duration-500"
-            >
-          </div>
-
-          <!-- Controles del carrusel -->
-          <div class="flex flex-col items-center gap-3">
-            <!-- Nombre del proyecto -->
-            <p id="phone-project-title" class="text-xs sm:text-sm font-medium text-slate-200">
-              Emprendimiento 1 · Servicios locales
-            </p>
-
-            <!-- Puntos -->
-            <div class="flex items-center gap-2">
-              <!-- Cambia data-slide según la cantidad de proyectos -->
-              <button type="button" data-slide="0"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-500"></button>
-              <button type="button" data-slide="1"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
-              <button type="button" data-slide="2"
-                      class="carousel-dot h-2.5 w-2.5 rounded-full bg-slate-700"></button>
-            </div>
-
-            <!-- Botones Anterior / Siguiente -->
-            <div class="flex items-center gap-3 text-[11px] sm:text-xs">
-              <button id="phone-prev"
-                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
-                ← Anterior
-              </button>
-              <button id="phone-next"
-                      class="inline-flex items-center gap-1 rounded-full border border-slate-700 px-3 py-1.5 text-slate-200 hover:border-slate-400">
-                Siguiente →
-              </button>
-            </div>
-
-            <p class="text-[10px] text-slate-500 text-center max-w-xs">
-              Son ejemplos de cómo se ven las Web Express en el celular.
-              La tuya tendrá tus colores, tus textos y tu estilo.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -1179,540 +1176,540 @@
         </div>
     </footer>
 
-   <script>
-
-
-
-(function () {
-    const imgEl = document.getElementById('phone-project-image');
-    const titleEl = document.getElementById('phone-project-title');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const prevBtn = document.getElementById('phone-prev');
-    const nextBtn = document.getElementById('phone-next');
-
-    if (!imgEl || !titleEl || !dots.length) return;
-
-    // Aquí configuras tus proyectos
-    const projects = [
-      {
-        src: '/img/proyectos/proyecto1.jpg',
-        title: 'Emprendimiento 1 · Servicios locales'
-      },
-      {
-        src: '/img/proyectos/proyecto2.jpg',
-        title: 'Emprendimiento 2 · Venta de productos'
-      },
-      {
-        src: '/img/proyectos/proyecto3.jpg',
-        title: 'Emprendimiento 3 · Turismo / Cabañas'
-      }
-    ];
-
-    let current = 0;
-
-    function updateDots() {
-      dots.forEach((dot, index) => {
-        if (index === current) {
-          dot.classList.remove('bg-slate-700');
-          dot.classList.add('bg-slate-500');
-        } else {
-          dot.classList.remove('bg-slate-500');
-          dot.classList.add('bg-slate-700');
-        }
-      });
-    }
-
-    function showSlide(index) {
-      if (index < 0) index = projects.length - 1;
-      if (index >= projects.length) index = projects.length - 1;
-
-      current = index;
-      imgEl.style.opacity = 0;
-
-      setTimeout(() => {
-        imgEl.src = projects[current].src;
-        imgEl.alt = projects[current].title;
-        titleEl.textContent = projects[current].title;
-        imgEl.style.opacity = 1;
-        updateDots();
-      }, 200);
-    }
-
-    // Click en puntos
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
-        if (!isNaN(slideIndex)) showSlide(slideIndex);
-      });
-    });
-
-    // Botones anterior/siguiente
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        const newIndex = current - 1 < 0 ? projects.length - 1 : current - 1;
-        showSlide(newIndex);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const newIndex = current + 1 >= projects.length ? 0 : current + 1;
-        showSlide(newIndex);
-      });
-    }
-
-    // Auto-rotación suave
-    setInterval(() => {
-      const newIndex = current + 1 >= projects.length ? 0 : current + 1;
-      showSlide(newIndex);
-    }, 7000);
-
-    // Estado inicial
-    showSlide(0);
-  })();
-
-
-
-  // =========================
-  // Menú móvil
-  // =========================
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-
-  // =========================
-  // Barra fija de pago (lee el plan activo y el total)
-  // =========================
-  function updateStickyPayBar() {
-    const inner = document.getElementById('stickyPayInner');
-    const labelEl = document.getElementById('stickyPayLabel');
-    const amountEl = document.getElementById('stickyPayAmount');
-    if (!inner || !labelEl || !amountEl) return;
-
-    const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
-    if (!activePlanDetail) return;
-
-    let label = 'Pagar';
-    let amount = '$0';
-
-    const plan = activePlanDetail.getAttribute('data-plan-detail');
-    if (plan === 'express') {
-      label = 'Pagar Web Express';
-      const totalEl = document.getElementById('totalWebExpress');
-      if (totalEl) amount = totalEl.textContent.trim();
-    } else if (plan === 'express-traffic') {
-      label = 'Pagar Web Express + Tráfico';
-      const totalEl = document.getElementById('totalWebExpressTraffic');
-      if (totalEl) amount = totalEl.textContent.trim();
-    }
-
-    labelEl.textContent = label;
-    amountEl.textContent = amount;
-  }
-
-  // =========================
-  // Selector de planes (cards)
-  // =========================
-  const planButtons = document.querySelectorAll('.plan-card[data-plan]');
-  const planDetails = document.querySelectorAll('.plan-detail[data-plan-detail]');
-
-  function selectPlan(plan) {
-    planButtons.forEach(btn => {
-      const isActive = btn.dataset.plan === plan;
-      if (isActive) {
-        btn.classList.add('border-blue-500', 'bg-slate-900/90', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
-      } else {
-        btn.classList.remove('border-blue-500', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
-        btn.classList.add('border-slate-800', 'bg-slate-900/80');
-      }
-    });
-
-    planDetails.forEach(detail => {
-      detail.classList.toggle('hidden', detail.dataset.planDetail !== plan);
-    });
-
-    // actualizar barra fija cuando cambia de plan
-    updateStickyPayBar();
-  }
-
-  planButtons.forEach(btn => {
-    btn.addEventListener('click', () => selectPlan(btn.dataset.plan));
-  });
-
-  // Plan por defecto: Web Express
-  selectPlan('express');
-
-  // =========================
-  // Calculadora Web Express (plan 1)
-  // =========================
-  (function () {
-    const radios = document.querySelectorAll('input[name="hosting-option"]');
-    const totalEl = document.getElementById('totalWebExpress');
-    const btnTotalEl = document.getElementById('btnTotalWebExpress');
-    if (!radios.length || !totalEl || !btnTotalEl) return;
-
-    const desarrollo = 35000;
-    const dominio = 15000;
-
-    function updateTotal() {
-      const checked = document.querySelector('input[name="hosting-option"]:checked');
-      const hosting = checked ? parseInt(checked.value, 10) : 0;
-      const total = desarrollo + dominio + hosting;
-      const formatted = '$' + total.toLocaleString('es-CL');
-      totalEl.textContent = formatted;
-      btnTotalEl.textContent = formatted;
-      updateStickyPayBar();
-    }
-
-    radios.forEach(r => r.addEventListener('change', updateTotal));
-    updateTotal();
-  })();
-
-  // =========================
-  // Plan Web Express + Tráfico (totales + extras + simulador + promo hosting + visual)
-  // =========================
-  (function () {
-    // --- Totales + promo ---
-    const hostingRadios = document.querySelectorAll('input[name="hosting-option-traffic"]');
-    const seoAddon = document.getElementById('addon-seo');
-    const chatbotAddon = document.getElementById('addon-chatbot');
-    const multipageAddon = document.getElementById('addon-multipage');
-    const totalTrafficEl = document.getElementById('totalWebExpressTraffic');
-    const btnTotalTrafficEl = document.getElementById('btnTotalWebExpressTraffic');
-    const promoEl = document.getElementById('trafficHostingPromo');
-
-    const desarrollo = 35000;
-    const dominio = 15000;
-
-    function getAddonPrice(addonEl) {
-      if (!addonEl || !addonEl.checked) return 0;
-      const value = parseInt(addonEl.dataset.price || '0', 10);
-      return isNaN(value) ? 0 : value;
-    }
-
-    function getHostingTraffic() {
-      const checked = document.querySelector('input[name="hosting-option-traffic"]:checked');
-      return checked ? parseInt(checked.value, 10) || 0 : 0;
-    }
-
-    function getExtrasCount() {
-      let count = 0;
-      if (seoAddon && seoAddon.checked) count++;
-      if (chatbotAddon && chatbotAddon.checked) count++;
-      if (multipageAddon && multipageAddon.checked) count++;
-      return count;
-    }
-
-    function updateTrafficTotal() {
-      if (!totalTrafficEl || !btnTotalTrafficEl) return;
-
-      const rawHosting = getHostingTraffic();
-      const extrasCount = getExtrasCount();
-
-      let hostingForTotal = rawHosting;
-      let hostingDiscount = 0;
-
-      // Promo: hosting de por vida gratis si hay 3 extras y se eligió hosting de por vida (60.000)
-      if (rawHosting === 60000 && extrasCount === 3) {
-        hostingForTotal = 0;
-        hostingDiscount = 60000;
-      }
-
-      const addons =
-        getAddonPrice(seoAddon) +
-        getAddonPrice(chatbotAddon) +
-        getAddonPrice(multipageAddon);
-
-      const total = desarrollo + dominio + hostingForTotal + addons;
-      const formatted = '$' + total.toLocaleString('es-CL');
-      totalTrafficEl.textContent = formatted;
-      btnTotalTrafficEl.textContent = formatted;
-
-      if (promoEl) {
-        if (hostingDiscount > 0) {
-          promoEl.classList.remove('hidden');
-        } else {
-          promoEl.classList.add('hidden');
-        }
-      }
-
-      updateStickyPayBar();
-    }
-
-    // --- Simulador ---
-    const budgetRange = document.getElementById('trafficBudget');
-    const budgetLabel = document.getElementById('trafficBudgetLabel');
-    const visitsEl = document.getElementById('trafficVisits');
-    const leadsEl = document.getElementById('trafficLeads');
-    const rateLabelEl = document.getElementById('trafficRateLabel');
-    const simulatorCard = document.getElementById('trafficSimulatorCard');
-    const boostBadge = document.getElementById('trafficBoostBadge');
-    const boostBadgeIcon = document.getElementById('trafficBoostBadgeIcon');
-    const boostBadgeText = document.getElementById('trafficBoostBadgeText');
-
-    const baseRate = 0.03; // 3%
-
-    function getConversionBonus() {
-      let bonus = 0;
-      if (seoAddon && seoAddon.checked) bonus += 0.02;        // +2%
-      if (chatbotAddon && chatbotAddon.checked) bonus += 0.02; // +2%
-      if (multipageAddon && multipageAddon.checked) bonus += 0.015; // +1.5%
-      return bonus;
-    }
-
-    function formatCLP(value) {
-      return '$' + value.toLocaleString('es-CL');
-    }
-
-    function formatPercent(rate) {
-      const val = rate * 100;
-      const str = val.toFixed(1);
-      return str.endsWith('.0') ? str.slice(0, -2) + '%' : str + '%';
-    }
-
-    function updateBoostVisual() {
-      if (!simulatorCard) return;
-      const extrasCount = getExtrasCount();
-
-      simulatorCard.classList.remove('boost-1', 'boost-2', 'boost-3');
-
-      if (!boostBadge) return;
-
-      if (extrasCount === 0) {
-        boostBadge.classList.add('hidden');
-        return;
-      }
-
-      boostBadge.classList.remove('hidden');
-
-      if (extrasCount === 1) {
-        simulatorCard.classList.add('boost-1');
-        boostBadgeText.textContent = 'Resultados potenciados x1';
-        boostBadge.classList.remove('spin');
-      } else if (extrasCount === 2) {
-        simulatorCard.classList.add('boost-2');
-        boostBadgeText.textContent = 'Resultados potenciados x2';
-        boostBadge.classList.remove('spin');
-      } else if (extrasCount === 3) {
-        simulatorCard.classList.add('boost-3');
-        boostBadgeText.textContent = 'Resultados potenciados x3';
-        // Disparar una pequeña animación
-        boostBadge.classList.remove('spin');
-        // Forzar reflow para reiniciar animación si se vuelve a 3 más adelante
-        void boostBadge.offsetWidth;
-        boostBadge.classList.add('spin');
-      }
-    }
-
-    function updateSimulator() {
-      if (!budgetRange || !budgetLabel || !visitsEl || !leadsEl || !rateLabelEl) return;
-
-      const budget = parseInt(budgetRange.value, 10) || 0;
-      const cpc = 200; // costo por clic estimado
-      const visits = Math.round(budget / cpc);
-
-      const rate = baseRate + getConversionBonus();
-      const leads = Math.round(visits * rate);
-
-      budgetLabel.textContent = formatCLP(budget);
-      visitsEl.textContent = visits.toLocaleString('es-CL');
-      leadsEl.textContent = leads.toLocaleString('es-CL');
-      rateLabelEl.textContent = formatPercent(rate);
-
-      updateBoostVisual();
-    }
-
-    hostingRadios.forEach(r => r.addEventListener('change', () => {
-      updateTrafficTotal();
-    }));
-    [seoAddon, chatbotAddon, multipageAddon].forEach(addon => {
-      if (!addon) return;
-      addon.addEventListener('change', () => {
-        updateTrafficTotal();
-        updateSimulator();
-      });
-    });
-
-    if (budgetRange) {
-      budgetRange.addEventListener('input', updateSimulator);
-    }
-
-    // Inicializar total + simulador
-    updateTrafficTotal();
-    updateSimulator();
-
-    // Toggle textos de ayuda de los addons
-    const infoButtons = document.querySelectorAll('[data-addon-info]');
-    infoButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.getAttribute('data-addon-info');
-        const infoEl = document.getElementById(id);
-        if (!infoEl) return;
-        infoEl.classList.toggle('hidden');
-      });
-    });
-
-    // Colapsable de opciones
-    const boostOptions = document.getElementById('boost-options');
-    const boostToggle = document.getElementById('boost-toggle');
-    if (boostOptions && boostToggle) {
-      boostToggle.addEventListener('click', () => {
-        const isOpen = boostOptions.classList.toggle('open');
-        if (isOpen) {
-          boostToggle.innerHTML =
-            '<span class="underline underline-offset-2">Ocultar opciones para potenciar resultados</span><span>↑</span>';
-        } else {
-          boostToggle.innerHTML =
-            '<span class="underline underline-offset-2">Ver opciones para potenciar resultados</span><span>↓</span>';
-        }
-      });
-    }
-  })();
-
-  // =========================
-  // Botones de pago + transferencia (lógica de click)
-  // =========================
-  (function () {
-    const btnExpress = document.getElementById('pay-web-express');
-    const btnExpressTraffic = document.getElementById('pay-web-express-traffic');
-
-    if (btnExpress) {
-      btnExpress.addEventListener('click', function () {
-        const domain = (document.getElementById('domain-express')?.value || '').trim();
-        const contact = (document.getElementById('contact-express')?.value || '').trim();
-
-        if (!contact) {
-          alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
-          return;
+    <script>
+
+
+
+        (function () {
+            const imgEl = document.getElementById('phone-project-image');
+            const titleEl = document.getElementById('phone-project-title');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('phone-prev');
+            const nextBtn = document.getElementById('phone-next');
+
+            if (!imgEl || !titleEl || !dots.length) return;
+
+            // Aquí configuras tus proyectos
+            const projects = [
+                {
+                    src: '/img/proyectos/proyecto1.jpg',
+                    title: 'Emprendimiento 1 · Servicios locales'
+                },
+                {
+                    src: '/img/proyectos/proyecto2.jpg',
+                    title: 'Emprendimiento 2 · Venta de productos'
+                },
+                {
+                    src: '/img/proyectos/proyecto3.jpg',
+                    title: 'Emprendimiento 3 · Turismo / Cabañas'
+                }
+            ];
+
+            let current = 0;
+
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    if (index === current) {
+                        dot.classList.remove('bg-slate-700');
+                        dot.classList.add('bg-slate-500');
+                    } else {
+                        dot.classList.remove('bg-slate-500');
+                        dot.classList.add('bg-slate-700');
+                    }
+                });
+            }
+
+            function showSlide(index) {
+                if (index < 0) index = projects.length - 1;
+                if (index >= projects.length) index = projects.length - 1;
+
+                current = index;
+                imgEl.style.opacity = 0;
+
+                setTimeout(() => {
+                    imgEl.src = projects[current].src;
+                    imgEl.alt = projects[current].title;
+                    titleEl.textContent = projects[current].title;
+                    imgEl.style.opacity = 1;
+                    updateDots();
+                }, 200);
+            }
+
+            // Click en puntos
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+                    if (!isNaN(slideIndex)) showSlide(slideIndex);
+                });
+            });
+
+            // Botones anterior/siguiente
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const newIndex = current - 1 < 0 ? projects.length - 1 : current - 1;
+                    showSlide(newIndex);
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    const newIndex = current + 1 >= projects.length ? 0 : current + 1;
+                    showSlide(newIndex);
+                });
+            }
+
+            // Auto-rotación suave
+            setInterval(() => {
+                const newIndex = current + 1 >= projects.length ? 0 : current + 1;
+                showSlide(newIndex);
+            }, 7000);
+
+            // Estado inicial
+            showSlide(0);
+        })();
+
+
+
+        // =========================
+        // Menú móvil
+        // =========================
+        const mobileBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
         }
 
-        console.log('Web Express ->', { dominio: domain, contacto: contact });
+        // =========================
+        // Barra fija de pago (lee el plan activo y el total)
+        // =========================
+        function updateStickyPayBar() {
+            const inner = document.getElementById('stickyPayInner');
+            const labelEl = document.getElementById('stickyPayLabel');
+            const amountEl = document.getElementById('stickyPayAmount');
+            if (!inner || !labelEl || !amountEl) return;
 
-        // Aquí rediriges a tu endpoint de Mercado Pago para Web Express
-        // window.location.href = `/api/mercadopago/web-express?...`;
-      });
-    }
+            const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
+            if (!activePlanDetail) return;
 
-    if (btnExpressTraffic) {
-      btnExpressTraffic.addEventListener('click', function () {
-        const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
-        const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
-        const budget = (document.getElementById('trafficBudget')?.value || '').trim();
-        const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
+            let label = 'Pagar';
+            let amount = '$0';
 
-        if (!contact) {
-          alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
-          return;
+            const plan = activePlanDetail.getAttribute('data-plan-detail');
+            if (plan === 'express') {
+                label = 'Pagar Web Express';
+                const totalEl = document.getElementById('totalWebExpress');
+                if (totalEl) amount = totalEl.textContent.trim();
+            } else if (plan === 'express-traffic') {
+                label = 'Pagar Web Express + Tráfico';
+                const totalEl = document.getElementById('totalWebExpressTraffic');
+                if (totalEl) amount = totalEl.textContent.trim();
+            }
+
+            labelEl.textContent = label;
+            amountEl.textContent = amount;
         }
 
-        console.log('Web Express + Tráfico (Mercado Pago) ->', {
-          dominio: domain,
-          contacto: contact,
-          presupuestoAnuncios: budget,
-          total
+        // =========================
+        // Selector de planes (cards)
+        // =========================
+        const planButtons = document.querySelectorAll('.plan-card[data-plan]');
+        const planDetails = document.querySelectorAll('.plan-detail[data-plan-detail]');
+
+        function selectPlan(plan) {
+            planButtons.forEach(btn => {
+                const isActive = btn.dataset.plan === plan;
+                if (isActive) {
+                    btn.classList.add('border-blue-500', 'bg-slate-900/90', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
+                } else {
+                    btn.classList.remove('border-blue-500', 'shadow-soft', 'ring-2', 'ring-blue-500/70');
+                    btn.classList.add('border-slate-800', 'bg-slate-900/80');
+                }
+            });
+
+            planDetails.forEach(detail => {
+                detail.classList.toggle('hidden', detail.dataset.planDetail !== plan);
+            });
+
+            // actualizar barra fija cuando cambia de plan
+            updateStickyPayBar();
+        }
+
+        planButtons.forEach(btn => {
+            btn.addEventListener('click', () => selectPlan(btn.dataset.plan));
         });
 
-        // Aquí rediriges a tu endpoint de Mercado Pago para Web Express + Tráfico
-        // window.location.href = `/api/mercadopago/web-express-traffic?...`;
-      });
-    }
+        // Plan por defecto: Web Express
+        selectPlan('express');
 
-    // Transferencia (toggle)
-    const transferToggle = document.getElementById('transfer-toggle-traffic');
-    const transferInfo = document.getElementById('transfer-info-traffic');
-    const btnTransferWhatsApp = document.getElementById('btnTransferWhatsApp');
+        // =========================
+        // Calculadora Web Express (plan 1)
+        // =========================
+        (function () {
+            const radios = document.querySelectorAll('input[name="hosting-option"]');
+            const totalEl = document.getElementById('totalWebExpress');
+            const btnTotalEl = document.getElementById('btnTotalWebExpress');
+            if (!radios.length || !totalEl || !btnTotalEl) return;
 
-    if (transferToggle && transferInfo) {
-      transferToggle.addEventListener('click', () => {
-        transferInfo.classList.toggle('hidden');
-      });
-    }
+            const desarrollo = 35000;
+            const dominio = 15000;
 
-    if (btnTransferWhatsApp) {
-      btnTransferWhatsApp.addEventListener('click', () => {
-        const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
-        const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
-        const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
+            function updateTotal() {
+                const checked = document.querySelector('input[name="hosting-option"]:checked');
+                const hosting = checked ? parseInt(checked.value, 10) : 0;
+                const total = desarrollo + dominio + hosting;
+                const formatted = '$' + total.toLocaleString('es-CL');
+                totalEl.textContent = formatted;
+                btnTotalEl.textContent = formatted;
+                updateStickyPayBar();
+            }
 
-        const mensaje =
-          `Hola, quiero pagar mi plan Web Express + Tráfico por transferencia.` +
-          `%0A%0ADominio: ${domain || '(por definir)'}` +
-          `%0AContacto: ${contact || '(no indicado)'}` +
-          `%0ATotal: ${total}`;
+            radios.forEach(r => r.addEventListener('change', updateTotal));
+            updateTotal();
+        })();
 
-        // REEMPLAZA 569XXXXXXXX por tu número de WhatsApp real
-        const telefono = '569XXXXXXXX';
-        const url = `https://wa.me/${telefono}?text=${mensaje}`;
+        // =========================
+        // Plan Web Express + Tráfico (totales + extras + simulador + promo hosting + visual)
+        // =========================
+        (function () {
+            // --- Totales + promo ---
+            const hostingRadios = document.querySelectorAll('input[name="hosting-option-traffic"]');
+            const seoAddon = document.getElementById('addon-seo');
+            const chatbotAddon = document.getElementById('addon-chatbot');
+            const multipageAddon = document.getElementById('addon-multipage');
+            const totalTrafficEl = document.getElementById('totalWebExpressTraffic');
+            const btnTotalTrafficEl = document.getElementById('btnTotalWebExpressTraffic');
+            const promoEl = document.getElementById('trafficHostingPromo');
 
-        console.log('Transferencia Web Express + Tráfico -> WhatsApp', { url });
+            const desarrollo = 35000;
+            const dominio = 15000;
 
-        // Cuando tengas el número real, descomenta esto:
-        // window.open(url, '_blank');
-      });
-    }
-  })();
+            function getAddonPrice(addonEl) {
+                if (!addonEl || !addonEl.checked) return 0;
+                const value = parseInt(addonEl.dataset.price || '0', 10);
+                return isNaN(value) ? 0 : value;
+            }
 
-  // =========================
-  // Barra fija de pago: mostrar / ocultar según scroll (solo escritorio)
-  // =========================
-  (function () {
-    const inner = document.getElementById('stickyPayInner');
-    if (!inner) return;
+            function getHostingTraffic() {
+                const checked = document.querySelector('input[name="hosting-option-traffic"]:checked');
+                return checked ? parseInt(checked.value, 10) || 0 : 0;
+            }
 
-    function handleStickyScroll() {
-      const isDesktop = window.innerWidth >= 768; // md
-      const threshold = 150; // px desde arriba
+            function getExtrasCount() {
+                let count = 0;
+                if (seoAddon && seoAddon.checked) count++;
+                if (chatbotAddon && chatbotAddon.checked) count++;
+                if (multipageAddon && multipageAddon.checked) count++;
+                return count;
+            }
 
-      if (!isDesktop) {
-        // en móvil siempre oculto
-        inner.classList.add('translate-y-full', 'opacity-0');
-        return;
-      }
+            function updateTrafficTotal() {
+                if (!totalTrafficEl || !btnTotalTrafficEl) return;
 
-      if (window.scrollY > threshold) {
-        // aparece suave
-        inner.classList.remove('translate-y-full', 'opacity-0');
-      } else {
-        // se esconde suave hacia abajo
-        inner.classList.add('translate-y-full', 'opacity-0');
-      }
-    }
+                const rawHosting = getHostingTraffic();
+                const extrasCount = getExtrasCount();
 
-    window.addEventListener('scroll', handleStickyScroll);
-    window.addEventListener('resize', handleStickyScroll);
-    // estado inicial
-    handleStickyScroll();
-  })();
+                let hostingForTotal = rawHosting;
+                let hostingDiscount = 0;
 
-  // =========================
-  // El botón fijo reutiliza la lógica de los botones originales
-  // =========================
-  (function () {
-    const stickyBtn = document.getElementById('stickyPayButton');
-    if (!stickyBtn) return;
+                // Promo: hosting de por vida gratis si hay 3 extras y se eligió hosting de por vida (60.000)
+                if (rawHosting === 60000 && extrasCount === 3) {
+                    hostingForTotal = 0;
+                    hostingDiscount = 60000;
+                }
 
-    stickyBtn.addEventListener('click', function () {
-      const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
-      if (!activePlanDetail) return;
+                const addons =
+                    getAddonPrice(seoAddon) +
+                    getAddonPrice(chatbotAddon) +
+                    getAddonPrice(multipageAddon);
 
-      const plan = activePlanDetail.getAttribute('data-plan-detail');
-      if (plan === 'express') {
-        document.getElementById('pay-web-express')?.click();
-      } else if (plan === 'express-traffic') {
-        document.getElementById('pay-web-express-traffic')?.click();
-      }
-    });
-  })();
+                const total = desarrollo + dominio + hostingForTotal + addons;
+                const formatted = '$' + total.toLocaleString('es-CL');
+                totalTrafficEl.textContent = formatted;
+                btnTotalTrafficEl.textContent = formatted;
 
-  // =========================
-  // Inicializar barra fija al cargar
-  // =========================
-  updateStickyPayBar();
-</script>
+                if (promoEl) {
+                    if (hostingDiscount > 0) {
+                        promoEl.classList.remove('hidden');
+                    } else {
+                        promoEl.classList.add('hidden');
+                    }
+                }
+
+                updateStickyPayBar();
+            }
+
+            // --- Simulador ---
+            const budgetRange = document.getElementById('trafficBudget');
+            const budgetLabel = document.getElementById('trafficBudgetLabel');
+            const visitsEl = document.getElementById('trafficVisits');
+            const leadsEl = document.getElementById('trafficLeads');
+            const rateLabelEl = document.getElementById('trafficRateLabel');
+            const simulatorCard = document.getElementById('trafficSimulatorCard');
+            const boostBadge = document.getElementById('trafficBoostBadge');
+            const boostBadgeIcon = document.getElementById('trafficBoostBadgeIcon');
+            const boostBadgeText = document.getElementById('trafficBoostBadgeText');
+
+            const baseRate = 0.03; // 3%
+
+            function getConversionBonus() {
+                let bonus = 0;
+                if (seoAddon && seoAddon.checked) bonus += 0.02;        // +2%
+                if (chatbotAddon && chatbotAddon.checked) bonus += 0.02; // +2%
+                if (multipageAddon && multipageAddon.checked) bonus += 0.015; // +1.5%
+                return bonus;
+            }
+
+            function formatCLP(value) {
+                return '$' + value.toLocaleString('es-CL');
+            }
+
+            function formatPercent(rate) {
+                const val = rate * 100;
+                const str = val.toFixed(1);
+                return str.endsWith('.0') ? str.slice(0, -2) + '%' : str + '%';
+            }
+
+            function updateBoostVisual() {
+                if (!simulatorCard) return;
+                const extrasCount = getExtrasCount();
+
+                simulatorCard.classList.remove('boost-1', 'boost-2', 'boost-3');
+
+                if (!boostBadge) return;
+
+                if (extrasCount === 0) {
+                    boostBadge.classList.add('hidden');
+                    return;
+                }
+
+                boostBadge.classList.remove('hidden');
+
+                if (extrasCount === 1) {
+                    simulatorCard.classList.add('boost-1');
+                    boostBadgeText.textContent = 'Resultados potenciados x1';
+                    boostBadge.classList.remove('spin');
+                } else if (extrasCount === 2) {
+                    simulatorCard.classList.add('boost-2');
+                    boostBadgeText.textContent = 'Resultados potenciados x2';
+                    boostBadge.classList.remove('spin');
+                } else if (extrasCount === 3) {
+                    simulatorCard.classList.add('boost-3');
+                    boostBadgeText.textContent = 'Resultados potenciados x3';
+                    // Disparar una pequeña animación
+                    boostBadge.classList.remove('spin');
+                    // Forzar reflow para reiniciar animación si se vuelve a 3 más adelante
+                    void boostBadge.offsetWidth;
+                    boostBadge.classList.add('spin');
+                }
+            }
+
+            function updateSimulator() {
+                if (!budgetRange || !budgetLabel || !visitsEl || !leadsEl || !rateLabelEl) return;
+
+                const budget = parseInt(budgetRange.value, 10) || 0;
+                const cpc = 200; // costo por clic estimado
+                const visits = Math.round(budget / cpc);
+
+                const rate = baseRate + getConversionBonus();
+                const leads = Math.round(visits * rate);
+
+                budgetLabel.textContent = formatCLP(budget);
+                visitsEl.textContent = visits.toLocaleString('es-CL');
+                leadsEl.textContent = leads.toLocaleString('es-CL');
+                rateLabelEl.textContent = formatPercent(rate);
+
+                updateBoostVisual();
+            }
+
+            hostingRadios.forEach(r => r.addEventListener('change', () => {
+                updateTrafficTotal();
+            }));
+            [seoAddon, chatbotAddon, multipageAddon].forEach(addon => {
+                if (!addon) return;
+                addon.addEventListener('change', () => {
+                    updateTrafficTotal();
+                    updateSimulator();
+                });
+            });
+
+            if (budgetRange) {
+                budgetRange.addEventListener('input', updateSimulator);
+            }
+
+            // Inicializar total + simulador
+            updateTrafficTotal();
+            updateSimulator();
+
+            // Toggle textos de ayuda de los addons
+            const infoButtons = document.querySelectorAll('[data-addon-info]');
+            infoButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-addon-info');
+                    const infoEl = document.getElementById(id);
+                    if (!infoEl) return;
+                    infoEl.classList.toggle('hidden');
+                });
+            });
+
+            // Colapsable de opciones
+            const boostOptions = document.getElementById('boost-options');
+            const boostToggle = document.getElementById('boost-toggle');
+            if (boostOptions && boostToggle) {
+                boostToggle.addEventListener('click', () => {
+                    const isOpen = boostOptions.classList.toggle('open');
+                    if (isOpen) {
+                        boostToggle.innerHTML =
+                            '<span class="underline underline-offset-2">Ocultar opciones para potenciar resultados</span><span>↑</span>';
+                    } else {
+                        boostToggle.innerHTML =
+                            '<span class="underline underline-offset-2">Ver opciones para potenciar resultados</span><span>↓</span>';
+                    }
+                });
+            }
+        })();
+
+        // =========================
+        // Botones de pago + transferencia (lógica de click)
+        // =========================
+        (function () {
+            const btnExpress = document.getElementById('pay-web-express');
+            const btnExpressTraffic = document.getElementById('pay-web-express-traffic');
+
+            if (btnExpress) {
+                btnExpress.addEventListener('click', function () {
+                    const domain = (document.getElementById('domain-express')?.value || '').trim();
+                    const contact = (document.getElementById('contact-express')?.value || '').trim();
+
+                    if (!contact) {
+                        alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
+                        return;
+                    }
+
+                    console.log('Web Express ->', { dominio: domain, contacto: contact });
+
+                    // Aquí rediriges a tu endpoint de Mercado Pago para Web Express
+                    // window.location.href = `/api/mercadopago/web-express?...`;
+                });
+            }
+
+            if (btnExpressTraffic) {
+                btnExpressTraffic.addEventListener('click', function () {
+                    const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
+                    const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
+                    const budget = (document.getElementById('trafficBudget')?.value || '').trim();
+                    const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
+
+                    if (!contact) {
+                        alert('Por favor, deja al menos un WhatsApp o correo para poder contactarte 🙂');
+                        return;
+                    }
+
+                    console.log('Web Express + Tráfico (Mercado Pago) ->', {
+                        dominio: domain,
+                        contacto: contact,
+                        presupuestoAnuncios: budget,
+                        total
+                    });
+
+                    // Aquí rediriges a tu endpoint de Mercado Pago para Web Express + Tráfico
+                    // window.location.href = `/api/mercadopago/web-express-traffic?...`;
+                });
+            }
+
+            // Transferencia (toggle)
+            const transferToggle = document.getElementById('transfer-toggle-traffic');
+            const transferInfo = document.getElementById('transfer-info-traffic');
+            const btnTransferWhatsApp = document.getElementById('btnTransferWhatsApp');
+
+            if (transferToggle && transferInfo) {
+                transferToggle.addEventListener('click', () => {
+                    transferInfo.classList.toggle('hidden');
+                });
+            }
+
+            if (btnTransferWhatsApp) {
+                btnTransferWhatsApp.addEventListener('click', () => {
+                    const domain = (document.getElementById('domain-express-traffic')?.value || '').trim();
+                    const contact = (document.getElementById('contact-express-traffic')?.value || '').trim();
+                    const total = (document.getElementById('totalWebExpressTraffic')?.textContent || '').trim();
+
+                    const mensaje =
+                        `Hola, quiero pagar mi plan Web Express + Tráfico por transferencia.` +
+                        `%0A%0ADominio: ${domain || '(por definir)'}` +
+                        `%0AContacto: ${contact || '(no indicado)'}` +
+                        `%0ATotal: ${total}`;
+
+                    // REEMPLAZA 569XXXXXXXX por tu número de WhatsApp real
+                    const telefono = '569XXXXXXXX';
+                    const url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+                    console.log('Transferencia Web Express + Tráfico -> WhatsApp', { url });
+
+                    // Cuando tengas el número real, descomenta esto:
+                    // window.open(url, '_blank');
+                });
+            }
+        })();
+
+        // =========================
+        // Barra fija de pago: mostrar / ocultar según scroll (solo escritorio)
+        // =========================
+        (function () {
+            const inner = document.getElementById('stickyPayInner');
+            if (!inner) return;
+
+            function handleStickyScroll() {
+                const isDesktop = window.innerWidth >= 768; // md
+                const threshold = 150; // px desde arriba
+
+                if (!isDesktop) {
+                    // en móvil siempre oculto
+                    inner.classList.add('translate-y-full', 'opacity-0');
+                    return;
+                }
+
+                if (window.scrollY > threshold) {
+                    // aparece suave
+                    inner.classList.remove('translate-y-full', 'opacity-0');
+                } else {
+                    // se esconde suave hacia abajo
+                    inner.classList.add('translate-y-full', 'opacity-0');
+                }
+            }
+
+            window.addEventListener('scroll', handleStickyScroll);
+            window.addEventListener('resize', handleStickyScroll);
+            // estado inicial
+            handleStickyScroll();
+        })();
+
+        // =========================
+        // El botón fijo reutiliza la lógica de los botones originales
+        // =========================
+        (function () {
+            const stickyBtn = document.getElementById('stickyPayButton');
+            if (!stickyBtn) return;
+
+            stickyBtn.addEventListener('click', function () {
+                const activePlanDetail = document.querySelector('.plan-detail:not(.hidden)');
+                if (!activePlanDetail) return;
+
+                const plan = activePlanDetail.getAttribute('data-plan-detail');
+                if (plan === 'express') {
+                    document.getElementById('pay-web-express')?.click();
+                } else if (plan === 'express-traffic') {
+                    document.getElementById('pay-web-express-traffic')?.click();
+                }
+            });
+        })();
+
+        // =========================
+        // Inicializar barra fija al cargar
+        // =========================
+        updateStickyPayBar();
+    </script>
 
 </body>
 

@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diferencias entre una Buena y Mala Página Web | PaginasFast</title>
-    <meta name="description" content="Aprende a distinguir una página web efectiva de una que ahuyenta clientes. Descubre qué hace que un sitio sea exitoso.">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"
+        content="Aprende a distinguir una página web efectiva de una que ahuyenta clientes. Descubre qué hace que un sitio sea exitoso.">
+    <link rel="icon" type="image/png" href="/fav.ico">
     <script src="https://unpkg.com/feather-icons" defer></script>
     <link href="/output.css" rel="stylesheet">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-    .modal { transition: opacity .3s; }
-    .loader { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-radius: 50%; border-top-color: #fff; animation: 1s ease-in-out infinite spin; }
-    .loader-dark { border: 3px solid rgba(0,0,0,.2); border-top-color: #3b82f6; }
-    @keyframes spin { to { transform: rotate(360deg) } }
-        
+
+        .modal {
+            transition: opacity .3s;
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: 1s ease-in-out infinite spin;
+        }
+
+        .loader-dark {
+            border: 3px solid rgba(0, 0, 0, .2);
+            border-top-color: #3b82f6;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
         .blog-content {
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
         }
-        
+
         .blog-content h2 {
             font-size: 2rem;
             font-weight: 700;
@@ -31,7 +52,7 @@
             margin-top: 2.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .blog-content h3 {
             font-size: 1.5rem;
             font-weight: 600;
@@ -39,46 +60,47 @@
             margin-top: 2rem;
             margin-bottom: 0.75rem;
         }
-        
+
         .blog-content p {
             color: #4b5563;
             margin-bottom: 1.25rem;
             font-size: 1.1rem;
         }
-        
-        .blog-content ul, .blog-content ol {
+
+        .blog-content ul,
+        .blog-content ol {
             margin: 1.5rem 0;
             padding-left: 2rem;
             color: #4b5563;
         }
-        
+
         .blog-content li {
             margin-bottom: 0.75rem;
             font-size: 1.05rem;
         }
-        
+
         .blog-content strong {
             color: #1f2937;
             font-weight: 600;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
         }
-        
+
         .comparison-table {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin: 2rem 0;
         }
-        
+
         @media (max-width: 768px) {
             .comparison-table {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .good-card {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
@@ -86,7 +108,7 @@
             border-radius: 0.75rem;
             box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3);
         }
-        
+
         .bad-card {
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             color: white;
@@ -94,19 +116,19 @@
             border-radius: 0.75rem;
             box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.3);
         }
-        
+
         .comparison-item {
             margin-bottom: 1rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .comparison-item:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
-        
+
         .checklist-item {
             display: flex;
             align-items: flex-start;
@@ -115,7 +137,7 @@
             background: #f3f4f6;
             border-radius: 0.5rem;
         }
-        
+
         .checklist-icon {
             flex-shrink: 0;
             width: 24px;
@@ -133,7 +155,8 @@
             </a>
             <div class="flex space-x-6 items-center">
                 <a href="/#blog" class="text-gray-600 hover:text-blue-600 font-medium">← Volver al Blog</a>
-                <a href="#" class="open-contact-modal bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar</a>
+                <a href="#"
+                    class="open-contact-modal bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar</a>
             </div>
         </nav>
     </header>
@@ -157,19 +180,24 @@
             <div class="container mx-auto px-6">
                 <div class="blog-content">
                     <p class="text-xl text-gray-700 font-medium mb-8">
-                        Tener una página web no es suficiente. Lo que realmente importa es tener una BUENA página web. La diferencia entre ambas puede ser el éxito o el fracaso de tu presencia digital. Veamos qué distingue a una de la otra.
+                        Tener una página web no es suficiente. Lo que realmente importa es tener una BUENA página web.
+                        La diferencia entre ambas puede ser el éxito o el fracaso de tu presencia digital. Veamos qué
+                        distingue a una de la otra.
                     </p>
 
                     <h2>¿Por Qué Importa la Calidad de Tu Página Web?</h2>
                     <p>
-                        Los usuarios de internet son impacientes. De hecho, estudios demuestran que <strong>53% de los visitantes abandonan un sitio que tarda más de 3 segundos en cargar</strong>. Además, el 94% de las primeras impresiones están relacionadas con el diseño web.
+                        Los usuarios de internet son impacientes. De hecho, estudios demuestran que <strong>53% de los
+                            visitantes abandonan un sitio que tarda más de 3 segundos en cargar</strong>. Además, el 94%
+                        de las primeras impresiones están relacionadas con el diseño web.
                     </p>
                     <p>
-                        Una mala página web no solo no te ayuda: te perjudica. Puede hacer que parezcas poco profesional, poco confiable o simplemente anticuado.
+                        Una mala página web no solo no te ayuda: te perjudica. Puede hacer que parezcas poco
+                        profesional, poco confiable o simplemente anticuado.
                     </p>
 
                     <h2>Comparación Directa: Buena vs Mala Página Web</h2>
-                    
+
                     <div class="comparison-table">
                         <div class="good-card">
                             <h3 class="text-2xl font-bold mb-4 flex items-center">
@@ -194,7 +222,8 @@
                             </div>
                             <div class="comparison-item">
                                 <strong>Contenido Claro</strong>
-                                <p class="mt-1">Textos directos, sin tecnicismos innecesarios. Enfocado en el cliente.</p>
+                                <p class="mt-1">Textos directos, sin tecnicismos innecesarios. Enfocado en el cliente.
+                                </p>
                             </div>
                             <div class="comparison-item">
                                 <strong>Llamados a la Acción</strong>
@@ -217,7 +246,8 @@
                             </div>
                             <div class="comparison-item">
                                 <strong>Diseño Anticuado</strong>
-                                <p class="mt-1">Parece de los años 2000. Transmite desconfianza y falta de profesionalismo.</p>
+                                <p class="mt-1">Parece de los años 2000. Transmite desconfianza y falta de
+                                    profesionalismo.</p>
                             </div>
                             <div class="comparison-item">
                                 <strong>Navegación Confusa</strong>
@@ -243,13 +273,14 @@
                     </div>
 
                     <h2>Los 7 Pecados Capitales de una Mala Página Web</h2>
-                    
+
                     <div class="space-y-4 my-8">
                         <div class="checklist-item">
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">1. Lentitud Extrema</strong>
-                                <p class="text-gray-600 mt-1">Si tu sitio tarda más de 3 segundos en cargar, estás perdiendo la mitad de tus visitantes antes de que vean tu contenido.</p>
+                                <p class="text-gray-600 mt-1">Si tu sitio tarda más de 3 segundos en cargar, estás
+                                    perdiendo la mitad de tus visitantes antes de que vean tu contenido.</p>
                             </div>
                         </div>
 
@@ -257,7 +288,8 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">2. No Adaptarse a Móviles</strong>
-                                <p class="text-gray-600 mt-1">El 70% del tráfico web viene de móviles. Si tu sitio no se adapta, estás rechazando automáticamente a la mayoría de tus visitantes.</p>
+                                <p class="text-gray-600 mt-1">El 70% del tráfico web viene de móviles. Si tu sitio no se
+                                    adapta, estás rechazando automáticamente a la mayoría de tus visitantes.</p>
                             </div>
                         </div>
 
@@ -265,7 +297,8 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">3. Diseño Sobrecargado</strong>
-                                <p class="text-gray-600 mt-1">Demasiados colores, animaciones molestas, pop-ups agresivos. El usuario se abruma y cierra la pestaña.</p>
+                                <p class="text-gray-600 mt-1">Demasiados colores, animaciones molestas, pop-ups
+                                    agresivos. El usuario se abruma y cierra la pestaña.</p>
                             </div>
                         </div>
 
@@ -273,7 +306,8 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">4. Información Oculta o Confusa</strong>
-                                <p class="text-gray-600 mt-1">Si el usuario no puede encontrar rápidamente qué ofreces, cuánto cuesta o cómo contactarte, se irá.</p>
+                                <p class="text-gray-600 mt-1">Si el usuario no puede encontrar rápidamente qué ofreces,
+                                    cuánto cuesta o cómo contactarte, se irá.</p>
                             </div>
                         </div>
 
@@ -281,7 +315,8 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">5. Contenido Desactualizado</strong>
-                                <p class="text-gray-600 mt-1">"Últimas noticias de 2018" no inspira confianza. Muestra que no te importa mantener tu presencia digital.</p>
+                                <p class="text-gray-600 mt-1">"Últimas noticias de 2018" no inspira confianza. Muestra
+                                    que no te importa mantener tu presencia digital.</p>
                             </div>
                         </div>
 
@@ -289,7 +324,8 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">6. Errores Técnicos</strong>
-                                <p class="text-gray-600 mt-1">Enlaces rotos, imágenes que no cargan, formularios que no funcionan. Es frustración garantizada.</p>
+                                <p class="text-gray-600 mt-1">Enlaces rotos, imágenes que no cargan, formularios que no
+                                    funcionan. Es frustración garantizada.</p>
                             </div>
                         </div>
 
@@ -297,19 +333,21 @@
                             <i data-feather="x" class="checklist-icon text-red-600"></i>
                             <div>
                                 <strong class="text-lg">7. Falta de Seguridad (Sin HTTPS)</strong>
-                                <p class="text-gray-600 mt-1">Los navegadores marcan sitios sin HTTPS como "No Seguros". ¿Confiarías tu información a un sitio así?</p>
+                                <p class="text-gray-600 mt-1">Los navegadores marcan sitios sin HTTPS como "No Seguros".
+                                    ¿Confiarías tu información a un sitio así?</p>
                             </div>
                         </div>
                     </div>
 
                     <h2>Las 7 Virtudes de una Buena Página Web</h2>
-                    
+
                     <div class="space-y-4 my-8">
                         <div class="checklist-item bg-green-50">
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">1. Velocidad Relámpago</strong>
-                                <p class="text-gray-600 mt-1">Carga en menos de 2 segundos. Cada milisegundo cuenta para mantener al usuario enganchado.</p>
+                                <p class="text-gray-600 mt-1">Carga en menos de 2 segundos. Cada milisegundo cuenta para
+                                    mantener al usuario enganchado.</p>
                             </div>
                         </div>
 
@@ -317,7 +355,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">2. Diseño Responsive Perfecto</strong>
-                                <p class="text-gray-600 mt-1">Se ve y funciona igual de bien en cualquier dispositivo. La experiencia es consistente.</p>
+                                <p class="text-gray-600 mt-1">Se ve y funciona igual de bien en cualquier dispositivo.
+                                    La experiencia es consistente.</p>
                             </div>
                         </div>
 
@@ -325,7 +364,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">3. Jerarquía Visual Clara</strong>
-                                <p class="text-gray-600 mt-1">Lo más importante destaca. El usuario sabe dónde mirar y qué hacer.</p>
+                                <p class="text-gray-600 mt-1">Lo más importante destaca. El usuario sabe dónde mirar y
+                                    qué hacer.</p>
                             </div>
                         </div>
 
@@ -333,7 +373,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">4. Contenido Orientado al Usuario</strong>
-                                <p class="text-gray-600 mt-1">Habla de los beneficios para el cliente, no solo de las características de tu producto.</p>
+                                <p class="text-gray-600 mt-1">Habla de los beneficios para el cliente, no solo de las
+                                    características de tu producto.</p>
                             </div>
                         </div>
 
@@ -341,7 +382,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">5. Llamados a la Acción Estratégicos</strong>
-                                <p class="text-gray-600 mt-1">Botones visibles en los lugares correctos que guían al usuario hacia la conversión.</p>
+                                <p class="text-gray-600 mt-1">Botones visibles en los lugares correctos que guían al
+                                    usuario hacia la conversión.</p>
                             </div>
                         </div>
 
@@ -349,7 +391,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">6. SEO Optimizado</strong>
-                                <p class="text-gray-600 mt-1">Estructura técnica correcta para que Google te encuentre y te posicione bien.</p>
+                                <p class="text-gray-600 mt-1">Estructura técnica correcta para que Google te encuentre y
+                                    te posicione bien.</p>
                             </div>
                         </div>
 
@@ -357,7 +400,8 @@
                             <i data-feather="check" class="checklist-icon text-green-600"></i>
                             <div>
                                 <strong class="text-lg">7. Seguridad y Confianza</strong>
-                                <p class="text-gray-600 mt-1">HTTPS, políticas de privacidad claras, testimonios reales. Todo suma para generar confianza.</p>
+                                <p class="text-gray-600 mt-1">HTTPS, políticas de privacidad claras, testimonios reales.
+                                    Todo suma para generar confianza.</p>
                             </div>
                         </div>
                     </div>
@@ -388,38 +432,46 @@
                         <li>Solo 5 se convierten en clientes potenciales</li>
                     </ul>
                     <p class="mt-4">
-                        Con una buena página web, esos números se invierten: <strong>60-70 de esos 100 visitantes se convertirían en leads calificados</strong>.
+                        Con una buena página web, esos números se invierten: <strong>60-70 de esos 100 visitantes se
+                            convertirían en leads calificados</strong>.
                     </p>
 
                     <div class="bg-purple-50 border-l-4 border-purple-600 p-6 my-10 rounded-r-lg">
                         <h3 class="text-xl font-bold text-purple-900 mb-2">💎 La Regla de Oro</h3>
                         <p class="text-purple-800">
-                            Tu página web debería ser tan fácil de usar que tu abuela podría navegar por ella sin ayuda. Si no es así, es demasiado compleja.
+                            Tu página web debería ser tan fácil de usar que tu abuela podría navegar por ella sin ayuda.
+                            Si no es así, es demasiado compleja.
                         </p>
                     </div>
 
                     <h2>Conclusión</h2>
                     <p>
-                        La diferencia entre una buena y una mala página web no es subjetiva: se mide en clientes ganados o perdidos, en ventas realizadas o frustradas, en una imagen profesional o mediocre.
+                        La diferencia entre una buena y una mala página web no es subjetiva: se mide en clientes ganados
+                        o perdidos, en ventas realizadas o frustradas, en una imagen profesional o mediocre.
                     </p>
                     <p>
-                        No basta con "tener" una página web. Necesitas una página que <strong>trabaje para ti</strong>, que convierta visitantes en clientes y que refleje la calidad de tu negocio.
+                        No basta con "tener" una página web. Necesitas una página que <strong>trabaje para ti</strong>,
+                        que convierta visitantes en clientes y que refleje la calidad de tu negocio.
                     </p>
                     <p>
-                        En PaginasFast nos especializamos en crear páginas web que cumplen todos los estándares de una buena página: rápidas, profesionales, responsive y optimizadas para convertir.
+                        En PaginasFast nos especializamos en crear páginas web que cumplen todos los estándares de una
+                        buena página: rápidas, profesionales, responsive y optimizadas para convertir.
                     </p>
                 </div>
 
-                <div class="max-w-3xl mx-auto mt-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 text-center text-white shadow-2xl">
+                <div
+                    class="max-w-3xl mx-auto mt-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 text-center text-white shadow-2xl">
                     <h3 class="text-2xl font-bold mb-4">¿Tu Página Web Está a la Altura?</h3>
                     <p class="text-lg mb-6 text-white/90">
                         Déjanos crear una página que convierta visitantes en clientes, no que los ahuyente.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#" class="open-contact-modal bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors inline-block">
+                        <a href="#"
+                            class="open-contact-modal bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors inline-block">
                             Cotizar Mi Página Web
                         </a>
-                        <a href="/#servicios" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors inline-block">
+                        <a href="/#servicios"
+                            class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors inline-block">
                             Ver Planes
                         </a>
                     </div>
@@ -436,25 +488,33 @@
     </main>
 
     <!-- Modal de Contacto (mismo estilo que home) -->
-    <div id="contact-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
-            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+    <div id="contact-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
+            <button id="close-modal-btn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Asesoría gratuita para tu web</h3>
-            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu negocio.</p>
+            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu
+                negocio.</p>
             <form id="contact-form">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                    <input type="text" id="name-modal" name="name" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="text" id="name-modal" name="name" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                    <input type="email" id="email-modal" name="email" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="email" id="email-modal" name="email" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
                 <div class="mb-6">
                     <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
-                    <input type="tel" id="contact-phone-input" name="phone" class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="tel" id="contact-phone-input" name="phone"
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
                     <span class="btn-text">Enviar Solicitud</span>
                     <div class="loader loader-dark hidden"></div>
                 </button>

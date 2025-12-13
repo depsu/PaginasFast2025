@@ -17,8 +17,8 @@
     <title>Tu Competencia te Roba Clientes en Google | Recupéralos Ahora</title>
     <meta name="description"
         content="Mientras lees esto, un cliente buscó tu servicio, encontró a tu competencia y cerró un trato. ¿Duele? Tengo el plan para que eso no vuelva a pasar. Hablemos.">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="icon" type="image/png" href="/fav.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <script src="https://unpkg.com/feather-icons" defer></script>
@@ -336,10 +336,13 @@
             flex: 1 1 auto;
             -webkit-overflow-scrolling: touch;
         }
-        #reviews-list-view, #add-review-view {
+
+        #reviews-list-view,
+        #add-review-view {
             display: flex;
             flex-direction: column;
-            min-height: 0; /* permite que el contenedor scroll pueda contraerse */
+            min-height: 0;
+            /* permite que el contenedor scroll pueda contraerse */
         }
 
         /* Estilos para el formulario de añadir reseña */
@@ -368,19 +371,49 @@
             /* Color de estrella llena/hover */
         }
 
-    /* Estilos para el carrusel de blog */
-    .blog-carousel { position: relative; }
-    .blog-carousel .swiper-wrapper { align-items: stretch; }
-    .blog-carousel .swiper-slide { height: auto; display: flex; }
-    .blog-carousel .swiper-slide > a { width: 100%; display: flex; flex-direction: column; height: 100%; }
-    /* Ubicar los bullets bajo el carrusel y centrados */
-        .blog-carousel .swiper-pagination { position: static; margin-top: 1.5rem; display: flex; justify-content: center; }
+        /* Estilos para el carrusel de blog */
+        .blog-carousel {
+            position: relative;
+        }
+
+        .blog-carousel .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .blog-carousel .swiper-slide {
+            height: auto;
+            display: flex;
+        }
+
+        .blog-carousel .swiper-slide>a {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Ubicar los bullets bajo el carrusel y centrados */
+        .blog-carousel .swiper-pagination {
+            position: static;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
         .blog-carousel .swiper-pagination-bullet {
-            width: 10px; height: 10px; margin: 0 6px;
-            background-color: #cbd5e1; opacity: 1;
+            width: 10px;
+            height: 10px;
+            margin: 0 6px;
+            background-color: #cbd5e1;
+            opacity: 1;
             transition: transform .2s ease, background-color .2s ease;
         }
-        .blog-carousel .swiper-pagination-bullet-active { background-color: #2563eb; transform: scale(1.2); }
+
+        .blog-carousel .swiper-pagination-bullet-active {
+            background-color: #2563eb;
+            transform: scale(1.2);
+        }
+
         /* Flechas de navegación del carrusel */
         .blog-carousel .swiper-button-prev,
         .blog-carousel .swiper-button-next {
@@ -389,26 +422,56 @@
             width: 44px;
             height: 44px;
             border-radius: 9999px;
-            background: rgba(255,255,255,0.95);
-            color: #1f2937; /* gray-800 */
-            box-shadow: 0 10px 20px rgba(0,0,0,.12);
-            border: 1px solid #e5e7eb; /* gray-200 */
-            display: none; /* oculto en mobile */
+            background: rgba(255, 255, 255, 0.95);
+            color: #1f2937;
+            /* gray-800 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12);
+            border: 1px solid #e5e7eb;
+            /* gray-200 */
+            display: none;
+            /* oculto en mobile */
             align-items: center;
             justify-content: center;
         }
-        .blog-carousel .swiper-button-prev { left: -16px; }
-        .blog-carousel .swiper-button-next { right: -16px; }
+
+        .blog-carousel .swiper-button-prev {
+            left: -16px;
+        }
+
+        .blog-carousel .swiper-button-next {
+            right: -16px;
+        }
+
         .blog-carousel .swiper-button-prev::after,
-        .blog-carousel .swiper-button-next::after { font-size: 18px; font-weight: 700; }
+        .blog-carousel .swiper-button-next::after {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
         .blog-carousel .swiper-button-prev,
-        .blog-carousel .swiper-button-next { transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+        .blog-carousel .swiper-button-next {
+            transition: background-color .2s ease, color .2s ease, transform .2s ease;
+        }
+
         .blog-carousel .swiper-button-prev:hover,
-        .blog-carousel .swiper-button-next:hover { background-color: #1f2937; color: #fff; transform: translateY(-1px); }
-        .blog-carousel .swiper-button-disabled { opacity: .4; pointer-events: none; }
-        @media (min-width: 768px) { /* md: */
+        .blog-carousel .swiper-button-next:hover {
+            background-color: #1f2937;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .blog-carousel .swiper-button-disabled {
+            opacity: .4;
+            pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+
+            /* md: */
             .blog-carousel .swiper-button-prev,
-            .blog-carousel .swiper-button-next { display: flex; }
+            .blog-carousel .swiper-button-next {
+                display: flex;
+            }
         }
 
         /* Botón flotante de WhatsApp */
@@ -423,12 +486,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
             z-index: 1100;
             transition: transform .2s ease, box-shadow .2s ease;
         }
-        .floating-whatsapp-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.25); }
-        .floating-whatsapp-btn svg { width: 28px; height: 28px; }
+
+        .floating-whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .25);
+        }
+
+        .floating-whatsapp-btn svg {
+            width: 28px;
+            height: 28px;
+        }
 
 
         /* Fix para el carrusel en móviles */
@@ -444,7 +515,9 @@
 
 
     <link rel="preload" href="/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/output.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="/output.css">
+    </noscript>
 
 </head>
 
@@ -638,7 +711,8 @@
                                 class="h-5 w-5 text-yellow-300 mr-2 flex-shrink-0"></i>Abono inicial de solo $19.990
                         </li>
                         <li class="flex items-center"><i data-feather="check-circle"
-                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Hasta 10 secciones y Multi páginas</li>
+                                class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Hasta 10 secciones y Multi páginas
+                        </li>
                         <li class="flex items-center"><i data-feather="check-circle"
                                 class="h-5 w-5 text-green-300 mr-2 flex-shrink-0"></i>Diseño Premium a la medida de tu
                             marca</li>
@@ -818,9 +892,12 @@
                                 </div>
                             </div>
                             <h4 class="font-bold text-lg text-gray-900">¡Resultados que no esperaba!</h4>
-                            <p class="text-gray-600 my-2">"Desde que lanzamos la nueva web con PaginasFast, las solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente marcan la diferencia."</p>
+                            <p class="text-gray-600 my-2">"Desde que lanzamos la nueva web con PaginasFast, las
+                                solicitudes de cotización se triplicaron. La velocidad y el diseño profesional realmente
+                                marcan la diferencia."</p>
                             <div class="text-sm text-gray-500">
-                                <span>Carlos Vega, Constructora Vega Ltda.</span> &mdash; <time datetime="2024-05-15">15 de Mayo, 2024</time>
+                                <span>Carlos Vega, Constructora Vega Ltda.</span> &mdash; <time datetime="2024-05-15">15
+                                    de Mayo, 2024</time>
                             </div>
                         </div>
                         <div class="review-card">
@@ -834,9 +911,12 @@
                                 </div>
                             </div>
                             <h4 class="font-bold text-lg text-gray-900">Aumenté mis ventas un 40%</h4>
-                            <p class="text-gray-600 my-2">"Estaba perdiendo clientes por mi antigua página. Alex y su equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer mes. ¡Totalmente recomendado!"</p>
+                            <p class="text-gray-600 my-2">"Estaba perdiendo clientes por mi antigua página. Alex y su
+                                equipo crearon una tienda online rapidísima que aumentó mis ventas en un 40% el primer
+                                mes. ¡Totalmente recomendado!"</p>
                             <div class="text-sm text-gray-500">
-                                <span>Ana Fuentes, Moda con Sentido</span> &mdash; <time datetime="2024-05-10">10 de Mayo, 2024</time>
+                                <span>Ana Fuentes, Moda con Sentido</span> &mdash; <time datetime="2024-05-10">10 de
+                                    Mayo, 2024</time>
                             </div>
                         </div>
                         <div class="review-card">
@@ -850,14 +930,18 @@
                                 </div>
                             </div>
                             <h4 class="font-bold text-lg text-gray-900">Profesionalismo de otro nivel</h4>
-                            <p class="text-gray-600 my-2">"El profesionalismo y el enfoque en resultados es de otro nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para crecer."</p>
+                            <p class="text-gray-600 my-2">"El profesionalismo y el enfoque en resultados es de otro
+                                nivel. Entendieron mi negocio y me entregaron justo la herramienta que necesitaba para
+                                crecer."</p>
                             <div class="text-sm text-gray-500">
-                                <span>Javier Torres, Consultor de Negocios</span> &mdash; <time datetime="2024-04-28">28 de Abril, 2024</time>
+                                <span>Javier Torres, Consultor de Negocios</span> &mdash; <time datetime="2024-04-28">28
+                                    de Abril, 2024</time>
                             </div>
                         </div>
                     </div>
                     <div class="mt-6 text-center">
-                        <button id="open-reviews-modal-btn" class="cta-button inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700">
+                        <button id="open-reviews-modal-btn"
+                            class="cta-button inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700">
                             Ver todas las reseñas
                         </button>
                     </div>
@@ -871,7 +955,8 @@
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Historias de Éxito de Negocios Como el Tuyo
                 </h2>
-                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Llevamos 8 años, No solo creamos páginas web. Construimos herramientas
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Llevamos 8 años, No solo creamos páginas web.
+                    Construimos herramientas
                     que ayudan a profesionales y pymes a crecer.</p>
             </div>
 
@@ -904,7 +989,8 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/sabor-espanol.webp" alt="Página web para restaurante"
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/sabor-espanol.webp"
+                        alt="Página web para restaurante"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -915,7 +1001,8 @@
                     </div>
                 </div>
                 <div class="group relative rounded-lg overflow-hidden shadow-lg">
-                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/dental.webp" alt="Página web para consulta médica"
+                    <img loading="lazy" decoding="async" width="640" height="480" src="/image/dental.webp"
+                        alt="Página web para consulta médica"
                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div>
@@ -933,20 +1020,26 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Blog y Recursos</h2>
-                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Aprende cómo potenciar tu negocio en línea con consejos prácticos y estrategias comprobadas.</p>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Aprende cómo potenciar tu negocio en línea con consejos
+                    prácticos y estrategias comprobadas.</p>
             </div>
             <!-- Swiper -->
             <div class="swiper-container blog-carousel">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <a href="/blog1.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                            <div class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
+                        <a href="/blog1.html"
+                            class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div
+                                class="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center">
                                 <i data-feather="trending-up" class="text-white w-20 h-20"></i>
                             </div>
                             <div class="p-6 flex-grow flex flex-col">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Beneficios de Tener una Página Web</h3>
-                                <p class="text-gray-600 mb-4 flex-grow">Descubre por qué tu empresa o pyme necesita presencia digital para crecer en el mercado actual.</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                    Beneficios de Tener una Página Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Descubre por qué tu empresa o pyme necesita
+                                    presencia digital para crecer en el mercado actual.</p>
                                 <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
                                     Leer más
                                     <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
@@ -956,13 +1049,18 @@
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <a href="/blog2.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                            <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-48 flex items-center justify-center">
+                        <a href="/blog2.html"
+                            class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div
+                                class="bg-gradient-to-br from-purple-500 to-purple-700 h-48 flex items-center justify-center">
                                 <i data-feather="layout" class="text-white w-20 h-20"></i>
                             </div>
                             <div class="p-6 flex-grow flex flex-col">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Buena vs Mala Página Web</h3>
-                                <p class="text-gray-600 mb-4 flex-grow">Aprende a identificar las características que distinguen una página web efectiva de una que ahuyenta clientes.</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                    Buena vs Mala Página Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Aprende a identificar las características que
+                                    distinguen una página web efectiva de una que ahuyenta clientes.</p>
                                 <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
                                     Leer más
                                     <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
@@ -972,13 +1070,18 @@
                     </div>
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <a href="/blog3.html" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
-                            <div class="bg-gradient-to-br from-green-500 to-green-700 h-48 flex items-center justify-center">
+                        <a href="/blog3.html"
+                            class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
+                            <div
+                                class="bg-gradient-to-br from-green-500 to-green-700 h-48 flex items-center justify-center">
                                 <i data-feather="target" class="text-white w-20 h-20"></i>
                             </div>
                             <div class="p-6 flex-grow flex flex-col">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Cómo Generar Tráfico Web</h3>
-                                <p class="text-gray-600 mb-4 flex-grow">Conoce estrategias efectivas como Google Ads para atraer clientes y los costos aproximados involucrados.</p>
+                                <h3
+                                    class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                                    Cómo Generar Tráfico Web</h3>
+                                <p class="text-gray-600 mb-4 flex-grow">Conoce estrategias efectivas como Google Ads
+                                    para atraer clientes y los costos aproximados involucrados.</p>
                                 <span class="text-blue-600 font-semibold inline-flex items-center mt-auto">
                                     Leer más
                                     <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
@@ -1231,7 +1334,8 @@
             <button id="close-modal-btn"
                 class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Asesoría gratuita para tu web</h3>
-            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu negocio.</p>
+            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu
+                negocio.</p>
             <form id="contact-form">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
@@ -1259,10 +1363,14 @@
     </div>
 
     <!-- Modal de Reseñas -->
-    <div id="reviews-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0" role="dialog" aria-modal="true" aria-labelledby="reviews-modal-title">
-        <div class="bg-white rounded-2xl p-8 max-w-2xl w-full relative transform scale-95 transition-transform duration-300 review-modal-content">
-            <button id="close-reviews-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
-            
+    <div id="reviews-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0"
+        role="dialog" aria-modal="true" aria-labelledby="reviews-modal-title">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-2xl w-full relative transform scale-95 transition-transform duration-300 review-modal-content">
+            <button id="close-reviews-modal-btn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+
             <!-- Vista de Lista de Reseñas -->
             <div id="reviews-list-view">
                 <h3 id="reviews-modal-title" class="text-2xl font-bold text-gray-900 mb-4">Todas las Reseñas</h3>
@@ -1270,7 +1378,8 @@
                     <!-- Las reseñas se cargarán aquí -->
                 </div>
                 <div class="mt-6 pt-6 border-t border-gray-200 text-center">
-                    <button id="show-add-review-form-btn" class="cta-button inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-700">
+                    <button id="show-add-review-form-btn"
+                        class="cta-button inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-green-700">
                         Escribir una reseña
                     </button>
                 </div>
@@ -1288,32 +1397,45 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="review-name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                            <input type="text" id="review-name" name="name" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <input type="text" id="review-name" name="name" required
+                                class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
                         </div>
                         <div>
-                            <label for="review-project" class="block text-sm font-medium text-gray-700 mb-1">Página Realizada (ej. miempresa.cl)</label>
-                            <input type="text" id="review-project" name="project" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                            <label for="review-project" class="block text-sm font-medium text-gray-700 mb-1">Página
+                                Realizada (ej. miempresa.cl)</label>
+                            <input type="text" id="review-project" name="project" required
+                                class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label for="review-title" class="block text-sm font-medium text-gray-700 mb-1">Título de la reseña</label>
-                        <input type="text" id="review-title" name="title" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                        <label for="review-title" class="block text-sm font-medium text-gray-700 mb-1">Título de la
+                            reseña</label>
+                        <input type="text" id="review-title" name="title" required
+                            class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div class="mb-4">
-                        <label for="review-comment" class="block text-sm font-medium text-gray-700 mb-1">Comentario</label>
-                        <textarea id="review-comment" name="comment" rows="4" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        <label for="review-comment"
+                            class="block text-sm font-medium text-gray-700 mb-1">Comentario</label>
+                        <textarea id="review-comment" name="comment" rows="4" required
+                            class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
                     </div>
                     <div class="mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Calificación</label>
                         <div class="star-rating-input">
-                            <input type="radio" id="star5" name="rating" value="5" required/><label for="star5" title="5 stars"><i data-feather="star" class="w-8 h-8"></i></label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars"><i data-feather="star" class="w-8 h-8"></i></label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars"><i data-feather="star" class="w-8 h-8"></i></label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars"><i data-feather="star" class="w-8 h-8"></i></label>
-                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star5" name="rating" value="5" required /><label for="star5"
+                                title="5 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"
+                                title="4 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"
+                                title="3 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"
+                                title="2 stars"><i data-feather="star" class="w-8 h-8"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"
+                                title="1 star"><i data-feather="star" class="w-8 h-8"></i></label>
                         </div>
                     </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
                         <span class="btn-text">Enviar Reseña</span>
                         <div class="loader loader-dark hidden"></div>
                     </button>
@@ -1363,7 +1485,7 @@
     </a>
 
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" defer />
 
 
     <!-- Swiper se cargará de forma diferida -->
@@ -1409,7 +1531,7 @@
                         if (!swiperInstance.autoplay) return;
                         if (e.matches) swiperInstance.autoplay.stop(); else swiperInstance.autoplay.start();
                     });
-                } catch(_) {}
+                } catch (_) { }
             }
             function loadSwiperAssets() {
                 if (window.Swiper) { initSwiper(); return; }
@@ -2001,7 +2123,7 @@
                 const closeModalBtn = document.getElementById('close-reviews-modal-btn');
                 const modalContent = reviewsModal.querySelector('.review-modal-content');
                 const allReviewsContainer = document.getElementById('all-reviews-container');
-                
+
                 const reviewsListView = document.getElementById('reviews-list-view');
                 const addReviewView = document.getElementById('add-review-view');
                 const showAddReviewFormBtn = document.getElementById('show-add-review-form-btn');
@@ -2107,7 +2229,7 @@
                     const submitButton = addReviewForm.querySelector('button[type="submit"]');
                     const buttonText = submitButton.querySelector('.btn-text');
                     const buttonLoader = submitButton.querySelector('.loader');
-                    
+
                     submitButton.disabled = true;
                     buttonText.classList.add('hidden');
                     buttonLoader.classList.remove('hidden');

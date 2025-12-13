@@ -7,7 +7,7 @@
     <title>Pack Inicio Profesional | PaginasFast</title>
     <meta name="description"
         content="Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.">
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/fav.ico" />
 
     <!-- SEO & Social Tags -->
     <meta property="og:type" content="website">
@@ -17,6 +17,7 @@
         content="Diseño web profesional para emprendedores. Todo incluido: Dominio, Hosting, SEO y sistema de contacto directo.">
     <meta property="og:image" content="https://paginasfast.cl/images/og-image-pack.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0B0F19">
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -37,46 +38,11 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: {
-                            900: '#0B0F19', // Fondo principal muy oscuro
-                            800: '#151B2B', // Fondo secundario
-                            700: '#1E293B', // Bordes
-                        },
-                        brand: {
-                            500: '#3B82F6', // Azul vibrante
-                            400: '#60A5FA',
-                            glow: 'rgba(59, 130, 246, 0.5)'
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                },
-            },
-        };
-    </script>
 
     <style>
         body {
@@ -179,13 +145,36 @@
                             d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
+                    aria-label="Menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="absolute top-16 left-0 w-full bg-dark-900/95 backdrop-blur-xl border-b border-white/10 p-4 flex flex-col gap-4 md:hidden transition-all duration-300 origin-top scale-y-0 opacity-0 invisible">
+            <a href="#beneficios"
+                class="text-lg font-medium text-slate-300 py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">Beneficios</a>
+            <a href="#servicios"
+                class="text-lg font-medium text-slate-300 py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">Servicios</a>
+            <a href="#testimonios"
+                class="text-lg font-medium text-slate-300 py-3 border-b border-white/5 hover:text-white hover:pl-2 transition-all">Reseñas</a>
+            <a href="#pagar" class="text-lg font-medium text-brand-400 py-3 font-bold hover:pl-2 transition-all">Empezar
+                Proyecto</a>
         </div>
     </header>
 
     <main class="relative z-10 pt-24 md:pt-32 pb-16 md:pb-20">
 
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 lg:mb-32">
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-16 md:mb-32">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-left">
                     <div
@@ -235,7 +224,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col items-center gap-8 animate-float">
+                <div class="flex flex-col items-center gap-8 animate-float motion-reduce:animate-none">
 
                     <div
                         class="relative w-[240px] sm:w-[280px] aspect-[9/19] bg-slate-800 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
@@ -245,7 +234,8 @@
                         </div>
 
                         <img id="phone-screen-img" src="/images/destaperapido.cl.jpeg" alt="Ejemplo de página web"
-                            class="w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100">
+                            fetchpriority="high" width="280" height="590" decoding="async"
+                            class="w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100 will-change-[opacity]">
 
                         <div
                             class="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-md rounded-xl p-3 border border-slate-700/50 text-left shadow-lg">
@@ -278,7 +268,8 @@
             </div>
         </section>
 
-        <section id="beneficios" class="max-w-6xl mx-auto px-4 sm:px-6 mb-24">
+        <section id="beneficios"
+            class="max-w-6xl mx-auto px-4 sm:px-6 mb-16 md:mb-24 [content-visibility:auto] [contain-intrinsic-size:1000px]">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-white mb-4">Diseñado para convertir visitas en clientes</h2>
                 <p class="text-slate-400">Cada elemento de tu web tiene un propósito estratégico.</p>
@@ -385,7 +376,7 @@
 
 
         <section id="testimonios"
-            class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 py-12 border-t border-b border-white/5 bg-white/[0.02]">
+            class="max-w-6xl mx-auto px-4 sm:px-6 mb-16 md:mb-24 py-12 border-t border-b border-white/5 bg-white/[0.02] [content-visibility:auto] [contain-intrinsic-size:800px]">
             <div class="text-center mb-12">
                 <span class="text-blue-400 font-semibold tracking-wider text-xs uppercase">Confianza</span>
                 <h2 class="text-2xl font-bold text-white mt-2">Lo que dicen nuestros clientes</h2>
@@ -593,7 +584,7 @@
         <div id="cupos-container"
             class="fixed top-20 left-0 right-0 z-40 flex justify-center pointer-events-none transition-all duration-500 ease-in-out opacity-0 -translate-y-4">
             <div id="cupos-pill"
-                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 backdrop-blur-md shadow-lg shadow-emerald-900/20 transition-transform duration-300">
+                class="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 backdrop-blur-md shadow-lg shadow-emerald-900/20 transition-transform duration-300">
                 <span class="relative flex h-2.5 w-2.5">
                     <span
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -674,23 +665,28 @@
             const transitionDuration = 500; // 500ms (debe coincidir con la clase duration-500 de CSS)
             const displayDuration = 3500;   // Tiempo que la imagen se queda quieta (3.5 seg)
 
-            // 2. Función de Pre-carga (La magia para evitar parpadeos)
-            const preloadImages = () => {
-                projects.forEach((project) => {
-                    const img = new Image();
-                    img.src = project.img;
-                });
+            // 2. Función de Pre-carga JIT (Just-in-Time)
+            // Solo precargamos la SIGUIENTE imagen, no todas de golpe.
+            const preloadNextImage = (nextIndex) => {
+                const img = new Image();
+                img.src = projects[nextIndex].img;
             };
 
-            // 3. Función del Ciclo
+            // 3. Función del Ciclo Optimizado
             const cycleProjects = () => {
-                // A. Fase de Desvanecimiento (Salida)
+                // A. Calcular siguiente índice
+                const nextIndex = (currentIndex + 1) % projects.length;
+
+                // B. Precargar la siguiente imagen con antelación
+                preloadNextImage(nextIndex);
+
+                // C. Fase de Desvanecimiento (Salida)
                 imgEl.style.opacity = '0';
                 urlEl.style.opacity = '0';
 
                 setTimeout(() => {
-                    // B. Actualizar datos (mientras está invisible)
-                    currentIndex = (currentIndex + 1) % projects.length;
+                    // D. Actualizar datos (mientras está invisible)
+                    currentIndex = nextIndex;
 
                     // Cambiamos el src y el texto
                     imgEl.src = projects[currentIndex].img;
@@ -698,21 +694,19 @@
 
                     // Pequeña espera técnica para asegurar que el navegador procesó el cambio de src
                     requestAnimationFrame(() => {
-                        // C. Fase de Aparición (Entrada)
+                        // E. Fase de Aparición (Entrada)
                         imgEl.style.opacity = '1';
                         urlEl.style.opacity = '1';
                     });
 
                 }, transitionDuration); // Esperamos a que termine de desvanecerse
 
-                // D. Programar el siguiente ciclo
-                // El tiempo total es: Tiempo visible + Tiempo de transición de salida
+                // F. Programar el siguiente ciclo
                 setTimeout(cycleProjects, displayDuration + transitionDuration);
             };
 
             // INICIO
-            preloadImages(); // Cargamos imágenes en caché
-
+            // No cargamos todas las imágenes al inicio para ahorrar ancho de banda móvil.
             // Iniciamos el ciclo después de una breve espera inicial
             setTimeout(cycleProjects, displayDuration);
 
@@ -728,24 +722,59 @@
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById('navbar');
         const cuposContainer = document.getElementById('cupos-container');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMobileMenuOpen = false;
+        let ticking = false;
+
+        // Toggle Mobile Menu
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                isMobileMenuOpen = !isMobileMenuOpen;
+                if (isMobileMenuOpen) {
+                    mobileMenu.classList.remove('scale-y-0', 'opacity-0', 'invisible');
+                    mobileMenu.classList.add('scale-y-100', 'opacity-100', 'visible');
+                } else {
+                    mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'visible');
+                    mobileMenu.classList.add('scale-y-0', 'opacity-0', 'invisible');
+                }
+            });
+
+            // Close menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    isMobileMenuOpen = false;
+                    mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'visible');
+                    mobileMenu.classList.add('scale-y-0', 'opacity-0', 'invisible');
+                });
+            });
+        }
 
         window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
 
-            // Lógica de ocultar/mostrar
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Si baja y ha pasado 100px del tope -> Ocultar (mover hacia arriba)
-                navbar.classList.add('-translate-y-full');
-                // Mover el contador de cupos hacia arriba para ocupar el espacio
-                if (cuposContainer) cuposContainer.classList.add('-translate-y-16');
-            } else {
-                // Si sube o está en el tope -> Mostrar (posición original)
-                navbar.classList.remove('-translate-y-full');
-                // Devolver el contador a su posición original (debajo del nav)
-                if (cuposContainer) cuposContainer.classList.remove('-translate-y-16');
+                    // Lógica de ocultar/mostrar
+                    // No ocultar si el menú móvil está abierto
+                    if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobileMenuOpen) {
+                        // Si baja y ha pasado 100px del tope -> Ocultar (mover hacia arriba)
+                        navbar.classList.add('-translate-y-full');
+                        // Mover el contador de cupos hacia arriba para ocupar el espacio
+                        if (cuposContainer) cuposContainer.classList.add('-translate-y-16');
+                    } else {
+                        // Si sube o está en el tope -> Mostrar (posición original)
+                        navbar.classList.remove('-translate-y-full');
+                        // Devolver el contador a su posición original (debajo del nav)
+                        if (cuposContainer) cuposContainer.classList.remove('-translate-y-16');
+                    }
+
+                    lastScrollY = currentScrollY;
+                    ticking = false;
+                });
+
+                ticking = true;
             }
-
-            lastScrollY = currentScrollY;
         });
 
 

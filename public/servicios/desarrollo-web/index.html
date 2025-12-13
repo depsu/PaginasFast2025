@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Google Tag Manager -->
   <script>
@@ -21,9 +22,9 @@
 
   <title>Desarrollo Web para PYMEs | PaginasFast – Sitios que venden, no solo se ven bonitos</title>
   <meta name="description"
-        content="Servicio de desarrollo web para emprendedores y PYMEs en Chile. Sitios modernos, rápidos, pensados para conseguir más cotizaciones, reservas y contactos.">
+    content="Servicio de desarrollo web para emprendedores y PYMEs en Chile. Sitios modernos, rápidos, pensados para conseguir más cotizaciones, reservas y contactos.">
 
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/fav.ico">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -63,19 +64,19 @@
     .glass {
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom right, rgba(15,23,42,.88), rgba(15,23,42,.94));
-      border: 1px solid rgba(148,163,184,.4);
+      background: linear-gradient(to bottom right, rgba(15, 23, 42, .88), rgba(15, 23, 42, .94));
+      border: 1px solid rgba(148, 163, 184, .4);
     }
 
     .hero-gradient {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
-                  radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
-                  #020617;
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129, 140, 248, .2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56, 189, 248, .14), transparent 55%),
+        #020617;
     }
 
     .logo-pill {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .45), rgba(37, 99, 235, .9));
     }
 
     .floating-whatsapp-btn {
@@ -89,658 +90,662 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, .35);
       z-index: 40;
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
     .floating-whatsapp-btn:hover {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
     }
   </style>
 </head>
+
 <body class="bg-slate-950 text-slate-50 antialiased">
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
-          style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-2">
-      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
-      </span>
-      <div class="flex flex-col leading-tight">
-        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
-      <button
-        id="cta-header"
-        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
-        Agendar llamada
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile button -->
-    <button id="mobile-menu-button"
-            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
-      <button
-        id="cta-header-mobile"
-        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
-        Agendar llamada
-      </button>
-    </div>
-  </div>
-</header>
-
-<main class="hero-gradient min-h-screen">
-  <!-- HERO DESARROLLO WEB -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
-    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
-      <a href="/servicios" class="hover:text-slate-100">Servicios</a>
-      <span>/</span>
-      <span class="text-slate-300">Desarrollo web</span>
-    </div>
-
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
-      <div>
-        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Servicio · Desarrollo web para PYMEs
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
-          Sitios web modernos y claros que convierten visitas en cotizaciones.
-        </h1>
-
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
-          No hacemos páginas solo para “estar en internet”. Diseñamos una web que explique
-          bien qué haces, por qué elegirte a ti y qué tiene que hacer el cliente para avanzar.
-        </p>
-
-        <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Enfoque ventas</p>
-            <p class="mt-1 text-slate-400">Estructura pensada para conseguir contactos, reservas o ventas, no solo visitas.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Rápida y segura</p>
-            <p class="mt-1 text-slate-400">Buenas prácticas de velocidad, responsive y optimización técnica básica.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Lista para campañas</p>
-            <p class="mt-1 text-slate-400">Preparada para recibir tráfico de Google Ads, redes sociales y SEO.</p>
-          </div>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <button
-            id="cta-hero"
-            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero cotizar mi web
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-
-          <a href="#planes"
-             class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-            Ver planes web
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <p class="mt-4 text-xs text-slate-400">
-          Ideal para: profesionales independientes, estudios, clínicas, alojamientos, cursos, servicios a domicilio y PYMEs en general.
-        </p>
-      </div>
-
-      <!-- Panel lateral resumen -->
-      <div class="relative">
-        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-emerald-300/40 opacity-60 blur-3xl"></div>
-        <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
-          <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué obtienes con tu nueva web</h2>
-
-          <ul class="mt-4 space-y-2 text-sm text-slate-200">
-            <li>• Diseño moderno y limpio, adaptado a tu rubro.</li>
-            <li>• Textos claros que explican tu propuesta de valor.</li>
-            <li>• Versión móvil optimizada (más de la mitad del tráfico llega por ahí).</li>
-            <li>• Botones de acción visibles (WhatsApp, llamadas, formularios).</li>
-            <li>• Integración con métricas básicas (Google Analytics / Tag Manager).</li>
-          </ul>
-
-          <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
-            <p><span class="font-semibold text-slate-100">Plazo promedio:</span> 7 a 15 días hábiles según alcance.</p>
-            <p><span class="font-semibold text-slate-100">Forma de trabajo:</span> anticipo + entrega final.</p>
-          </div>
-
-          <button
-            id="cta-card"
-            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-            Quiero que me hagan una propuesta
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUÉ INCLUYE EL SERVICIO -->
-  <section class="border-t border-slate-800/80 bg-slate-950/90">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="max-w-2xl">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Qué incluye el servicio de desarrollo web
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          No solo se trata del diseño. Armamos una web que tenga sentido con tu modelo de negocio
-          y la forma en que hoy llegan tus clientes.
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-6 md:grid-cols-2">
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">1. Estrategia y estructura</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Antes de diseñar definimos la estructura correcta para tu tipo de negocio:
-            página única tipo “one page”, sitio corporativo con varias secciones o landing
-            específica para campañas.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
-            <li>• Definición de objetivos de la web (cotizar, agendar, reservar, etc.).</li>
-            <li>• Mapa de secciones y jerarquía de información.</li>
-            <li>• Referencias de estilo y casos de tu rubro.</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">2. Diseño visual moderno</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Creamos un diseño limpio, actual y coherente con tu marca. Si ya tienes logo
-            y colores, los usamos; si no, te proponemos una base simple para partir.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
-            <li>• Diseño responsive (PC, tablet y móvil).</li>
-            <li>• Uso equilibrado de imágenes, iconos y espacios en blanco.</li>
-            <li>• Sección hero clara con propuesta de valor y llamada a la acción.</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">3. Textos orientados a conversión</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Redactamos o mejoramos tus textos para que hablen en lenguaje simple, expliquen
-            tu diferencia y lleven al usuario a dar el siguiente paso.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
-            <li>• Titulares y subtítulos claros.</li>
-            <li>• Sección de beneficios y “por qué elegirte”.</li>
-            <li>• Preguntas frecuentes básicas de tu rubro.</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">4. Performance, SEO básico e integraciones</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Ajustamos aspectos técnicos para que la web cargue rápido, sea fácil de usar
-            y esté lista para medir resultados.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
-            <li>• Carga optimizada y diseño ligero.</li>
-            <li>• Etiquetas básicas de SEO (títulos, descripciones, encabezados).</li>
-            <li>• Botones de contacto, WhatsApp y formularios conectados.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANES WEB -->
-  <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Planes de desarrollo web recomendados
-          </h2>
-          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
-            Los montos pueden variar según el alcance final, pero estos rangos te ayudan a
-            tener una referencia antes de hablar.
-          </p>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
-          En la llamada definimos qué plan tiene más sentido para tu etapa y presupuesto.
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <!-- Plan 1 -->
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 1</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Web Emprendedor</h3>
-          <p class="mt-1 text-xs text-slate-400">Para quienes están partiendo y necesitan “estar bien” en internet.</p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $55.000</p>
-          <p class="text-[11px] text-slate-400">Monto referencial + hosting y dominio aparte.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Sitio tipo one-page con secciones principales.</li>
-            <li>• Hasta 3 bloques clave (servicios, experiencia, contacto).</li>
-            <li>• Integración con WhatsApp y correo.</li>
-            <li>• Diseño simple pero moderno.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
-            onclick="scrollContact('Web Emprendedor')">
-            Cotizar este plan
-          </button>
-        </article>
-
-        <!-- Plan 2 -->
-        <article class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
-          <div class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Más elegido
-          </div>
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 2</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Web Corporativa</h3>
-          <p class="mt-1 text-xs text-slate-400">Para negocios que necesitan más secciones y profundidad.</p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $95.000</p>
-          <p class="text-[11px] text-slate-400">Monto referencial + hosting y dominio aparte.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Sitio de varias secciones o páginas internas.</li>
-            <li>• Página de servicios, quiénes somos y contacto.</li>
-            <li>• Sección de testimonios y preguntas frecuentes.</li>
-            <li>• Preparado para conectar con campañas de tráfico.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
-            onclick="scrollContact('Web Corporativa')">
-            Cotizar este plan
-          </button>
-        </article>
-
-        <!-- Plan 3 -->
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 3</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Web a Medida / Escalable</h3>
-          <p class="mt-1 text-xs text-slate-400">Para proyectos que requieren funcionalidades especiales.</p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">A convenir</p>
-          <p class="text-[11px] text-slate-400">Ideal cuando la web es clave en tu modelo de negocio.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Funciones específicas (módulos especiales, áreas privadas básicas, etc.).</li>
-            <li>• Integraciones adicionales con otras herramientas.</li>
-            <li>• Mayor nivel de personalización y escalabilidad.</li>
-            <li>• Ideal para proyectos que crecerán en el tiempo.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
-            onclick="scrollContact('Web a Medida')">
-            Hablar sobre este plan
-          </button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO DE TRABAJO -->
-  <section class="border-t border-slate-800/80 bg-slate-950/90">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Cómo trabajamos tu proyecto web
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          Queremos que sea un proceso ordenado, con pasos claros y sin perder semanas
-          esperando respuestas de nadie.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico y plan</h3>
-          <p class="mt-2 text-slate-300">
-            Conversamos sobre tu negocio, revisamos tu presencia actual (si la tienes) y definimos
-            qué tipo de web necesitas realmente.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Contenido y referencias</h3>
-          <p class="mt-2 text-slate-300">
-            Te pedimos la info clave (textos base, fotos, logo si tienes) y te mostramos ejemplos
-            visuales para alinear expectativas.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Diseño y ajustes</h3>
-          <p class="mt-2 text-slate-300">
-            Diseñamos la web, te la mostramos en un enlace privado y hacemos una ronda de
-            ajustes para dejarla fina.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Publicación y siguiente paso</h3>
-          <p class="mt-2 text-slate-300">
-            Publicamos la web en tu dominio, conectamos métricas básicas y vemos el
-            siguiente paso: tráfico, SEO o automatizaciones.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="max-w-2xl">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Preguntas frecuentes sobre el desarrollo web
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          Algunas de las dudas que suelen aparecer antes de comenzar un proyecto.
-        </p>
-      </div>
-
-      <div class="mt-8 space-y-3 text-sm">
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Necesito tener listo todo el contenido antes de empezar?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            No. Es ideal que tengas claridad en tus servicios y fotos básicas, pero nosotros
-            te ayudamos a ordenar la información y redactar los textos principales. Puedes
-            partir con algo simple e ir agregando más secciones luego.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Cuánto se demora el desarrollo de la web?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Depende del alcance, pero un sitio tipo “Web Emprendedor” suele estar listo entre
-            7 y 10 días hábiles desde que tenemos la información base. Sitios más grandes
-            o con funciones especiales pueden tomar un poco más.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Incluye dominio y hosting?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            El servicio de desarrollo web se centra en el diseño y construcción del sitio.
-            Te orientamos para contratar dominio y hosting a tu nombre, y podemos ayudarte
-            a configurarlos para que no tengas que pelear con la parte técnica.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Puedo luego editar textos o fotos por mi cuenta?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Sí. Dependiendo de la tecnología que usemos, podemos dejar ciertas partes
-            para que puedas actualizarlas tú mismo (por ejemplo, textos y fotos de secciones
-            específicas) o acordar un plan de mantención donde nosotros hacemos los cambios.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Pueden también ayudarme con Google Ads o redes después?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Sí. De hecho, lo ideal es que la web no quede sola: podemos acompañarte con
-            campañas de Google Ads, redes sociales, SEO y automatizaciones para que tu
-            sitio reciba tráfico y genere resultados.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA CONTACTO -->
-  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Conversemos sobre la web que necesitas hoy
-          </h2>
-          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-            Cuéntanos en qué etapa está tu negocio y qué resultado te gustaría obtener con tu web:
-            más consultas, más reservas, más ventas, etc. Te proponemos un plan concreto.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li>• Llamada o videollamada corta, sin compromiso.</li>
-            <li>• Hablamos en lenguaje simple, sin tecnicismos innecesarios.</li>
-            <li>• Si tiene sentido trabajar juntos, definimos fechas y siguiente paso.</li>
-          </ul>
-          <button
-            id="cta-bottom"
-            class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero cotizar mi web
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Formulario -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
-          <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y te contactamos para hablar de tu web.</p>
-
-          <form id="contact-form" class="mt-4 space-y-3">
-            <div>
-              <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
-              <input id="name" name="name" type="text" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
-              <input id="email" name="email" type="email" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
-              <input id="phone" name="phone" type="tel"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
-              <input id="service" name="service" type="text" value="Desarrollo web"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
-              <textarea id="message" name="message" rows="3"
-                        class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                        placeholder="Ej: tengo una web antigua / no tengo web, ofrezco estos servicios, me gustaría conseguir más cotizaciones…"></textarea>
-            </div>
-            <button type="submit"
-                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Enviar consulta
-            </button>
-            <p class="text-[11px] text-slate-500">
-              Usamos tus datos solo para responder a tu mensaje. Nada de spam.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-800 bg-slate-950">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
-          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
         </span>
         <div class="flex flex-col leading-tight">
-          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
-          <span class="text-[11px] text-slate-400">Desarrollo web y sistemas para negocios reales.</span>
+          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
         </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+        <button id="cta-header"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          Agendar llamada
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
       </div>
-      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
-        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
-        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
-        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
-        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+        <button id="cta-header-mobile"
+          class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+          Agendar llamada
+        </button>
       </div>
     </div>
-    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
-      © 2025 PaginasFast. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+  </header>
 
-<!-- Botón WhatsApp flotante -->
-<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20desarrollo%20web"
-   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
-    <defs>
-      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#57d163"></stop>
-        <stop offset="1" stop-color="#23b33a"></stop>
-      </linearGradient>
-      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
-        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
-      </filter>
-    </defs>
-    <path fill="#b3b3b3"
-          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
-          filter="url(#a)"></path>
-    <path fill="#fff"
-          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
-    </path>
-    <path fill="url(#b)"
-          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
-    </path>
-    <path fill="#fff" fill-rule="evenodd"
-          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
-    </path>
-  </svg>
-</a>
+  <main class="hero-gradient min-h-screen">
+    <!-- HERO DESARROLLO WEB -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
+      <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+        <a href="/servicios" class="hover:text-slate-100">Servicios</a>
+        <span>/</span>
+        <span class="text-slate-300">Desarrollo web</span>
+      </div>
 
-<!-- JS mínimo -->
-<script>
-  // menú móvil
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Servicio · Desarrollo web para PYMEs
+          </div>
 
-  // scroll a contacto (opcionalmente con preselección de plan)
-  function scrollContact(plan) {
-    const section = document.getElementById('contacto');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      if (plan) {
-        const serviceField = document.getElementById('service');
-        if (serviceField) serviceField.value = `Desarrollo web – ${plan}`;
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+            Sitios web modernos y claros que convierten visitas en cotizaciones.
+          </h1>
+
+          <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+            No hacemos páginas solo para “estar en internet”. Diseñamos una web que explique
+            bien qué haces, por qué elegirte a ti y qué tiene que hacer el cliente para avanzar.
+          </p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Enfoque ventas</p>
+              <p class="mt-1 text-slate-400">Estructura pensada para conseguir contactos, reservas o ventas, no solo
+                visitas.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Rápida y segura</p>
+              <p class="mt-1 text-slate-400">Buenas prácticas de velocidad, responsive y optimización técnica básica.
+              </p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Lista para campañas</p>
+              <p class="mt-1 text-slate-400">Preparada para recibir tráfico de Google Ads, redes sociales y SEO.</p>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <button id="cta-hero"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero cotizar mi web
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+
+            <a href="#planes"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              Ver planes web
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-slate-400">
+            Ideal para: profesionales independientes, estudios, clínicas, alojamientos, cursos, servicios a domicilio y
+            PYMEs en general.
+          </p>
+        </div>
+
+        <!-- Panel lateral resumen -->
+        <div class="relative">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-emerald-300/40 opacity-60 blur-3xl">
+          </div>
+          <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
+            <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué obtienes con tu nueva web</h2>
+
+            <ul class="mt-4 space-y-2 text-sm text-slate-200">
+              <li>• Diseño moderno y limpio, adaptado a tu rubro.</li>
+              <li>• Textos claros que explican tu propuesta de valor.</li>
+              <li>• Versión móvil optimizada (más de la mitad del tráfico llega por ahí).</li>
+              <li>• Botones de acción visibles (WhatsApp, llamadas, formularios).</li>
+              <li>• Integración con métricas básicas (Google Analytics / Tag Manager).</li>
+            </ul>
+
+            <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-100">Plazo promedio:</span> 7 a 15 días hábiles según alcance.
+              </p>
+              <p><span class="font-semibold text-slate-100">Forma de trabajo:</span> anticipo + entrega final.</p>
+            </div>
+
+            <button id="cta-card"
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Quiero que me hagan una propuesta
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE EL SERVICIO -->
+    <section class="border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Qué incluye el servicio de desarrollo web
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            No solo se trata del diseño. Armamos una web que tenga sentido con tu modelo de negocio
+            y la forma en que hoy llegan tus clientes.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">1. Estrategia y estructura</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Antes de diseñar definimos la estructura correcta para tu tipo de negocio:
+              página única tipo “one page”, sitio corporativo con varias secciones o landing
+              específica para campañas.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+              <li>• Definición de objetivos de la web (cotizar, agendar, reservar, etc.).</li>
+              <li>• Mapa de secciones y jerarquía de información.</li>
+              <li>• Referencias de estilo y casos de tu rubro.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">2. Diseño visual moderno</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Creamos un diseño limpio, actual y coherente con tu marca. Si ya tienes logo
+              y colores, los usamos; si no, te proponemos una base simple para partir.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+              <li>• Diseño responsive (PC, tablet y móvil).</li>
+              <li>• Uso equilibrado de imágenes, iconos y espacios en blanco.</li>
+              <li>• Sección hero clara con propuesta de valor y llamada a la acción.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">3. Textos orientados a conversión</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Redactamos o mejoramos tus textos para que hablen en lenguaje simple, expliquen
+              tu diferencia y lleven al usuario a dar el siguiente paso.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+              <li>• Titulares y subtítulos claros.</li>
+              <li>• Sección de beneficios y “por qué elegirte”.</li>
+              <li>• Preguntas frecuentes básicas de tu rubro.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/75 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">4. Performance, SEO básico e integraciones</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Ajustamos aspectos técnicos para que la web cargue rápido, sea fácil de usar
+              y esté lista para medir resultados.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+              <li>• Carga optimizada y diseño ligero.</li>
+              <li>• Etiquetas básicas de SEO (títulos, descripciones, encabezados).</li>
+              <li>• Botones de contacto, WhatsApp y formularios conectados.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES WEB -->
+    <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Planes de desarrollo web recomendados
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+              Los montos pueden variar según el alcance final, pero estos rangos te ayudan a
+              tener una referencia antes de hablar.
+            </p>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
+            En la llamada definimos qué plan tiene más sentido para tu etapa y presupuesto.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Plan 1 -->
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 1</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Web Emprendedor</h3>
+            <p class="mt-1 text-xs text-slate-400">Para quienes están partiendo y necesitan “estar bien” en internet.
+            </p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">Desde $55.000</p>
+            <p class="text-[11px] text-slate-400">Monto referencial + hosting y dominio aparte.</p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Sitio tipo one-page con secciones principales.</li>
+              <li>• Hasta 3 bloques clave (servicios, experiencia, contacto).</li>
+              <li>• Integración con WhatsApp y correo.</li>
+              <li>• Diseño simple pero moderno.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+              onclick="scrollContact('Web Emprendedor')">
+              Cotizar este plan
+            </button>
+          </article>
+
+          <!-- Plan 2 -->
+          <article
+            class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
+            <div
+              class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              Más elegido
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 2</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Web Corporativa</h3>
+            <p class="mt-1 text-xs text-slate-400">Para negocios que necesitan más secciones y profundidad.</p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">Desde $95.000</p>
+            <p class="text-[11px] text-slate-400">Monto referencial + hosting y dominio aparte.</p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Sitio de varias secciones o páginas internas.</li>
+              <li>• Página de servicios, quiénes somos y contacto.</li>
+              <li>• Sección de testimonios y preguntas frecuentes.</li>
+              <li>• Preparado para conectar con campañas de tráfico.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
+              onclick="scrollContact('Web Corporativa')">
+              Cotizar este plan
+            </button>
+          </article>
+
+          <!-- Plan 3 -->
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Plan 3</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Web a Medida / Escalable</h3>
+            <p class="mt-1 text-xs text-slate-400">Para proyectos que requieren funcionalidades especiales.</p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">A convenir</p>
+            <p class="text-[11px] text-slate-400">Ideal cuando la web es clave en tu modelo de negocio.</p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Funciones específicas (módulos especiales, áreas privadas básicas, etc.).</li>
+              <li>• Integraciones adicionales con otras herramientas.</li>
+              <li>• Mayor nivel de personalización y escalabilidad.</li>
+              <li>• Ideal para proyectos que crecerán en el tiempo.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+              onclick="scrollContact('Web a Medida')">
+              Hablar sobre este plan
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO DE TRABAJO -->
+    <section class="border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Cómo trabajamos tu proyecto web
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            Queremos que sea un proceso ordenado, con pasos claros y sin perder semanas
+            esperando respuestas de nadie.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico y plan</h3>
+            <p class="mt-2 text-slate-300">
+              Conversamos sobre tu negocio, revisamos tu presencia actual (si la tienes) y definimos
+              qué tipo de web necesitas realmente.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Contenido y referencias</h3>
+            <p class="mt-2 text-slate-300">
+              Te pedimos la info clave (textos base, fotos, logo si tienes) y te mostramos ejemplos
+              visuales para alinear expectativas.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Diseño y ajustes</h3>
+            <p class="mt-2 text-slate-300">
+              Diseñamos la web, te la mostramos en un enlace privado y hacemos una ronda de
+              ajustes para dejarla fina.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Publicación y siguiente paso</h3>
+            <p class="mt-2 text-slate-300">
+              Publicamos la web en tu dominio, conectamos métricas básicas y vemos el
+              siguiente paso: tráfico, SEO o automatizaciones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Preguntas frecuentes sobre el desarrollo web
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            Algunas de las dudas que suelen aparecer antes de comenzar un proyecto.
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3 text-sm">
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Necesito tener listo todo el contenido antes de empezar?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              No. Es ideal que tengas claridad en tus servicios y fotos básicas, pero nosotros
+              te ayudamos a ordenar la información y redactar los textos principales. Puedes
+              partir con algo simple e ir agregando más secciones luego.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Cuánto se demora el desarrollo de la web?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Depende del alcance, pero un sitio tipo “Web Emprendedor” suele estar listo entre
+              7 y 10 días hábiles desde que tenemos la información base. Sitios más grandes
+              o con funciones especiales pueden tomar un poco más.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Incluye dominio y hosting?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              El servicio de desarrollo web se centra en el diseño y construcción del sitio.
+              Te orientamos para contratar dominio y hosting a tu nombre, y podemos ayudarte
+              a configurarlos para que no tengas que pelear con la parte técnica.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Puedo luego editar textos o fotos por mi cuenta?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Sí. Dependiendo de la tecnología que usemos, podemos dejar ciertas partes
+              para que puedas actualizarlas tú mismo (por ejemplo, textos y fotos de secciones
+              específicas) o acordar un plan de mantención donde nosotros hacemos los cambios.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Pueden también ayudarme con Google Ads o redes después?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Sí. De hecho, lo ideal es que la web no quede sola: podemos acompañarte con
+              campañas de Google Ads, redes sociales, SEO y automatizaciones para que tu
+              sitio reciba tráfico y genere resultados.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CONTACTO -->
+    <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Conversemos sobre la web que necesitas hoy
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+              Cuéntanos en qué etapa está tu negocio y qué resultado te gustaría obtener con tu web:
+              más consultas, más reservas, más ventas, etc. Te proponemos un plan concreto.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Llamada o videollamada corta, sin compromiso.</li>
+              <li>• Hablamos en lenguaje simple, sin tecnicismos innecesarios.</li>
+              <li>• Si tiene sentido trabajar juntos, definimos fechas y siguiente paso.</li>
+            </ul>
+            <button id="cta-bottom"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero cotizar mi web
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Formulario -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
+            <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y te contactamos para hablar de tu web.</p>
+
+            <form id="contact-form" class="mt-4 space-y-3">
+              <div>
+                <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+                <input id="name" name="name" type="text" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
+                <input id="phone" name="phone" type="tel"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
+                <input id="service" name="service" type="text" value="Desarrollo web"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
+                <textarea id="message" name="message" rows="3"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Ej: tengo una web antigua / no tengo web, ofrezco estos servicios, me gustaría conseguir más cotizaciones…"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                Enviar consulta
+              </button>
+              <p class="text-[11px] text-slate-500">
+                Usamos tus datos solo para responder a tu mensaje. Nada de spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+          </span>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+            <span class="text-[11px] text-slate-400">Desarrollo web y sistemas para negocios reales.</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+          <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+        </div>
+      </div>
+      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+        © 2025 PaginasFast. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20desarrollo%20web"
+    target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+      <defs>
+        <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#57d163"></stop>
+          <stop offset="1" stop-color="#23b33a"></stop>
+        </linearGradient>
+        <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+        </filter>
+      </defs>
+      <path fill="#b3b3b3"
+        d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+        filter="url(#a)"></path>
+      <path fill="#fff"
+        d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+      </path>
+      <path fill="url(#b)"
+        d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+      </path>
+      <path fill="#fff" fill-rule="evenodd"
+        d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+      </path>
+    </svg>
+  </a>
+
+  <!-- JS mínimo -->
+  <script>
+    // menú móvil
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // scroll a contacto (opcionalmente con preselección de plan)
+    function scrollContact(plan) {
+      const section = document.getElementById('contacto');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        if (plan) {
+          const serviceField = document.getElementById('service');
+          if (serviceField) serviceField.value = `Desarrollo web – ${plan}`;
+        }
       }
     }
-  }
-  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
 
-  // envío básico del formulario (placeholder)
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const name = formData.get('name') || '';
-      alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre desarrollo web. Te contactaremos pronto.`);
-      contactForm.reset();
-      // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
-    });
-  }
-</script>
+    // envío básico del formulario (placeholder)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name') || '';
+        alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre desarrollo web. Te contactaremos pronto.`);
+        contactForm.reset();
+        // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
+      });
+    }
+  </script>
 </body>
+
 </html>

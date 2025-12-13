@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Google Tag Manager -->
   <script>
@@ -21,9 +22,9 @@
 
   <title>Chatbots con IA para tu negocio | PaginasFast – Respuestas 24/7 y más clientes</title>
   <meta name="description"
-        content="Diseñamos chatbots con IA que responden como tú, pero 24/7. Web, WhatsApp y redes sociales para captar leads, resolver dudas y automatizar preguntas frecuentes.">
+    content="Diseñamos chatbots con IA que responden como tú, pero 24/7. Web, WhatsApp y redes sociales para captar leads, resolver dudas y automatizar preguntas frecuentes.">
 
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/fav.ico">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -63,20 +64,20 @@
     .glass {
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom right, rgba(15,23,42,.88), rgba(15,23,42,.94));
-      border: 1px solid rgba(148,163,184,.4);
+      background: linear-gradient(to bottom right, rgba(15, 23, 42, .88), rgba(15, 23, 42, .94));
+      border: 1px solid rgba(148, 163, 184, .4);
     }
 
     .hero-gradient {
       background:
-        radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
-        radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
-        radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
+        radial-gradient(circle at top left, rgba(59, 130, 246, .25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129, 140, 248, .2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56, 189, 248, .14), transparent 55%),
         #020617;
     }
 
     .logo-pill {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .45), rgba(37, 99, 235, .9));
     }
 
     .floating-whatsapp-btn {
@@ -90,669 +91,683 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, .35);
       z-index: 40;
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
     .floating-whatsapp-btn:hover {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
     }
   </style>
 </head>
+
 <body class="bg-slate-950 text-slate-50 antialiased">
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
-          style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-2">
-      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
-      </span>
-      <div class="flex flex-col leading-tight">
-        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
-      <button
-        id="cta-header"
-        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
-        Agendar llamada
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile button -->
-    <button id="mobile-menu-button"
-            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-      <a href="/servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
-      <button
-        id="cta-header-mobile"
-        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
-        Agendar llamada
-      </button>
-    </div>
-  </div>
-</header>
-
-<main class="hero-gradient min-h-screen">
-  <!-- HERO CHATBOTS IA -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
-    <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
-      <a href="/servicios" class="hover:text-slate-100">Servicios</a>
-      <span>/</span>
-      <span class="text-slate-300">Chatbots con IA</span>
-    </div>
-
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
-      <div>
-        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Servicio · Chatbots con IA entrenados con tu negocio
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
-          Chatbots con IA que responden como tú, pero 24/7 y sin cansarse.
-        </h1>
-
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
-          Creamos asistentes con inteligencia artificial conectados a tu web, WhatsApp o redes sociales
-          para responder dudas frecuentes, calificar leads y guiar a las personas hasta el contacto o la compra.
-        </p>
-
-        <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Entrenado con tu contenido</p>
-            <p class="mt-1 text-slate-400">Alimentamos el chatbot con tu página, PDFs, preguntas frecuentes y tono de marca.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Disponible 24/7</p>
-            <p class="mt-1 text-slate-400">Responde en horario fuera de oficina, fines de semana y feriados.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Orientado a resultados</p>
-            <p class="mt-1 text-slate-400">En vez de “conversar por conversar”, lo enfocamos en conseguir datos de contacto y próximos pasos.</p>
-          </div>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <button
-            id="cta-hero"
-            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero un chatbot con IA para mi negocio
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-
-          <a href="#planes"
-             class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-            Ver tipos de chatbots y planes
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <p class="mt-4 text-xs text-slate-400">
-          Ideal para: páginas de servicios, reservas (cabañas, turismo, salud), academias, tiendas online y negocios
-          que reciben muchas preguntas repetidas por WhatsApp, correo o redes sociales.
-        </p>
-      </div>
-
-      <!-- Panel lateral resumen -->
-      <div class="relative">
-        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-violet-300/40 opacity-60 blur-3xl"></div>
-        <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
-          <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué puede hacer el chatbot con IA</h2>
-
-          <ul class="mt-4 space-y-2 text-sm text-slate-200">
-            <li>• Responder preguntas frecuentes sobre servicios, horarios, precios y reservas.</li>
-            <li>• Guiar a la persona hasta el formulario, WhatsApp o pago según tu objetivo.</li>
-            <li>• Calificar leads (presupuesto, ubicación, tamaño del proyecto, etc.) antes de que tú intervengas.</li>
-            <li>• Entregar información coherente con tu marca, sin inventar datos críticos.</li>
-          </ul>
-
-          <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
-            <p><span class="font-semibold text-slate-100">Canales:</span> widget en tu web, página de contacto, landing específica y (según caso) WhatsApp / redes.</p>
-            <p><span class="font-semibold text-slate-100">Entrenamiento:</span> usamos tu web, documentos y ejemplos reales de conversaciones con tus clientes.</p>
-          </div>
-
-          <button
-            id="cta-card"
-            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-            Quiero que revisen si calza conmigo
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUÉ INCLUYE / QUÉ PROBLEMAS RESUELVE -->
-  <section class="border-t border-slate-800/80 bg-slate-950/90">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="max-w-2xl">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Qué resuelve un chatbot con IA bien hecho (y qué no)
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          La idea no es reemplazar completamente a las personas, sino automatizar lo repetitivo para que tú
-          puedas enfocarte en los casos importantes, reuniones y cierres de venta.
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-6 md:grid-cols-3 text-xs sm:text-sm">
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">Respuestas inmediatas y consistentes</h3>
-          <p class="mt-2 text-slate-300">
-            Muchas ventas se pierden porque respondes horas después o al día siguiente.
-            El chatbot responde al instante y dice siempre lo mismo, sin depender del ánimo o del horario.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-slate-300">
-            <li>• No más “chuta, se me pasó este mensaje”.</li>
-            <li>• Info clara: horarios, formas de pago, zonas de atención, etc.</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">Filtra y ordena las conversaciones</h3>
-          <p class="mt-2 text-slate-300">
-            El chatbot puede hacer unas pocas preguntas clave antes de pasarte el lead,
-            para que ya llegue “precalentado”: qué necesita, cuándo, rango de presupuesto, comuna, etc.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-slate-300">
-            <li>• Menos tiempo respondiendo cosas básicas.</li>
-            <li>• Más foco en quienes tienen real intención de comprar.</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">No promete imposibles</h3>
-          <p class="mt-2 text-slate-300">
-            Definimos límites claros de lo que puede y no puede responder.
-            Si la conversación se pone compleja o delicada, el chatbot deriva la consulta a una persona.
-          </p>
-          <ul class="mt-3 space-y-1.5 text-slate-300">
-            <li>• Para dudas más profundas, canaliza hacia tu WhatsApp o correo.</li>
-            <li>• Evitamos que la IA “invente” políticas o precios que no existen.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIPOS DE CHATBOTS / PLANES -->
-  <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Tipos de chatbots con IA que podemos implementar
-          </h2>
-          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
-            Los valores dependen del canal (web, WhatsApp, redes), el volumen de consultas y las integraciones.
-            Estos ejemplos sirven como guía para entender las diferencias.
-          </p>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
-          En la llamada revisamos tu caso y te proponemos la combinación más razonable
-          entre automatización y atención humana.
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <!-- Plan Web -->
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot Web</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Widget en tu sitio o landing</h3>
-          <p class="mt-1 text-xs text-slate-400">Para quienes quieren que la web responda dudas básicas y capture contactos.</p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $120.000</p>
-          <p class="text-[11px] text-slate-400">Implementación inicial. Mantención opcional mensual.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Chat flotante en tu página (escritorio y móvil).</li>
-            <li>• Entrenado con tu web, preguntas frecuentes y documentos clave.</li>
-            <li>• Configuración para derivar a WhatsApp o formulario en casos específicos.</li>
-            <li>• Ajustes básicos el primer mes según conversaciones reales.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
-            onclick="scrollContact('Chatbot Web')">
-            Cotizar chatbot web
-          </button>
-        </article>
-
-        <!-- Plan Web + WhatsApp -->
-        <article class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
-          <div class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
-            Más usado
-          </div>
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot Web + WhatsApp</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Asistente 24/7 en tu página y WhatsApp*</h3>
-          <p class="mt-1 text-xs text-slate-400">
-            Ideal si hoy la mayoría de tus consultas llegan por WhatsApp y quieres ordenar ese flujo.
-          </p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">Desde $190.000</p>
-          <p class="text-[11px] text-slate-400">Implementación inicial. Integraciones con WhatsApp sujeto a la API que uses.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Chatbot web + conexión con tu número de WhatsApp Business (según proveedor).</li>
-            <li>• Flujos simples para preguntas frecuentes, horarios, reservas y precios.</li>
-            <li>• Calificación básica de leads (qué buscan, cuándo, presupuesto aproximado).</li>
-            <li>• Reporte inicial de preguntas más repetidas para mejorar tu comunicación.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
-            onclick="scrollContact('Chatbot Web + WhatsApp')">
-            Cotizar chatbot web + WhatsApp
-          </button>
-        </article>
-
-        <!-- Plan a medida -->
-        <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot a Medida</p>
-          <h3 class="mt-1 text-sm font-semibold text-slate-50">Integraciones y procesos más complejos</h3>
-          <p class="mt-1 text-xs text-slate-400">Para cuando el chatbot debe conectarse con sistemas internos o flujos específicos.</p>
-          <p class="mt-4 text-2xl font-bold text-slate-50">A convenir</p>
-          <p class="text-[11px] text-slate-400">Se define según integraciones, volúmenes y requerimientos técnicos.</p>
-          <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
-            <li>• Consultas a bases de datos (stock, estado de reserva/pedido, etc.).</li>
-            <li>• Automatizaciones con herramientas externas (CRM, correos, etc.).</li>
-            <li>• Reglas más avanzadas para escalar a humanos según el contexto.</li>
-            <li>• Soporte ampliado mientras el sistema se estabiliza.</li>
-          </ul>
-          <button
-            class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
-            onclick="scrollContact('Chatbot a Medida')">
-            Conversar sobre un proyecto a medida
-          </button>
-        </article>
-      </div>
-
-      <p class="mt-4 text-[11px] text-slate-500">
-        *La disponibilidad técnica de WhatsApp y otras plataformas depende de las políticas y APIs vigentes en el momento de la implementación.
-      </p>
-    </div>
-  </section>
-
-  <!-- PROCESO DE TRABAJO CHATBOTS -->
-  <section class="border-t border-slate-800/80 bg-slate-950/90">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Cómo creamos tu chatbot con IA paso a paso
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          Nada de “subir un bot genérico y ver qué pasa”.
-          Trabajamos con un proceso claro para que el chatbot entienda tu negocio y no solo responda frases bonitas.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Entrevista y objetivos</h3>
-          <p class="mt-2 text-slate-300">
-            Hablamos de tu negocio, qué tipo de preguntas recibes, qué te complica responder
-            y qué esperas del chatbot (más contactos, menos tiempo en soporte, etc.).
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Recolección de contenido</h3>
-          <p class="mt-2 text-slate-300">
-            Revisamos tu web, documentos, PDFs, correos, screenshots de conversaciones
-            y todo lo que ayude a que la IA entienda tu realidad y tu forma de explicar las cosas.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Entrenamiento y pruebas</h3>
-          <p class="mt-2 text-slate-300">
-            Configuramos el chatbot, probamos preguntas reales y vamos corrigiendo respuestas
-            antes de que lo vean tus clientes. Aquí definimos límites y tono.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Lanzamiento y ajustes</h3>
-          <p class="mt-2 text-slate-300">
-            Lo publicamos en tu web o canal elegido, monitoreamos las primeras conversaciones
-            y ajustamos el comportamiento según lo que pase en la vida real.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="max-w-2xl">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Preguntas frecuentes sobre chatbots con IA
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          Algunas de las dudas más comunes cuando alguien piensa en automatizar parte de la atención.
-        </p>
-      </div>
-
-      <div class="mt-8 space-y-3 text-sm">
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿El chatbot va a “inventar cosas” o decir información incorrecta?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Lo entrenamos principalmente con tu contenido y definimos reglas para limitar respuestas en temas sensibles
-            (precios exactos, políticas, temas legales, etc.). Si la IA no está segura, preferimos que derive la conversación
-            a un humano antes de que “invente” algo importante.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Puede responder en más de un idioma?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Sí. Dependiendo del caso, podemos configurarlo para detectar el idioma de la persona
-            (por ejemplo, español/inglés) y responder en consecuencia, siempre basándose en la información
-            que tú nos entregues en esos idiomas.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Necesito tener una web para tener un chatbot con IA?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Ayuda mucho tener al menos una landing bien explicada, porque eso le da buen material
-            al chatbot para responder. Si aún no la tienes, podemos partir por una página rápida
-            con PaginasFast y, desde ahí, entrenar el bot.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿El chatbot reemplaza al 100% a la atención humana?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            No es la idea. El chatbot se encarga de lo repetitivo y de filtrar consultas.
-            Para casos delicados, que requieren criterio o negociación, siempre proponemos derivar la conversación
-            a una persona (WhatsApp, mail, llamada, etc.).
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Qué costo mensual tiene mantener un chatbot con IA?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Hay dos partes: (1) el costo de la herramienta / proveedor de IA y (2) nuestro servicio de ajustes
-            y revisión (si quieres que lo gestionemos). En la propuesta te explicamos ambas partes por separado
-            y con ejemplos de volumen de uso.
-          </p>
-        </details>
-
-        <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
-            <span class="font-semibold text-slate-100 text-sm">
-              ¿Qué pasa si después quiero agregar nuevas preguntas o información?
-            </span>
-            <span
-              class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
-              →
-            </span>
-          </summary>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300">
-            Es normal que el bot evolucione. Podemos pactar un plan de ajustes periódicos (por ejemplo mensual)
-            o bien paquetes de horas para ir mejorándolo a medida que tu negocio cambia, sin tener que empezar de cero.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA CONTACTO -->
-  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Conversemos si tiene sentido un chatbot con IA para tu caso
-          </h2>
-          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-            Cuéntanos qué tipo de negocio tienes, por dónde te llegan más consultas hoy
-            (WhatsApp, redes, web, llamadas) y qué te gustaría automatizar. Si vemos que un chatbot no es
-            la mejor herramienta para ti, también te lo diremos.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li>• Revisión honesta de si la IA suma o no a tu realidad actual.</li>
-            <li>• Ideas concretas de flujos de conversación y dónde encajaría el chatbot.</li>
-            <li>• Propuesta clara, sin letras chicas, con próximos pasos definidos.</li>
-          </ul>
-          <button
-            id="cta-bottom"
-            class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero explorar un chatbot con IA
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Formulario -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
-          <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y revisamos qué tipo de chatbot podría ayudarte más.</p>
-
-          <form id="contact-form" class="mt-4 space-y-3">
-            <div>
-              <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
-              <input id="name" name="name" type="text" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
-              <input id="email" name="email" type="email" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
-              <input id="phone" name="phone" type="tel"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
-              <input id="service" name="service" type="text" value="Chatbots con IA"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
-              <textarea id="message" name="message" rows="3"
-                        class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                        placeholder="Ej: rubro, por dónde te llegan más consultas hoy, qué te gustaría que el chatbot hiciera, etc."></textarea>
-            </div>
-            <button type="submit"
-                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Enviar consulta
-            </button>
-            <p class="text-[11px] text-slate-500">
-              Usamos tus datos solo para responder a tu mensaje. Nada de spam.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-800 bg-slate-950">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
-          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
         </span>
         <div class="flex flex-col leading-tight">
-          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
-          <span class="text-[11px] text-slate-400">Desarrollo web, tiendas online, Google Ads, chatbots con IA y automatizaciones.</span>
+          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
         </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+        <button id="cta-header"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          Agendar llamada
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
       </div>
-      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
-        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
-        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
-        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
-        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="/servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+        <button id="cta-header-mobile"
+          class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+          Agendar llamada
+        </button>
       </div>
     </div>
-    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
-      © 2025 PaginasFast. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+  </header>
 
-<!-- Botón WhatsApp flotante -->
-<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20chatbots%20con%20IA%20para%20mi%20negocio"
-   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
-    <defs>
-      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#57d163"></stop>
-        <stop offset="1" stop-color="#23b33a"></stop>
-      </linearGradient>
-      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
-        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
-      </filter>
-    </defs>
-    <path fill="#b3b3b3"
-          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
-          filter="url(#a)"></path>
-    <path fill="#fff"
-          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
-    </path>
-    <path fill="url(#b)"
-          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
-    </path>
-    <path fill="#fff" fill-rule="evenodd"
-          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
-    </path>
-  </svg>
-</a>
+  <main class="hero-gradient min-h-screen">
+    <!-- HERO CHATBOTS IA -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-20">
+      <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
+        <a href="/servicios" class="hover:text-slate-100">Servicios</a>
+        <span>/</span>
+        <span class="text-slate-300">Chatbots con IA</span>
+      </div>
 
-<!-- JS mínimo -->
-<script>
-  // menú móvil
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Servicio · Chatbots con IA entrenados con tu negocio
+          </div>
 
-  // scroll a contacto (con posible preselección de plan)
-  function scrollContact(plan) {
-    const section = document.getElementById('contacto');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      const serviceField = document.getElementById('service');
-      if (serviceField) {
-        if (plan) {
-          serviceField.value = `Chatbots con IA – ${plan}`;
-        } else {
-          serviceField.value = 'Chatbots con IA';
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+            Chatbots con IA que responden como tú, pero 24/7 y sin cansarse.
+          </h1>
+
+          <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+            Creamos asistentes con inteligencia artificial conectados a tu web, WhatsApp o redes sociales
+            para responder dudas frecuentes, calificar leads y guiar a las personas hasta el contacto o la compra.
+          </p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Entrenado con tu contenido</p>
+              <p class="mt-1 text-slate-400">Alimentamos el chatbot con tu página, PDFs, preguntas frecuentes y tono de
+                marca.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Disponible 24/7</p>
+              <p class="mt-1 text-slate-400">Responde en horario fuera de oficina, fines de semana y feriados.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Orientado a resultados</p>
+              <p class="mt-1 text-slate-400">En vez de “conversar por conversar”, lo enfocamos en conseguir datos de
+                contacto y próximos pasos.</p>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <button id="cta-hero"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero un chatbot con IA para mi negocio
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+
+            <a href="#planes"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              Ver tipos de chatbots y planes
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <p class="mt-4 text-xs text-slate-400">
+            Ideal para: páginas de servicios, reservas (cabañas, turismo, salud), academias, tiendas online y negocios
+            que reciben muchas preguntas repetidas por WhatsApp, correo o redes sociales.
+          </p>
+        </div>
+
+        <!-- Panel lateral resumen -->
+        <div class="relative">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-violet-300/40 opacity-60 blur-3xl">
+          </div>
+          <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen rápido</p>
+            <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué puede hacer el chatbot con IA</h2>
+
+            <ul class="mt-4 space-y-2 text-sm text-slate-200">
+              <li>• Responder preguntas frecuentes sobre servicios, horarios, precios y reservas.</li>
+              <li>• Guiar a la persona hasta el formulario, WhatsApp o pago según tu objetivo.</li>
+              <li>• Calificar leads (presupuesto, ubicación, tamaño del proyecto, etc.) antes de que tú intervengas.
+              </li>
+              <li>• Entregar información coherente con tu marca, sin inventar datos críticos.</li>
+            </ul>
+
+            <div class="mt-4 border-t border-slate-700/70 pt-4 text-xs text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-100">Canales:</span> widget en tu web, página de contacto,
+                landing específica y (según caso) WhatsApp / redes.</p>
+              <p><span class="font-semibold text-slate-100">Entrenamiento:</span> usamos tu web, documentos y ejemplos
+                reales de conversaciones con tus clientes.</p>
+            </div>
+
+            <button id="cta-card"
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Quiero que revisen si calza conmigo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ INCLUYE / QUÉ PROBLEMAS RESUELVE -->
+    <section class="border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Qué resuelve un chatbot con IA bien hecho (y qué no)
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            La idea no es reemplazar completamente a las personas, sino automatizar lo repetitivo para que tú
+            puedas enfocarte en los casos importantes, reuniones y cierres de venta.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3 text-xs sm:text-sm">
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">Respuestas inmediatas y consistentes</h3>
+            <p class="mt-2 text-slate-300">
+              Muchas ventas se pierden porque respondes horas después o al día siguiente.
+              El chatbot responde al instante y dice siempre lo mismo, sin depender del ánimo o del horario.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-slate-300">
+              <li>• No más “chuta, se me pasó este mensaje”.</li>
+              <li>• Info clara: horarios, formas de pago, zonas de atención, etc.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">Filtra y ordena las conversaciones</h3>
+            <p class="mt-2 text-slate-300">
+              El chatbot puede hacer unas pocas preguntas clave antes de pasarte el lead,
+              para que ya llegue “precalentado”: qué necesita, cuándo, rango de presupuesto, comuna, etc.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-slate-300">
+              <li>• Menos tiempo respondiendo cosas básicas.</li>
+              <li>• Más foco en quienes tienen real intención de comprar.</li>
+            </ul>
+          </article>
+
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <h3 class="text-sm font-semibold text-slate-50">No promete imposibles</h3>
+            <p class="mt-2 text-slate-300">
+              Definimos límites claros de lo que puede y no puede responder.
+              Si la conversación se pone compleja o delicada, el chatbot deriva la consulta a una persona.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-slate-300">
+              <li>• Para dudas más profundas, canaliza hacia tu WhatsApp o correo.</li>
+              <li>• Evitamos que la IA “invente” políticas o precios que no existen.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPOS DE CHATBOTS / PLANES -->
+    <section id="planes" class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Tipos de chatbots con IA que podemos implementar
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+              Los valores dependen del canal (web, WhatsApp, redes), el volumen de consultas y las integraciones.
+              Estos ejemplos sirven como guía para entender las diferencias.
+            </p>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-xs">
+            En la llamada revisamos tu caso y te proponemos la combinación más razonable
+            entre automatización y atención humana.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <!-- Plan Web -->
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot Web</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Widget en tu sitio o landing</h3>
+            <p class="mt-1 text-xs text-slate-400">Para quienes quieren que la web responda dudas básicas y capture
+              contactos.</p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">Desde $120.000</p>
+            <p class="text-[11px] text-slate-400">Implementación inicial. Mantención opcional mensual.</p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Chat flotante en tu página (escritorio y móvil).</li>
+              <li>• Entrenado con tu web, preguntas frecuentes y documentos clave.</li>
+              <li>• Configuración para derivar a WhatsApp o formulario en casos específicos.</li>
+              <li>• Ajustes básicos el primer mes según conversaciones reales.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+              onclick="scrollContact('Chatbot Web')">
+              Cotizar chatbot web
+            </button>
+          </article>
+
+          <!-- Plan Web + WhatsApp -->
+          <article
+            class="rounded-2xl border border-blue-500/70 bg-slate-900/95 p-5 shadow-soft flex flex-col relative overflow-hidden">
+            <div
+              class="absolute right-4 top-4 rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+              Más usado
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot Web + WhatsApp</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Asistente 24/7 en tu página y WhatsApp*</h3>
+            <p class="mt-1 text-xs text-slate-400">
+              Ideal si hoy la mayoría de tus consultas llegan por WhatsApp y quieres ordenar ese flujo.
+            </p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">Desde $190.000</p>
+            <p class="text-[11px] text-slate-400">Implementación inicial. Integraciones con WhatsApp sujeto a la API que
+              uses.</p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Chatbot web + conexión con tu número de WhatsApp Business (según proveedor).</li>
+              <li>• Flujos simples para preguntas frecuentes, horarios, reservas y precios.</li>
+              <li>• Calificación básica de leads (qué buscan, cuándo, presupuesto aproximado).</li>
+              <li>• Reporte inicial de preguntas más repetidas para mejorar tu comunicación.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark"
+              onclick="scrollContact('Chatbot Web + WhatsApp')">
+              Cotizar chatbot web + WhatsApp
+            </button>
+          </article>
+
+          <!-- Plan a medida -->
+          <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 flex flex-col">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Chatbot a Medida</p>
+            <h3 class="mt-1 text-sm font-semibold text-slate-50">Integraciones y procesos más complejos</h3>
+            <p class="mt-1 text-xs text-slate-400">Para cuando el chatbot debe conectarse con sistemas internos o flujos
+              específicos.</p>
+            <p class="mt-4 text-2xl font-bold text-slate-50">A convenir</p>
+            <p class="text-[11px] text-slate-400">Se define según integraciones, volúmenes y requerimientos técnicos.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-xs text-slate-300 flex-1">
+              <li>• Consultas a bases de datos (stock, estado de reserva/pedido, etc.).</li>
+              <li>• Automatizaciones con herramientas externas (CRM, correos, etc.).</li>
+              <li>• Reglas más avanzadas para escalar a humanos según el contexto.</li>
+              <li>• Soporte ampliado mientras el sistema se estabiliza.</li>
+            </ul>
+            <button
+              class="mt-5 inline-flex w-full items-center justify-center rounded-full border border-slate-600 px-3 py-2 text-xs font-semibold text-slate-100 hover:border-slate-300"
+              onclick="scrollContact('Chatbot a Medida')">
+              Conversar sobre un proyecto a medida
+            </button>
+          </article>
+        </div>
+
+        <p class="mt-4 text-[11px] text-slate-500">
+          *La disponibilidad técnica de WhatsApp y otras plataformas depende de las políticas y APIs vigentes en el
+          momento de la implementación.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESO DE TRABAJO CHATBOTS -->
+    <section class="border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Cómo creamos tu chatbot con IA paso a paso
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            Nada de “subir un bot genérico y ver qué pasa”.
+            Trabajamos con un proceso claro para que el chatbot entienda tu negocio y no solo responda frases bonitas.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-4 text-xs sm:text-sm">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 1</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Entrevista y objetivos</h3>
+            <p class="mt-2 text-slate-300">
+              Hablamos de tu negocio, qué tipo de preguntas recibes, qué te complica responder
+              y qué esperas del chatbot (más contactos, menos tiempo en soporte, etc.).
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 2</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Recolección de contenido</h3>
+            <p class="mt-2 text-slate-300">
+              Revisamos tu web, documentos, PDFs, correos, screenshots de conversaciones
+              y todo lo que ayude a que la IA entienda tu realidad y tu forma de explicar las cosas.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 3</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Entrenamiento y pruebas</h3>
+            <p class="mt-2 text-slate-300">
+              Configuramos el chatbot, probamos preguntas reales y vamos corrigiendo respuestas
+              antes de que lo vean tus clientes. Aquí definimos límites y tono.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Paso 4</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Lanzamiento y ajustes</h3>
+            <p class="mt-2 text-slate-300">
+              Lo publicamos en tu web o canal elegido, monitoreamos las primeras conversaciones
+              y ajustamos el comportamiento según lo que pase en la vida real.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Preguntas frecuentes sobre chatbots con IA
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            Algunas de las dudas más comunes cuando alguien piensa en automatizar parte de la atención.
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3 text-sm">
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿El chatbot va a “inventar cosas” o decir información incorrecta?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Lo entrenamos principalmente con tu contenido y definimos reglas para limitar respuestas en temas
+              sensibles
+              (precios exactos, políticas, temas legales, etc.). Si la IA no está segura, preferimos que derive la
+              conversación
+              a un humano antes de que “invente” algo importante.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Puede responder en más de un idioma?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Sí. Dependiendo del caso, podemos configurarlo para detectar el idioma de la persona
+              (por ejemplo, español/inglés) y responder en consecuencia, siempre basándose en la información
+              que tú nos entregues en esos idiomas.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Necesito tener una web para tener un chatbot con IA?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Ayuda mucho tener al menos una landing bien explicada, porque eso le da buen material
+              al chatbot para responder. Si aún no la tienes, podemos partir por una página rápida
+              con PaginasFast y, desde ahí, entrenar el bot.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿El chatbot reemplaza al 100% a la atención humana?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              No es la idea. El chatbot se encarga de lo repetitivo y de filtrar consultas.
+              Para casos delicados, que requieren criterio o negociación, siempre proponemos derivar la conversación
+              a una persona (WhatsApp, mail, llamada, etc.).
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Qué costo mensual tiene mantener un chatbot con IA?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Hay dos partes: (1) el costo de la herramienta / proveedor de IA y (2) nuestro servicio de ajustes
+              y revisión (si quieres que lo gestionemos). En la propuesta te explicamos ambas partes por separado
+              y con ejemplos de volumen de uso.
+            </p>
+          </details>
+
+          <details class="group border border-slate-800 rounded-2xl bg-slate-900/80 p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-2">
+              <span class="font-semibold text-slate-100 text-sm">
+                ¿Qué pasa si después quiero agregar nuevas preguntas o información?
+              </span>
+              <span
+                class="h-5 w-5 inline-flex items-center justify-center rounded-full border border-slate-600 text-[10px] text-slate-300 group-open:rotate-90 transition-transform">
+                →
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300">
+              Es normal que el bot evolucione. Podemos pactar un plan de ajustes periódicos (por ejemplo mensual)
+              o bien paquetes de horas para ir mejorándolo a medida que tu negocio cambia, sin tener que empezar de
+              cero.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CONTACTO -->
+    <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/98">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Conversemos si tiene sentido un chatbot con IA para tu caso
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+              Cuéntanos qué tipo de negocio tienes, por dónde te llegan más consultas hoy
+              (WhatsApp, redes, web, llamadas) y qué te gustaría automatizar. Si vemos que un chatbot no es
+              la mejor herramienta para ti, también te lo diremos.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Revisión honesta de si la IA suma o no a tu realidad actual.</li>
+              <li>• Ideas concretas de flujos de conversación y dónde encajaría el chatbot.</li>
+              <li>• Propuesta clara, sin letras chicas, con próximos pasos definidos.</li>
+            </ul>
+            <button id="cta-bottom"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero explorar un chatbot con IA
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Formulario -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
+            <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y revisamos qué tipo de chatbot podría ayudarte
+              más.</p>
+
+            <form id="contact-form" class="mt-4 space-y-3">
+              <div>
+                <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+                <input id="name" name="name" type="text" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
+                <input id="phone" name="phone" type="tel"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
+                <input id="service" name="service" type="text" value="Chatbots con IA"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
+                <textarea id="message" name="message" rows="3"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Ej: rubro, por dónde te llegan más consultas hoy, qué te gustaría que el chatbot hiciera, etc."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                Enviar consulta
+              </button>
+              <p class="text-[11px] text-slate-500">
+                Usamos tus datos solo para responder a tu mensaje. Nada de spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+          </span>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+            <span class="text-[11px] text-slate-400">Desarrollo web, tiendas online, Google Ads, chatbots con IA y
+              automatizaciones.</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+          <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+        </div>
+      </div>
+      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+        © 2025 PaginasFast. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20chatbots%20con%20IA%20para%20mi%20negocio"
+    target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+      <defs>
+        <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#57d163"></stop>
+          <stop offset="1" stop-color="#23b33a"></stop>
+        </linearGradient>
+        <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+        </filter>
+      </defs>
+      <path fill="#b3b3b3"
+        d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+        filter="url(#a)"></path>
+      <path fill="#fff"
+        d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+      </path>
+      <path fill="url(#b)"
+        d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+      </path>
+      <path fill="#fff" fill-rule="evenodd"
+        d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+      </path>
+    </svg>
+  </a>
+
+  <!-- JS mínimo -->
+  <script>
+    // menú móvil
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // scroll a contacto (con posible preselección de plan)
+    function scrollContact(plan) {
+      const section = document.getElementById('contacto');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        const serviceField = document.getElementById('service');
+        if (serviceField) {
+          if (plan) {
+            serviceField.value = `Chatbots con IA – ${plan}`;
+          } else {
+            serviceField.value = 'Chatbots con IA';
+          }
         }
       }
     }
-  }
-  document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
-  document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-card')?.addEventListener('click', () => scrollContact());
+    document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact());
 
-  // envío básico del formulario (placeholder)
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const name = formData.get('name') || '';
-      alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre chatbots con IA. Te contactaremos pronto.`);
-      contactForm.reset();
-      // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
-    });
-  }
-</script>
+    // envío básico del formulario (placeholder)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name') || '';
+        alert(`¡Gracias ${name}! Hemos recibido tu consulta sobre chatbots con IA. Te contactaremos pronto.`);
+        contactForm.reset();
+        // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
+      });
+    }
+  </script>
 </body>
+
 </html>

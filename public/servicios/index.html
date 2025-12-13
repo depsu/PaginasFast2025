@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <!-- Google Tag Manager -->
   <script>
@@ -21,9 +22,9 @@
 
   <title>Servicios | PaginasFast – Web, tráfico y automatizaciones con IA</title>
   <meta name="description"
-        content="Conoce todos los servicios de PaginasFast: desarrollo web, tiendas online, Google Ads, redes sociales, SEO de contenidos, chatbots con IA y automatizaciones de marketing para PYMEs en Chile.">
+    content="Conoce todos los servicios de PaginasFast: desarrollo web, tiendas online, Google Ads, redes sociales, SEO de contenidos, chatbots con IA y automatizaciones de marketing para PYMEs en Chile.">
 
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/fav.ico">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -63,19 +64,19 @@
     .glass {
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom right, rgba(15,23,42,.88), rgba(15,23,42,.94));
-      border: 1px solid rgba(148,163,184,.4);
+      background: linear-gradient(to bottom right, rgba(15, 23, 42, .88), rgba(15, 23, 42, .94));
+      border: 1px solid rgba(148, 163, 184, .4);
     }
 
     .hero-gradient {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 55%),
-                  radial-gradient(circle at top right, rgba(129,140,248,.2), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(56,189,248,.14), transparent 55%),
-                  #020617;
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .25), transparent 55%),
+        radial-gradient(circle at top right, rgba(129, 140, 248, .2), transparent 55%),
+        radial-gradient(circle at bottom, rgba(56, 189, 248, .14), transparent 55%),
+        #020617;
     }
 
     .logo-pill {
-      background: radial-gradient(circle at top left, rgba(59,130,246,.45), rgba(37,99,235,.9));
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, .45), rgba(37, 99, 235, .9));
     }
 
     .floating-whatsapp-btn {
@@ -89,819 +90,825 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 16px 35px rgba(0,0,0,.35);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, .35);
       z-index: 40;
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
     .floating-whatsapp-btn:hover {
       transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 22px 45px rgba(0,0,0,.45);
+      box-shadow: 0 22px 45px rgba(0, 0, 0, .45);
     }
   </style>
 </head>
+
 <body class="bg-slate-950 text-slate-50 antialiased">
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
-          style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-2">
-      <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-        <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
-      </span>
-      <div class="flex flex-col leading-tight">
-        <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-        <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <div class="hidden md:flex items-center gap-8 text-sm">
-      <a href="/#servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
-      <button
-        id="cta-header"
-        class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
-        Agendar llamada
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile button -->
-    <button id="mobile-menu-button"
-            class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
-      <a href="/#servicios" class="text-primary font-semibold">Servicios</a>
-      <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
-      <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
-      <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
-      <button
-        id="cta-header-mobile"
-        class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
-        Agendar llamada
-      </button>
-    </div>
-  </div>
-</header>
-
-<main class="hero-gradient min-h-screen">
-  <!-- HERO SERVICIOS -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 lg:pt-18 lg:pb-20">
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Catálogo de servicios PaginasFast
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
-          Servicios diseñados para que tu negocio deje de vivir “al lote” en internet.
-        </h1>
-
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
-          Desde tu primera página web hasta embudos completos con IA. Elige un servicio
-          puntual o arma un sistema que reúna <strong>web + tráfico + automatizaciones</strong>
-          según la etapa de tu negocio.
-        </p>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <button
-            id="cta-hero"
-            class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero que revisen mi caso
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-
-          <a href="#lista-servicios"
-             class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-            Ver todos los servicios
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="mt-8 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Web</p>
-            <p class="mt-1 text-slate-400">Páginas rápidas y claras que venden, no solo “se ven bonitas”.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">Tráfico</p>
-            <p class="mt-1 text-slate-400">Google Ads y redes sociales para atraer visitas con intención real.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
-            <p class="font-semibold text-slate-50">IA & Automatización</p>
-            <p class="mt-1 text-slate-400">Chatbots, emails y flujos automáticos para no perder leads.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tarjeta resumen “packs” -->
-      <div class="relative">
-        <div class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/50 via-sky-400/40 to-emerald-300/40 opacity-60 blur-3xl"></div>
-        <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Recomendado</p>
-          <h2 class="mt-2 text-lg font-semibold text-slate-50">¿No sabes por dónde partir?</h2>
-          <p class="mt-2 text-sm text-slate-300">
-            Para la mayoría de PYMEs locales recomendamos partir con este combo:
-          </p>
-
-          <ul class="mt-4 space-y-2 text-sm text-slate-200">
-            <li>1. <strong>Desarrollo web</strong> tipo “Web Emprendedor” o “Web Corporativa”.</li>
-            <li>2. <strong>Google Ads IA Performance</strong> para generar tráfico con intención.</li>
-            <li>3. <strong>Chatbot o automatización simple</strong> para responder y captar datos.</li>
-          </ul>
-
-          <p class="mt-4 text-xs text-slate-400">
-            En una llamada estratégica revisamos cuál es la combinación ideal para tu negocio y presupuesto.
-          </p>
-
-          <button
-            id="cta-card"
-            class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-            Agendar llamada de diagnóstico
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LISTA DE SERVICIOS -->
-  <section id="lista-servicios" class="border-t border-slate-800/80 bg-slate-950/80">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Todos los servicios PaginasFast
-          </h2>
-          <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
-            Puedes contratarlos por separado o combinarlos como un plan a medida. Aquí tienes
-            un resumen claro de lo que hace cada uno, para quién es y qué puedes esperar.
-          </p>
-        </div>
-        <div class="text-xs sm:text-sm text-slate-400">
-          <p class="font-semibold text-slate-300">¿Cuál elegir?</p>
-          <p>Si tienes dudas, agenda una llamada y lo definimos juntos en 20–30 minutos.</p>
-        </div>
-      </div>
-
-      <!-- GRID de servicios -->
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
-        <!-- Desarrollo Web -->
-        <article id="desarrollo-web" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-primary.soft/20 flex items-center justify-center text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>
-                  <path d="M3 10h18"></path>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">01 · Web</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Desarrollo web para PYMEs</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-300">
-              Desde $55.000
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Creamos sitios rápidos, claros y enfocados en conversión. Nada de webs llenas de texto
-            que nadie lee: hablamos directo a tu cliente ideal.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• No tienes web o la tuya se ve antigua.</li>
-                <li>• Quieres parecer “empresa seria” en segundos.</li>
-                <li>• Vives de servicios, reservas o cotizaciones.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Diseño responsive (PC + móvil).</li>
-                <li>• Estructura optimizada para ventas.</li>
-                <li>• Contacto vía formulario y WhatsApp.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/desarrollo-web"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- Tiendas Online -->
-        <article id="tiendas-online" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-indigo-500/15 flex items-center justify-center text-indigo-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.68 16h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">02 · Ecommerce</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Tiendas online que sí venden</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-indigo-500/12 px-2.5 py-1 text-[11px] font-medium text-indigo-200">
-              WebPay · MercadoPago
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Montamos tu ecommerce con catálogo claro, pasarela de pagos y fichas de producto
-            pensadas para responder dudas y reducir “lo voy a pensar”.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Vendes productos físicos o digitales.</li>
-                <li>• Tienes stock en bodega o a pedido.</li>
-                <li>• Quieres dejar de vender solo por Instagram/WhatsApp.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Carrito de compra completo.</li>
-                <li>• Integración con WebPay / MercadoPago.</li>
-                <li>• Correos post-compra y estados de pedido.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/tiendas-online"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- Google Ads -->
-        <article id="google-ads" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <path d="M3 3h6l3 7-4 11H3L7 10z"></path>
-                  <path d="M14 3h7l-4 11h-7z"></path>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">03 · Tráfico</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Google Ads IA Performance</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-amber-500/12 px-2.5 py-1 text-[11px] font-medium text-amber-200">
-              Leads, no solo clicks
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Diseñamos y optimizamos campañas para que cada peso invertido se traduzca en
-            consultas reales y medibles, no solo visitas curiosas.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Vendes servicios locales (abogados, clínicas, cursos, etc.).</li>
-                <li>• Quieres resultados más rápidos que con SEO solo.</li>
-                <li>• Tienes presupuesto mensual definido.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Investigación de palabras clave.</li>
-                <li>• Creación de campañas y anuncios.</li>
-                <li>• Optimización semanal + reportes claros.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/google-ads"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- Redes Sociales -->
-        <article id="redes-sociales" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-pink-500/15 flex items-center justify-center text-pink-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <path d="M7 8h10M7 12h6m-6 4h8"></path>
-                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">04 · Contenido & Ads</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Redes sociales para vender más</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-pink-500/12 px-2.5 py-1 text-[11px] font-medium text-pink-200">
-              Instagram · Facebook
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Creamos un plan de contenido y anuncios coherente con tu web y tus objetivos.
-            No más publicaciones “porque hay que subir algo”.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Ya tienes web pero redes desordenadas.</li>
-                <li>• Vendes mucho por Instagram/DM.</li>
-                <li>• Necesitas constancia y estrategia.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Calendario mensual con ideas de posts.</li>
-                <li>• Piezas gráficas alineadas a tu marca.</li>
-                <li>• Configuración de campañas en Meta Ads.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/redes-sociales"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- SEO & Contenidos -->
-        <article id="seo-contenidos" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <path d="M3 4h18M7 8h10M10 12h4"></path>
-                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">05 · SEO & Blog</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">SEO y contenidos que posicionan</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
-              Tráfico orgánico
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Optimizamos tu web y escribimos contenidos con IA supervisada para que Google
-            entienda de qué trata tu negocio y te muestre a más personas.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Ya tienes web y algo de tráfico.</li>
-                <li>• Quieres depender menos de anuncios pagados.</li>
-                <li>• Estás en rubros con mucha búsqueda en Google.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Auditoría SEO on-page básica.</li>
-                <li>• Contenidos para blog / recursos.</li>
-                <li>• Optimización de textos clave en tu web.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/seo-contenidos"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- Chatbots IA -->
-        <article id="chatbots-ia" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-violet-500/15 flex items-center justify-center text-violet-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <path d="M12 3C7.03 3 3 6.13 3 10c0 2.17 1.21 4.09 3.16 5.37L5 21l4.34-2.17C10.1 18.93 11.03 19 12 19c4.97 0 9-3.13 9-7s-4.03-9-9-9z"/>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">06 · IA</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Chatbots y asistentes con IA</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-violet-500/12 px-2.5 py-1 text-[11px] font-medium text-violet-200">
-              Respuesta 24/7
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Entrenamos un asistente con la información de tu negocio para que responda
-            dudas frecuentes, filtre curiosos y recopile datos de potenciales clientes.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Recibes muchas preguntas repetidas.</li>
-                <li>• No alcanzas a responder todo el día.</li>
-                <li>• Ofreces varios servicios y planes.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Diseño de flujo de preguntas.</li>
-                <li>• Entrenamiento inicial con tu info.</li>
-                <li>• Integración en tu sitio web.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/chatbots-ia"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-
-        <!-- Automatizaciones -->
-        <article id="automatizaciones" class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
-          <div class="flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-              <div class="h-9 w-9 rounded-xl bg-emerald-500/12 flex items-center justify-center text-emerald-300">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M19.4 15A1.65 1.65 0 0 0 21 13.35v-2.7A1.65 1.65 0 0 0 19.4 9L18 7.6 15.9 5.5 14.5 4.1A1.65 1.65 0 0 0 12.85 3h-1.7A1.65 1.65 0 0 0 9.5 4.1L8.1 5.5 6 7.6 4.6 9A1.65 1.65 0 0 0 3 10.65v2.7A1.65 1.65 0 0 0 4.6 15l1.4 1.4 2.1 2.1 1.4 1.4a1.65 1.65 0 0 0 1.65.5h1.7a1.65 1.65 0 0 0 1.65-.5l1.4-1.4 2.1-2.1z"/>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">07 · Sistemas</p>
-                <h3 class="text-base sm:text-lg font-semibold text-slate-50">Automatizaciones & funnels</h3>
-              </div>
-            </div>
-            <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
-              Menos tareas manuales
-            </span>
-          </div>
-          <p class="mt-3 text-sm text-slate-300">
-            Conectamos tu web, tus formularios, tu agenda y tu correo para que los
-            leads no se pierdan entre pantallazos de WhatsApp y mails sin responder.
-          </p>
-
-          <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
-              <ul class="space-y-1">
-                <li>• Ya estás recibiendo varios leads.</li>
-                <li>• Manejas agenda, reuniones, pagos, etc.</li>
-                <li>• Quieres profesionalizar tu experiencia de cliente.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
-              <ul class="space-y-1">
-                <li>• Mapeo de tu flujo actual.</li>
-                <li>• Diseño de funnel y automatizaciones.</li>
-                <li>• Integración con herramientas (ej: Calendly, Gmail, CRM).</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
-            <a href="/servicios/automatizaciones"
-               class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
-              Ver detalle del servicio
-              <span class="transition-transform group-hover:translate-x-0.5">→</span>
-            </a>
-            <button
-              class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
-              onclick="scrollContact()">
-              Quiero cotizar este servicio
-            </button>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CÓMO TRABAJAMOS -->
-  <section class="border-t border-slate-800/80 bg-slate-950/90">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-          Cómo trabajamos cada proyecto
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-slate-300">
-          No vendemos plantillas sin contexto. Antes de abrir el editor, entendemos tu negocio
-          y definimos qué tiene sentido hacer ahora y qué puede esperar.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 1</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico rápido</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Llamada de 20–30 minutos para entender tu negocio, qué estás haciendo hoy
-            y dónde se están escapando las oportunidades.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 2</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Plan concreto</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Te proponemos una combinación de servicios (web, tráfico, IA) con plazos,
-            inversión estimada y qué métricas mirar.
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 3</p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-50">Implementación y ajustes</h3>
-          <p class="mt-2 text-xs sm:text-sm text-slate-300">
-            Ejecutamos, medimos resultados y hacemos ajustes. Tú tienes siempre
-            claridad de lo que se está haciendo y por qué.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA CONTACTO -->
-  <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/95">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-      <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-            Conversemos qué tiene sentido hacer en tu caso
-          </h2>
-          <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-            Llámanos, cuéntanos cómo estás hoy y te proponemos un plan que combine
-            los servicios correctos según tu etapa, rubro y presupuesto.
-          </p>
-          <ul class="mt-4 space-y-2 text-sm text-slate-300">
-            <li>• Enfocado en cifras y objetivos, sin humo.</li>
-            <li>• Sin compromiso de contratar: la idea es darte claridad.</li>
-            <li>• Si encajamos, definimos los próximos pasos y fechas.</li>
-          </ul>
-          <button
-            id="cta-bottom"
-            class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-            Quiero agendar una llamada
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Formulario -->
-        <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-5 sm:p-6 shadow-soft">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
-          <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y cuéntanos qué servicio te interesa.</p>
-
-          <form id="contact-form" class="mt-4 space-y-3">
-            <div>
-              <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
-              <input id="name" name="name" type="text" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
-              <input id="email" name="email" type="email" required
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
-              <input id="phone" name="phone" type="tel"
-                     class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-            </div>
-            <div>
-              <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
-              <select id="service" name="service"
-                      class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                <option value="">Selecciona una opción</option>
-                <option>Desarrollo web</option>
-                <option>Tiendas online</option>
-                <option>Google Ads</option>
-                <option>Redes sociales</option>
-                <option>SEO y contenidos</option>
-                <option>Chatbots con IA</option>
-                <option>Automatizaciones & funnels</option>
-                <option>No estoy seguro, quiero orientación</option>
-              </select>
-            </div>
-            <div>
-              <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
-              <textarea id="message" name="message" rows="3"
-                        class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                        placeholder="Ej: tengo una web antigua, quiero renovarla y empezar a recibir más cotizaciones con Google Ads."></textarea>
-            </div>
-            <button type="submit"
-                    class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Enviar consulta
-            </button>
-            <p class="text-[11px] text-slate-500">
-              Usamos tus datos solo para responder a tu mensaje. Nada de spam.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-800 bg-slate-950">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
-          <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
+          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
         </span>
         <div class="flex flex-col leading-tight">
-          <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
-          <span class="text-[11px] text-slate-400">Convertimos tu presencia online en tu mejor vendedor.</span>
+          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
         </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="/#servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white transition-colors">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white transition-colors">Blog</a>
+        <button id="cta-header"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          Agendar llamada
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+        </button>
       </div>
-      <div class="flex flex-wrap gap-4 text-xs text-slate-400">
-        <a href="/servicios" class="hover:text-slate-200">Servicios</a>
-        <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
-        <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
-        <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+
+      <!-- Mobile button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="/#servicios" class="text-primary font-semibold">Servicios</a>
+        <a href="/#casos" class="text-slate-300 hover:text-white">Casos de éxito</a>
+        <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
+        <a href="/blog" class="text-slate-300 hover:text-white">Blog</a>
+        <button id="cta-header-mobile"
+          class="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark">
+          Agendar llamada
+        </button>
       </div>
     </div>
-    <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
-      © 2025 PaginasFast. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+  </header>
 
-<!-- Botón WhatsApp flotante -->
-<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PaginasFast"
-   target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
-    <defs>
-      <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#57d163"></stop>
-        <stop offset="1" stop-color="#23b33a"></stop>
-      </linearGradient>
-      <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
-        <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
-      </filter>
-    </defs>
-    <path fill="#b3b3b3"
-          d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
-          filter="url(#a)"></path>
-    <path fill="#fff"
-          d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
-    </path>
-    <path fill="url(#b)"
-          d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
-    </path>
-    <path fill="#fff" fill-rule="evenodd"
-          d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
-    </path>
-  </svg>
-</a>
+  <main class="hero-gradient min-h-screen">
+    <!-- HERO SERVICIOS -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 lg:pt-18 lg:pb-20">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Catálogo de servicios PaginasFast
+          </div>
 
-<!-- JS mínimo -->
-<script>
-  // menú móvil
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
+            Servicios diseñados para que tu negocio deje de vivir “al lote” en internet.
+          </h1>
 
-  // scroll a contacto
-  function scrollContact() {
-    const section = document.getElementById('contacto');
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
-  }
-  document.getElementById('cta-header')?.addEventListener('click', scrollContact);
-  document.getElementById('cta-header-mobile')?.addEventListener('click', scrollContact);
-  document.getElementById('cta-hero')?.addEventListener('click', scrollContact);
-  document.getElementById('cta-card')?.addEventListener('click', scrollContact);
-  document.getElementById('cta-bottom')?.addEventListener('click', scrollContact);
+          <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
+            Desde tu primera página web hasta embudos completos con IA. Elige un servicio
+            puntual o arma un sistema que reúna <strong>web + tráfico + automatizaciones</strong>
+            según la etapa de tu negocio.
+          </p>
 
-  // envío básico del formulario (placeholder)
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const name = formData.get('name') || '';
-      alert(`¡Gracias ${name}! Hemos recibido tu mensaje sobre servicios. Te contactaremos pronto.`);
-      contactForm.reset();
-      // Aquí puedes hacer fetch a tu endpoint /api/contact si quieres conectarlo de verdad.
-    });
-  }
-</script>
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <button id="cta-hero"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero que revisen mi caso
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+
+            <a href="#lista-servicios"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
+              Ver todos los servicios
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-3 text-xs sm:text-[13px] text-slate-300">
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Web</p>
+              <p class="mt-1 text-slate-400">Páginas rápidas y claras que venden, no solo “se ven bonitas”.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">Tráfico</p>
+              <p class="mt-1 text-slate-400">Google Ads y redes sociales para atraer visitas con intención real.</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900/80 border border-slate-800 px-3.5 py-3">
+              <p class="font-semibold text-slate-50">IA & Automatización</p>
+              <p class="mt-1 text-slate-400">Chatbots, emails y flujos automáticos para no perder leads.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta resumen “packs” -->
+        <div class="relative">
+          <div
+            class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/50 via-sky-400/40 to-emerald-300/40 opacity-60 blur-3xl">
+          </div>
+          <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Recomendado</p>
+            <h2 class="mt-2 text-lg font-semibold text-slate-50">¿No sabes por dónde partir?</h2>
+            <p class="mt-2 text-sm text-slate-300">
+              Para la mayoría de PYMEs locales recomendamos partir con este combo:
+            </p>
+
+            <ul class="mt-4 space-y-2 text-sm text-slate-200">
+              <li>1. <strong>Desarrollo web</strong> tipo “Web Emprendedor” o “Web Corporativa”.</li>
+              <li>2. <strong>Google Ads IA Performance</strong> para generar tráfico con intención.</li>
+              <li>3. <strong>Chatbot o automatización simple</strong> para responder y captar datos.</li>
+            </ul>
+
+            <p class="mt-4 text-xs text-slate-400">
+              En una llamada estratégica revisamos cuál es la combinación ideal para tu negocio y presupuesto.
+            </p>
+
+            <button id="cta-card"
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              Agendar llamada de diagnóstico
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA DE SERVICIOS -->
+    <section id="lista-servicios" class="border-t border-slate-800/80 bg-slate-950/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Todos los servicios PaginasFast
+            </h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-xl">
+              Puedes contratarlos por separado o combinarlos como un plan a medida. Aquí tienes
+              un resumen claro de lo que hace cada uno, para quién es y qué puedes esperar.
+            </p>
+          </div>
+          <div class="text-xs sm:text-sm text-slate-400">
+            <p class="font-semibold text-slate-300">¿Cuál elegir?</p>
+            <p>Si tienes dudas, agenda una llamada y lo definimos juntos en 20–30 minutos.</p>
+          </div>
+        </div>
+
+        <!-- GRID de servicios -->
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <!-- Desarrollo Web -->
+          <article id="desarrollo-web"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-primary.soft/20 flex items-center justify-center text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="14" rx="2" ry="2"></rect>
+                    <path d="M3 10h18"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">01 · Web</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Desarrollo web para PYMEs</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-300">
+                Desde $55.000
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Creamos sitios rápidos, claros y enfocados en conversión. Nada de webs llenas de texto
+              que nadie lee: hablamos directo a tu cliente ideal.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• No tienes web o la tuya se ve antigua.</li>
+                  <li>• Quieres parecer “empresa seria” en segundos.</li>
+                  <li>• Vives de servicios, reservas o cotizaciones.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Diseño responsive (PC + móvil).</li>
+                  <li>• Estructura optimizada para ventas.</li>
+                  <li>• Contacto vía formulario y WhatsApp.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/desarrollo-web"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Tiendas Online -->
+          <article id="tiendas-online"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-indigo-500/15 flex items-center justify-center text-indigo-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39A2 2 0 0 0 9.68 16h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">02 · Ecommerce</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Tiendas online que sí venden</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-indigo-500/12 px-2.5 py-1 text-[11px] font-medium text-indigo-200">
+                WebPay · MercadoPago
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Montamos tu ecommerce con catálogo claro, pasarela de pagos y fichas de producto
+              pensadas para responder dudas y reducir “lo voy a pensar”.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Vendes productos físicos o digitales.</li>
+                  <li>• Tienes stock en bodega o a pedido.</li>
+                  <li>• Quieres dejar de vender solo por Instagram/WhatsApp.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Carrito de compra completo.</li>
+                  <li>• Integración con WebPay / MercadoPago.</li>
+                  <li>• Correos post-compra y estados de pedido.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/tiendas-online"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Google Ads -->
+          <article id="google-ads"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M3 3h6l3 7-4 11H3L7 10z"></path>
+                    <path d="M14 3h7l-4 11h-7z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">03 · Tráfico</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Google Ads IA Performance</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-amber-500/12 px-2.5 py-1 text-[11px] font-medium text-amber-200">
+                Leads, no solo clicks
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Diseñamos y optimizamos campañas para que cada peso invertido se traduzca en
+              consultas reales y medibles, no solo visitas curiosas.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Vendes servicios locales (abogados, clínicas, cursos, etc.).</li>
+                  <li>• Quieres resultados más rápidos que con SEO solo.</li>
+                  <li>• Tienes presupuesto mensual definido.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Investigación de palabras clave.</li>
+                  <li>• Creación de campañas y anuncios.</li>
+                  <li>• Optimización semanal + reportes claros.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/google-ads"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Redes Sociales -->
+          <article id="redes-sociales"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-pink-500/15 flex items-center justify-center text-pink-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M7 8h10M7 12h6m-6 4h8"></path>
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">04 · Contenido & Ads</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Redes sociales para vender más</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-pink-500/12 px-2.5 py-1 text-[11px] font-medium text-pink-200">
+                Instagram · Facebook
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Creamos un plan de contenido y anuncios coherente con tu web y tus objetivos.
+              No más publicaciones “porque hay que subir algo”.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Ya tienes web pero redes desordenadas.</li>
+                  <li>• Vendes mucho por Instagram/DM.</li>
+                  <li>• Necesitas constancia y estrategia.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Calendario mensual con ideas de posts.</li>
+                  <li>• Piezas gráficas alineadas a tu marca.</li>
+                  <li>• Configuración de campañas en Meta Ads.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/redes-sociales"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- SEO & Contenidos -->
+          <article id="seo-contenidos"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M3 4h18M7 8h10M10 12h4"></path>
+                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">05 · SEO & Blog</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">SEO y contenidos que posicionan</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
+                Tráfico orgánico
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Optimizamos tu web y escribimos contenidos con IA supervisada para que Google
+              entienda de qué trata tu negocio y te muestre a más personas.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Ya tienes web y algo de tráfico.</li>
+                  <li>• Quieres depender menos de anuncios pagados.</li>
+                  <li>• Estás en rubros con mucha búsqueda en Google.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Auditoría SEO on-page básica.</li>
+                  <li>• Contenidos para blog / recursos.</li>
+                  <li>• Optimización de textos clave en tu web.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/seo-contenidos"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Chatbots IA -->
+          <article id="chatbots-ia"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-violet-500/15 flex items-center justify-center text-violet-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M12 3C7.03 3 3 6.13 3 10c0 2.17 1.21 4.09 3.16 5.37L5 21l4.34-2.17C10.1 18.93 11.03 19 12 19c4.97 0 9-3.13 9-7s-4.03-9-9-9z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">06 · IA</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Chatbots y asistentes con IA</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-violet-500/12 px-2.5 py-1 text-[11px] font-medium text-violet-200">
+                Respuesta 24/7
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Entrenamos un asistente con la información de tu negocio para que responda
+              dudas frecuentes, filtre curiosos y recopile datos de potenciales clientes.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Recibes muchas preguntas repetidas.</li>
+                  <li>• No alcanzas a responder todo el día.</li>
+                  <li>• Ofreces varios servicios y planes.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Diseño de flujo de preguntas.</li>
+                  <li>• Entrenamiento inicial con tu info.</li>
+                  <li>• Integración en tu sitio web.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/chatbots-ia"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- Automatizaciones -->
+          <article id="automatizaciones"
+            class="group rounded-2xl border border-slate-800 bg-slate-900/75 p-5 hover:border-blue-500/80 hover:shadow-soft transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-emerald-500/12 flex items-center justify-center text-emerald-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                      d="M19.4 15A1.65 1.65 0 0 0 21 13.35v-2.7A1.65 1.65 0 0 0 19.4 9L18 7.6 15.9 5.5 14.5 4.1A1.65 1.65 0 0 0 12.85 3h-1.7A1.65 1.65 0 0 0 9.5 4.1L8.1 5.5 6 7.6 4.6 9A1.65 1.65 0 0 0 3 10.65v2.7A1.65 1.65 0 0 0 4.6 15l1.4 1.4 2.1 2.1 1.4 1.4a1.65 1.65 0 0 0 1.65.5h1.7a1.65 1.65 0 0 0 1.65-.5l1.4-1.4 2.1-2.1z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.13em] text-slate-400">07 · Sistemas</p>
+                  <h3 class="text-base sm:text-lg font-semibold text-slate-50">Automatizaciones & funnels</h3>
+                </div>
+              </div>
+              <span class="rounded-full bg-emerald-500/12 px-2.5 py-1 text-[11px] font-medium text-emerald-200">
+                Menos tareas manuales
+              </span>
+            </div>
+            <p class="mt-3 text-sm text-slate-300">
+              Conectamos tu web, tus formularios, tu agenda y tu correo para que los
+              leads no se pierdan entre pantallazos de WhatsApp y mails sin responder.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3 text-xs text-slate-300">
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Ideal si:</p>
+                <ul class="space-y-1">
+                  <li>• Ya estás recibiendo varios leads.</li>
+                  <li>• Manejas agenda, reuniones, pagos, etc.</li>
+                  <li>• Quieres profesionalizar tu experiencia de cliente.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-100 mb-1">Incluye:</p>
+                <ul class="space-y-1">
+                  <li>• Mapeo de tu flujo actual.</li>
+                  <li>• Diseño de funnel y automatizaciones.</li>
+                  <li>• Integración con herramientas (ej: Calendly, Gmail, CRM).</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-3 justify-between">
+              <a href="/servicios/automatizaciones"
+                class="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-blue-300">
+                Ver detalle del servicio
+                <span class="transition-transform group-hover:translate-x-0.5">→</span>
+              </a>
+              <button
+                class="text-xs rounded-full border border-slate-600 px-3 py-1.5 text-slate-200 hover:border-slate-300"
+                onclick="scrollContact()">
+                Quiero cotizar este servicio
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="border-t border-slate-800/80 bg-slate-950/90">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+            Cómo trabajamos cada proyecto
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-300">
+            No vendemos plantillas sin contexto. Antes de abrir el editor, entendemos tu negocio
+            y definimos qué tiene sentido hacer ahora y qué puede esperar.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 1</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico rápido</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Llamada de 20–30 minutos para entender tu negocio, qué estás haciendo hoy
+              y dónde se están escapando las oportunidades.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 2</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Plan concreto</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Te proponemos una combinación de servicios (web, tráfico, IA) con plazos,
+              inversión estimada y qué métricas mirar.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Paso 3</p>
+            <h3 class="mt-2 text-sm font-semibold text-slate-50">Implementación y ajustes</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-300">
+              Ejecutamos, medimos resultados y hacemos ajustes. Tú tienes siempre
+              claridad de lo que se está haciendo y por qué.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CONTACTO -->
+    <section id="contacto" class="border-t border-slate-800/80 bg-slate-950/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
+              Conversemos qué tiene sentido hacer en tu caso
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
+              Llámanos, cuéntanos cómo estás hoy y te proponemos un plan que combine
+              los servicios correctos según tu etapa, rubro y presupuesto.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Enfocado en cifras y objetivos, sin humo.</li>
+              <li>• Sin compromiso de contratar: la idea es darte claridad.</li>
+              <li>• Si encajamos, definimos los próximos pasos y fechas.</li>
+            </ul>
+            <button id="cta-bottom"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
+              Quiero agendar una llamada
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Formulario -->
+          <div class="rounded-3xl border border-slate-800 bg-slate-950/90 p-5 sm:p-6 shadow-soft">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">Formulario rápido</p>
+            <p class="mt-2 text-sm text-slate-200">Déjanos tus datos y cuéntanos qué servicio te interesa.</p>
+
+            <form id="contact-form" class="mt-4 space-y-3">
+              <div>
+                <label for="name" class="block text-xs font-medium text-slate-300 mb-1">Nombre</label>
+                <input id="name" name="name" type="text" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-medium text-slate-300 mb-1">Correo electrónico</label>
+                <input id="email" name="email" type="email" required
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-medium text-slate-300 mb-1">WhatsApp (opcional)</label>
+                <input id="phone" name="phone" type="tel"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+              </div>
+              <div>
+                <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Servicio de interés</label>
+                <select id="service" name="service"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+                  <option value="">Selecciona una opción</option>
+                  <option>Desarrollo web</option>
+                  <option>Tiendas online</option>
+                  <option>Google Ads</option>
+                  <option>Redes sociales</option>
+                  <option>SEO y contenidos</option>
+                  <option>Chatbots con IA</option>
+                  <option>Automatizaciones & funnels</option>
+                  <option>No estoy seguro, quiero orientación</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-medium text-slate-300 mb-1">Cuéntanos un poco más</label>
+                <textarea id="message" name="message" rows="3"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="Ej: tengo una web antigua, quiero renovarla y empezar a recibir más cotizaciones con Google Ads."></textarea>
+              </div>
+              <button type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                Enviar consulta
+              </button>
+              <p class="text-[11px] text-slate-500">
+                Usamos tus datos solo para responder a tu mensaje. Nada de spam.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
+            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+          </span>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
+            <span class="text-[11px] text-slate-400">Convertimos tu presencia online en tu mejor vendedor.</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <a href="/servicios" class="hover:text-slate-200">Servicios</a>
+          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
+          <a href="/reseñas" class="hover:text-slate-200">Reseñas</a>
+          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+        </div>
+      </div>
+      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+        © 2025 PaginasFast. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PaginasFast"
+    target="_blank" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552" width="28" height="28">
+      <defs>
+        <linearGradient id="b" x1="85.915" x2="86.535" y1="32.567" y2="137.092" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#57d163"></stop>
+          <stop offset="1" stop-color="#23b33a"></stop>
+        </linearGradient>
+        <filter id="a" width="1.115" height="1.114" x="-.057" y="-.057" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="3.531"></feGaussianBlur>
+        </filter>
+      </defs>
+      <path fill="#b3b3b3"
+        d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"
+        filter="url(#a)"></path>
+      <path fill="#fff"
+        d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z">
+      </path>
+      <path fill="url(#b)"
+        d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.313-6.179 22.558 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.517 31.126 8.523h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.928z">
+      </path>
+      <path fill="#fff" fill-rule="evenodd"
+        d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647">
+      </path>
+    </svg>
+  </a>
+
+  <!-- JS mínimo -->
+  <script>
+    // menú móvil
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // scroll a contacto
+    function scrollContact() {
+      const section = document.getElementById('contacto');
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+    document.getElementById('cta-header')?.addEventListener('click', scrollContact);
+    document.getElementById('cta-header-mobile')?.addEventListener('click', scrollContact);
+    document.getElementById('cta-hero')?.addEventListener('click', scrollContact);
+    document.getElementById('cta-card')?.addEventListener('click', scrollContact);
+    document.getElementById('cta-bottom')?.addEventListener('click', scrollContact);
+
+    // envío básico del formulario (placeholder)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get('name') || '';
+        alert(`¡Gracias ${name}! Hemos recibido tu mensaje sobre servicios. Te contactaremos pronto.`);
+        contactForm.reset();
+        // Aquí puedes hacer fetch a tu endpoint /api/contact si quieres conectarlo de verdad.
+      });
+    }
+  </script>
 </body>
+
 </html>

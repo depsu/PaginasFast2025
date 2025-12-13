@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cómo Generar Tráfico Web con Google Ads | PaginasFast</title>
-    <meta name="description" content="Descubre cómo generar tráfico a tu sitio web usando Google Ads y otras estrategias efectivas. Conoce los costos reales involucrados.">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"
+        content="Descubre cómo generar tráfico a tu sitio web usando Google Ads y otras estrategias efectivas. Conoce los costos reales involucrados.">
+    <link rel="icon" type="image/png" href="/fav.ico">
     <script src="https://unpkg.com/feather-icons" defer></script>
     <link href="/output.css" rel="stylesheet">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-    .modal { transition: opacity .3s; }
-    .loader { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.3); border-radius: 50%; border-top-color: #fff; animation: 1s ease-in-out infinite spin; }
-    .loader-dark { border: 3px solid rgba(0,0,0,.2); border-top-color: #3b82f6; }
-    @keyframes spin { to { transform: rotate(360deg) } }
-        
+
+        .modal {
+            transition: opacity .3s;
+        }
+
+        .loader {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: 1s ease-in-out infinite spin;
+        }
+
+        .loader-dark {
+            border: 3px solid rgba(0, 0, 0, .2);
+            border-top-color: #3b82f6;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
         .blog-content {
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
         }
-        
+
         .blog-content h2 {
             font-size: 2rem;
             font-weight: 700;
@@ -31,7 +52,7 @@
             margin-top: 2.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .blog-content h3 {
             font-size: 1.5rem;
             font-weight: 600;
@@ -39,33 +60,34 @@
             margin-top: 2rem;
             margin-bottom: 0.75rem;
         }
-        
+
         .blog-content p {
             color: #4b5563;
             margin-bottom: 1.25rem;
             font-size: 1.1rem;
         }
-        
-        .blog-content ul, .blog-content ol {
+
+        .blog-content ul,
+        .blog-content ol {
             margin: 1.5rem 0;
             padding-left: 2rem;
             color: #4b5563;
         }
-        
+
         .blog-content li {
             margin-bottom: 0.75rem;
             font-size: 1.05rem;
         }
-        
+
         .blog-content strong {
             color: #1f2937;
             font-weight: 600;
         }
-        
+
         .hero-gradient {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         }
-        
+
         .strategy-card {
             background: white;
             border-radius: 0.75rem;
@@ -74,7 +96,7 @@
             border-left: 4px solid #3b82f6;
             margin-bottom: 1.5rem;
         }
-        
+
         .cost-table {
             width: 100%;
             border-collapse: collapse;
@@ -84,7 +106,7 @@
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        
+
         .cost-table th {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             color: white;
@@ -92,20 +114,20 @@
             text-align: left;
             font-weight: 600;
         }
-        
+
         .cost-table td {
             padding: 1rem;
             border-bottom: 1px solid #e5e7eb;
         }
-        
+
         .cost-table tr:last-child td {
             border-bottom: none;
         }
-        
+
         .cost-table tr:hover {
             background: #f9fafb;
         }
-        
+
         .highlight-box {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-left: 4px solid #f59e0b;
@@ -113,36 +135,36 @@
             border-radius: 0.5rem;
             margin: 2rem 0;
         }
-        
+
         .pros-cons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin: 2rem 0;
         }
-        
+
         @media (max-width: 768px) {
             .pros-cons {
                 grid-template-columns: 1fr;
             }
-            
+
             .cost-table {
                 font-size: 0.9rem;
             }
-            
+
             .cost-table th,
             .cost-table td {
                 padding: 0.75rem 0.5rem;
             }
         }
-        
+
         .pros-box {
             background: #d1fae5;
             border-left: 4px solid #10b981;
             padding: 1.5rem;
             border-radius: 0.5rem;
         }
-        
+
         .cons-box {
             background: #fee2e2;
             border-left: 4px solid #ef4444;
@@ -160,7 +182,8 @@
             </a>
             <div class="flex space-x-6 items-center">
                 <a href="/#blog" class="text-gray-600 hover:text-blue-600 font-medium">← Volver al Blog</a>
-                <a href="#" class="open-contact-modal bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar</a>
+                <a href="#"
+                    class="open-contact-modal bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">Cotizar</a>
             </div>
         </nav>
     </header>
@@ -184,36 +207,46 @@
             <div class="container mx-auto px-6">
                 <div class="blog-content">
                     <p class="text-xl text-gray-700 font-medium mb-8">
-                        Tienes una página web hermosa y funcional. ¿Y ahora qué? El siguiente paso es traer visitantes que se conviertan en clientes. Aquí te enseñamos cómo hacerlo, cuánto cuesta y qué esperar.
+                        Tienes una página web hermosa y funcional. ¿Y ahora qué? El siguiente paso es traer visitantes
+                        que se conviertan en clientes. Aquí te enseñamos cómo hacerlo, cuánto cuesta y qué esperar.
                     </p>
 
                     <h2>La Verdad Sobre el Tráfico Web</h2>
                     <p>
-                        Construir una página web es solo el primer paso. Es como abrir una tienda en un callejón vacío: puedes tener los mejores productos, pero si nadie sabe que existes, no venderás nada.
+                        Construir una página web es solo el primer paso. Es como abrir una tienda en un callejón vacío:
+                        puedes tener los mejores productos, pero si nadie sabe que existes, no venderás nada.
                     </p>
                     <p>
-                        <strong>Generar tráfico web es el arte de llevar personas interesadas a tu sitio</strong>. Y hay dos formas principales de hacerlo: tráfico orgánico (gratis pero lento) y tráfico pagado (rápido pero con costo).
+                        <strong>Generar tráfico web es el arte de llevar personas interesadas a tu sitio</strong>. Y hay
+                        dos formas principales de hacerlo: tráfico orgánico (gratis pero lento) y tráfico pagado (rápido
+                        pero con costo).
                     </p>
 
                     <h2>Estrategia #1: Google Ads - El Acelerador</h2>
                     <p>
-                        Google Ads es la forma más rápida de aparecer en la primera página de Google. Cuando alguien busca "electricista en Santiago" y tú pagaste por ese anuncio, apareces arriba de todo.
+                        Google Ads es la forma más rápida de aparecer en la primera página de Google. Cuando alguien
+                        busca "electricista en Santiago" y tú pagaste por ese anuncio, apareces arriba de todo.
                     </p>
 
                     <div class="strategy-card">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">¿Cómo Funciona Google Ads?</h3>
                         <ol class="space-y-2">
-                            <li><strong>1. Eliges palabras clave:</strong> Por ejemplo, "servicio de plomería urgente"</li>
+                            <li><strong>1. Eliges palabras clave:</strong> Por ejemplo, "servicio de plomería urgente"
+                            </li>
                             <li><strong>2. Creas un anuncio:</strong> Un texto breve que aparecerá en Google</li>
-                            <li><strong>3. Estableces un presupuesto:</strong> Cuánto estás dispuesto a gastar por día</li>
-                            <li><strong>4. Solo pagas por clics:</strong> No pagas por aparecer, solo cuando alguien hace clic</li>
-                            <li><strong>5. El tráfico llega inmediatamente:</strong> Desde el día 1 puedes tener visitantes</li>
+                            <li><strong>3. Estableces un presupuesto:</strong> Cuánto estás dispuesto a gastar por día
+                            </li>
+                            <li><strong>4. Solo pagas por clics:</strong> No pagas por aparecer, solo cuando alguien
+                                hace clic</li>
+                            <li><strong>5. El tráfico llega inmediatamente:</strong> Desde el día 1 puedes tener
+                                visitantes</li>
                         </ol>
                     </div>
 
                     <h3>Costos Reales de Google Ads en Chile</h3>
                     <p>
-                        Los costos varían según tu industria, competencia y ubicación. Aquí tienes una tabla con valores aproximados:
+                        Los costos varían según tu industria, competencia y ubicación. Aquí tienes una tabla con valores
+                        aproximados:
                     </p>
 
                     <table class="cost-table">
@@ -261,7 +294,10 @@
                     <div class="highlight-box">
                         <h3 class="text-lg font-bold text-gray-900 mb-2">💰 Ejemplo Real</h3>
                         <p class="text-gray-800">
-                            Un salón de belleza en Santiago invierte $100.000/mes en Google Ads. Con un CPC promedio de $400, obtienen aproximadamente <strong>250 clics al mes</strong>. Si el 10% agenda una cita (25 clientes nuevos) y cada cliente deja $30.000 en promedio, generan <strong>$750.000 en ingresos</strong> de una inversión de $100.000. ROI: 650%.
+                            Un salón de belleza en Santiago invierte $100.000/mes en Google Ads. Con un CPC promedio de
+                            $400, obtienen aproximadamente <strong>250 clics al mes</strong>. Si el 10% agenda una cita
+                            (25 clientes nuevos) y cada cliente deja $30.000 en promedio, generan <strong>$750.000 en
+                                ingresos</strong> de una inversión de $100.000. ROI: 650%.
                         </p>
                     </div>
 
@@ -297,16 +333,22 @@
 
                     <h2>Estrategia #2: SEO - El Maratonista</h2>
                     <p>
-                        El SEO (Optimización para Motores de Búsqueda) es la estrategia de aparecer en Google de forma orgánica, sin pagar por cada clic. Es más lento que Google Ads, pero una vez que funciona, es prácticamente gratis.
+                        El SEO (Optimización para Motores de Búsqueda) es la estrategia de aparecer en Google de forma
+                        orgánica, sin pagar por cada clic. Es más lento que Google Ads, pero una vez que funciona, es
+                        prácticamente gratis.
                     </p>
 
                     <div class="strategy-card">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">¿Cómo Funciona el SEO?</h3>
                         <ol class="space-y-2">
-                            <li><strong>1. Contenido de calidad:</strong> Escribes artículos útiles relacionados con tu negocio</li>
-                            <li><strong>2. Palabras clave estratégicas:</strong> Usas términos que tus clientes buscan</li>
-                            <li><strong>3. Optimización técnica:</strong> Tu sitio carga rápido y es fácil de navegar</li>
-                            <li><strong>4. Enlaces de calidad:</strong> Otros sitios enlazan al tuyo, aumentando tu autoridad</li>
+                            <li><strong>1. Contenido de calidad:</strong> Escribes artículos útiles relacionados con tu
+                                negocio</li>
+                            <li><strong>2. Palabras clave estratégicas:</strong> Usas términos que tus clientes buscan
+                            </li>
+                            <li><strong>3. Optimización técnica:</strong> Tu sitio carga rápido y es fácil de navegar
+                            </li>
+                            <li><strong>4. Enlaces de calidad:</strong> Otros sitios enlazan al tuyo, aumentando tu
+                                autoridad</li>
                             <li><strong>5. Paciencia:</strong> Toma 3-6 meses ver resultados significativos</li>
                         </ol>
                     </div>
@@ -346,13 +388,15 @@
 
                     <h2>Estrategia #3: Redes Sociales - El Networking Digital</h2>
                     <p>
-                        Facebook, Instagram, LinkedIn y TikTok son herramientas poderosas para dirigir tráfico a tu sitio web, especialmente para negocios B2C (venta directa a consumidores).
+                        Facebook, Instagram, LinkedIn y TikTok son herramientas poderosas para dirigir tráfico a tu
+                        sitio web, especialmente para negocios B2C (venta directa a consumidores).
                     </p>
 
                     <div class="strategy-card">
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Costos de Publicidad en Redes Sociales</h3>
                         <ul class="space-y-3">
-                            <li><strong>Facebook/Instagram Ads:</strong> $200-$600 CPC, presupuesto mínimo $50.000/mes</li>
+                            <li><strong>Facebook/Instagram Ads:</strong> $200-$600 CPC, presupuesto mínimo $50.000/mes
+                            </li>
                             <li><strong>LinkedIn Ads:</strong> $1.000-$3.000 CPC (más caro pero ideal para B2B)</li>
                             <li><strong>TikTok Ads:</strong> $300-$800 CPC (excelente para público joven)</li>
                         </ul>
@@ -360,7 +404,8 @@
 
                     <h2>Estrategia #4: Email Marketing - El Vendedor Silencioso</h2>
                     <p>
-                        El email marketing tiene un ROI promedio de 4200% (por cada $1 invertido, obtienes $42). Consiste en construir una lista de correos y enviar ofertas, contenido útil y recordatorios.
+                        El email marketing tiene un ROI promedio de 4200% (por cada $1 invertido, obtienes $42).
+                        Consiste en construir una lista de correos y enviar ofertas, contenido útil y recordatorios.
                     </p>
 
                     <div class="strategy-card">
@@ -380,27 +425,34 @@
                     <div class="space-y-4 my-8">
                         <div class="strategy-card">
                             <h4 class="font-bold text-blue-900 mb-2">Si necesitas resultados RÁPIDOS (1-7 días):</h4>
-                            <p class="text-gray-700">Usa <strong>Google Ads</strong>. Tendrás tráfico desde el primer día, aunque debes estar dispuesto a invertir.</p>
+                            <p class="text-gray-700">Usa <strong>Google Ads</strong>. Tendrás tráfico desde el primer
+                                día, aunque debes estar dispuesto a invertir.</p>
                         </div>
 
                         <div class="strategy-card">
-                            <h4 class="font-bold text-blue-900 mb-2">Si tienes presupuesto limitado y paciencia (3-6 meses):</h4>
-                            <p class="text-gray-700">Enfócate en <strong>SEO</strong>. Es más lento pero sostenible a largo plazo.</p>
+                            <h4 class="font-bold text-blue-900 mb-2">Si tienes presupuesto limitado y paciencia (3-6
+                                meses):</h4>
+                            <p class="text-gray-700">Enfócate en <strong>SEO</strong>. Es más lento pero sostenible a
+                                largo plazo.</p>
                         </div>
 
                         <div class="strategy-card">
-                            <h4 class="font-bold text-blue-900 mb-2">Si vendes productos visuales (ropa, comida, decoración):</h4>
-                            <p class="text-gray-700">Instagram y Facebook Ads son ideales. El contenido visual convierte muy bien.</p>
+                            <h4 class="font-bold text-blue-900 mb-2">Si vendes productos visuales (ropa, comida,
+                                decoración):</h4>
+                            <p class="text-gray-700">Instagram y Facebook Ads son ideales. El contenido visual convierte
+                                muy bien.</p>
                         </div>
 
                         <div class="strategy-card">
-                            <h4 class="font-bold text-blue-900 mb-2">Si ofreces servicios B2B (empresas a empresas):</h4>
+                            <h4 class="font-bold text-blue-900 mb-2">Si ofreces servicios B2B (empresas a empresas):
+                            </h4>
                             <p class="text-gray-700">LinkedIn Ads y email marketing son tus mejores aliados.</p>
                         </div>
 
                         <div class="strategy-card">
                             <h4 class="font-bold text-blue-900 mb-2">Si eres inteligente (recomendado):</h4>
-                            <p class="text-gray-700">Combina <strong>Google Ads para tráfico inmediato + SEO para crecimiento sostenible</strong>. Es la estrategia más efectiva.</p>
+                            <p class="text-gray-700">Combina <strong>Google Ads para tráfico inmediato + SEO para
+                                    crecimiento sostenible</strong>. Es la estrategia más efectiva.</p>
                         </div>
                     </div>
 
@@ -435,41 +487,58 @@
                     <div class="highlight-box">
                         <h3 class="text-lg font-bold text-gray-900 mb-2">⚠️ Error Común</h3>
                         <p class="text-gray-800">
-                            Muchos negocios gastan en Google Ads pero tienen una página web lenta o mal diseñada. Es como gastar en invitar gente a tu tienda pero tener los productos desordenados y el aire acondicionado roto. <strong>Primero asegúrate de que tu página web convierta, luego invierte en tráfico</strong>.
+                            Muchos negocios gastan en Google Ads pero tienen una página web lenta o mal diseñada. Es
+                            como gastar en invitar gente a tu tienda pero tener los productos desordenados y el aire
+                            acondicionado roto. <strong>Primero asegúrate de que tu página web convierta, luego invierte
+                                en tráfico</strong>.
                         </p>
                     </div>
 
                     <h2>Consejos de Experto para Maximizar tu ROI</h2>
                     <ol class="space-y-3 my-6">
-                        <li><strong>1. Empieza con poco y escala:</strong> No gastes todo tu presupuesto de golpe. Prueba con $50.000-$100.000 el primer mes, analiza resultados y ajusta.</li>
-                        <li><strong>2. Mide TODO:</strong> Usa Google Analytics para saber exactamente de dónde viene tu tráfico y qué hacen los visitantes.</li>
-                        <li><strong>3. Optimiza tu landing page:</strong> Una página de aterrizaje bien diseñada puede duplicar tus conversiones sin gastar más en tráfico.</li>
-                        <li><strong>4. Prueba diferentes mensajes:</strong> Crea 3-4 versiones de tus anuncios y quédate con el que mejor funciona.</li>
-                        <li><strong>5. Remarketing es oro:</strong> El 97% de los visitantes no compran en su primera visita. El remarketing les recuerda que vuelvan.</li>
+                        <li><strong>1. Empieza con poco y escala:</strong> No gastes todo tu presupuesto de golpe.
+                            Prueba con $50.000-$100.000 el primer mes, analiza resultados y ajusta.</li>
+                        <li><strong>2. Mide TODO:</strong> Usa Google Analytics para saber exactamente de dónde viene tu
+                            tráfico y qué hacen los visitantes.</li>
+                        <li><strong>3. Optimiza tu landing page:</strong> Una página de aterrizaje bien diseñada puede
+                            duplicar tus conversiones sin gastar más en tráfico.</li>
+                        <li><strong>4. Prueba diferentes mensajes:</strong> Crea 3-4 versiones de tus anuncios y quédate
+                            con el que mejor funciona.</li>
+                        <li><strong>5. Remarketing es oro:</strong> El 97% de los visitantes no compran en su primera
+                            visita. El remarketing les recuerda que vuelvan.</li>
                     </ol>
 
                     <h2>Conclusión</h2>
                     <p>
-                        Generar tráfico web no es magia, es una combinación de estrategia, inversión inteligente y constancia. Ya sea que elijas Google Ads para resultados inmediatos o SEO para crecimiento sostenible (o idealmente, ambos), lo importante es empezar HOY.
+                        Generar tráfico web no es magia, es una combinación de estrategia, inversión inteligente y
+                        constancia. Ya sea que elijas Google Ads para resultados inmediatos o SEO para crecimiento
+                        sostenible (o idealmente, ambos), lo importante es empezar HOY.
                     </p>
                     <p>
-                        Recuerda: <strong>una página web sin tráfico es como una tienda en el desierto</strong>. Pero con las estrategias correctas, puedes convertir tu sitio web en una máquina de generar clientes y ventas.
+                        Recuerda: <strong>una página web sin tráfico es como una tienda en el desierto</strong>. Pero
+                        con las estrategias correctas, puedes convertir tu sitio web en una máquina de generar clientes
+                        y ventas.
                     </p>
                     <p>
-                        En PaginasFast no solo creamos tu sitio web, también te asesoramos sobre las mejores estrategias de marketing digital para tu industria específica.
+                        En PaginasFast no solo creamos tu sitio web, también te asesoramos sobre las mejores estrategias
+                        de marketing digital para tu industria específica.
                     </p>
                 </div>
 
-                <div class="max-w-3xl mx-auto mt-16 bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl p-8 text-center text-white shadow-2xl">
+                <div
+                    class="max-w-3xl mx-auto mt-16 bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl p-8 text-center text-white shadow-2xl">
                     <h3 class="text-2xl font-bold mb-4">¿Listo para Atraer Más Clientes?</h3>
                     <p class="text-lg mb-6 text-white/90">
-                        Creamos tu página web optimizada para convertir visitantes en clientes y te asesoramos en estrategias de marketing digital.
+                        Creamos tu página web optimizada para convertir visitantes en clientes y te asesoramos en
+                        estrategias de marketing digital.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#" class="open-contact-modal bg-white text-green-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors inline-block">
+                        <a href="#"
+                            class="open-contact-modal bg-white text-green-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors inline-block">
                             Cotizar Mi Página Web
                         </a>
-                        <a href="/#servicios" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors inline-block">
+                        <a href="/#servicios"
+                            class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors inline-block">
                             Ver Planes
                         </a>
                     </div>
@@ -486,25 +555,33 @@
     </main>
 
     <!-- Modal de Contacto (mismo estilo que home) -->
-    <div id="contact-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
-        <div class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
-            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
+    <div id="contact-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50 hidden opacity-0">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-md w-full relative transform scale-95 transition-transform duration-300">
+            <button id="close-modal-btn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">&times;</button>
             <h3 class="text-2xl font-bold text-gray-900 mb-2">Asesoría gratuita para tu web</h3>
-            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu negocio.</p>
+            <p class="text-gray-600 mb-6">Es gratis. Déjanos tus datos y te guiaremos paso a paso para impulsar tu
+                negocio.</p>
             <form id="contact-form">
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                    <input type="text" id="name-modal" name="name" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="text" id="name-modal" name="name" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                    <input type="email" id="email-modal" name="email" required class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="email" id="email-modal" name="email" required
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
                 <div class="mb-6">
                     <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (Opcional)</label>
-                    <input type="tel" id="contact-phone-input" name="phone" class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
+                    <input type="tel" id="contact-phone-input" name="phone"
+                        class="w-full p-3 bg-gray-100 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500">
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center min-h-[48px]">
                     <span class="btn-text">Enviar Solicitud</span>
                     <div class="loader loader-dark hidden"></div>
                 </button>
