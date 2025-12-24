@@ -110,7 +110,7 @@
 
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
-            <a href="/" class="flex items-center gap-2 group">
+            <a href="#" onclick="window.location.reload(); return false;" class="flex items-center gap-2 group">
                 <div
                     class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
                     <span class="font-bold text-white text-xs">PF</span>
@@ -349,10 +349,16 @@
                 </div>
 
                 <div
-                    class="glass-card rounded-3xl p-8 group flex flex-col justify-center border-amber-500/30 bg-amber-900/10">
-                    <h3 class="text-lg font-bold text-amber-400 mb-4 uppercase tracking-wider text-xs">Incluido Gratis
-                        (Valor $35.000/año)
-                    </h3>
+                    class="glass-card rounded-3xl p-8 group flex flex-col justify-center border-amber-500/40 bg-gradient-to-br from-amber-600/20 to-amber-900/40 shadow-xl shadow-amber-900/20 transform hover:-translate-y-1 transition-all">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        <h3 class="text-lg font-bold text-amber-400 uppercase tracking-widest text-xs">Regalo Exclusivo
+                        </h3>
+                    </div>
+
+                    <p class="text-white text-3xl font-bold mb-1">Incluido Gratis</p>
+                    <p class="text-amber-200/80 text-sm mb-6 font-medium">(Valor real: $35.000/año)</p>
+
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-white font-medium">
                             <span
@@ -595,7 +601,7 @@
 
 
 
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 relative">
+        <section id="servicios" class="max-w-6xl mx-auto px-4 sm:px-6 mb-24 relative">
 
             <div class="text-center mb-16">
                 <span class="text-blue-400 font-semibold tracking-wider text-xs uppercase">Simple y Rápido</span>
@@ -727,6 +733,38 @@
                         textos o fotos tú mismo si quieres, o puedes pedirnos cambios puntuales con un costo
                         preferencial.</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 mb-24 text-center">
+            <div
+                class="bg-gradient-to-b from-blue-900/20 to-transparent border border-blue-500/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50">
+                </div>
+
+                <h2 class="text-3xl font-bold text-white mb-4">¿Listo para empezar tu proyecto?</h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                    No dejes pasar esta oportunidad. Obtén tu sitio web profesional y empieza a vender más.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/56930153632?text=Hola,%20quiero%20reservar%20mi%20cupo%20antes%20de%20que%20se%20agoten."
+                        target="_blank"
+                        class="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2">
+                        Reservar mi Cupo Ahora
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="mt-6 text-xs text-slate-500">
+                    <span class="text-emerald-400 font-bold">●</span> Oferta limitada a 3 cupos diarios.
+                </p>
             </div>
         </section>
 
