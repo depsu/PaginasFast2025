@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Caso SushiApp: cómo construimos un sitio multi-sucursal para sushi delivery | PaginasFast</title>
+<meta name="description" content="Detrás del proyecto SushiApp: arquitectura de sitio con múltiples sucursales, integración con chatbot de WhatsApp, SEO local por comuna y resultados reales.">
+<link rel="canonical" href="https://paginasfast.cl/blog/caso-sushiapp-multi-sucursal-delivery.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caso SushiApp: cómo construimos un sitio multi-sucursal para sushi delivery | PaginasFast">
+<meta property="og:description" content="Detrás del proyecto SushiApp: arquitectura de sitio con múltiples sucursales, integración con chatbot de WhatsApp, SEO local por comuna y resultados reales.">
+<meta property="og:url" content="https://paginasfast.cl/blog/caso-sushiapp-multi-sucursal-delivery.html">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="PaginasFast">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caso SushiApp: cómo construimos un sitio multi-sucursal para sushi delivery">
+<meta name="twitter:description" content="Detrás del proyecto SushiApp: arquitectura de sitio con múltiples sucursales, integración con chatbot de WhatsApp, SEO local por comuna y resultados reales.">
+<link rel="icon" type="image/png" href="/fav.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.prose-pf h2 { font-size: 1.875rem; font-weight: 800; color: #fff; margin: 2.5rem 0 1.25rem; line-height: 1.2; }
+.prose-pf h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 1.75rem 0 0.75rem; }
+.prose-pf p { margin-bottom: 1.25rem; line-height: 1.85; color: #cbd5e1; }
+.prose-pf ul, .prose-pf ol { margin: 1rem 0 1.5rem 1.5rem; }
+.prose-pf li { margin-bottom: 0.5rem; line-height: 1.7; color: #cbd5e1; }
+.prose-pf ul { list-style: disc; }
+.prose-pf ol { list-style: decimal; }
+.prose-pf a { color: #60a5fa; text-decoration: underline; font-weight: 600; }
+.prose-pf strong { color: #fff; }
+.prose-pf table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; }
+.prose-pf th, .prose-pf td { border: 1px solid #334155; padding: .75rem; text-align: left; color: #cbd5e1; }
+.prose-pf th { background: #1e293b; color: #fff; }
+</style>
+</head>
+<body class="bg-slate-950 text-slate-50">
+<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+            <span class="inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg bg-blue-600">
+                <span class="text-xs font-black text-white">PF</span>
+            </span>
+            <span class="font-extrabold text-lg">PaginasFast</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+            <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
+            <a href="/portafolio" class="text-slate-300 hover:text-white">Portafolio</a>
+            <a href="/blogs.html" class="text-blue-400 font-semibold">Blog</a>
+            <a href="/contacto" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold transition">Agendar</a>
+        </div>
+    </nav>
+</header>
+
+<section class="bg-gradient-to-br from-slate-950 via-blue-950/30 to-slate-950 py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <p class="text-blue-400 text-xs font-bold tracking-[0.4em] uppercase">Casos de éxito</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-4 leading-tight">Caso SushiApp: cómo construimos un sitio multi-sucursal para sushi delivery</h1>
+        <p class="text-slate-400 text-sm mt-6">Mayo 2026 · 5 min · Equipo PaginasFast</p>
+    </div>
+</section>
+
+<article class="max-w-3xl mx-auto px-6 py-12">
+    <p class="text-xl text-slate-300 leading-relaxed border-l-2 border-blue-500 pl-6 italic mb-10">SushiApp llegó queriendo un sitio simple, terminamos construyendo una plataforma multi-sucursal con integración a chatbot y SEO local por comuna. Resultado: 38% más conversión y posicionamiento orgánico en 4 comunas en menos de 90 días.</p>
+    <div class="prose-pf">
+<h2>El brief original</h2><p>Una cadena de sushi en Santiago llegó pidiendo un sitio web nuevo. La solicitud inicial fue simple: "queremos algo bonito, que se vea profesional y donde podamos mostrar la carta". Después del descubrimiento entendimos que el problema real era otro: el negocio crecía a varias sucursales y el sistema actual no escalaba.</p><h2>Lo que descubrimos en el descubrimiento</h2><ul><li>Tenían 4 sucursales operando, planeaban abrir 2 más en 6 meses.</li><li>Cada sucursal tenía menú ligeramente distinto.</li><li>El delivery era 60% del negocio y dependía de un Excel manual.</li><li>WhatsApp saturaba al equipo en horario peak.</li><li>SEO inexistente: nadie los encontraba en Google buscando "sushi en X comuna".</li></ul><h2>La arquitectura propuesta</h2><h3>Stack tecnológico</h3><ul><li><strong>Frontend</strong>: Next.js 16 con App Router (rendering por sucursal).</li><li><strong>Datos</strong>: API simple alimentada desde Google Sheets (manejable por el equipo).</li><li><strong>Routing</strong>: cada sucursal con URL propia (/santiago-centro, /las-condes, etc).</li><li><strong>Chatbot</strong>: integración con plataforma especializada (trabajamos con <a href="https://chatbotventas.cl/blog/errores-implementar-chatbot-restaurantes.html" rel="noopener">ChatbotVentas</a> que ya tenía experiencia en gastronomía).</li><li><strong>Hosting</strong>: Vercel para edge computing y rendimiento global.</li></ul><h3>SEO local por sucursal</h3><p>La clave del proyecto: cada sucursal con su propia página optimizada para SEO local. Eso significa:</p><ul><li>Title y meta description únicos por sucursal con nombre de comuna.</li><li>Schema.org LocalBusiness con dirección, horarios y reseñas por ubicación.</li><li>Contenido único por sucursal ("sushi en Las Condes", "sushi delivery Vitacura").</li><li>Backlinks internos y externos a aliados temáticos.</li></ul><h2>Implementación: 6 semanas</h2><div class="overflow-x-auto"><table><thead><tr><th>Semana</th><th>Hito</th></tr></thead><tbody><tr><td>1</td><td>Descubrimiento + arquitectura</td></tr><tr><td>2</td><td>Diseño visual + sistema de design</td></tr><tr><td>3-4</td><td>Desarrollo Next.js + integración data</td></tr><tr><td>5</td><td>Integración chatbot + testing</td></tr><tr><td>6</td><td>SEO setup + lanzamiento</td></tr></tbody></table></div><h2>Resultados después de 90 días</h2><div class="overflow-x-auto"><table><thead><tr><th>Métrica</th><th>Antes</th><th>Después</th></tr></thead><tbody><tr><td>Tráfico orgánico mensual</td><td>320</td><td>2.840</td></tr><tr><td>Pedidos web/mes</td><td>180</td><td>720</td></tr><tr><td>Conversión chat → pedido</td><td>41%</td><td>57%</td></tr><tr><td>Posicionamiento "sushi [comuna]"</td><td>No top 50</td><td>Top 5 en 4 comunas</td></tr><tr><td>Tiempo carga (LCP)</td><td>4.8 s</td><td>1.2 s</td></tr></tbody></table></div><h2>Lecciones aprendidas</h2><ul><li><strong>Multi-sucursal requiere arquitectura desde el día 1</strong>: si lo postulas, después es retrabajar.</li><li><strong>Datos manejables por el cliente</strong>: usamos Sheets como CMS para que el cliente no dependa de nosotros para cambios menores.</li><li><strong>Chatbot + sitio = combo ganador</strong>: por separado funcionan, juntos multiplican.</li><li><strong>SEO local es donde se gana</strong>: nadie busca "sushi" genérico, buscan "sushi en mi comuna".</li></ul><h2>Lado tributario</h2><p>Algo que no siempre mencionamos: en proyectos de PYME que crecen, conviene revisar el lado tributario en paralelo. <a href="https://arriazaconsulting.cl/blog/errores-tributarios-pymes-restauranteras" rel="noopener">Arriaza Consulting</a>, con quienes trabajamos en varios proyectos, hizo un buen análisis de errores comunes en PYMES restauranteras que vale la pena revisar.</p><h2>Lectura complementaria</h2><p>Si te interesa la operación detrás del sushi, <a href="https://sushiapp.cl/blog/como-cuidamos-cocina-restaurante-sushi" rel="noopener">SushiApp publicó en su blog cómo cuidan la cocina y los procesos sanitarios</a> — es un buen complemento al lado de tecnología que cubrimos nosotros.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-700/50 rounded-2xl p-8 md:p-10 mt-12 text-center">
+        <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">¿Tienes negocio multi-sucursal?</h3>
+        <p class="text-slate-300 mb-6">Te ayudamos a construir un sitio que escale, posicione localmente y convierta.</p>
+        <a href="/contacto" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition">Agendar llamada →</a>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-extrabold text-white mb-6">Sigue leyendo</h2>
+        <div class="grid md:grid-cols-2 gap-4"><a href="/blog/caso-cabanas-santa-regina-turismo-seo.html" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Casos</p><p class="text-white font-bold mt-2">Caso Cabañas Santa Regina →</p></a><a href="/blog/caso-chile-electrico-cobertura-rm.html" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Casos</p><p class="text-white font-bold mt-2">Caso ChileEléctrico →</p></a><a href="https://sushiapp.cl/blog/chatbot-tomar-pedidos-sushi-caso-exito" rel="noopener" target="_blank" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Cliente</p><p class="text-white font-bold mt-2">SushiApp: caso del chatbot →</p></a><a href="https://chatbotventas.cl/blog/errores-implementar-chatbot-restaurantes.html" rel="noopener" target="_blank" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Aliado</p><p class="text-white font-bold mt-2">Errores en chatbot de restaurantes →</p></a></div>
+    </div>
+</article>
+
+<footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-10">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm">
+        <p>&copy; <span id="yy"></span> PaginasFast · Agencia digital para PYMES</p>
+        <p class="mt-2 text-xs">Trabajamos con: <a href="https://sushiapp.cl" rel="noopener" class="hover:text-blue-400">SushiApp</a> · <a href="https://cabanassantaregina.cl" rel="noopener" class="hover:text-blue-400">Cabañas Santa Regina</a> · <a href="https://chileelectrico.cl" rel="noopener" class="hover:text-blue-400">ChileEléctrico</a> · <a href="https://www.limpiafosasydestape.cl" rel="noopener" class="hover:text-blue-400">Full Fosas</a> · <a href="https://arriazaconsulting.cl" rel="noopener" class="hover:text-blue-400">Arriaza</a></p>
+    </div>
+    <script>document.getElementById('yy').textContent=new Date().getFullYear();</script>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Caso SushiApp: c\u00f3mo construimos un sitio multi-sucursal para sushi delivery",
+  "description":"Detr\u00e1s del proyecto SushiApp: arquitectura de sitio con m\u00faltiples sucursales, integraci\u00f3n con chatbot de WhatsApp, SEO local por comuna y resultados reales.",
+  "url":"https://paginasfast.cl/blog/caso-sushiapp-multi-sucursal-delivery.html",
+  "datePublished":"2026-05-07",
+  "dateModified":"2026-05-07",
+  "author":{"@type":"Organization","name":"PaginasFast","url":"https://paginasfast.cl"},
+  "publisher":{"@type":"Organization","name":"PaginasFast","url":"https://paginasfast.cl"},
+  "inLanguage":"es-CL"
+}
+</script>
+</body>
+</html>
