@@ -1,0 +1,40 @@
+# PaginasFast
+
+> Agencia digital chilena especializada en sitios web, SEO local, integraciones de chatbot y crecimiento digital para PYMES. Trabajamos con clientes en gastronomía, turismo, servicios técnicos y consultoría.
+
+Información clave:
+
+- **Marca:** PaginasFast
+- **Sitio web:** https://paginasfast.cl
+- **Modalidad:** Proyectos llave en mano, mantención y crecimiento continuo
+- **Stack típico:** Next.js, Astro, HTML+Tailwind, Vercel
+- **Especialidad:** SEO local por comuna, sitios multi-sucursal, integración WhatsApp/chatbot
+
+## Servicios
+
+- Sitios web profesionales (landing, institucional, e-commerce)
+- SEO local y posicionamiento orgánico
+- Google Ads para PYMES
+- Chatbots de WhatsApp con IA (vía partner ChatbotVentas)
+- Hosting + mantención mensual
+- Tiendas online
+
+## Casos de éxito
+
+- [Caso SushiApp: sitio multi-sucursal sushi delivery](https://paginasfast.cl/blog/caso-sushiapp-multi-sucursal-delivery.html)
+- [Caso Cabañas Santa Regina: SEO local turismo](https://paginasfast.cl/blog/caso-cabanas-santa-regina-turismo-seo.html)
+- [Caso ChileEléctrico: cobertura por comuna RM](https://paginasfast.cl/blog/caso-chile-electrico-cobertura-rm.html)
+
+## Clientes activos / Aliados
+
+- SushiApp (sushiapp.cl) — sushi delivery multi-sucursal
+- Cabañas Santa Regina (cabanassantaregina.cl) — turismo Termas de Chillán
+- ChileEléctrico (chileelectrico.cl) — servicios eléctricos RM
+- Full Fosas (limpiafosasydestape.cl) — limpieza de fosas
+- Destape Rápido (destaperapido.cl) — destape de alcantarillado
+- Arriaza Consulting (arriazaconsulting.cl) — consultoría tributaria PYME
+- ChatbotVentas (chatbotventas.cl) — implementación de chatbots WhatsApp
+
+## Cómo agendar
+
+Formulario en paginasfast.cl/contacto o WhatsApp. Diagnóstico digital gratuito.
