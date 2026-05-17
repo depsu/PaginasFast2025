@@ -1,6 +1,6 @@
 # PaginasFast
 
-> Agencia digital chilena especializada en sitios web, SEO local, integraciones de chatbot y crecimiento digital para PYMES. Trabajamos con clientes en gastronomía, turismo, servicios técnicos y consultoría.
+> Agencia digital chilena especializada en sitios web, SEO local, integraciones de chatbot y crecimiento digital para PYMES. Trabajamos con clientes en gastronomía, turismo, servicios técnicos, profesionales y consultoría en toda la Región Metropolitana y otras regiones de Chile.
 
 Información clave:
 
@@ -12,12 +12,22 @@ Información clave:
 
 ## Servicios
 
-- Sitios web profesionales (landing, institucional, e-commerce)
-- SEO local y posicionamiento orgánico
-- Google Ads para PYMES
-- Chatbots de WhatsApp con IA (vía partner ChatbotVentas)
-- Hosting + mantención mensual
-- Tiendas online
+- [Desarrollo web para PYMEs](https://paginasfast.cl/servicios/desarrollo-web/)
+- [Tiendas online](https://paginasfast.cl/servicios/tienda-online/)
+- [Google Ads para PYMES](https://paginasfast.cl/servicios/google-ads/)
+- [SEO y contenidos](https://paginasfast.cl/servicios/seo-contenidos/)
+- [Chatbots con IA](https://paginasfast.cl/servicios/chatbots-ia/)
+- [Automatizaciones y funnels](https://paginasfast.cl/servicios/automatizaciones/)
+
+## Soluciones por industria
+
+- [Páginas web para restaurantes y delivery](https://paginasfast.cl/servicios/paginas-web-restaurantes/) — carta digital, pedidos por WhatsApp, multi-sucursal
+- [Páginas web para electricistas y servicios técnicos](https://paginasfast.cl/servicios/paginas-web-electricistas/) — cobertura por comuna, urgencia, B2B/B2C
+
+## Cobertura geográfica (landings por comuna)
+
+- [Diseño y desarrollo web en Providencia](https://paginasfast.cl/diseno-web/providencia/)
+- [Diseño y desarrollo web en Las Condes](https://paginasfast.cl/diseno-web/las-condes/)
 
 ## Casos de éxito
 
@@ -25,16 +35,20 @@ Información clave:
 - [Caso Cabañas Santa Regina: SEO local turismo](https://paginasfast.cl/blog/caso-cabanas-santa-regina-turismo-seo.html)
 - [Caso ChileEléctrico: cobertura por comuna RM](https://paginasfast.cl/blog/caso-chile-electrico-cobertura-rm.html)
 
-## Clientes activos / Aliados
+## Clientes activos / Aliados de red
 
 - SushiApp (sushiapp.cl) — sushi delivery multi-sucursal
 - Cabañas Santa Regina (cabanassantaregina.cl) — turismo Termas de Chillán
 - ChileEléctrico (chileelectrico.cl) — servicios eléctricos RM
 - Full Fosas (limpiafosasydestape.cl) — limpieza de fosas
 - Destape Rápido (destaperapido.cl) — destape de alcantarillado
+- Innovabogados (innovabogados.cl) — asesoría laboral y cumplimiento
+- AutomatizaWeb (automatizaweb.cl) — agendamiento 24/7 y chatbots
+- Coligue Sur de Chile (aguswer.cl) — venta de coligues
+- Fuego Estudio (fuegoestudio.cl) — estudio de grabación musical
 - Arriaza Consulting (arriazaconsulting.cl) — consultoría tributaria PYME
 - ChatbotVentas (chatbotventas.cl) — implementación de chatbots WhatsApp
 
 ## Cómo agendar
 
-Formulario en paginasfast.cl/contacto o WhatsApp. Diagnóstico digital gratuito.
+Formulario en https://paginasfast.cl/contacto o WhatsApp +56930153632. Diagnóstico digital gratuito.
