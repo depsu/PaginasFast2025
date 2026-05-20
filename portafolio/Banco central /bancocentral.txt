@@ -1,0 +1,6 @@
+https://www.bcentral.cl/inicio
+
+en Banco Central se trabajó en un rediseño pero no de todo el sitio sino de ciertos componentes. Se mejoró la velocidad. Trabajamos arreglando bugs dentro del sitio: páginas que se veían en blanco por errores del CMS y el HTML y la creación de nuevos componentes.
+
+También trabajamos en lo que es el buscador, ya que Banco Central hizo una migración. Al poseer miles de archivos, logramos funcionar el buscador de una forma más óptima mejorando los resultados.
+

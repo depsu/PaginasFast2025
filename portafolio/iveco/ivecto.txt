@@ -1,0 +1,7 @@
+en el 2024, se desarrollo un rediseño para la empresa iveco de andesmotor... el cual es un desarrollo basado en el cms liferay...
+
+
+por la magnitud del proyecto, lo realizamos con un grupo de personas en un tiempo de 2 meses, creamos un diseño con figma en conversación con el cliente luego una vez aprobado creamos el sitio web con su nueva estructura... existieron elementos como cotizador, los cuales tienen mucha lógica backend detras... solo nos preocupamos de cambiar el diseño con los nuevos patrones sin modificar el funcionamiento, ahorrando un costo al cliente....y velocidad para la entrega... estos componentes están hecho en Java... el front es con html e integrado con la lógica de liferay el cms (que el cliente ya llevaba años usando y debíamos seguir usando ese)
+
+
+

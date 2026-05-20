@@ -1,0 +1,5 @@
+https://www.movistar.com.pe/ 
+
+En Movistar se crearon nuevos componentes como carruseles para la venta de planes y teléfonos, con interacción con WhatsApp o formularios directos de la página. Se crearon banners que detectan la ubicación de la persona para mostrar algo con más precisión.  
+  
+Se hizo un trabajo en lo que es el SEO para mejorar el posicionamiento de la página web y el tiempo de carga. Se trabajó también en una migración de SMS de Liferay a WordPress, por un tema económico de la empresa que necesitaba ahorrar costos. WordPress, al ser un poco más económico, se hizo la migración de forma correcta y hoy en día Movistar Perú está funcionando en WordPress.

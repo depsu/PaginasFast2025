@@ -1,0 +1,10 @@
+https://www.siid.cl/web/siid
+
+Creamos el rediseño de este portal, que es del banco central, ellos ya tenian un diseño base , pero se les realizó un rediseño completo en figma, y luego se pasó a la maquetación y desarrollo del sitio web.
+
+el desarrollo fue con la tecnología de liferay, html y css... logrando que los trabajadores puedan administrar el sitio, cambiando los texto y fotos según los nuevos eventos... 
+
+
+
+
+El desarrollo tuvo un mes de trabajo. Este sitio es informativo y no tiene tanto a quién detrás. 

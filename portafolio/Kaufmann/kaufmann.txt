@@ -1,0 +1,8 @@
+creación del portal https://shesmercedes.cl/ 
+
+diseño e intregración con cms... para que los trabajadores puedan administrar el sitio, cambiando los texto y fotos según los nuevos eventos... 
+
+rediseño de https://kaufmann.cl/ Se hizo un rediseño de look and feel, creación de nuevos mini sitios para electro movilidad, innovación, pago online y corporativo. 
+
+rediseño total de https://www.fuso.cl.  Se hizo prácticamente un nuevo sitio. Se hizo un rediseño mucho más moderno. Mi labor, más que de diseñar, eso lo hizo otra área. Lo que yo hice fue tomar el diseño de Figma y crearlo con código. Hasta el día de hoy se conserva el mismo diseño de 2023.  está hecho con tecnologias cms para su fácil administración para el area de marketing 
+

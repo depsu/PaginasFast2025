@@ -20,9 +20,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Portafolio de sitios reales | PaginasFast – Casos de éxito</title>
+  <title>Portafolio de proyectos reales | PaginasFast – Casos enterprise y PYME</title>
   <meta name="description"
-    content="Revisa ejemplos reales de sitios web, tiendas online, automatizaciones y proyectos con IA realizados por PaginasFast para negocios en Chile.">
+    content="Casos de éxito reales: Aguas Andinas, Banco Central, Correos de Chile, Kaufmann (Mercedes-Benz, Fuso), Movistar Perú, Iveco, Destape Rápido e Innovabogados. Rediseños, CMS Liferay, SEO y desarrollo a medida.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://paginasfast.cl/portafolio">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portafolio de proyectos reales | PaginasFast">
+  <meta property="og:description"
+    content="Trabajos en marcas como Aguas Andinas, Banco Central, Correos de Chile, Kaufmann, Movistar Perú, Iveco y más.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://paginasfast.cl/portafolio">
+  <meta property="og:image" content="/og.jpg">
 
   <link rel="icon" type="image/png" href="/fav.ico">
 
@@ -78,6 +88,95 @@
 
     .logo-pill {
       background: radial-gradient(circle at top left, rgba(59, 130, 246, .45), rgba(37, 99, 235, .9));
+    }
+
+    /* Marquesina de logos */
+    .marquee {
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      gap: 56px;
+      animation: marquee 35s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-track img {
+      height: 38px;
+      width: auto;
+      filter: grayscale(100%) brightness(2);
+      opacity: .75;
+      transition: opacity .2s ease, filter .2s ease;
+    }
+    .marquee-track img:hover {
+      filter: none;
+      opacity: 1;
+    }
+
+    /* Screenshot con efecto navegador */
+    .browser-frame {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1px solid rgba(148, 163, 184, .25);
+      box-shadow: 0 30px 60px rgba(2, 6, 23, .55);
+    }
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: #0b1220;
+      border-bottom: 1px solid rgba(148, 163, 184, .15);
+    }
+    .browser-bar span {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: #334155;
+    }
+    .browser-bar span:nth-child(1) { background: #ef4444; }
+    .browser-bar span:nth-child(2) { background: #f59e0b; }
+    .browser-bar span:nth-child(3) { background: #22c55e; }
+    .browser-bar .url {
+      flex: 1;
+      margin-left: 8px;
+      font-size: 11px;
+      color: #94a3b8;
+      background: #020617;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(148, 163, 184, .15);
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .browser-screenshot {
+      position: relative;
+      max-height: 260px;
+      overflow: hidden;
+    }
+    .browser-screenshot img {
+      width: 100%;
+      display: block;
+    }
+    .browser-screenshot::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, #0f172a);
+      pointer-events: none;
     }
 
     .fab-wa {
@@ -138,11 +237,6 @@
       border-left-color: #0f172a;
     }
     .fab-wa:hover .fab-tip { opacity: 1; transform: translateY(-50%) translateX(-4px); }
-
-    .project-thumb {
-      background-size: cover;
-      background-position: center;
-    }
   </style>
 </head>
 
@@ -153,23 +247,15 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-586BLT8Z" height="0" width="0"
       style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2">
-        <span class="logo-pill inline-flex h-9 w-9 rounded-xl items-center justify-center shadow-lg">
-          <span class="text-xs font-black tracking-tight text-slate-50">PF</span>
-        </span>
-        <div class="flex flex-col leading-tight">
-          <span class="font-extrabold tracking-tight text-slate-50 text-lg">PaginasFast</span>
-          <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Growth + IA</span>
-        </div>
+      <a href="/" class="flex items-center gap-2" aria-label="PaginasFast — Inicio">
+        <img src="/images/logo-paginasfast-blanco.png" alt="PaginasFast" class="h-9 w-auto sm:h-10" loading="eager">
+        <span class="hidden sm:inline-block text-[11px] uppercase tracking-[0.22em] text-slate-400 border-l border-slate-700 pl-3 ml-1">Growth + IA</span>
       </a>
 
-      <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-8 text-sm">
         <a href="/servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
         <a href="/portafolio" class="text-primary font-semibold">Portafolio</a>
@@ -185,7 +271,6 @@
         </button>
       </div>
 
-      <!-- Mobile button -->
       <button id="mobile-menu-button"
         class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -195,7 +280,6 @@
       </button>
     </nav>
 
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
       <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
         <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
@@ -210,9 +294,9 @@
     </div>
   </header>
 
-  <main class="hero-gradient min-h-screen">
-    <!-- HERO PORTAFOLIO -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-14 lg:pt-14 lg:pb-18">
+  <main class="hero-gradient">
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16">
       <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
         <a href="/" class="hover:text-slate-100">Inicio</a>
         <span>/</span>
@@ -224,48 +308,48 @@
           <div
             class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700 px-3 py-1 text-[11px] font-medium text-slate-200 mb-5">
             <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            Casos de éxito · Sitios, tiendas, automatizaciones y más
+            Casos reales · marcas enterprise y PYME en Chile y Perú
           </div>
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
-            Portafolio de proyectos reales
-            <span class="block text-primary">hechos para conseguir resultados, no solo “verse bonito”.</span>
+            Hemos trabajado con marcas como
+            <span class="block text-primary">Banco Central, Correos de Chile, Movistar y Kaufmann.</span>
           </h1>
 
           <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
-            Aquí puedes ver ejemplos de sitios web, tiendas online y proyectos con automatización e IA
-            que hemos realizado para negocios de distintos rubros en Chile.
+            Rediseños, sitios corporativos, intranets y portales sobre CMS Liferay y WordPress.
+            Mismo equipo y mismas metodologías que aplicamos a tu negocio.
           </p>
 
           <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-slate-300">
             <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1">
               <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
-              Sitios rápidos y optimizados
+              Liferay / WordPress / CMS propios
             </div>
             <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1">
               <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              Automatizaciones conectadas
+              SEO + performance
             </div>
             <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1">
               <span class="h-1.5 w-1.5 rounded-full bg-violet-400"></span>
-              IA para responder y vender mejor
+              Rediseño UI/UX desde Figma
             </div>
           </div>
 
           <div class="mt-7 flex flex-wrap items-center gap-3">
             <button id="cta-hero"
               class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-soft hover:bg-primary-dark">
-              Quiero un proyecto parecido
+              Quiero un proyecto así
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
             </button>
 
             <a href="#proyectos"
               class="inline-flex items-center gap-2 rounded-full border border-slate-600/80 px-5 py-3 text-sm sm:text-base font-semibold text-slate-200 hover:border-slate-300 hover:text-white">
-              Ver proyectos
+              Ver casos
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -274,54 +358,85 @@
           </div>
         </div>
 
-        <!-- Panel lateral mini métricas -->
+        <!-- Tarjeta resumen -->
         <div class="relative">
           <div
             class="absolute -inset-0.5 bg-gradient-to-tr from-blue-500/40 via-sky-400/30 to-violet-300/40 opacity-60 blur-3xl">
           </div>
           <div class="relative glass rounded-3xl p-6 sm:p-7 shadow-soft">
-            <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Resumen</p>
-            <h2 class="mt-2 text-lg font-semibold text-slate-50">Qué solemos entregar en cada proyecto</h2>
+            <p class="text-xs font-semibold uppercase tracking-[0.23em] text-slate-400">Track record</p>
+            <h2 class="mt-2 text-lg font-semibold text-slate-50">Lo que entregamos a este nivel</h2>
 
             <ul class="mt-4 space-y-2 text-xs sm:text-sm text-slate-200">
-              <li>• Sitio rápido, claro y fácil de usar desde el celular.</li>
-              <li>• Integración con WhatsApp, formularios, correos y/o CRM.</li>
-              <li>• Textos pensados para explicar en simple y convertir visitas en contactos.</li>
-              <li>• Bases para campañas de Google Ads y redes sociales.</li>
+              <li>• Rediseños completos en sitios con cientos de páginas.</li>
+              <li>• Componentes administrables para equipos de marketing.</li>
+              <li>• Migraciones (Liferay ↔ WordPress) sin perder SEO.</li>
+              <li>• Buscadores optimizados sobre miles de documentos.</li>
+              <li>• Integración con cotizadores y lógica backend Java.</li>
             </ul>
 
-            <div class="mt-4 grid grid-cols-3 gap-3 text-[11px] text-slate-300">
-              <div>
-                <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Rubros</p>
-                <p class="mt-1 font-semibold text-slate-50">Servicios, educación, turismo, legal y más.</p>
+            <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+              <div class="rounded-xl border border-slate-700/60 bg-slate-900/60 p-2">
+                <p class="text-xl font-extrabold text-slate-50">9+</p>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-slate-400">Casos</p>
               </div>
-              <div>
-                <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Enfoque</p>
-                <p class="mt-1 font-semibold text-slate-50">Resultados medibles (leads, reservas, consultas).</p>
+              <div class="rounded-xl border border-slate-700/60 bg-slate-900/60 p-2">
+                <p class="text-xl font-extrabold text-slate-50">2</p>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-slate-400">Países</p>
               </div>
-              <div>
-                <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Soporte</p>
-                <p class="mt-1 font-semibold text-slate-50">Acompañamiento post-lanzamiento según plan.</p>
+              <div class="rounded-xl border border-slate-700/60 bg-slate-900/60 p-2">
+                <p class="text-xl font-extrabold text-slate-50">+1k</p>
+                <p class="text-[10px] uppercase tracking-[0.16em] text-slate-400">Páginas</p>
               </div>
             </div>
 
             <button id="cta-card"
               class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
-              Conversar sobre tu proyecto
+              Cotizar mi proyecto
             </button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- MARQUESINA DE LOGOS -->
+    <section class="border-y border-slate-800/80 bg-slate-950/80 py-8">
+      <p class="text-center text-[11px] uppercase tracking-[0.3em] text-slate-500 mb-5">
+        Marcas con las que hemos trabajado
+      </p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <img src="/portafolio/img/bcentral-logo.png" alt="Banco Central de Chile">
+          <img src="/portafolio/img/correos-logo.svg" alt="Correos de Chile">
+          <img src="/portafolio/img/movistar-logo.svg" alt="Movistar">
+          <img src="/portafolio/img/kaufmann-logo.svg" alt="Kaufmann · Mercedes-Benz">
+          <img src="/portafolio/img/fuso-logo.svg" alt="Fuso">
+          <img src="/portafolio/img/shes-logo.svg" alt="SHE's Mercedes">
+          <img src="/portafolio/img/aguasandinas-logo.png" alt="Aguas Andinas">
+          <img src="/portafolio/img/iveco-logo.svg" alt="Iveco">
+          <img src="/portafolio/img/liferay-logo.png" alt="Liferay">
+          <!-- Duplicado para loop infinito -->
+          <img src="/portafolio/img/bcentral-logo.png" alt="" aria-hidden="true">
+          <img src="/portafolio/img/correos-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/movistar-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/kaufmann-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/fuso-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/shes-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/aguasandinas-logo.png" alt="" aria-hidden="true">
+          <img src="/portafolio/img/iveco-logo.svg" alt="" aria-hidden="true">
+          <img src="/portafolio/img/liferay-logo.png" alt="" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
     <!-- FILTROS -->
-    <section class="border-t border-slate-800/80 bg-slate-950/95">
+    <section class="bg-slate-950/95">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h2 class="text-base sm:text-lg font-semibold text-slate-50">Filtra el portafolio</h2>
+            <h2 class="text-base sm:text-lg font-semibold text-slate-50">Filtra por tipo de trabajo</h2>
             <p class="text-xs sm:text-sm text-slate-400">
-              Elige el tipo de proyecto que quieres ver. Todos los ejemplos se pueden adaptar a tu rubro.
+              Todos los casos son de clientes reales. Hacemos el mismo nivel de calidad para PYMES.
             </p>
           </div>
           <div class="flex flex-wrap gap-2 text-xs sm:text-[13px]">
@@ -331,24 +446,24 @@
               Todo
             </button>
             <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
-              data-filter="web">
-              Sitios web
+              data-filter="enterprise">
+              Enterprise
             </button>
             <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
-              data-filter="tienda">
-              Tiendas online
+              data-filter="rediseno">
+              Rediseños
             </button>
             <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
-              data-filter="automatizacion">
-              Automatizaciones
+              data-filter="cms">
+              CMS Liferay
             </button>
             <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
-              data-filter="ia">
-              Chatbots / IA
+              data-filter="seo">
+              SEO
             </button>
             <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
-              data-filter="ads">
-              Google Ads
+              data-filter="pyme">
+              PYME
             </button>
           </div>
         </div>
@@ -358,488 +473,644 @@
     <!-- PROYECTOS -->
     <section id="proyectos" class="border-t border-slate-800/80 bg-slate-950/98">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div class="grid gap-6 md:grid-cols-2">
-          <!-- Proyecto 1: Innovabogados -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="web ads automatizacion ia">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-sky-500/40 via-blue-500/30 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_left,rgba(148,163,184,.4),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,.4),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Legal / Asesoría laboral
-                  </span>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Innovabogados</h3>
-                  <p class="text-xs text-slate-200">
-                    Sitio informativo + captación de leads legales con enfoque en Ley Karin y asesoría laboral en Chile.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Sitio web
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Formularios optimizados
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Base para Google Ads
-                </span>
-              </div>
 
-              <p class="mt-4 text-sm text-slate-300">
-                Se diseñó un sitio claro para explicar servicios legales complejos en lenguaje simple,
-                con formularios claros y llamados a la acción conectados a correo y WhatsApp.
+        <!-- CASO 1: Banco Central -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms seo">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/bcentral-logo.png" alt="Banco Central" class="max-h-8 max-w-8">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-blue-500/15 text-blue-300 px-2.5 py-0.5 text-[11px] font-semibold border border-blue-500/30">
+                  Finanzas · Gobierno
+                </span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Banco Central de Chile
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Rediseño de componentes clave, optimización de velocidad y resolución de bugs heredados del CMS.
+                Optimizamos también el buscador interno sobre <span class="text-slate-100 font-semibold">miles de documentos</span>
+                tras una migración, mejorando precisión y tiempos de respuesta.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Recibir consultas legales calificadas.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Rediseño parcial + fixes</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="mt-1 font-semibold text-slate-50">Velocidad + buscador</p>
                 </div>
                 <div>
                   <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">HTML, CSS, Bootstrap, integraciones simples.</p>
+                  <p class="mt-1 font-semibold text-slate-50">Liferay, HTML, CSS</p>
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <a href="https://www.innovabogados.cl" target="_blank"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-1.5 font-semibold text-white hover:bg-primary-dark">
-                  Ver sitio
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://www.bcentral.cl/inicio" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar bcentral.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero algo similar a Innovabogados')">
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  onclick="scrollContact('Quiero algo similar a Banco Central')">
                   Quiero algo similar
                 </button>
               </div>
             </div>
-          </article>
-
-          <!-- Proyecto 2: Aguswer -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="web ads">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-emerald-400/40 via-teal-500/30 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top,rgba(16,185,129,.5),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(34,197,235,.45),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Educación / Colegio particular
-                  </span>
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">bcentral.cl</div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Aguswer</h3>
-                  <p class="text-xs text-slate-200">
-                    Sitio institucional para colegio con información clara para apoderados y base para campañas en
-                    buscadores.
-                  </p>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/bcentral.webp" alt="Captura del sitio Banco Central de Chile" loading="lazy">
                 </div>
               </div>
             </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Sitio web
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Enfoque informativo
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Preparado para Ads
+          </div>
+        </article>
+
+        <!-- CASO 2: Correos de Chile -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center order-2 lg:order-1">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">correos.cl</div>
+                </div>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/correos.webp" alt="Captura del rediseño de Correos de Chile" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/correos-logo.svg" alt="Correos de Chile" class="max-h-8 max-w-8">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-amber-500/15 text-amber-300 px-2.5 py-0.5 text-[11px] font-semibold border border-amber-500/30">
+                  Logística · Estatal
                 </span>
               </div>
-
-              <p class="mt-4 text-sm text-slate-300">
-                Se ordenó la información clave del colegio (niveles, valores, admisión, contacto) pensando en las dudas
-                reales de apoderados y en anuncios pagados.
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Correos de Chile
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Rediseño completo del sitio principal, además de portales nuevos (empresas, corporativo,
+                <span class="text-slate-100 font-semibold">Correos Transparente</span>) y la intranet de clientes.
+                Todo el contenido es administrable desde el CMS para que marketing publique sin pasar por desarrollo.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Aumentar consultas por vacantes.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Rediseño total + portales</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="mt-1 font-semibold text-slate-50">~1,5 meses + intranet 2 m</p>
                 </div>
                 <div>
                   <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">Sitio estático rápido optimizado para SEO base.</p>
+                  <p class="mt-1 font-semibold text-slate-50">Liferay + Figma</p>
                 </div>
               </div>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://www.correos.cl/" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar correos.cl
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <a href="https://www.correos.cl/web/correos-transparente" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300">
+                  Correos Transparente
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
 
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <a href="https://aguswer.cl" target="_blank"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-1.5 font-semibold text-white hover:bg-primary-dark">
-                  Ver sitio
+        <!-- CASO 3: Movistar Perú -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno seo cms">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/movistar-logo.svg" alt="Movistar" class="max-h-8 max-w-8">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-emerald-500/15 text-emerald-300 px-2.5 py-0.5 text-[11px] font-semibold border border-emerald-500/30">
+                  Telecom · Perú
+                </span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Movistar Perú
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Nuevos componentes de venta (carruseles de planes, banners geolocalizados),
+                conexión directa con WhatsApp y formularios.
+                Trabajo intensivo en <span class="text-slate-100 font-semibold">SEO y tiempos de carga</span>,
+                y migración completa del SMS desde Liferay a WordPress para reducir costos sin perder funcionalidades.
+              </p>
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Componentes + migración</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="mt-1 font-semibold text-slate-50">SEO, conversión, ahorro</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="mt-1 font-semibold text-slate-50">Liferay → WordPress</p>
+                </div>
+              </div>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://www.movistar.com.pe/" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar movistar.com.pe
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero algo similar a Aguswer')">
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  onclick="scrollContact('Quiero algo similar a Movistar Perú')">
                   Quiero algo similar
                 </button>
               </div>
             </div>
-          </article>
-
-          <!-- Proyecto 3: Cabañas Santa Regina -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="web ads automatizacion">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-amber-400/40 via-orange-500/30 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_left,rgba(251,191,36,.45),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(249,115,22,.5),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Turismo / Cabañas
-                  </span>
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">movistar.com.pe</div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Cabañas Santa Regina</h3>
-                  <p class="text-xs text-slate-200">
-                    Landing enfocada en reservas directas cerca de Termas de Chillán, con énfasis en fotos y beneficios.
-                  </p>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/movistar.webp" alt="Captura del sitio Movistar Perú" loading="lazy">
                 </div>
               </div>
             </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Landing page
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Reservas por WhatsApp
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Preparado para anuncios
+          </div>
+        </article>
+
+        <!-- CASO 4: Kaufmann (grupo) -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms">
+          <div class="p-6 sm:p-8 lg:p-10">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                <img src="/portafolio/img/kaufmann-logo.svg" alt="Kaufmann" class="max-h-8 max-w-8">
+              </div>
+              <span class="inline-flex items-center rounded-full bg-rose-500/15 text-rose-300 px-2.5 py-0.5 text-[11px] font-semibold border border-rose-500/30">
+                Automotriz
+              </span>
+            </div>
+            <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                  Kaufmann · Mercedes-Benz, Fuso y SHE's
+                </h3>
+                <p class="mt-3 text-sm sm:text-base text-slate-300">
+                  Tres proyectos para el grupo Kaufmann: portal <span class="text-slate-100 font-semibold">SHE's Mercedes</span>
+                  (diseño + integración CMS), rediseño <span class="text-slate-100 font-semibold">look &amp; feel kaufmann.cl</span>
+                  con minisitios (electromovilidad, innovación, pago online, corporativo),
+                  y rediseño total de <span class="text-slate-100 font-semibold">fuso.cl</span> tomando el Figma del cliente y
+                  llevándolo a código sin tocar la lógica backend en Java. El diseño sigue vigente desde 2023.
+                </p>
+                <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Sitios</p>
+                    <p class="mt-1 font-semibold text-slate-50">3 portales + minisitios</p>
+                  </div>
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                    <p class="mt-1 font-semibold text-slate-50">UI moderna + CMS</p>
+                  </div>
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                    <p class="mt-1 font-semibold text-slate-50">Liferay + HTML/CSS</p>
+                  </div>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+                  <a href="https://kaufmann.cl/" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    kaufmann.cl
+                  </a>
+                  <a href="https://www.fuso.cl" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    fuso.cl
+                  </a>
+                  <a href="https://shesmercedes.cl/" target="_blank" rel="noopener"
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    shesmercedes.cl
+                  </a>
+                </div>
+              </div>
+              <div class="grid gap-3">
+                <div class="browser-frame">
+                  <div class="browser-bar"><span></span><span></span><span></span><div class="url">kaufmann.cl</div></div>
+                  <div class="browser-screenshot" style="max-height:140px">
+                    <img src="/portafolio/img/kaufmann.webp" alt="Captura Kaufmann" loading="lazy">
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="browser-frame">
+                    <div class="browser-bar"><span></span><span></span><span></span><div class="url">fuso.cl</div></div>
+                    <div class="browser-screenshot" style="max-height:110px">
+                      <img src="/portafolio/img/fuso.webp" alt="Captura Fuso" loading="lazy">
+                    </div>
+                  </div>
+                  <div class="browser-frame">
+                    <div class="browser-bar"><span></span><span></span><span></span><div class="url">shesmercedes.cl</div></div>
+                    <div class="browser-screenshot" style="max-height:110px">
+                      <img src="/portafolio/img/shesmercedes.webp" alt="Captura SHE's Mercedes" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASO 5: Aguas Andinas -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center order-2 lg:order-1">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">aguasandinas.cl/web/aguasandinas/noticias</div>
+                </div>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/aguasandinas.webp" alt="Captura Aguas Andinas" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/aguasandinas-logo.png" alt="Aguas Andinas" class="max-h-8 max-w-8">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-cyan-500/15 text-cyan-300 px-2.5 py-0.5 text-[11px] font-semibold border border-cyan-500/30">
+                  Utility · Sanitaria
                 </span>
               </div>
-
-              <p class="mt-4 text-sm text-slate-300">
-                Se estructuró la página para reforzar lo que más le importa al huésped:
-                fotos reales, equipamiento, ubicación, piscina, tinaja y contacto rápido.
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Aguas Andinas
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Creación del <span class="text-slate-100 font-semibold">portal de noticias para la intranet</span>
+                y rediseño del portal de noticias público.
+                Diseño consistente con la marca y editor amigable para el equipo de comunicaciones internas.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Generar reservas directas (sin comisiones).</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Intranet + portal público</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="mt-1 font-semibold text-slate-50">Editorial / comunicaciones</p>
                 </div>
                 <div>
                   <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">Landing estática rápida + integraciones básicas.</p>
+                  <p class="mt-1 font-semibold text-slate-50">Liferay</p>
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span class="text-slate-500">
-                  Sitio en ajustes / próximamente link público.
-                </span>
-                <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero algo similar a Cabañas Santa Regina')">
-                  Quiero algo similar
-                </button>
+              <div class="mt-6">
+                <a href="https://www.aguasandinas.cl/web/aguasandinas/noticias" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar portal de noticias
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- Proyecto 4: Tienda Fit Market -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="tienda ads">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-fuchsia-500/40 via-purple-500/35 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_left,rgba(192,38,211,.4),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,.45),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Ecommerce / Alimentos saludables
-                  </span>
+        <!-- CASO 6: SIID Banco Central -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/bcentral-logo.png" alt="SIID Banco Central" class="max-h-8 max-w-8">
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Tienda Fit Market</h3>
-                  <p class="text-xs text-slate-200">
-                    Tienda online pensada para compras rápidas desde el celular, con foco en fichas claras y medios de
-                    pago locales.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Tienda online
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Integración medios de pago
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Preparado para campañas
+                <span class="inline-flex items-center rounded-full bg-blue-500/15 text-blue-300 px-2.5 py-0.5 text-[11px] font-semibold border border-blue-500/30">
+                  Gobierno · Datos económicos
                 </span>
               </div>
-
-              <p class="mt-4 text-sm text-slate-300">
-                Se organizó el catálogo, se simplificó el checkout y se destacaron los productos clave para campañas
-                de redes sociales y Google Shopping.
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                SIID · Sistema de Información Internacional
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Rediseño completo del portal del Banco Central. Partimos con la base existente,
+                creamos un <span class="text-slate-100 font-semibold">rediseño completo en Figma</span>,
+                y luego maquetamos y desarrollamos sobre Liferay para que los equipos puedan
+                administrar textos y secciones sin tocar código.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Aumentar ventas desde celular.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Rediseño + maquetación</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="mt-1 font-semibold text-slate-50">~1 mes</p>
                 </div>
                 <div>
                   <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">Plataforma ecommerce + optimización UX.</p>
+                  <p class="mt-1 font-semibold text-slate-50">Liferay + HTML/CSS</p>
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span class="text-slate-500">
-                  Cliente en producción. Link disponible en reunión.
-                </span>
-                <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero algo similar a Tienda Fit Market')">
-                  Quiero algo similar
-                </button>
+              <div class="mt-6">
+                <a href="https://www.siid.cl/web/siid" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar siid.cl
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
               </div>
             </div>
-          </article>
-
-          <!-- Proyecto 5: Estudio Contable Online (automatización) -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="automatizacion ia web">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-cyan-400/40 via-sky-500/30 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,.45),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,.45),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Servicios / Contabilidad
-                  </span>
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">siid.cl/web/siid</div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Estudio Contable Online</h3>
-                  <p class="text-xs text-slate-200">
-                    Mini sitio + sistema de derivación automática según tipo de consulta, usando IA para clasificar
-                    mensajes.
-                  </p>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/siid.webp" alt="Captura SIID" loading="lazy">
                 </div>
               </div>
             </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Sitio + automatizaciones
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  IA para clasificar leads
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Notificaciones internas
+          </div>
+        </article>
+
+        <!-- CASO 7: Iveco (antes/después) -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="enterprise rediseno cms">
+          <div class="p-6 sm:p-8 lg:p-10">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="h-10 w-10 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center p-1">
+                <img src="/portafolio/img/iveco-logo.svg" alt="Iveco" class="max-h-8 max-w-8">
+              </div>
+              <span class="inline-flex items-center rounded-full bg-blue-500/15 text-blue-300 px-2.5 py-0.5 text-[11px] font-semibold border border-blue-500/30">
+                Automotriz · Andes Motor
+              </span>
+              <span class="inline-flex items-center rounded-full bg-slate-800 text-slate-300 px-2.5 py-0.5 text-[11px] font-semibold border border-slate-700">
+                Antes / Después
+              </span>
+            </div>
+            <div class="grid lg:grid-cols-[1.1fr_1fr] gap-8 items-start">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                  Iveco (Andes Motor)
+                </h3>
+                <p class="mt-3 text-sm sm:text-base text-slate-300">
+                  Rediseño 2024 sobre el CMS Liferay que el cliente venía usando hace años.
+                  Trabajamos en equipo durante 2 meses: diseño en Figma con conversación constante con el cliente,
+                  y luego desarrollo respetando los <span class="text-slate-100 font-semibold">componentes con lógica backend en Java</span>
+                  (como el cotizador) para no romper funcionalidad ni costo extra.
+                </p>
+                <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Año</p>
+                    <p class="mt-1 font-semibold text-slate-50">2024</p>
+                  </div>
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                    <p class="mt-1 font-semibold text-slate-50">2 meses</p>
+                  </div>
+                  <div>
+                    <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                    <p class="mt-1 font-semibold text-slate-50">Liferay + Java backend</p>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="browser-frame">
+                  <div class="browser-bar"><span></span><span></span><span></span><div class="url">antes</div></div>
+                  <div class="browser-screenshot" style="max-height:160px">
+                    <img src="/portafolio/img/iveco-antes.webp" alt="Iveco antes" loading="lazy">
+                  </div>
+                </div>
+                <div class="browser-frame">
+                  <div class="browser-bar"><span></span><span></span><span></span><div class="url">después</div></div>
+                  <div class="browser-screenshot" style="max-height:160px">
+                    <img src="/portafolio/img/iveco-ahora.webp" alt="Iveco después" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASO 8: Destape Rápido -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
+          data-type="pyme seo rediseno">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center order-2 lg:order-1">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">destaperapido.cl</div>
+                </div>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/destaperapido.webp" alt="Captura Destape Rápido" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1">
+                  <img src="/portafolio/img/destaperapido-logo.webp" alt="Destape Rápido" class="max-h-8 max-w-8">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-emerald-500/15 text-emerald-300 px-2.5 py-0.5 text-[11px] font-semibold border border-emerald-500/30">
+                  Servicios · Alcantarillado
                 </span>
               </div>
-
-              <p class="mt-4 text-sm text-slate-300">
-                Los formularios se conectan a un flujo que agrupa consultas por tipo (PYME, persona natural, inicio de
-                actividades, etc.)
-                y notifica a la persona correcta del equipo.
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Destape Rápido
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Rediseño y trabajo continuo de SEO orgánico para una de las empresas más grandes del rubro en Chile.
+                Sitio con más de <span class="text-slate-100 font-semibold">60 páginas</span> (servicios, camiones,
+                comparadores, ubicaciones, sectores específicos) optimizado para aparecer primero en Google
+                sin depender de pauta.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Dejar de perder consultas desordenadas.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Rediseño + SEO continuo</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">Sitio estático + Zapier / Make + IA.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Páginas</p>
+                  <p class="mt-1 font-semibold text-slate-50">+60</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="mt-1 font-semibold text-slate-50">4+ meses (en curso)</p>
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span class="text-slate-500">
-                  Caso interno / demostración en reuniones.
-                </span>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://www.destaperapido.cl/" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar destaperapido.cl
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero automatizaciones similares al Estudio Contable Online')">
-                  Quiero algo similar
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  onclick="scrollContact('Quiero SEO como Destape Rápido')">
+                  Quiero SEO así
                 </button>
               </div>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <!-- Proyecto 6: Chatbot IA para servicios -->
-          <article
-            class="project-card rounded-3xl border border-slate-800 bg-slate-900/80 overflow-hidden flex flex-col"
-            data-type="ia automatizacion">
-            <div
-              class="relative h-44 sm:h-48 bg-gradient-to-tr from-indigo-500/40 via-violet-500/35 to-slate-900 project-thumb">
-              <div
-                class="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_left,rgba(129,140,248,.5),transparent_55%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,.5),transparent_55%)]">
-              </div>
-              <div class="relative h-full flex flex-col justify-between p-4 sm:p-5">
-                <div class="flex items-center gap-2 text-[11px] text-slate-100">
-                  <span
-                    class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                    Chatbot / Servicios varios
-                  </span>
+        <!-- CASO 9: Innovabogados -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-4"
+          data-type="pyme seo rediseno">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 w-10 rounded-lg bg-white/95 flex items-center justify-center p-1 overflow-hidden">
+                  <img src="/portafolio/img/innovabogados-logo.jpeg" alt="Innova Abogados" class="max-h-8 max-w-8 object-contain">
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-slate-50">Chatbot IA para atención inicial</h3>
-                  <p class="text-xs text-slate-200">
-                    Asistente que responde preguntas frecuentes y deriva a humano cuando corresponde, conectado a
-                    formularios y planillas.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="p-5 sm:p-6 flex-1 flex flex-col">
-              <div class="flex flex-wrap gap-2 text-[11px] text-slate-200">
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Chatbot IA
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Integrado a sitio web
-                </span>
-                <span
-                  class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 border border-slate-700/80">
-                  Derivación a WhatsApp / correo
+                <span class="inline-flex items-center rounded-full bg-violet-500/15 text-violet-300 px-2.5 py-0.5 text-[11px] font-semibold border border-violet-500/30">
+                  Legal · Demandas
                 </span>
               </div>
-
-              <p class="mt-4 text-sm text-slate-300">
-                El chatbot resuelve dudas básicas 24/7 y, cuando detecta un caso complejo,
-                envía el resumen al equipo junto con los datos de contacto del cliente.
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Innova Abogados
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Sitio creado desde cero para un estudio nuevo en el rubro legal,
+                con <span class="text-slate-100 font-semibold">más de 40 páginas</span> y landings específicas para conversión.
+                Diseño propio + campaña de Google Ads activa para captar demandas millonarias.
               </p>
-
-              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px] text-slate-300">
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Objetivo</p>
-                  <p class="mt-1 font-semibold text-slate-50">Filtrar y priorizar contactos automáticamente.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Sitio + landings + Ads</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
-                  <p class="mt-1 font-semibold text-slate-50">Widget web + IA + automatizaciones.</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Páginas</p>
+                  <p class="mt-1 font-semibold text-slate-50">+40</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="mt-1 font-semibold text-slate-50">2 meses (vigente)</p>
                 </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span class="text-slate-500">
-                  Demo disponible. Se adapta a tu rubro.
-                </span>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://www.innovabogados.cl/" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar innovabogados.cl
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3 py-1.5 text-[11px] text-slate-200 hover:border-slate-300"
-                  onclick="scrollContact('Quiero un chatbot IA similar al del portafolio')">
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  onclick="scrollContact('Quiero algo similar a Innova Abogados')">
                   Quiero algo similar
                 </button>
               </div>
             </div>
-          </article>
-        </div>
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">innovabogados.cl</div>
+                </div>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/innovabogados.webp" alt="Captura Innovabogados" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
 
-        <p class="mt-8 text-xs sm:text-sm text-slate-400 max-w-3xl">
-          Este portafolio mezcla proyectos reales, proyectos internos y demostraciones que usamos para mostrar
-          posibilidades.
-          En una reunión podemos mostrar más detalles técnicos, estadísticas y adaptaciones posibles para tu negocio.
+        <p class="mt-10 text-xs sm:text-sm text-slate-400 max-w-3xl">
+          Algunos casos corresponden a desarrollos hechos como parte de equipos en agencias o consultoras Liferay
+          (ej. Banco Central, Correos de Chile, Movistar, Kaufmann, Iveco, Aguas Andinas, SIID).
+          Otros (Destape Rápido, Innova Abogados) son clientes propios de PaginasFast. Las marcas pertenecen a sus respectivos dueños.
         </p>
       </div>
     </section>
 
-    <!-- SECCIÓN: CÓMO USAMOS ESTOS CASOS EN TU PROYECTO -->
+    <!-- METODOLOGÍA -->
     <section class="border-t border-slate-800/80 bg-slate-950/95">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
           <div>
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-              Cómo usamos este portafolio para diseñar tu solución
+              Misma metodología enterprise · sin sobrecostos PYME
             </h2>
             <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-              La idea no es “copiar un sitio”, sino tomar lo que funciona de cada caso y adaptarlo a tu realidad:
-              tu rubro, tu forma de vender y el nivel de madurez digital que tienes hoy.
+              Aplicamos a tu sitio lo mismo que hicimos en proyectos de Banco Central o Correos:
+              diseño en Figma, componentes administrables, foco en velocidad y SEO,
+              integraciones con WhatsApp / CRM / pagos cuando se necesitan.
             </p>
             <div class="mt-6 grid gap-4 sm:grid-cols-3 text-xs sm:text-sm text-slate-300">
               <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                <p class="font-semibold text-slate-50">Entendemos tu proceso</p>
-                <p class="mt-2">
-                  Antes de proponer algo, vemos cómo llegan tus clientes, qué herramientas usas y qué esperas que pase
-                  después.
-                </p>
+                <p class="font-semibold text-slate-50">1 · Descubrimiento</p>
+                <p class="mt-2">Entendemos tu negocio, tu cliente y cómo midamos el éxito.</p>
               </div>
               <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                <p class="font-semibold text-slate-50">Elegimos buenas referencias</p>
-                <p class="mt-2">
-                  Tomamos secciones, flujos y estilos de proyectos similares que han funcionado en la práctica.
-                </p>
+                <p class="font-semibold text-slate-50">2 · Diseño en Figma</p>
+                <p class="mt-2">Iteramos visualmente antes de programar. Cero sorpresas al final.</p>
               </div>
               <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
-                <p class="font-semibold text-slate-50">Aterrizamos en un plan</p>
-                <p class="mt-2">
-                  Definimos un alcance concreto: qué se hace ahora, qué se deja para después y cómo se medirá el
-                  resultado.
-                </p>
+                <p class="font-semibold text-slate-50">3 · Desarrollo + SEO</p>
+                <p class="mt-2">Código limpio, rápido, optimizado para Google y administrable.</p>
               </div>
             </div>
           </div>
           <div class="rounded-3xl border border-slate-800 bg-slate-950/95 p-5 sm:p-6">
             <p class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Siguiente paso</p>
             <p class="mt-2 text-sm text-slate-200">
-              Mándanos 2 o 3 sitios que te gusten (aunque no sean tuyos), tu rubro y qué te gustaría mejorar.
+              Mándanos 2 o 3 sitios que te gusten (de los nuestros o de la web), tu rubro y qué te gustaría mejorar.
             </p>
             <p class="mt-2 text-xs text-slate-400">
-              Con eso podemos proponerte una mezcla entre lo que has visto aquí, tus referencias y lo que sabemos que
-              funciona en campañas.
+              En una llamada de 20 min te decimos honestamente qué hace sentido para tu negocio.
             </p>
             <button id="cta-middle"
               class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
@@ -856,15 +1127,15 @@
         <div class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
           <div>
             <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-50">
-              Conversemos qué tipo de proyecto hace sentido para tu negocio
+              Conversemos qué proyecto hace sentido para tu negocio
             </h2>
             <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-xl">
-              Cuéntanos qué te gustó de estos ejemplos, qué rubro tienes y qué te gustaría lograr
+              Cuéntanos qué te gustó de estos ejemplos, qué rubro tienes y qué quieres lograr
               (más clientes, reservas, consultas, ventas en línea, etc.).
             </p>
             <ul class="mt-4 space-y-2 text-sm text-slate-300">
               <li>• Revisión honesta de tu situación actual (sin promesas mágicas).</li>
-              <li>• Idea de estructura de sitio / tienda / automatizaciones que podría servirte.</li>
+              <li>• Propuesta concreta de sitio / tienda / automatizaciones.</li>
               <li>• Presupuesto estimado y próximos pasos claros.</li>
             </ul>
             <button id="cta-bottom"
@@ -873,7 +1144,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7" />
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
             </button>
           </div>
@@ -900,8 +1171,7 @@
                   class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
               </div>
               <div>
-                <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Tipo de proyecto de
-                  interés</label>
+                <label for="service" class="block text-xs font-medium text-slate-300 mb-1">Tipo de proyecto de interés</label>
                 <input id="service" name="service" type="text" value="Proyecto tipo portafolio (ver ejemplos)"
                   class="block w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-50 placeholder:text-slate-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
               </div>
@@ -929,16 +1199,11 @@
   <footer class="border-t border-slate-800 bg-slate-950">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div class="flex items-center gap-2">
-          <span class="logo-pill inline-flex h-8 w-8 rounded-xl items-center justify-center shadow-md">
-            <span class="text-[10px] font-black tracking-tight text-slate-50">PF</span>
+        <div class="flex items-center gap-3">
+          <img src="/images/logo-paginasfast-blanco.png" alt="PaginasFast" class="h-9 w-auto" loading="lazy">
+          <span class="hidden sm:block text-[11px] text-slate-400 max-w-xs leading-snug">
+            Desarrollo web, tiendas online, Google Ads, SEO, chatbots con IA y automatizaciones.
           </span>
-          <div class="flex flex-col leading-tight">
-            <span class="font-semibold text-slate-50 text-sm">PaginasFast</span>
-            <span class="text-[11px] text-slate-400">
-              Desarrollo web, tiendas online, Google Ads, redes sociales, SEO, chatbots con IA y automatizaciones.
-            </span>
-          </div>
         </div>
         <div class="flex flex-wrap gap-4 text-xs text-slate-400">
           <a href="/servicios" class="hover:text-slate-200">Servicios</a>
@@ -948,7 +1213,7 @@
         </div>
       </div>
       <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
-        © 2025 PaginasFast. Todos los derechos reservados.
+        © 2026 PaginasFast. Todos los derechos reservados.
       </p>
     </div>
   </footer>
@@ -956,33 +1221,38 @@
   <!-- Botón WhatsApp flotante -->
   <a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20estuve%20viendo%20el%20portafolio%20de%20PaginasFast%20y%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" class="fab-wa" aria-label="Contactar por WhatsApp"><span class="fab-tip">¿Hablamos?</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg></a>
 
-  <!-- JS mínimo -->
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portafolio de proyectos reales | PaginasFast",
+    "description": "Casos de éxito en marcas enterprise (Banco Central, Correos de Chile, Movistar Perú, Kaufmann, Aguas Andinas, Iveco) y clientes PYME (Destape Rápido, Innovabogados).",
+    "url": "https://paginasfast.cl/portafolio"
+  }
+  </script>
+
+  <!-- JS -->
   <script>
     // menú móvil
     const mobileBtn = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
 
-    // filtros portafolio
+    // filtros
     const filterPills = document.querySelectorAll('.filter-pill');
     const projectCards = document.querySelectorAll('.project-card');
-
     filterPills.forEach(pill => {
       pill.addEventListener('click', () => {
         const filter = pill.getAttribute('data-filter');
-
         filterPills.forEach(p => {
           p.classList.remove('bg-slate-900/80', 'text-slate-50', 'border-slate-600');
           p.classList.add('bg-slate-900/60', 'text-slate-200', 'border-slate-700');
         });
-
         pill.classList.add('bg-slate-900/80', 'text-slate-50', 'border-slate-600');
         pill.classList.remove('bg-slate-900/60', 'text-slate-200', 'border-slate-700');
-
         projectCards.forEach(card => {
           const types = (card.getAttribute('data-type') || '').split(' ');
           if (filter === 'all' || types.includes(filter)) {
@@ -994,34 +1264,30 @@
       });
     });
 
-    // scroll a contacto (con posible preselección de contexto)
+    // scroll a contacto
     function scrollContact(context) {
       const section = document.getElementById('contacto');
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
         const serviceField = document.getElementById('service');
-        if (serviceField && context) {
-          serviceField.value = context;
-        }
+        if (serviceField && context) serviceField.value = context;
       }
     }
     document.getElementById('cta-header')?.addEventListener('click', () => scrollContact());
     document.getElementById('cta-header-mobile')?.addEventListener('click', () => scrollContact());
     document.getElementById('cta-hero')?.addEventListener('click', () => scrollContact('Proyecto tipo portafolio'));
-    document.getElementById('cta-card')?.addEventListener('click', () => scrollContact('Quiero conversar sobre mi proyecto'));
+    document.getElementById('cta-card')?.addEventListener('click', () => scrollContact('Cotizar proyecto enterprise/PYME'));
     document.getElementById('cta-middle')?.addEventListener('click', () => scrollContact('Enviar referencias y agendar llamada'));
     document.getElementById('cta-bottom')?.addEventListener('click', () => scrollContact('Proyecto como los del portafolio'));
 
-    // envío básico del formulario (placeholder)
+    // formulario (placeholder)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        const formData = new FormData(contactForm);
-        const name = formData.get('name') || '';
-        alert(`¡Gracias ${name}! Hemos recibido tu mensaje. Te contactaremos pronto para hablar de tu proyecto.`);
+        const name = new FormData(contactForm).get('name') || '';
+        alert(`¡Gracias ${name}! Hemos recibido tu mensaje. Te contactaremos pronto.`);
         contactForm.reset();
-        // Aquí podrías hacer fetch hacia tu endpoint real /api/contact.
       });
     }
   </script>

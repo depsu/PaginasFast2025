@@ -1,0 +1,13 @@
+https://www.correos.cl/ Se hizo todo un rediseño del sitio de Correos de Chile,  ellos tienen su propio CMS, lo cual aumentó un poco la complejidad de este proyecto pero se hizo todo el rediseño de Correos de Chile en todo el sitio. También creamos nuevos sitios como para empresas y corporativos manteniendo los nuevos patrones de diseños.
+
+Todo el sitio de Correos de Chile es administrable. Es decir que alguien de marketing puede entrar, modificar la página, luego se pasa por una aprobación y se tienen cambios de inmediato. Esto está hecho con la tecnología del CMS LifeRate. El rediseño lo hicimos a través de Figma y el proyecto se llevó a cabo en un mes y medio.
+
+Luego del rediseño también creamos el diseño de nuevas aplicaciones y sitios, como por ejemplo el de aliados. También rediseñamos lo que es la Intranet de Correos de Chile, donde los clientes ingresan, pueden solicitar sus pedidos y ver información. Ese proyecto también llevó a cabo dos meses. 
+
+
+
+https://www.correos.cl/web/correos-transparente
+
+sitio nuevo de correos que creamos desde 0. creando componentes para su fácil administración a largo plazo ...  
+
+también rediseño para portal https://www.correos.cl/web/correos-chile-empresas, manteniendo el mismo patrón de diseño del rediseño del sitio principal correos.cl 
