@@ -26,8 +26,16 @@ Información clave:
 
 ## Cobertura geográfica (landings por comuna)
 
+- [Cobertura por comuna (índice)](https://paginasfast.cl/diseno-web/)
 - [Diseño y desarrollo web en Providencia](https://paginasfast.cl/diseno-web/providencia/)
 - [Diseño y desarrollo web en Las Condes](https://paginasfast.cl/diseno-web/las-condes/)
+
+## Otras páginas
+
+- [Reseñas de clientes](https://paginasfast.cl/resenas/)
+- [Blog](https://paginasfast.cl/blogs)
+- [Portafolio](https://paginasfast.cl/portafolio)
+- [Ofertas y packs](https://paginasfast.cl/ofertas/)
 
 ## Casos de éxito
 
@@ -38,7 +46,7 @@ Información clave:
 ## Clientes activos / Aliados de red
 
 - SushiApp (sushiapp.cl) — sushi delivery multi-sucursal
-- Cabañas Santa Regina (cabanassantaregina.cl) — turismo Termas de Chillán
+- Cabañas Santa Regina (www.xn--cabaassantaregina-ixb.cl, dominio con ñ) — turismo Termas de Chillán
 - ChileEléctrico (chileelectrico.cl) — servicios eléctricos RM
 - Full Fosas (limpiafosasydestape.cl) — limpieza de fosas
 - Destape Rápido (destaperapido.cl) — destape de alcantarillado
