@@ -258,11 +258,11 @@
 
       <div class="hidden md:flex items-center gap-8 text-sm">
         <a href="/servicios" class="text-slate-300 hover:text-white transition-colors">Servicios</a>
-        <a href="/portafolio" class="text-primary font-semibold">Portafolio</a>
+        <a href="/portafolio" class="text-blue-400 font-semibold">Portafolio</a>
         <a href="/#planes" class="text-slate-300 hover:text-white transition-colors">Planes web</a>
         <a href="/blogs" class="text-slate-300 hover:text-white transition-colors">Blog</a>
         <button id="cta-header"
-          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-sm font-semibold text-white shadow-md shadow-blue-500/40 hover:bg-primary-dark transition-colors">
           Agendar llamada
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             stroke-width="2">
@@ -271,8 +271,8 @@
         </button>
       </div>
 
-      <button id="mobile-menu-button"
-        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-2 text-slate-200">
+      <button id="mobile-menu-button" aria-label="Abrir menú"
+        class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700/80 p-3 text-slate-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
           stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -283,7 +283,7 @@
     <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800/70 bg-slate-950/95 backdrop-blur-xl">
       <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
         <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
-        <a href="/portafolio" class="text-primary font-semibold">Portafolio</a>
+        <a href="/portafolio" class="text-blue-400 font-semibold">Portafolio</a>
         <a href="/#planes" class="text-slate-300 hover:text-white">Planes web</a>
         <a href="/blogs" class="text-slate-300 hover:text-white">Blog</a>
         <button id="cta-header-mobile"
@@ -298,7 +298,7 @@
     <!-- HERO -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16">
       <div class="mb-5 text-xs text-slate-400 flex items-center gap-2">
-        <a href="/" class="hover:text-slate-100">Inicio</a>
+        <a href="/" class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] -ml-2 hover:text-slate-100">Inicio</a>
         <span>/</span>
         <span class="text-slate-300">Portafolio</span>
       </div>
@@ -313,7 +313,7 @@
 
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-50 leading-tight">
             Hemos trabajado con marcas como
-            <span class="block text-primary">Banco Central, Correos de Chile, Movistar y Kaufmann.</span>
+            <span class="block text-blue-400">Banco Central, Correos de Chile, Movistar y Kaufmann.</span>
           </h1>
 
           <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-xl">
@@ -391,7 +391,7 @@
             </div>
 
             <button id="cta-card"
-              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 min-h-[44px] text-sm font-semibold text-white hover:bg-primary-dark">
               Cotizar mi proyecto
             </button>
           </div>
@@ -401,7 +401,7 @@
 
     <!-- MARQUESINA DE LOGOS -->
     <section class="border-y border-slate-800/80 bg-slate-950/80 py-8">
-      <p class="text-center text-[11px] uppercase tracking-[0.3em] text-slate-500 mb-5">
+      <p class="text-center text-[11px] uppercase tracking-[0.3em] text-slate-400 mb-5">
         Marcas con las que hemos trabajado
       </p>
       <div class="marquee">
@@ -445,23 +445,23 @@
               data-filter="all">
               Todo
             </button>
-            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
+            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 min-h-[44px] text-slate-200"
               data-filter="enterprise">
               Enterprise
             </button>
-            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
+            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 min-h-[44px] text-slate-200"
               data-filter="rediseno">
               Rediseños
             </button>
-            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
+            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 min-h-[44px] text-slate-200"
               data-filter="cms">
               CMS Liferay
             </button>
-            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
+            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 min-h-[44px] text-slate-200"
               data-filter="seo">
               SEO
             </button>
-            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-slate-200"
+            <button class="filter-pill rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1.5 min-h-[44px] text-slate-200"
               data-filter="pyme">
               PYME
             </button>
@@ -498,21 +498,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Rediseño parcial + fixes</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Foco</p>
                   <p class="mt-1 font-semibold text-slate-50">Velocidad + buscador</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                   <p class="mt-1 font-semibold text-slate-50">Liferay, HTML, CSS</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.bcentral.cl/inicio" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar bcentral.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -520,7 +520,7 @@
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
                   onclick="scrollContact('Quiero algo similar a Banco Central')">
                   Quiero algo similar
                 </button>
@@ -575,21 +575,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Rediseño total + portales</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                   <p class="mt-1 font-semibold text-slate-50">~1,5 meses + intranet 2 m</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                   <p class="mt-1 font-semibold text-slate-50">Liferay + Figma</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.correos.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar correos.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -597,7 +597,7 @@
                   </svg>
                 </a>
                 <a href="https://www.correos.cl/web/correos-transparente" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300">
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300">
                   Correos Transparente
                 </a>
               </div>
@@ -630,21 +630,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Componentes + migración</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Foco</p>
                   <p class="mt-1 font-semibold text-slate-50">SEO, conversión, ahorro</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                   <p class="mt-1 font-semibold text-slate-50">Liferay → WordPress</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.movistar.com.pe/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar movistar.com.pe
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -652,7 +652,7 @@
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
                   onclick="scrollContact('Quiero algo similar a Movistar Perú')">
                   Quiero algo similar
                 </button>
@@ -699,29 +699,29 @@
                 </p>
                 <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Sitios</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Sitios</p>
                     <p class="mt-1 font-semibold text-slate-50">3 portales + minisitios</p>
                   </div>
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Foco</p>
                     <p class="mt-1 font-semibold text-slate-50">UI moderna + CMS</p>
                   </div>
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                     <p class="mt-1 font-semibold text-slate-50">Liferay + HTML/CSS</p>
                   </div>
                 </div>
                 <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
                   <a href="https://kaufmann.cl/" target="_blank" rel="noopener"
-                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 min-h-[44px] font-semibold text-white hover:bg-primary">
                     kaufmann.cl
                   </a>
                   <a href="https://www.fuso.cl" target="_blank" rel="noopener"
-                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 min-h-[44px] font-semibold text-white hover:bg-primary">
                     fuso.cl
                   </a>
                   <a href="https://shesmercedes.cl/" target="_blank" rel="noopener"
-                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 font-semibold text-white hover:bg-primary">
+                    class="inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1.5 min-h-[44px] font-semibold text-white hover:bg-primary">
                     shesmercedes.cl
                   </a>
                 </div>
@@ -787,21 +787,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Intranet + portal público</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Foco</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Foco</p>
                   <p class="mt-1 font-semibold text-slate-50">Editorial / comunicaciones</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                   <p class="mt-1 font-semibold text-slate-50">Liferay</p>
                 </div>
               </div>
               <div class="mt-6">
                 <a href="https://www.aguasandinas.cl/web/aguasandinas/noticias" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar portal de noticias
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -838,21 +838,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Rediseño + maquetación</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                   <p class="mt-1 font-semibold text-slate-50">~1 mes</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                   <p class="mt-1 font-semibold text-slate-50">Liferay + HTML/CSS</p>
                 </div>
               </div>
               <div class="mt-6">
                 <a href="https://www.siid.cl/web/siid" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar siid.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -904,15 +904,15 @@
                 </p>
                 <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Año</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Año</p>
                     <p class="mt-1 font-semibold text-slate-50">2024</p>
                   </div>
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                     <p class="mt-1 font-semibold text-slate-50">2 meses</p>
                   </div>
                   <div>
-                    <p class="uppercase tracking-[0.18em] text-slate-500">Stack</p>
+                    <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
                     <p class="mt-1 font-semibold text-slate-50">Liferay + Java backend</p>
                   </div>
                 </div>
@@ -971,21 +971,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Rediseño + SEO continuo</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Páginas</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Páginas</p>
                   <p class="mt-1 font-semibold text-slate-50">+60</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                   <p class="mt-1 font-semibold text-slate-50">4+ meses (en curso)</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.destaperapido.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar destaperapido.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -993,7 +993,7 @@
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
                   onclick="scrollContact('Quiero SEO como Destape Rápido')">
                   Quiero SEO así
                 </button>
@@ -1027,21 +1027,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Sitio + Ads + panel</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Páginas</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Páginas</p>
                   <p class="mt-1 font-semibold text-slate-50">31</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                   <p class="mt-1 font-semibold text-slate-50">En curso</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://destapando.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar destapando.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1049,7 +1049,7 @@
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
                   onclick="scrollContact('Quiero un sitio con panel como Destapando')">
                   Quiero algo así
                 </button>
@@ -1102,7 +1102,7 @@
               </p>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://asvrgruas.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar asvrgruas.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1136,7 +1136,7 @@
               </p>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://fuegoestudio.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar fuegoestudio.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1194,7 +1194,7 @@
               </p>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.aguswer.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar aguswer.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1227,7 +1227,7 @@
               </p>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.automatizaweb.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar automatizaweb.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1252,7 +1252,7 @@
 
         <!-- CASO 9: Innovabogados -->
         <article
-          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-4"
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-10"
           data-type="pyme seo rediseno">
           <div class="grid lg:grid-cols-2 gap-0">
             <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
@@ -1274,21 +1274,21 @@
               </p>
               <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Trabajo</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
                   <p class="mt-1 font-semibold text-slate-50">Sitio + landings + Ads</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Páginas</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Páginas</p>
                   <p class="mt-1 font-semibold text-slate-50">+40</p>
                 </div>
                 <div>
-                  <p class="uppercase tracking-[0.18em] text-slate-500">Duración</p>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Duración</p>
                   <p class="mt-1 font-semibold text-slate-50">2 meses (vigente)</p>
                 </div>
               </div>
               <div class="mt-6 flex flex-wrap items-center gap-3">
                 <a href="https://www.innovabogados.cl/" target="_blank" rel="noopener"
-                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-dark">
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
                   Visitar innovabogados.cl
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
@@ -1296,7 +1296,7 @@
                   </svg>
                 </a>
                 <button
-                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 text-xs text-slate-200 hover:border-slate-300"
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
                   onclick="scrollContact('Quiero algo similar a Innova Abogados')">
                   Quiero algo similar
                 </button>
@@ -1316,10 +1316,80 @@
           </div>
         </article>
 
+        <!-- CASO 10: Integra Metal -->
+        <article
+          class="project-card rounded-3xl border border-slate-800 bg-slate-900/60 overflow-hidden mb-4"
+          data-type="pyme rediseno seo">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="p-5 sm:p-6 bg-slate-950/60 flex items-center order-2 lg:order-1">
+              <div class="browser-frame w-full">
+                <div class="browser-bar">
+                  <span></span><span></span><span></span>
+                  <div class="url">integrametal.cl</div>
+                </div>
+                <div class="browser-screenshot">
+                  <img src="/portafolio/img/integrametal.webp" alt="Captura Integra Metal" loading="lazy">
+                </div>
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center order-1 lg:order-2">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="h-10 rounded-lg bg-white/95 flex items-center justify-center px-2 py-1 overflow-hidden">
+                  <img src="/portafolio/img/integrametal-logo.webp" alt="Integra Metal" width="720" height="202" class="h-7 w-auto object-contain">
+                </div>
+                <span class="inline-flex items-center rounded-full bg-amber-500/15 text-amber-300 px-2.5 py-0.5 text-[11px] font-semibold border border-amber-500/30">
+                  Industria · Metalmecánica
+                </span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-50">
+                Integra Metal
+              </h3>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Maestranza con más de 20 años en Lampa: tornería y mecanizado CNC, engranajes, ejes, estructuras y
+                soldadura para minería, industria y construcción. Su WordPress de 2021 declaraba 275 direcciones y
+                solo 4 eran páginas reales. Lo reemplazamos por un sitio estático de
+                <span class="text-slate-100 font-semibold">19 páginas</span>, una por servicio y por industria,
+                conservando las URL que Google ya conocía. La
+                <a href="https://integrametal.cl/torneria-cnc/" class="text-slate-100 font-semibold underline decoration-slate-500 underline-offset-2 hover:decoration-slate-200">página de tornería CNC y convencional</a>
+                fue de las primeras en aparecer en búsquedas. Correo y dominio siguieron funcionando durante todo el cambio.
+              </p>
+              <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Trabajo</p>
+                  <p class="mt-1 font-semibold text-slate-50">Rediseño desde WordPress</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Páginas</p>
+                  <p class="mt-1 font-semibold text-slate-50">19</p>
+                </div>
+                <div>
+                  <p class="uppercase tracking-[0.18em] text-slate-400">Stack</p>
+                  <p class="mt-1 font-semibold text-slate-50">HTML estático, Cloudflare Pages</p>
+                </div>
+              </div>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <a href="https://integrametal.cl/" target="_blank" rel="noopener"
+                  class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 min-h-[44px] text-xs font-semibold text-white hover:bg-primary-dark">
+                  Visitar integrametal.cl
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+                <button
+                  class="inline-flex items-center gap-1 rounded-full border border-slate-600 px-3.5 py-2 min-h-[44px] text-xs text-slate-200 hover:border-slate-300"
+                  onclick="scrollContact('Quiero un rediseño como Integra Metal')">
+                  Quiero un rediseño así
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <p class="mt-10 text-xs sm:text-sm text-slate-400 max-w-3xl">
           Algunos casos corresponden a desarrollos hechos como parte de equipos en agencias o consultoras Liferay
           (ej. Banco Central, Correos de Chile, Movistar, Kaufmann, Iveco, Aguas Andinas, SIID).
-          Otros (Destape Rápido, Innova Abogados) son clientes propios de PaginasFast. Las marcas pertenecen a sus respectivos dueños.
+          Otros (Destape Rápido, Innova Abogados, Integra Metal) son clientes propios de PaginasFast. Las marcas pertenecen a sus respectivos dueños.
         </p>
       </div>
     </section>
@@ -1361,7 +1431,7 @@
               En una llamada de 20 min te decimos honestamente qué hace sentido para tu negocio.
             </p>
             <button id="cta-middle"
-              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 min-h-[44px] text-sm font-semibold text-white hover:bg-primary-dark">
               Enviar referencias y agendar llamada
             </button>
           </div>
@@ -1430,10 +1500,10 @@
                   placeholder="Ej: rubro, si quieres sitio web, tienda, automatizaciones, ejemplos de sitios que te gustan, presupuesto aproximado si lo tienes."></textarea>
               </div>
               <button type="submit"
-                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark">
+                class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 min-h-[44px] text-sm font-semibold text-white hover:bg-primary-dark">
                 Enviar consulta
               </button>
-              <p class="text-[11px] text-slate-500">
+              <p class="text-[11px] text-slate-400">
                 Usamos tus datos solo para responder a tu mensaje. Nada de spam.
               </p>
             </form>
@@ -1454,13 +1524,13 @@
           </span>
         </div>
         <div class="flex flex-wrap gap-4 text-xs text-slate-400">
-          <a href="/servicios" class="hover:text-slate-200">Servicios</a>
-          <a href="/portafolio" class="hover:text-slate-200">Portafolio</a>
-          <a href="/resenas/" class="hover:text-slate-200">Reseñas</a>
-          <a href="/politica-privacidad" class="hover:text-slate-200">Política de privacidad</a>
+          <a href="/servicios" class="inline-block py-3.5 hover:text-slate-200">Servicios</a>
+          <a href="/portafolio" class="inline-block py-3.5 hover:text-slate-200">Portafolio</a>
+          <a href="/resenas/" class="inline-block py-3.5 hover:text-slate-200">Reseñas</a>
+          <a href="/politica-privacidad" class="inline-block py-3.5 hover:text-slate-200">Política de privacidad</a>
         </div>
       </div>
-      <p class="mt-5 text-[11px] text-slate-500 text-center sm:text-left">
+      <p class="mt-5 text-[11px] text-slate-400 text-center sm:text-left">
         © 2026 PaginasFast. Todos los derechos reservados.
       </p>
     </div>
