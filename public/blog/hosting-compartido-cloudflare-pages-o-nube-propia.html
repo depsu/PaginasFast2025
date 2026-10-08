@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hosting compartido, Cloudflare Pages o nube propia: dónde alojar la web de una pyme | PaginasFast</title>
+<meta name="description" content="Qué es cada opción para alojar una web, cuándo basta un plan gratis, cuándo una tienda o un sistema con panel necesita servidor propio y qué preguntar al proveedor antes de contratar.">
+<link rel="canonical" href="https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hosting compartido, Cloudflare Pages o nube propia: dónde alojar la web de una pyme | PaginasFast">
+<meta property="og:description" content="Qué es cada opción para alojar una web, cuándo basta un plan gratis, cuándo una tienda o un sistema con panel necesita servidor propio y qué preguntar al proveedor antes de contratar.">
+<meta property="og:url" content="https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="PaginasFast">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hosting compartido, Cloudflare Pages o nube propia: dónde alojar la web de una pyme">
+<meta name="twitter:description" content="Qué es cada opción para alojar una web, cuándo basta un plan gratis, cuándo una tienda o un sistema con panel necesita servidor propio y qué preguntar al proveedor antes de contratar.">
+<link rel="icon" type="image/png" href="/fav.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.prose-pf h2 { font-size: 1.875rem; font-weight: 800; color: #fff; margin: 2.5rem 0 1.25rem; line-height: 1.2; }
+.prose-pf h3 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 1.75rem 0 0.75rem; }
+.prose-pf p { margin-bottom: 1.25rem; line-height: 1.85; color: #cbd5e1; }
+.prose-pf ul, .prose-pf ol { margin: 1rem 0 1.5rem 1.5rem; }
+.prose-pf li { margin-bottom: 0.5rem; line-height: 1.7; color: #cbd5e1; }
+.prose-pf ul { list-style: disc; }
+.prose-pf ol { list-style: decimal; }
+.prose-pf a { color: #60a5fa; text-decoration: underline; font-weight: 600; }
+.prose-pf strong { color: #fff; }
+.prose-pf table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .95rem; }
+.prose-pf th, .prose-pf td { border: 1px solid #334155; padding: .75rem; text-align: left; color: #cbd5e1; }
+.prose-pf th { background: #1e293b; color: #fff; }
+</style>
+</head>
+<body class="bg-slate-950 text-slate-50">
+<header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+            <img src="/images/logo-paginasfast-blanco.png" alt="PaginasFast" class="h-9 w-auto sm:h-10" loading="eager">
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+            <a href="/servicios" class="text-slate-300 hover:text-white">Servicios</a>
+            <a href="/portafolio" class="text-slate-300 hover:text-white">Portafolio</a>
+            <a href="/blogs" class="text-blue-400 font-semibold">Blog</a>
+            <a href="/contacto" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold transition">Agendar</a>
+        </div>
+    </nav>
+</header>
+
+<section class="bg-gradient-to-br from-slate-950 via-blue-950/30 to-slate-950 py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <p class="text-blue-400 text-xs font-bold tracking-[0.4em] uppercase">Guías para pymes</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mt-4 leading-tight">Hosting compartido, Cloudflare Pages o nube propia: dónde conviene alojar la web de una pyme</h1>
+        <p class="text-slate-400 text-sm mt-6">Octubre 2026 · 5 min · Equipo PaginasFast</p>
+    </div>
+</section>
+
+<article class="max-w-3xl mx-auto px-6 py-12">
+    <p class="text-xl text-slate-300 leading-relaxed border-l-2 border-blue-500 pl-6 italic mb-10">Cuando encargas una web, alguien decide dónde va a vivir. Casi nunca es el dueño del negocio, y la decisión aparece después: en la cuenta mensual, en una caída un sábado o el día en que quieres cambiar de agencia. Aquí explicamos las tres opciones habituales, cuándo alcanza con un plan gratuito y qué preguntar antes de firmar.</p>
+    <div class="prose-pf">
+<h2>Primero, qué es "alojar" una web</h2>
+<p>Una web son archivos (textos, imágenes, código) que un computador encendido las 24 horas entrega a quien escribe tu dominio. Ese computador es el servidor; "hosting" es el servicio de prestarte espacio en él. Lo que cambia entre opciones es quién lo administra, con quién lo compartes y qué puede ejecutar.</p>
+
+<h2>Las tres opciones, sin tecnicismos</h2>
+<h3>1. Hosting compartido</h3>
+<p>La forma clásica: una empresa reparte un servidor grande entre cientos de clientes. Recibes un panel, una base de datos y la posibilidad de instalar sistemas como WordPress, que recomienda que el servidor tenga PHP 8.3 o superior, MySQL 8.0 o MariaDB 10.11 o superior y soporte HTTPS, según sus <a href="https://wordpress.org/about/requirements/" rel="noopener">requisitos oficiales</a>.</p>
+<p>La contra: compartes recursos con vecinos que no conoces. Si uno recibe mucho tráfico o tiene un problema de seguridad, tu sitio puede ponerse lento, y el proveedor decide qué puedes instalar.</p>
+
+<h3>2. Cloudflare Pages (y servicios parecidos)</h3>
+<p>Cloudflare Pages publica sitios estáticos desde un repositorio de código: cada vez que la agencia sube un cambio, el sitio se reconstruye y se publica en la red de Cloudflare. Está disponible en todos los planes, incluido el gratuito, según la <a href="https://developers.cloudflare.com/pages/" rel="noopener">documentación oficial de Cloudflare Pages</a>. Vercel o Netlify funcionan con una lógica similar.</p>
+<p>El plan gratis tiene límites claros y publicados: 500 construcciones al mes, hasta 20.000 archivos por sitio y 25 MiB como tamaño máximo por archivo, según la <a href="https://developers.cloudflare.com/pages/platform/limits/" rel="noopener">página de límites de Cloudflare Pages</a>. Una web corporativa de 5 a 30 páginas queda muy lejos de agotarlos. En esa misma documentación Cloudflare indica que su plataforma principal para proyectos nuevos es Workers; para una web informativa da lo mismo cuál use tu agencia, siempre que el código quede en un repositorio al que tú tengas acceso.</p>
+
+<h3>3. Nube propia (servidor virtual o VPS)</h3>
+<p>Arriendas una máquina virtual completa. Nadie más vive en ella, instalas lo que necesites (base de datos, sistema con usuarios, procesos nocturnos) y tú o tu proveedor son responsables de actualizarla, respaldarla y vigilarla. Más control, más trabajo.</p>
+
+<h2>Cuándo basta con un plan gratuito</h2>
+<p>Si tu web es informativa (quién eres, qué haces, cómo contactarte) y los formularios van a un servicio externo o a WhatsApp, un sitio estático en Cloudflare Pages o similar cubre el caso completo. No hay base de datos que respaldar ni panel que actualizar. Así construimos la mayoría de los sitios de nuestro servicio de <a href="/servicios/desarrollo-web/">desarrollo web</a>: carga rápido, no hay plugins que se desactualicen y el alojamiento puede costar cero.</p>
+
+<h2>Cuándo necesitas servidor propio o un hosting con base de datos</h2>
+<p>El cambio llega cuando el sitio tiene que recordar cosas: una <a href="/servicios/tienda-online/">tienda online</a> con stock y pedidos, un sistema de reservas, un panel con contraseña para tu equipo. Eso requiere un servidor que ejecute código y guarde datos. WooCommerce, por ejemplo, pide PHP 8.3 o superior, MySQL 8.0 o MariaDB 10.6 o superior y un límite de memoria de WordPress de al menos 256 MB, según sus <a href="https://woocommerce.com/document/server-requirements/" rel="noopener">requisitos de servidor</a>. Un plan gratuito de sitios estáticos no está hecho para eso.</p>
+<p>Si tu sistema ya corre en un servidor viejo o en un hosting que se quedó chico y quieres moverlo a una nube propia, el proceso tiene pasos definidos: inventariar lo que corre, respaldar la base de datos, probar en la máquina nueva antes de apuntar el dominio y dejar un plan de vuelta atrás; <a href="https://www.vitisorigins.cl/recursos/migrar-a-la-nube/">acá lo explican paso a paso</a>. No cortes el servidor antiguo hasta que el nuevo lleve varios días funcionando bien.</p>
+
+<h2>Qué preguntar al proveedor antes de contratar</h2>
+<ol>
+<li><strong>¿Quién es dueño de la cuenta?</strong> El dominio .CL se inscribe a nombre de un titular, y la <a href="https://www.nic.cl/normativa/reglamentacion.html" rel="noopener">reglamentación de NIC Chile</a> establece que el contacto administrativo actúa como representante del titular para todos los efectos. Si el titular es tu agencia y no tu empresa, el día que cambies de proveedor dependes de su buena voluntad. Pide que dominio y cuenta de hosting queden a nombre de tu empresa, con la agencia como colaborador.</li>
+<li><strong>¿Cómo y cuándo se hacen los respaldos?</strong> Con qué frecuencia, dónde se guardan y cómo se restaura uno. En un sitio estático el repositorio es el respaldo; en una tienda, los respaldos son lo único que te separa de perder los pedidos.</li>
+<li><strong>¿Quién gestiona el certificado HTTPS?</strong> El candado del navegador depende de un certificado que vence. Los de Let's Encrypt son gratuitos y duran 90 días, y la propia organización recomienda renovarlos cada 60, según su <a href="https://letsencrypt.org/docs/faq/" rel="noopener">documentación</a>. Confirma que en tu plataforma se renueve solo.</li>
+<li><strong>¿Cómo me voy?</strong> Pide por escrito que te entregarán código, base de datos y accesos si terminas el contrato. Una respuesta vaga aquí dice más que cualquier promesa.</li>
+</ol>
+
+<h2>Resumen práctico</h2>
+<div class="overflow-x-auto"><table><thead><tr><th>Tu caso</th><th>Opción que suele servir</th><th>Lo que debes exigir</th></tr></thead><tbody>
+<tr><td>Web informativa, contacto por formulario o WhatsApp</td><td>Sitio estático en Cloudflare Pages o similar</td><td>Repositorio y cuenta a tu nombre</td></tr>
+<tr><td>Blog o catálogo con WordPress, sin ventas</td><td>Hosting compartido serio o sitio estático generado</td><td>Respaldos y actualizaciones acordadas</td></tr>
+<tr><td>Tienda con stock y pagos, sistema con usuarios</td><td>Hosting con base de datos o nube propia</td><td>Respaldos diarios probados, HTTPS automático, plan de salida</td></tr>
+</tbody></table></div>
+<p>No hay una opción correcta para todos; hay la que corresponde a lo que tu web hace hoy y hará en un año. La pregunta que casi siempre lo resuelve: ¿tu sitio necesita guardar datos de alguien? Si la respuesta es no, parte simple.</p>
+    </div>
+
+    <div class="bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-700/50 rounded-2xl p-8 md:p-10 mt-12 text-center">
+        <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">¿No sabes dónde está alojada tu web hoy?</h3>
+        <p class="text-slate-300 mb-6">Lo revisamos contigo y te decimos a nombre de quién está cada cosa.</p>
+        <a href="/contacto" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition">Agendar llamada →</a>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-extrabold text-white mb-6">Sigue leyendo</h2>
+        <div class="grid md:grid-cols-2 gap-4"><a href="/servicios/desarrollo-web/" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Servicio</p><p class="text-white font-bold mt-2">Desarrollo web para pymes →</p></a><a href="/blog/caso-chile-electrico-cobertura-rm" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Casos</p><p class="text-white font-bold mt-2">Caso ChileEléctrico →</p></a><a href="/blog/caso-sushiapp-multi-sucursal-delivery" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Casos</p><p class="text-white font-bold mt-2">Caso SushiApp →</p></a><a href="/blog/caso-cabanas-santa-regina-turismo-seo" class="block bg-slate-900 border border-slate-800 hover:border-blue-500 p-5 rounded-xl transition"><p class="text-blue-400 text-xs font-bold uppercase tracking-widest">Casos</p><p class="text-white font-bold mt-2">Caso Cabañas Santa Regina →</p></a></div>
+    </div>
+</article>
+
+<footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-10">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm">
+        <p>&copy; <span id="yy"></span> PaginasFast · Agencia digital para PYMES</p>
+        <p class="mt-2 text-xs">Trabajamos con: <span>SushiApp</span> · <a href="https://www.xn--cabaassantaregina-ixb.cl/" rel="noopener" class="hover:text-blue-400">Cabañas Santa Regina</a> · <a href="https://chileelectrico.cl" rel="noopener" class="hover:text-blue-400">ChileEléctrico</a> · <a href="https://www.limpiafosasydestape.cl" rel="noopener" class="hover:text-blue-400">Full Fosas</a> · <span>Arriaza</span></p>
+    </div>
+    <script>document.getElementById('yy').textContent=new Date().getFullYear();</script>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "@id":"https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia#article",
+      "headline":"Hosting compartido, Cloudflare Pages o nube propia: dónde conviene alojar la web de una pyme",
+      "description":"Qué es cada opción para alojar una web, cuándo basta un plan gratis, cuándo una tienda o un sistema con panel necesita servidor propio y qué preguntar al proveedor antes de contratar.",
+      "image":"https://paginasfast.cl/og.jpg",
+      "url":"https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia",
+      "mainEntityOfPage":{"@type":"WebPage","@id":"https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia"},
+      "datePublished":"2026-10-08",
+      "dateModified":"2026-10-08",
+      "author":{"@type":"Organization","name":"PaginasFast","url":"https://paginasfast.cl"},
+      "publisher":{"@type":"Organization","name":"PaginasFast","url":"https://paginasfast.cl","logo":{"@type":"ImageObject","url":"https://paginasfast.cl/og.jpg"}},
+      "inLanguage":"es-CL",
+      "articleSection":"Guías para pymes",
+      "keywords":["hosting para pymes","Cloudflare Pages","servidor propio","alojamiento web","dominio a nombre de la empresa"]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Inicio","item":"https://paginasfast.cl/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://paginasfast.cl/blogs.html"},
+        {"@type":"ListItem","position":3,"name":"Dónde alojar la web de una pyme","item":"https://paginasfast.cl/blog/hosting-compartido-cloudflare-pages-o-nube-propia"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+.fab-wa{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);border-radius:9999px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(37,211,102,.45);z-index:50;transition:transform .2s ease}
+.fab-wa:hover{transform:scale(1.08)}
+.fab-wa::before{content:"";position:absolute;inset:-6px;border-radius:9999px;background:rgba(37,211,102,.35);animation:fab-pulse 1.8s ease-out infinite;z-index:-1}
+@keyframes fab-pulse{0%{transform:scale(.85);opacity:.75}100%{transform:scale(1.4);opacity:0}}
+.fab-tip{position:absolute;right:72px;top:50%;transform:translateY(-50%);background:#0f172a;color:#fff;font-size:13px;font-weight:600;padding:8px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.fab-tip::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:0;height:0;border:5px solid transparent;border-left-color:#0f172a}
+.fab-wa:hover .fab-tip{opacity:1;transform:translateY(-50%) translateX(-4px)}
+</style>
+<a href="https://api.whatsapp.com/send?phone=56930153632&text=Hola%2C%20le%C3%AD%20la%20gu%C3%ADa%20sobre%20d%C3%B3nde%20alojar%20la%20web%20y%20quiero%20revisar%20la%20m%C3%ADa." target="_blank" rel="noopener" class="fab-wa" aria-label="Contactar por WhatsApp">
+<span class="fab-tip">¿Hablamos?</span>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.683 5.526l-.999 3.648 3.805-.873zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+</body>
+</html>
