@@ -38,6 +38,7 @@
     { "source": "/blog/caso-sushiapp-multi-sucursal-delivery/", "destination": "/blog/caso-sushiapp-multi-sucursal-delivery", "permanent": true },
     { "source": "/blog/caso-cabanas-santa-regina-turismo-seo/", "destination": "/blog/caso-cabanas-santa-regina-turismo-seo", "permanent": true },
     { "source": "/blog/caso-chile-electrico-cobertura-rm/", "destination": "/blog/caso-chile-electrico-cobertura-rm", "permanent": true },
+    { "source": "/blog/hosting-compartido-cloudflare-pages-o-nube-propia/", "destination": "/blog/hosting-compartido-cloudflare-pages-o-nube-propia", "permanent": true },
     { "source": "/blogs/blog1/", "destination": "/blogs/blog1", "permanent": true },
     { "source": "/blogs/blog2/", "destination": "/blogs/blog2", "permanent": true },
     { "source": "/blogs/blog3/", "destination": "/blogs/blog3", "permanent": true }
